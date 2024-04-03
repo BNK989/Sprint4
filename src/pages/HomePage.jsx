@@ -11,6 +11,7 @@ export function HomePage() {
     return (
         <section>
             <h2>HomePage page</h2>
+            <h1>hay</h1>
         </section >
     )
 }
