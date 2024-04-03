@@ -3,7 +3,7 @@ import { GigIndex } from './pages/GigIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { ChatApp } from './pages/Chat.jsx'
 
-// Routes accesible from the main navigation (in AppHeader)
+// Routes accessible from the main navigation (in AppHeader)
 const routes = [
     {
         path: '/',
