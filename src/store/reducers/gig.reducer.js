@@ -8,6 +8,7 @@ export const ADD_TO_CART = 'ADD_TO_CART'
 export const CLEAR_CART = 'CLEAR_CART'
 export const UNDO_REMOVE_GIG = 'UNDO_REMOVE_GIG'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+export const SET_FILTER_BY = 'SET_FILTER_BY'
 
 const initialState = {
     gigs: [],
@@ -51,6 +52,8 @@ export function gigReducer(state = initialState, action) {
                 newState = { ...state, gigs: [...state.gigs, state.lastRemovedGig], lastRemovedGig: null }
             }
             break
+        case SET_FILTER_BY:
+            return { ...state, filterBy: action.val }
         default:
     }
     return newState
