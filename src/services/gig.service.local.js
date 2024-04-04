@@ -103,21 +103,12 @@ function getDefaultFilter() {
     return { title: '', price: 0 }
 }
 
-// function _saveDemoData(){
-//     gigs.forEach(gig=>{
-//         console.log(gig);
-//         save(gig)
-//     })
-// }
+
 function _saveDemoData() {
     let gigs = utilService.loadFromStorage(STORAGE_KEY)
     if (!gigs || !gigs.length) {
         gigs = gigsDemo
-        // books.push(_createBook('The wheel of Time', 300))
-        // books.push(_createBook('The name of the Wind', 120))
-        // books.push(_createBook('Without A Word', 100))
-        // books.push(_createBook('The Death Gate Cycle', 150))
-        // console.log('gigs:', gigs)
+    
         utilService.saveToStorage(STORAGE_KEY, gigs)
     }
 }
