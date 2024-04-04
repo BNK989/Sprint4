@@ -58,6 +58,7 @@ const gig = {
       username: "user1",
       password: "secret",
       level: "basic/premium",
+      rate: 4
     },
   ]
   

@@ -31,5 +31,28 @@ const routes = [
     //     label: 'About us'
     // },
 ]
-
 export default routes
+
+
+export const NavRoutes = [
+    {
+        path: 'explore',
+        component: <GigIndex />,
+        label: 'Explore'
+    },
+    // {
+    //     path: 'review',
+    //     component: <ReviewIndex />,
+    //     label: 'Reviews'
+    // },
+    {
+        path: 'chat',
+        component: <ChatApp />,
+        label: 'Become a Seller'
+    }
+    // {
+    //     path: 'about',
+    //     component: <AboutUs />,
+    //     label: 'About us'
+    // },
+]
