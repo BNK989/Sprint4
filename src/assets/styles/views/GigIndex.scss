@@ -21,13 +21,13 @@
                 display: flex;
                 flex-flow: column;
 
-                .main-img{
+                .main-img {
 
                     img {
-                    width: cover;
+                        width: cover;
+                    }
                 }
-                }
-                
+
 
                 .gig-owner-mini {
                     margin-top: 2px;
@@ -36,12 +36,20 @@
                     justify-content: space-between;
 
                     font-size: 0.7em;
+
                     .gig-user {
                         display: flex;
                         // align-items: center;
 
                         img {
                             max-width: 30px;
+                        }
+
+
+
+                        .sdsad::after {
+                            font-family: 'fa-solid';
+                            content: "\f078";
                         }
                     }
 
@@ -50,4 +58,8 @@
 
         }
     }
+}
+
+.fa-full-star::after {
+    content: "\e5d6"
 }

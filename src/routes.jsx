@@ -2,6 +2,7 @@ import { HomePage } from './pages/HomePage.jsx'
 import { GigIndex } from './pages/GigIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { ChatApp } from './pages/Chat.jsx'
+import { GigDetails } from './cmps/GigDetails.jsx'
 
 // Routes accessible from the main navigation (in AppHeader)
 const routes = [
@@ -24,12 +25,12 @@ const routes = [
         path: 'chat',
         component: <ChatApp />,
         label: 'Chat'
-    }
-    // {
-    //     path: 'about',
-    //     component: <AboutUs />,
-    //     label: 'About us'
-    // },
+    },
+    {
+        path: 'explore/:gigId',
+        component: <GigDetails />,
+        label: 'details'
+    },
 ]
 export default routes
 

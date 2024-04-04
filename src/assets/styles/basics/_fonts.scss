@@ -2,6 +2,14 @@
     font-family: 'fa-solid';
     src: url('../../../../public/fonts/fa/fa-Solid.otf');
 }
+@font-face {
+    font-family: 'fa-reg';
+    src: url('../../../../public/fonts/fa/fa-Regular.otf');
+}
+@font-face {
+    font-family: 'fa-brands';
+    src: url('../../../../public/fonts/fa/fa-Brands.otf');
+}
 
 
 @font-face {
@@ -20,4 +28,10 @@
 
 .fa{
     font-family: 'fa-solid';
+}
+.fa-reg{
+    font-family: 'fa-reg';
+}
+.fa-brands{
+    font-family: 'fa-brands';
 }
