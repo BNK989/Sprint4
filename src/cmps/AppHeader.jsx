@@ -53,7 +53,7 @@ export function AppHeader() {
         <header className={`app-header full main-container ${isBgOn ? "color" : "transparent"}`}>
             <div className="header-container">
                 <div className="logo">
-                    <a href="#"><img src={isBgOn ? `/img/5err-logo.svg` : `/img/5err-logo-white.svg`} alt="5err logo" /></a>
+                    <a href="/"><img src={isBgOn ? `/img/5err-logo.svg` : `/img/5err-logo-white.svg`} alt="5err logo" /></a>
                 </div>
                 <div className="search-container">
                     <SearchBox/>

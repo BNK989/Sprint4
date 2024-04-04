@@ -1,0 +1,24 @@
+.fiverr-nav{
+    ul{
+        gap: 10px;
+    }
+    .explore:after{
+        font-family: 'fa-solid';
+        content: "\f078";
+        font-size: .6em;
+        margin: auto .2em;
+        color: white;
+    }
+
+    .join-btn{
+        padding: 7px 20px;
+        font-weight: 700;
+        font-size: .875rem;
+        background-color: inherit;
+        transition: all .2s ease;
+        border-radius: 4px;
+        margin-inline-start: 10px;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+}
