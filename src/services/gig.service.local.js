@@ -2,19 +2,23 @@
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
+import { gigsDemo } from '../../data/gig-demo-data.js'
 
 const STORAGE_KEY = 'gig'
 
-export const gigServiceLocal = {
+
+
+export const gigService = {
     query,
     getById,
     save,
     remove,
     getEmptyGig,
-    addGigMsg
+    addGigMsg,
+    getDefaultFilter
 }
 window.cs = gigService
-
+_saveDemoData()
 
 async function query(filterBy = { title: '', price: 0 }) {
     var gigs = await storageService.query(STORAGE_KEY)
@@ -42,6 +46,7 @@ async function save(gig) {
     if (gig._id) {
         savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
+        console.log('gig:',gig);
         // Later, owner is set by the backend
         gig.owner = userService.getLoggedinUser()
         savedGig = await storageService.post(STORAGE_KEY, gig)
@@ -92,6 +97,29 @@ function getEmptyGig() {
           }
         ], 
       }
+}
+
+function getDefaultFilter() {
+    return { title: '', price: 0 }
+}
+
+// function _saveDemoData(){
+//     gigs.forEach(gig=>{
+//         console.log(gig);
+//         save(gig)
+//     })
+// }
+function _saveDemoData() {
+    let gigs = utilService.loadFromStorage(STORAGE_KEY)
+    if (!gigs || !gigs.length) {
+        gigs = gigsDemo
+        // books.push(_createBook('The wheel of Time', 300))
+        // books.push(_createBook('The name of the Wind', 120))
+        // books.push(_createBook('Without A Word', 100))
+        // books.push(_createBook('The Death Gate Cycle', 150))
+        // console.log('gigs:', gigs)
+        utilService.saveToStorage(STORAGE_KEY, gigs)
+    }
 }
 
 
