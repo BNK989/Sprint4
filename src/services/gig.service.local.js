@@ -5,7 +5,7 @@ import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'gig'
 
-export const gigServiceLocal = {
+export const gigService = {
     query,
     getById,
     save,
