@@ -8,7 +8,17 @@ $clr6: #fff;
 $clr7: #222;
 
 
+$clrbg1:#1dbf73;
+$clrbg1-light:lighten($clrbg1, 10%);
+$clrbg1-dark:darken($clrbg1, 10%);
+
+$clralert:#c14a83;
+
+$clrbtn:#404145;
+$clrbtn-hover:#74767e;
+
 // Breakpoints
 $mobile-breakpoint: 460px;
 $narrow-breakpoint: 720px;
 $normal-breakpoint: 960px;
+
