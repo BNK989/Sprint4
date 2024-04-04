@@ -1,16 +1,32 @@
 .app-header {
-    padding: 10px;
-    position: sticky;
-    top: 0;
-
+    height: 80px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e5e7;
+    transition: background-color .5s ease;
+    transition: border .5s ease;
+    
     &.transparent{
+        position: absolute;
         background-color: transparent;
+        border-bottom: none;
+        transition: background-color .5s ease;
+
+        *{
+            color: #fff;
+        }
+
         .search-container{
             visibility: hidden;
         }
     }
     &.color{
+        position: sticky;
         background-color: white;
+        top: 0;
+
         .search-container{
             visibility: visible;
         }

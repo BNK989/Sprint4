@@ -9,7 +9,10 @@ export function HomePage() {
 
 
     return (
-        <section>
+        <section className='homepage-section'>
+            <section className='hero-container main-layout full'>
+                <img src="../../public/img/hero/hero-img1.webp" alt="hero image" />
+            </section>
             <h2>HomePage page</h2>
             <h1>hay</h1>
             <ul>
