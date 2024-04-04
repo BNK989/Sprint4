@@ -5,7 +5,7 @@ import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'gig'
 
-export const gigService = {
+export const gigServiceLocal = {
     query,
     getById,
     save,
@@ -16,11 +16,11 @@ export const gigService = {
 window.cs = gigService
 
 
-async function query(filterBy = { txt: '', price: 0 }) {
+async function query(filterBy = { title: '', price: 0 }) {
     var gigs = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        gigs = gigs.filter(gig => regex.test(gig.vendor) || regex.test(gig.description))
+    if (filterBy.title) {
+        const regex = new RegExp(filterBy.title, 'i')
+        gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
     }
     if (filterBy.price) {
         gigs = gigs.filter(gig => gig.price <= filterBy.price)
@@ -67,9 +67,31 @@ async function addGigMsg(gigId, txt) {
 
 function getEmptyGig() {
     return {
-        vendor: 'Susita-' + (Date.now() % 1000),
-        price: utilService.getRandomIntInclusive(1000, 9000),
-    }
+        title: "",
+        price: '',
+        owner: {},
+        daysToMake: getRandomIntInclusive(3,10),
+        description: makeLorem(10),
+        avgResponseTime: getRandomIntInclusive(1,3),
+        loc: "Ghana",
+        imgUrls: [""],
+        tags: [
+          "Arts And Crafts", "Logo Design"
+        ],
+        likedByUsers: ['mini-user'],
+        reviews: [
+          {
+            "id": "madeId",
+            "txt": "Did an amazing work",
+            "rate": 4,
+            "by": {
+              "_id": "u102",
+              "fullname": "user2",
+              "imgUrl": "/img/img2.jpg"
+            }
+          }
+        ], 
+      }
 }
 
 
