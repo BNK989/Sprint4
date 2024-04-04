@@ -27,6 +27,7 @@ function getUsers() {
 
 
 async function getById(userId) {
+    console.log('userId:', userId)
     const user = await storageService.get('user', userId)
     // const user = await httpService.get(`user/${userId}`)
     return user
@@ -99,7 +100,7 @@ function getLoggedinUser() {
 
 ;(async ()=>{
     // await userService.signup({fullname: 'aviya', username: 'puki', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"})
-    await userService.signup({fullname: 'meni', username: 'admin', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"})
+    // await userService.signup({fullname: 'meni', username: 'admin', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"})
     // await userService.signup({fullname: 'ben', username: 'muki', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"})
 })()
 

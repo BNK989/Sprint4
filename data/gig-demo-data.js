@@ -4,7 +4,7 @@ export const gigsDemo =[
         "title": "I will design your logo",
         "price": 12,
         "owner": {
-          "_id": "u101",
+          "_id": "hI1f1",
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": "basic/premium",
@@ -30,7 +30,7 @@ export const gigsDemo =[
         "title": "I will design your logo",
         "price": 15,
         "owner": {
-          "_id": "u101",
+          "_id": "hI1f1",
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": "basic/premium",
