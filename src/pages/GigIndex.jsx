@@ -1,16 +1,17 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { loadGigs, addGig, updateGig, removeGig, addToCART } from '../store/gig.actions.js'
+// import { loadGigs, addGig, updateGig, removeGig, addToCART } from '../store/gig.actions.js'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { gigService } from '../services/gig.service.js'
+import { loadGigs } from '../store/actions/gig.actions.js'
 
 export function GigIndex() {
 
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
-
+    
     useEffect(() => {
         try {
             loadGigs()

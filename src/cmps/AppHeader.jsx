@@ -3,10 +3,10 @@ import {useSelector} from 'react-redux'
 import { useState, useEffect } from "react"
 import routes from '../routes'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { login, logout, signup } from '../store/user.actions.js'
 import { LoginSignup } from './LoginSignup.jsx'
 import { NavBar } from './Navbar.jsx'
 import { SearchBox } from './SearchBox.jsx'
+import { login, logout, signup } from '../store/actions/user.actions.js'
 
 
 export function AppHeader() {
