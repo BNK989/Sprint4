@@ -55,7 +55,9 @@ export function AppHeader() {
                 <div className="logo">
                     <img src="/img/5err-logo.svg" alt="5err logo" />
                 </div>
-                <SearchBox/>
+                <div className="search-container">
+                    <SearchBox/>
+                </div>
                 <NavBar/>
             </div>
             </header>

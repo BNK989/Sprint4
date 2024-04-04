@@ -5,15 +5,21 @@
 
     &.transparent{
         background-color: transparent;
+        .search-container{
+            visibility: hidden;
+        }
     }
     &.color{
         background-color: white;
+        .search-container{
+            visibility: visible;
+        }
     }
-    
 
     .logo img{
         width: 60px;
     }
+
 
     .header-container {
         display: flex;
