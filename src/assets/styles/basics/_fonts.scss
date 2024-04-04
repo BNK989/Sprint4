@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'fa-solid';
+    src: url('../../../../public/fonts/fa/fa-Solid.otf');
+}
+
+
+@font-face {
+    font-family: 'Macan';
+    src: url('../../../../public/fonts/MacanPanWeb-Regular.eot');
+    src: local('Macan Pan Web Regular'), local('../../../../public/fonts/MacanPanWeb-Regular'),
+        url('../../../../public/fonts/MacanPanWeb-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../../../public/fonts/MacanPanWeb-Regular.woff2') format('woff2'),
+        url('../../../../public/fonts/MacanPanWeb-Regular.woff') format('woff'),
+        url('../../../../public/fonts/MacanPanWeb-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

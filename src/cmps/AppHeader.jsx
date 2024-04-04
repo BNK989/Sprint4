@@ -1,12 +1,28 @@
 import { Link, NavLink } from 'react-router-dom'
 import {useSelector} from 'react-redux'
+import { useState, useEffect } from "react"
 import routes from '../routes'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { login, logout, signup } from '../store/user.actions.js'
 import { LoginSignup } from './LoginSignup.jsx'
+import { NavBar } from './Navbar.jsx'
+import { SearchBox } from './SearchBox.jsx'
+
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
+
+    const [isBgOn, setIsBgOn] = useState(false)
+
+    const handleScroll = () => {
+        window.scrollY > 0 ? setIsBgOn(true) : setIsBgOn(false)
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
 
     async function onLogin(credentials) {
         try {
@@ -34,9 +50,17 @@ export function AppHeader() {
     }
     
     return (
-        <header className="app-header">
-            <h1>Header cmp</h1>
-            <nav>
+        <header className={`app-header ${isBgOn ? "color" : "transparent"}`}>
+            <div className="header-container">
+                <div className="logo">
+                    <img src="/img/5err-logo.svg" alt="5err logo" />
+                </div>
+                <SearchBox/>
+                <NavBar/>
+            </div>
+            </header>
+    )
+            {/* <nav>
                 {routes.map(route => <NavLink key={route.path} to={route.path}>{route.label}</NavLink>)}
 
                 {user &&
@@ -54,7 +78,6 @@ export function AppHeader() {
                         <LoginSignup onLogin={onLogin} onSignup={onSignup} />
                     </section>
                 }
-            </nav>
-        </header>
-    )
+            </nav> */}
+
 }
