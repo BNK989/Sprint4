@@ -7,14 +7,19 @@
     border-bottom: 1px solid #e4e5e7;
     transition: background-color .5s ease;
     transition: border .5s ease;
+    
+ 
 
     li{
         margin: auto;
     }
-    
-    &.transparent{
+
+    &.beAbs{
         position: absolute;
         background-color: transparent;
+    }
+    
+    &.transparent{
         border-bottom: none;
         transition: background-color .5s ease;
 
@@ -31,10 +36,11 @@
         transform: rotateX(0deg);
         background-color: #fff;
     }
-    
+
     &.color {
         position: sticky;
         top: 0;
+        background-color: white;
         .header-container{
             background-color: #fff;
         }

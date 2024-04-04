@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useParams, useLocation } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import { useState, useEffect } from "react"
 import routes from '../routes'
@@ -9,34 +9,24 @@ import { SearchBox } from './SearchBox.jsx'
 import { login, logout, signup } from '../store/actions/user.actions.js'
 
 
-
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
 
     const [isBgOn, setIsBgOn] = useState(false)
     const [isSearchVisible, setIsSearchVisible] = useState(false)
-    const [isHomepage, setIsHomepage] = useState(false)
-
-
-    // const isHomePage = () => {
-    //     const currentPath = window.location.pathname
-    //     const homePath = routes.home.path
-    //     console.log('currentPath === homePath:', currentPath === homePath)
-
-    //     //setIsHomepage(currentPath === homePath) 
-    // }
-
+    const location = useLocation()
+    const isHomepage = location.pathname === '/'
 
     const handleScroll = () => {
-        window.scrollY > 0 ? setIsBgOn(true) : setIsBgOn(false)
+        (window.scrollY > 0 ) ? setIsBgOn(true) : setIsBgOn(false)
         window.scrollY > 80 ? setIsSearchVisible(true) : setIsSearchVisible(false)
     }
 
+
     useEffect(() => {
-        //isHomePage()
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
+    }, [location])
 
 
     async function onLogin(credentials) {
@@ -63,12 +53,19 @@ export function AppHeader() {
             showErrorMsg('Cannot logout')
         }
     }
+
+    console.log('isHomepage:', (isBgOn && isHomepage))
     
     return (
-        <header className={`app-header full main-container ${isHomepage ? "beAbs" : "noAbs"} ${isBgOn ? "color" : "transparent"} ${isSearchVisible ? "search-visible" : ""}`}>
+        <header className={
+            `app-header full main-container 
+                ${isHomepage ? "beAbs" : "noAbs"} 
+                ${(isBgOn && isHomepage) ? "color" : "transparent"} 
+                ${isSearchVisible ? "search-visible" : ""}`
+            }>
             <div className="header-container">
                 <div className="logo">
-                    <a href="/"><img src={isBgOn ? `/img/5err-logo.svg` : `/img/5err-logo-white.svg`} alt="5err logo" /></a>
+                    <a href="/"><img src={(isBgOn && isHomepage) ? `/img/5err-logo.svg` : `/img/5err-logo-white.svg`} alt="5err logo" /></a>
                 </div>
                 <div className="search-container">
                     <SearchBox/>

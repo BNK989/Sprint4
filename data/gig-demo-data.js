@@ -4,7 +4,7 @@ export const gigsDemo =[
         "title": "I will design your logo",
         "price": 12,
         "owner": {
-          "_id": "hI1f1",
+          "_id": "FHc6T",
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 1,
@@ -30,7 +30,7 @@ export const gigsDemo =[
         "title": "I will design your logo",
         "price": 15,
         "owner": {
-          "_id": "hI1f1",
+          "_id": "FHc6T",
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 3,
@@ -55,7 +55,7 @@ export const gigsDemo =[
         "title": "I will design your home page",
         "price": 30,
         "owner": {
-          "_id": "u101",
+          "_id": "FHc6T",
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 2,

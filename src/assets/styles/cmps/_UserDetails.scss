@@ -1,0 +1,52 @@
+.user-details-seller-container {
+    display: flex;
+    margin-top: 100px;
+    gap: 10px;
+    justify-content: space-between;
+
+    .user-container {
+        display: flex;
+        flex-direction: column;
+        background-color: aquamarine;
+        max-width: 400px;
+        gap: 20px;
+
+        .user-details-seller {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                align-self: center;
+            }
+
+            .location::after {
+                content: "\f3c5";
+            }
+
+            h3 {
+                align-self: center;
+            }
+        }
+
+        .user-description-seller {
+            // width: fit-content;
+            padding-right: 10px;
+            border: 1px solid black;
+
+        }
+    }
+
+
+    .owned-gigs-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+
+        .add-new-gig-container {
+            text-align: center;
+        }
+
+        .owned-gigs-preview {}
+    }
+}

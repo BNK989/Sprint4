@@ -7,6 +7,7 @@ import { loadOwnGigs } from '../store/actions/gig.actions'
 import { OwnedGigPreview } from '../cmps/OwnedGigPreview'
 
 
+
 // import { store } from '../store/store'
 // import { showSuccessMsg } from '../services/event-bus.service'
 // import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
@@ -17,9 +18,9 @@ export function UserDetails() {
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.user)
   const ownedGigs = useSelector(storeState => storeState.gigModule.ownedGigs)
-  console.log('params.id:', params.id)
+  console.log('params.id:', params)
   useEffect(() => {
-    // loadUser(params.id)
+    loadUser(params.id)
     loadOwnGigs(params.id)
     // gigService.query(params.id)
     // socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
@@ -37,31 +38,47 @@ export function UserDetails() {
   //   store.dispatch({ type: 'SET_WATCHED_USER', user })
   // }
 
-  return (<>
-    <section className="user-details">
-      <h1>User Details</h1>
-      {user && <div>
-        <h3>
-          {user.fullname}
-        </h3>
-        <img src={user.imgUrl} style={{ width: '100px' }} />
-        {/* <pre> {JSON.stringify(user, null, 2)} </pre> */}
-      </div>}
-    </section>
+  return (<section className='user-details-seller-container'>
     {
-       
-          <ul className='owned-gigs-container clean-list'>
-          {
-        !!ownedGigs.length && ownedGigs.map(ownedGig =>{
-             return <li className='owned-gigs-preview' key={ownedGig._id}>
-                <OwnedGigPreview ownedGig={ownedGig}/>
-              </li>
-            })
-          }
-          </ul>
-      
+      user && <section className="user-container">
+        <section className="user-details-seller">
+          <img src={user.imgUrl} style={{ width: '100px' }} />
+          <h3>{user.fullname}</h3>
+          
+          {/* <i className="fa location"></i> */}
+          <p><span className="fa location"></span> Country:</p>
+        </section>
+
+
+        <article className='user-description-seller'>
+          <h2>Description:</h2>
+          <p>kadfdf iuadhf uioh ouahf iuh daufhluj  aoiuhafp8ihas uihasdf iuah dasiuh </p>
+        </article>
+      </section>
+
+
     }
-  </>
+
+    {
+
+      <ul className='owned-gigs-container clean-list'>
+        <li className='add-new-gig-container'>
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT-aRZyzNggfpR9_ncdjTOoPVirlRm6n0O020q41dCXjYk4jVAL" alt="" />
+          <p>Create new gig</p>
+        </li>
+        {
+          !!ownedGigs.length && ownedGigs.map(ownedGig => {
+            return <li className='owned-gigs-preview' key={ownedGig._id}>
+              <OwnedGigPreview ownedGig={ownedGig} />
+            </li>
+          })
+        }
+      </ul>
+
+    }
+  </section>
+
+
 
   )
 }
