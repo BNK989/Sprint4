@@ -11,7 +11,7 @@ export function HomePage() {
 
     return (
         <section className='homepage-section'>
-            <section className='hero-container main-layout full'>
+            <section className='hero-container main-layout full flex'>
                 {/* <img src="../../public/img/hero/hero-img1.webp" alt="hero image" /> */}
                 <div class="search-container flex">
                     <h1>Find the right <i>freelance</i><br/> service, right away</h1>
