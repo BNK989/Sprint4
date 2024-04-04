@@ -2,8 +2,8 @@ import { gigService } from '../../services/gig.service.local.js'
 import { userService } from '../../services/user.service.js'
 import { store } from '../store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG } from '../reducers/gig.reducer.js'
-import { SET_SCORE } from '../reducers/user.reducer.js'
+import { ADD_GIG,  REMOVE_GIG, SET_GIGS, UPDATE_GIG } from '../reducers/gig.reducer.js'
+// import { SET_SCORE } from '../reducers/user.reducer.js'
 
 // Action Creators:
 export function getActionRemoveGig(gigId) {
@@ -76,31 +76,31 @@ export function updateGig(gig) {
         })
 }
 
-export function addToCART(gig) {
-    store.dispatch({
-        type: ADD_TO_CART,
-        gig
-    })
-}
+// export function addToCART(gig) {
+//     store.dispatch({
+//         type: ADD_TO_CART,
+//         gig
+//     })
+// }
 
-export function removeFromCART(gigId) {
-    store.dispatch({
-        type: REMOVE_FROM_CART,
-        gigId
-    })
-}
+// export function removeFromCART(gigId) {
+//     store.dispatch({
+//         type: REMOVE_FROM_CART,
+//         gigId
+//     })
+// }
 
-export async function checkout(total) {
-    try {
-        const score = await userService.changeScore(-total)
-        store.dispatch({ type: SET_SCORE, score })
-        store.dispatch({ type: CLEAR_CART })
-        return score
-    } catch (err) {
-        console.log('GigActions: err in checkout', err)
-        throw err
-    }
-}
+// export async function checkout(total) {
+//     try {
+//         const score = await userService.changeScore(-total)
+//         store.dispatch({ type: SET_SCORE, score })
+//         store.dispatch({ type: CLEAR_CART })
+//         return score
+//     } catch (err) {
+//         console.log('GigActions: err in checkout', err)
+//         throw err
+//     }
+// }
 
 
 // Demo for Optimistic Mutation 
@@ -119,8 +119,8 @@ export function onRemoveGigOptimistic(gigId) {
         .catch(err => {
             showErrorMsg('Cannot remove gig')
             console.log('Cannot load gigs', err)
-            store.dispatch({
-                type: UNDO_REMOVE_GIG,
-            })
+            // store.dispatch({
+            //     type: UNDO_REMOVE_GIG,
+            // })
         })
 }
