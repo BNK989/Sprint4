@@ -1,16 +1,36 @@
 .app-header {
-    padding: 10px;
-    position: sticky;
-    top: 0;
+    height: 80px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e5e7;
+    transition: background-color .5s ease;
+    transition: border .5s ease;
 
+    li{
+        margin: auto;
+    }
+    
     &.transparent{
+        position: absolute;
         background-color: transparent;
+        border-bottom: none;
+        transition: background-color .5s ease;
+
+        *{
+            color: #fff;
+        }
+
         .search-container{
             visibility: hidden;
         }
     }
     &.color{
-        background-color: white;
+        position: sticky;
+        background-color: #fff;
+        top: 0;
+
         .search-container{
             visibility: visible;
         }
@@ -20,24 +40,10 @@
         width: 60px;
     }
 
-
     .header-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .fiverr-nav{
-        ul{
-            gap: 10px;
-        }
-        li:after{
-            font-family: 'fa-solid';
-            content: "\f078";
-            font-size: .6em;
-            margin: auto .2em;
-            color: white;
-        }
     }
 
 }

@@ -7,12 +7,13 @@ import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { UserDetails } from './pages/UserDetails'
 
+
 export function RootCmp() {
 
     return (
         <div className='main-container'>
             <AppHeader />
-            <main>
+            <main className='full main-layout'>
                 <Routes>
                     {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
                     <Route path="user/:id" element={<UserDetails />} />
