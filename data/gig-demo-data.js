@@ -7,7 +7,7 @@ export const gigsDemo =[
           "_id": "u101",
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
-          "level": "basic/premium",
+          "level": 1,
           "rate": 4
         },
         "daysToMake": 6,
@@ -33,7 +33,7 @@ export const gigsDemo =[
           "_id": "u101",
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
-          "level": "basic/premium",
+          "level": 3,
           "rate": 4
         },
         "daysToMake": 3,
@@ -58,7 +58,7 @@ export const gigsDemo =[
           "_id": "u101",
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
-          "level": "basic/premium",
+          "level": 2,
           "rate": 4
         },
         "daysToMake": 1,
@@ -72,6 +72,110 @@ export const gigsDemo =[
         "likedByUsers": ["mini-user"],
         "reviews": [
           {
+          }
+        ] 
+      },
+      {
+        "_id": "JYOJa2NpSCq9",
+        "title": "I will design your logo",
+        "price": 15,
+        "owner": {
+          "_id": "u101",
+          "fullname": "Dudu Da",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+          "level": 1,
+          "rate": 4
+        },
+        "daysToMake": 3,
+        "description": "Make unique logo...",
+        "avgResponseTime": 2,
+        "loc": "Ghana",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/185625048/original/a285c0a494a99a882761387348e6a99f9a041758.jpg"],
+        "tags": [
+          "Arts And Crafts", "Logo Design"
+        ],
+        "likedByUsers": ["mini-user"],
+        "reviews": [
+          {
+            
+          }
+        ] 
+      },
+      {
+        "_id": "JYOJa2NpSCq7",
+        "title": "I will design your logo",
+        "price": 15,
+        "owner": {
+          "_id": "u101",
+          "fullname": "Dudu Da",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+          "level": 2,
+          "rate": 4
+        },
+        "daysToMake": 3,
+        "description": "Make unique logo...",
+        "avgResponseTime": 2,
+        "loc": "Ghana",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/185625048/original/a285c0a494a99a882761387348e6a99f9a041758.jpg"],
+        "tags": [
+          "Arts And Crafts", "Logo Design"
+        ],
+        "likedByUsers": ["mini-user"],
+        "reviews": [
+          {
+            
+          }
+        ] 
+      },
+      {
+        "_id": "JYOJa2NpSCq5",
+        "title": "I will design your logo",
+        "price": 15,
+        "owner": {
+          "_id": "u101",
+          "fullname": "Dudu Da",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+          "level": 3,
+          "rate": 4
+        },
+        "daysToMake": 3,
+        "description": "Make unique logo...",
+        "avgResponseTime": 2,
+        "loc": "Ghana",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/185625048/original/a285c0a494a99a882761387348e6a99f9a041758.jpg"],
+        "tags": [
+          "Arts And Crafts", "Logo Design"
+        ],
+        "likedByUsers": ["mini-user"],
+        "reviews": [
+          {
+            
+          }
+        ] 
+      },
+      {
+        "_id": "JYOJa2NpSCq4",
+        "title": "I will design your logo",
+        "price": 15,
+        "owner": {
+          "_id": "u101",
+          "fullname": "Dudu Da",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+          "level": 1,
+          "rate": 4
+        },
+        "daysToMake": 3,
+        "description": "Make unique logo...",
+        "avgResponseTime": 2,
+        "loc": "Ghana",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/185625048/original/a285c0a494a99a882761387348e6a99f9a041758.jpg"],
+        "tags": [
+          "Arts And Crafts", "Logo Design"
+        ],
+        "likedByUsers": ["mini-user"],
+        "reviews": [
+          {
+            
           }
         ] 
       }

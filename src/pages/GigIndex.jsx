@@ -6,6 +6,8 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { gigService } from '../services/gig.service.js'
 import { loadGigs } from '../store/actions/gig.actions.js'
+import { GigFilter } from '../cmps/GigFilter.jsx'
+import { GigList } from '../cmps/GigList.jsx'
 
 export function GigIndex() {
 
@@ -20,6 +22,10 @@ export function GigIndex() {
             showErrorMsg('Cannot load toys')
         }
     }, [filterBy])
+
+    // function onSetFilter(filterBy) {
+    //     setGigFilter(filterBy)
+    // }
 
     // async function onRemoveGig(gigId) {
     //     try {
@@ -76,10 +82,10 @@ export function GigIndex() {
     // }
     // if (!gigs.length) return <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
     return (
-        <div>
-            <h3>Gig index page</h3>
-            <main>
-                
+        <div className='gig-index'>
+            <h3 className='gigs-title'>Gigs</h3>
+            <main className='gig-list-main-container'>
+            <GigList gigs={gigs}/>
             </main>
         </div>
     )

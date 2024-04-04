@@ -100,7 +100,7 @@ function getEmptyGig() {
 }
 
 function getDefaultFilter() {
-    return { title: '', price: 0 }
+    return { title: '', price: 0, creteAT: '' }
 }
 
 
