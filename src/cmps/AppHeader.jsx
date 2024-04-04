@@ -50,7 +50,7 @@ export function AppHeader() {
     }
     
     return (
-        <header className={`app-header ${isBgOn ? "color" : "transparent"}`}>
+        <header className={`app-header full main-container ${isBgOn ? "color" : "transparent"}`}>
             <div className="header-container">
                 <div className="logo">
                     <img src="/img/5err-logo.svg" alt="5err logo" />

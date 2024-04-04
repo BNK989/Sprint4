@@ -1,8 +1,14 @@
 .app-header {
-    background-color: lighten($clrbg1, 20%);
     padding: 10px;
     position: sticky;
     top: 0;
+
+    &.transparent{
+        background-color: transparent;
+    }
+    &.color{
+        background-color: white;
+    }
     
 
     .logo img{
