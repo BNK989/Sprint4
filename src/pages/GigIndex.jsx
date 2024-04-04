@@ -74,7 +74,7 @@ export function GigIndex() {
     //     if (user.isAdmin) return true
     //     return gig.owner?._id === user._id
     // }
-
+    // if (!gigs.length) return <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
     return (
         <div>
             <h3>Gig index page</h3>
