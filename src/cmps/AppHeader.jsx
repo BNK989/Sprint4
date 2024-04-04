@@ -13,9 +13,11 @@ export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
 
     const [isBgOn, setIsBgOn] = useState(false)
+    const [isSearchVisible, setIsSearchVisible] = useState(false)
 
     const handleScroll = () => {
         window.scrollY > 0 ? setIsBgOn(true) : setIsBgOn(false)
+        window.scrollY > 80 ? setIsSearchVisible(true) : setIsSearchVisible(false)
     }
 
     useEffect(() => {
@@ -50,7 +52,7 @@ export function AppHeader() {
     }
     
     return (
-        <header className={`app-header full main-container ${isBgOn ? "color" : "transparent"}`}>
+        <header className={`app-header full main-container ${isBgOn ? "color" : "transparent"} ${isSearchVisible ? "search-visible" : ""}`}>
             <div className="header-container">
                 <div className="logo">
                     <a href="/"><img src={isBgOn ? `/img/5err-logo.svg` : `/img/5err-logo-white.svg`} alt="5err logo" /></a>
@@ -60,6 +62,22 @@ export function AppHeader() {
                 </div>
                 <NavBar/>
             </div>
+            <section className="under-header main-container full">
+                
+                    <ul className='flex clean-list'>
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>Three</li>
+                        <li>Four</li>
+                        <li>Five</li>
+                        <li>Six</li>
+                        <li>Seven</li>
+                        <li>Eight</li>
+                        <li>Nine</li>
+                        <li>Ten</li>
+                    </ul>
+                
+            </section>
             </header>
     )
             {/* <nav>

@@ -26,11 +26,19 @@
             visibility: hidden;
         }
     }
-    &.color{
-        position: sticky;
-        background-color: #fff;
-        top: 0;
 
+    &.search-visible .under-header{
+        transform: rotateX(0deg);
+        background-color: #fff;
+    }
+    
+    &.color {
+        position: sticky;
+        top: 0;
+        .header-container{
+            background-color: #fff;
+        }
+        
         .search-container{
             visibility: visible;
         }
@@ -44,6 +52,30 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .under-header{
+        position: absolute;
+        top: 80px;
+        width: 100%;
+
+        transform: rotateX(90deg);
+        transition: transform .5s ease;
+        
+
+        ul{
+            width: 100%;
+            gap: 10px;
+
+            li:nth-child(1) {
+                margin-inline-start: 0;
+            }
+
+            li:nth-last-child(1) {
+                margin-inline-end: 0;
+            }
+            
+        }
     }
 
 }
