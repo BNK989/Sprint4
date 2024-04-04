@@ -2,7 +2,7 @@ import { gigService } from '../../services/gig.service.local.js'
 import { userService } from '../../services/user.service.js'
 import { store } from '../store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { ADD_GIG,  REMOVE_GIG, SET_GIGS, UPDATE_GIG } from '../reducers/gig.reducer.js'
+import { ADD_GIG,  REMOVE_GIG, SET_GIGS, UPDATE_GIG,SET_FILTER_BY ,SET_OWN_GIGS} from '../reducers/gig.reducer.js'
 // import { SET_SCORE } from '../reducers/user.reducer.js'
 
 // Action Creators:
@@ -32,6 +32,22 @@ export async function loadGigs(filterBy) {
         store.dispatch({
             type: SET_GIGS,
             gigs
+        })
+
+    } catch (err) {
+        console.log('Cannot load gigs', err)
+        throw err
+    }
+
+}
+
+export async function loadOwnGigs(userId) {
+    try {
+        const ownedGigs = await gigService.query(null,userId)
+        console.log('Gigs from DB:', ownedGigs)
+        store.dispatch({
+            type: SET_OWN_GIGS,
+            ownedGigs
         })
 
     } catch (err) {
@@ -123,4 +139,11 @@ export function onRemoveGigOptimistic(gigId) {
             //     type: UNDO_REMOVE_GIG,
             // })
         })
+}
+
+export function setGigFilter(filterBy) {
+    // dispatch
+    store.dispatch({ type: SET_FILTER_BY, filterBy })
+    return Promise.resolve(filterBy)
+    // return loadToys()
 }

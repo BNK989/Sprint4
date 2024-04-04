@@ -13,7 +13,7 @@ export function RootCmp() {
     return (
         <div className='main-container'>
             <AppHeader />
-            <main className='full main-layout'>
+            <main className='main-layout'>
                 <Routes>
                     {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
                     <Route path="user/:id" element={<UserDetails />} />

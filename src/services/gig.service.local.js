@@ -20,15 +20,24 @@ export const gigService = {
 window.cs = gigService
 _saveDemoData()
 
-async function query(filterBy = { title: '', price: 0 }) {
+async function query(filterBy = { title: '', price: 0 },ownedGigsId) {
+    
     var gigs = await storageService.query(STORAGE_KEY)
-    if (filterBy.title) {
+    if(ownedGigsId){
+        let userId =userService.getLoggedinUser()._id
+        
+      return  gigs = gigs.filter(gig=> gig.owner._id === userId)
+        
+    }else{
+       if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
     }
     if (filterBy.price) {
         gigs = gigs.filter(gig => gig.price <= filterBy.price)
+    } 
     }
+    
     return gigs
 }
 
@@ -100,7 +109,7 @@ function getEmptyGig() {
 }
 
 function getDefaultFilter() {
-    return { title: '', price: 0 }
+    return { title: '', price: 0, creteAT: '' }
 }
 
 
