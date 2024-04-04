@@ -12,10 +12,10 @@ $clrbg1:#1dbf73;
 $clrbg1-light:lighten($clrbg1, 10%);
 $clrbg1-dark:darken($clrbg1, 10%);
 
-$clr-alert:#c14a83;
+$clralert:#c14a83;
 
-$clr-btn:#404145;
-$clr-btn-hover:#74767e;
+$clrbtn:#404145;
+$clrbtn-hover:#74767e;
 
 // Breakpoints
 $mobile-breakpoint: 460px;
