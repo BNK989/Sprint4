@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { SearchBox } from '../cmps/SearchBox'
+import { Button } from '@/components/ui/button'
 // import { CHANGE_COUNT } from '../store/user.reducer'
 
 
@@ -27,6 +28,8 @@ export function HomePage() {
                 </div>
                 </div>
             </section>
+
+            <Button className='join-btn btn txt'>Join Now</Button>
             
             <h2>HomePage page</h2>
             <h1>hay</h1>
