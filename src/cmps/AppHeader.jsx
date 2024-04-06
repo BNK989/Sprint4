@@ -57,10 +57,6 @@ export function AppHeader() {
         }
     }
 
-
-    console.log('isScrollNull:', isScrollNull)
-    console.log('isHomepage:', isHomepage)
-    console.log('both:', (isScrollNull && isHomepage))
     
     return (
         <header className={

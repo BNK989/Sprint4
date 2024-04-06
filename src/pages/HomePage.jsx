@@ -34,8 +34,8 @@ export function HomePage() {
             <h2>HomePage page</h2>
             <h1>hay</h1>
             <ul>
-                <li></li>
-                <li></li>
+                <li>2</li>
+                <li>3</li>
                 <li></li>
                 <li></li>
                 <li></li>
