@@ -1,0 +1,176 @@
+.main-details-container {
+    margin-inline: 60px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+
+    .gig-details {
+        display: flex;
+        flex-flow: column;
+
+        // background-color: blue;
+
+        .gig-title {
+            font-size: 1.5em;
+            padding-bottom: 10px;
+        }
+
+        .gig-user {
+            display: flex;
+            flex-flow: row;
+            gap: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            // border-bottom: 1px solid $clr-light-grey;
+            padding-bottom: 15px;
+            width: 59%;
+
+
+            img {
+                width: 14%;
+            }
+
+            .user-details {
+
+                display: flex;
+                flex-flow: column;
+                justify-content: space-around;
+
+
+
+                .star::after {
+                    content: "\f005";
+                }
+            }
+        }
+
+
+        .main-img {
+            width: 86%;
+            height: 53%;
+
+        }
+
+        .about-this-gig {
+            width: 88%;
+            margin-top: 60px;
+
+            p {
+                font-weight: bolder;
+                padding-bottom: 25px;
+            }
+        }
+    }
+
+    .order-details {
+        margin-right: 5px;
+        border: 1px solid rgb(255, 0, 0);
+        height: fit-content;
+        width: 410px;
+        display: flex;
+        flex-flow: column;
+
+
+        .btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            button {
+                margin: 0;
+                background-color: white;
+                color: black;
+                border: 1px solid $clr-light-grey;
+                font-size: 0.9em;
+                padding: 17px;
+            }
+        }
+
+        .main-details {
+            padding: 20px;
+            padding-top: 45px;
+            display: flex;
+            flex-flow: column;
+
+            .price {
+                h1 {
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    line-height: 0;
+                }
+            }
+
+            .desc {
+                padding-block: 15px;
+                line-height: 1.2em;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            .delivery-details {
+                padding-top: 5px;
+                display: flex;
+                font-size: 0.9em;
+
+
+                span {
+                    margin-left: 5px;
+                }
+
+                .clock::after {
+                    content: "\f017";
+
+                }
+
+            }
+
+            .whats-included {
+                ul {
+                    li {
+                        font-family: 'Macan', sans-serif;
+
+                        .include::after {
+                            content: "\f00c";
+                            color: black;
+                        }
+
+                        .not-include::after {
+                            content: "\f00c";
+                            color: $clr-light-grey;
+                        }
+                    }
+
+                }
+            }
+
+            .continue-btn {
+                background-color: $clr-black;
+                color: $clr-wight;
+                margin-top: 15px;
+
+                display: grid;
+                grid-template-columns: 1fr auto;
+                padding: 8px;
+                padding-inline: 30px;
+                border-radius: 7px;
+
+
+                .continue {
+                    justify-self: center;
+                }
+
+                .arrow::after {
+                    content: "\f061";
+                }
+
+            }
+
+            .Compare-btn {
+                text-align: center;
+                font-size: 0.8em;
+                padding-top: 10px;
+            }
+        }
+    }
+}

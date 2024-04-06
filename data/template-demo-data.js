@@ -12,6 +12,13 @@ const gig = {
     },
     daysToMake: 3,
     description: "Make unique logo...",
+    // 
+    whatIncluded:{
+      ConceptIncluded: true,
+      IncludeSourceFile: false,
+      StationeryDesigns:true
+    },
+    // 
     avgResponseTime: 1,
     loc: "Ghana",
     imgUrls: [""],

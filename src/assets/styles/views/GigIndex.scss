@@ -56,10 +56,14 @@
                 }
             }
 
+            .gig-user-rate {
+                display: flex;
+
+                .star::after {
+                    content: "\f005";
+                }
+            }
         }
     }
 }
 
-.fa-full-star::after {
-    content: "\e5d6"
-}

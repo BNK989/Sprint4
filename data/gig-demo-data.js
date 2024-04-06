@@ -12,6 +12,11 @@ export const gigsDemo =[
         },
         "daysToMake": 6,
         "description": "Make unique logo...",
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "avgResponseTime": 1,
         "loc": "Ghana",
         "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/66145094/original/121043a9a3915d3e646bac32cb7dc6374f741e3b.jpg"],
@@ -38,6 +43,11 @@ export const gigsDemo =[
         },
         "daysToMake": 3,
         "description": "Make unique logo...",
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "avgResponseTime": 2,
         "loc": "Ghana",
         "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/185625048/original/a285c0a494a99a882761387348e6a99f9a041758.jpg"],
@@ -63,6 +73,11 @@ export const gigsDemo =[
         },
         "daysToMake": 1,
         "description": "Make unique home...",
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":false
+        },
         "avgResponseTime": 1,
         "loc": "Ghana",
         "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/187680580/original/e03cbfb4c19b84d78b748678e1a917758d58b81a.jpg"],
