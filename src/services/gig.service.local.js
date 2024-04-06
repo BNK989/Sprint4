@@ -20,24 +20,34 @@ export const gigService = {
 window.cs = gigService
 _saveDemoData()
 
-async function query(filterBy = { title: '', price: 0 },ownedGigsId) {
-    
+async function query(filterBy = { title: '', price: 0, daysToMake:0 }, ownedGigsId) {
+    console.log(filterBy);
     var gigs = await storageService.query(STORAGE_KEY)
-    if(ownedGigsId){
-        let userId =userService.getLoggedinUser()._id
-        
-      return  gigs = gigs.filter(gig=> gig.owner._id === userId)
-        
-    }else{
-       if (filterBy.title) {
+    if (ownedGigsId) {
+        let userId = userService.getLoggedinUser()._id
+        return gigs = gigs.filter(gig => gig.owner._id === userId)
+    }
+    if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
     }
     if (filterBy.price) {
-        gigs = gigs.filter(gig => gig.price <= filterBy.price)
-    } 
+        if (filterBy.price === 100) {
+            gigs = gigs.filter(gig => gig.price <= filterBy.price)
+            console.log(gigs);
+        }
+        else if (filterBy.price === 200) {
+            console.log('hay');
+            gigs = gigs.filter(gig => gig.price >= 100 && gig.price <= 200)
+        } else {
+            gigs = gigs.filter(gig => gig.price >= filterBy.price)
+        }
+        
     }
-    
+    if(filterBy.daysToMake){
+         gigs = gigs.filter(gig => gig.daysToMake <= filterBy.daysToMake)  
+    }
+
     return gigs
 }
 
@@ -55,7 +65,7 @@ async function save(gig) {
     if (gig._id) {
         savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
-        console.log('gig:',gig);
+        console.log('gig:', gig);
         // Later, owner is set by the backend
         gig.owner = userService.getLoggedinUser()
         savedGig = await storageService.post(STORAGE_KEY, gig)
@@ -84,32 +94,32 @@ function getEmptyGig() {
         title: "",
         price: '',
         owner: {},
-        daysToMake: getRandomIntInclusive(3,10),
+        daysToMake: getRandomIntInclusive(3, 10),
         description: makeLorem(10),
-        avgResponseTime: getRandomIntInclusive(1,3),
+        avgResponseTime: getRandomIntInclusive(1, 3),
         loc: "Ghana",
         imgUrls: [""],
         tags: [
-          "Arts And Crafts", "Logo Design"
+            "Arts And Crafts", "Logo Design"
         ],
         likedByUsers: ['mini-user'],
         reviews: [
-          {
-            "id": "madeId",
-            "txt": "Did an amazing work",
-            "rate": 4,
-            "by": {
-              "_id": "u102",
-              "fullname": "user2",
-              "imgUrl": "/img/img2.jpg"
+            {
+                "id": "madeId",
+                "txt": "Did an amazing work",
+                "rate": 4,
+                "by": {
+                    "_id": "u102",
+                    "fullname": "user2",
+                    "imgUrl": "/img/img2.jpg"
+                }
             }
-          }
-        ], 
-      }
+        ],
+    }
 }
 
 function getDefaultFilter() {
-    return { title: '', price: 0, creteAT: '' }
+    return { title: '', price: 0, creteAT: '',daysToMake:0 }
 }
 
 
@@ -117,7 +127,7 @@ function _saveDemoData() {
     let gigs = utilService.loadFromStorage(STORAGE_KEY)
     if (!gigs || !gigs.length) {
         gigs = gigsDemo
-    
+
         utilService.saveToStorage(STORAGE_KEY, gigs)
     }
 }

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
 import { gigService } from '../services/gig.service.js'
-import { loadGigs } from '../store/actions/gig.actions.js'
+import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
 import { GigFilter } from '../cmps/GigFilter.jsx'
 import { GigList } from '../cmps/GigList.jsx'
 
@@ -13,19 +13,20 @@ export function GigIndex() {
 
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
-    
+    console.log('filterBy:', filterBy)
     useEffect(() => {
         try {
-            loadGigs()
+            loadGigs(filterBy)
         } catch (err) {
             console.log('err:', err)
             showErrorMsg('Cannot load toys')
         }
     }, [filterBy])
 
-    // function onSetFilter(filterBy) {
-    //     setGigFilter(filterBy)
-    // }
+    function onSetFilter(filterBy) {
+        // console.log(filterBy);
+        setGigFilter(filterBy)
+    }
 
     // async function onRemoveGig(gigId) {
     //     try {
@@ -81,12 +82,15 @@ export function GigIndex() {
     //     return gig.owner?._id === user._id
     // }
     // if (!gigs.length) return <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
-    return (
-        <div className='gig-index'>
+    return (<>
+    <GigFilter filterBy={filterBy} onSetFilter={onSetFilter}/>
+    <div className='gig-index'>
             <h3 className='gigs-title'>Gigs</h3>
             <main className='gig-list-main-container'>
             <GigList gigs={gigs}/>
             </main>
         </div>
+    </>
+        
     )
 }

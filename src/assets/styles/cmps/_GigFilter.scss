@@ -1,0 +1,58 @@
+.gig-filter {
+
+display: flex;
+gap: 12px;
+
+    .filter-price{
+        select{
+            border: 0.8px solid rgba(138, 138, 138, 0.233);
+            border-radius: 5px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 1rem;  
+        }
+    }
+
+    .filter-delivery-time{
+        select{
+            border: 0.8px solid rgba(138, 138, 138, 0.233);
+            border-radius: 5px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 1rem;  
+        }
+    }
+
+    .clear-filter{
+        border: 0.8px solid rgba(138, 138, 138, 0.233);
+            border-radius: 5px;
+            padding: 5px;
+            font-weight: bold;
+            font-size: 1rem;
+    }
+
+
+
+    .budget-filter-container {
+        width: fit-content;
+        border: 1px solid black;
+        display: flex;
+        position: relative;
+
+        // .arrow-points-down-arrow::after {
+            // content: "\f107";
+        // }
+        // .arrow-points-up-arrow::after {
+            // content: "\f106";
+        // }
+        :hover {
+            cursor: pointer;
+        }
+
+    }
+
+    :hover {
+        cursor: pointer;
+    }
+
+}
