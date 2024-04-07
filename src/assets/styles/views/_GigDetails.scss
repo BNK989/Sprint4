@@ -63,6 +63,8 @@
     }
 
     .order-details {
+        position: sticky;
+        top: 150px;
         margin-right: 5px;
         border: 1px solid $clr-light-grey;
         height: fit-content;
@@ -78,10 +80,14 @@
             button {
                 margin: 0;
                 background-color: white;
-                color: black;
+                color: $clr-black;
                 border: 1px solid $clr-light-grey;
                 font-size: 0.9em;
                 padding: 17px;
+
+                :active {
+                    border-bottom: 1px solid $clr-black;
+                }
             }
         }
 
