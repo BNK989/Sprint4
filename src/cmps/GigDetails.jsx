@@ -43,7 +43,7 @@ export function GigDetails() {
 
                         <div className="user-rate">
                             <span className="fa star"></span>
-                            <span>{gig.owner.rate} (1k)</span>
+                            <span className="rate-num">{gig.owner.rate} (1k)</span>
                         </div>
                     </div>
                 </div>
@@ -75,8 +75,10 @@ export function GigDetails() {
 
                 <main className="main-details">
                     <div className="price">
-                        <h1>{gig.price}$</h1>
-                        <p>save tp to 20% with subscribe to save</p>
+                        <span>Basic</span>
+                        <span className="price-num">{gig.price}$</span>
+
+                        {/* <p>save tp to 20% with subscribe to save</p> */}
                     </div>
 
                     <div className="desc"><span>Lorem</span> ipsum, dolor sit amet  obcaecati veritatis, consequuntur aperiam deleniti neque et.</div>
@@ -84,7 +86,7 @@ export function GigDetails() {
                     <div className="delivery-details">
 
                         {/* <span className="fa-reg clock"></span> */}
-                        <span className="fa clock"></span>
+                        <span className="clock"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg></span>
                         <span>{gig.daysToMake} Days delivery</span>
                     </div>
 
@@ -92,9 +94,9 @@ export function GigDetails() {
                         <details>
                             <summary>what's included</summary>
                             <ul className="clean-list">
-                                <li className="fa vi"><span className={(gig.whatIncluded.ConceptIncluded) ? 'fa include' : 'fa not-include' }></span>  1 Concept Included </li>
-                                <li className="fa vi"><span className={(gig.whatIncluded.IncludeSourceFile) ? 'fa include' : 'fa not-include' }></span> Include Source File </li>
-                                <li className="fa vi"><span className={(gig.whatIncluded.StationeryDesigns) ? 'fa include' : 'fa not-include' }></span> Stationery Designs</li>
+                                <li className="fa vi"><span className={(gig.whatIncluded.ConceptIncluded) ? 'fa include' : 'fa not-include'}></span>  1 Concept Included </li>
+                                <li className="fa vi"><span className={(gig.whatIncluded.IncludeSourceFile) ? 'fa include' : 'fa not-include'}></span> Include Source File </li>
+                                <li className="fa vi"><span className={(gig.whatIncluded.StationeryDesigns) ? 'fa include' : 'fa not-include'}></span> Stationery Designs</li>
                             </ul>
                         </details>
                     </article>}

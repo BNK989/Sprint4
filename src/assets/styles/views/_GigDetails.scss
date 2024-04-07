@@ -1,5 +1,5 @@
 .main-details-container {
-    margin-inline: 60px;
+    margin-inline: 45px;
     display: grid;
     grid-template-columns: 1fr auto;
 
@@ -13,37 +13,56 @@
         .gig-title {
             font-size: 1.5em;
             padding-bottom: 10px;
+            font-weight: bolder;
         }
 
         .gig-user {
             display: flex;
             flex-flow: row;
-            gap: 20px;
+            // gap: 15px;
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 1em;
             // border-bottom: 1px solid $clr-light-grey;
-            padding-bottom: 15px;
+            margin-bottom: 15px;
+            margin-top: 10px;
             width: 59%;
 
 
             img {
-                width: 14%;
+                width: 15%;
             }
 
             .user-details {
-
                 display: flex;
                 flex-flow: column;
-                justify-content: space-around;
+                justify-content: space-between;
 
+                p{
+                    font-size: 1em; 
+                    //  border-right: 1px solid black;
+                     padding-inline: 10px;
+                }
 
+                .user-rate{
+                    font-size: 0.8em;
+                    margin-bottom: 15px;
+                    padding-left: 5px;
+
+                    .star{
+                        padding-left: 5px;
+                    }
+
+                    .rate-num{
+                        font-size: 1em;
+                    }
+
+                }
 
                 .star::after {
                     content: "\f005";
                 }
             }
         }
-
 
         .main-img {
             width: 86%;
@@ -65,10 +84,9 @@
     .order-details {
         position: sticky;
         top: 150px;
-        margin-right: 5px;
         border: 1px solid $clr-light-grey;
         height: fit-content;
-        width: 410px;
+        width: 415px;
         display: flex;
         flex-flow: column;
 
@@ -83,7 +101,7 @@
                 color: $clr-black;
                 border: 1px solid $clr-light-grey;
                 font-size: 0.9em;
-                padding: 17px;
+                padding: 15px;
 
                 :active {
                     border-bottom: 1px solid $clr-black;
@@ -92,46 +110,54 @@
         }
 
         .main-details {
-            padding: 20px;
-            padding-top: 45px;
+            padding-inline: 25px;
+            padding-top: 30px;
             display: flex;
             flex-flow: column;
 
             .price {
-                h1 {
-                    font-size: 1.3em;
-                    font-weight: bold;
-                    line-height: 0;
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    font-size: 1.1em;
+                    // font-weight: bold;
+                }
+
+                .price-num {
+                    font-size: 1.1em;
                 }
             }
 
             .desc {
-                padding-block: 15px;
+                margin-top: 30px;
+                font-size: 0.9em;
                 line-height: 1.2em;
-
-                span {
-                    font-weight: bold;
-                }
             }
 
             .delivery-details {
-                padding-top: 5px;
+                padding-top: 10px;
                 display: flex;
                 font-size: 0.9em;
+                align-items: center;
+                margin-bottom: 5px;
 
 
-                span {
-                    margin-left: 5px;
-                }
+               
 
-                .clock::after {
-                    content: "\f017";
+                .clock {
+                    margin-right: 5px;
+                    svg {
+                        padding: 0;
+                        margin: 0;
+                    }
 
                 }
 
             }
 
             .whats-included {
+                font-size: 0.9em;
                 ul {
                     li {
                         font-family: 'Macan', sans-serif;
@@ -155,11 +181,13 @@
                 color: $clr-wight;
                 margin-top: 15px;
 
+                font-size: 0.9em;
+
                 display: grid;
                 grid-template-columns: 1fr auto;
                 padding: 8px;
-                padding-inline: 30px;
-                border-radius: 7px;
+                padding-inline: 25px;
+                border-radius: 5px;
 
 
                 .continue {
@@ -175,7 +203,8 @@
             .Compare-btn {
                 text-align: center;
                 font-size: 0.8em;
-                padding-top: 10px;
+                padding: 10px;
+                margin-bottom: 10px;
             }
         }
     }
