@@ -113,8 +113,12 @@
 @import "views/UserDetails";
 
 // Components
+
+//homepage
 @import "cmps/AppHeader";
 @import "cmps/AppFooter";
+@import "cmps/TrustedBy";
+@import "cmps/PopularServices";
 @import "cmps/UserMsg";
 @import "cmps/ShoppingCART";
 @import "cmps/GigFilter";

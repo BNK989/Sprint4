@@ -106,3 +106,52 @@ export const searchSug = [
     'logo design',
     'ai services'
 ]
+
+export const popularServices = [
+   {
+       subTitle: 'Build your brand',
+       title: 'Logo Design',
+       imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793304/gigs/tsjasljano86zfjpsyhb.webp',
+    },
+    {
+        subTitle: 'Customize your site',
+        title: 'WordPress',
+        imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793304/gigs/ptkrcbqnwyegt4pb1rv7.webp',
+     },
+     {
+        subTitle: 'Share Your message',
+        title: 'Voice Over',
+        imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793305/gigs/ksixpld6dq1amhahdibu.webp',
+     },
+     {
+        subTitle: 'Engage your audience',
+        title: 'Video Explainer',
+        imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793304/gigs/oxavedfug6zyrbjorika.jpg',
+     },
+     {
+        subTitle: 'Reach more costumers',
+        title: 'Social Media',
+        imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793304/gigs/rahdwdft5vutjezykopc.webp',
+     },
+     {
+        subTitle: 'Unlock growth online',
+        title: 'SEO',
+        imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793304/gigs/alhg6ir99obt8b1dhkvl.webp',
+     },
+     {
+        subTitle: 'Color your dreams',
+        title: 'SEO',
+        imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793304/gigs/hbrjpedcyu8ytdhlbffm.webp',
+     },
+     {
+        subTitle: 'Learn your business',
+        title: 'Data Entry',
+        imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793304/gigs/jezoetuwvxqzc115bria.webp',
+     },
+     {
+        subTitle: 'Go global',
+        title: 'Translation',
+        imgUrl: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793611/gigs/ctvfjcpsnicackorfnoh.webp',
+     },
+
+]

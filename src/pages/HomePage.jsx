@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button'
 import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
 import { useNavigate, useParams } from "react-router"
 import { searchSug } from '../routes'
+import { TrustedBy } from '@/cmps/TrustedBy'
+import { PopularServices } from '@/cmps/PopularServices'
 
 // import { CHANGE_COUNT } from '../store/user.reducer'
 
@@ -33,112 +35,14 @@ export function HomePage() {
                     </div>
                 </div>
             </section>
+            <TrustedBy/>
+            <PopularServices/>
 
-            <Button className='join-btn btn txt'>Join Now</Button>
+            {/* <Button className='join-btn btn txt'>Join Now</Button> */}
             
-            <h2>HomePage page</h2>
-            <h1>hay</h1>
-            <ul>
-                <li>2</li>
-                <li>3</li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+            {/* <h2>HomePage page</h2>
+            <h1>hay</h1> */}
+
         </section >
     )
 }
