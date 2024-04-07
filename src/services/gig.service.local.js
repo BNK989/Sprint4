@@ -30,6 +30,7 @@ async function query(filterBy = { title: '', price: 0, daysToMake:0 }, ownedGigs
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
+        console.log('gigs:', gigs)
     }
     if (filterBy.price) {
         if (filterBy.price === 100) {

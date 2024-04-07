@@ -60,7 +60,7 @@ export const NavRoutes = [
 
 export const exploreMenu = [
     {
-        path: '',
+        path: 'explore',
         label: 'Explore',
         subText: 'Inspiring projects made on Fiverr',
     },
