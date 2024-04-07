@@ -57,3 +57,46 @@ export const NavRoutes = [
     //     label: 'About us'
     // },
 ]
+
+export const exploreMenu = [
+    {
+        path: '',
+        label: 'Explore',
+        subText: 'Inspiring projects made on Fiverr',
+    },
+    {
+        path: '',
+        label: 'Community',
+        subText: 'Connect with Fiverr\'s team and community',
+    },
+    {
+        path: '',
+        label: 'Guides',
+        subText: 'In-depth guides covering business topics',
+    },
+    {
+        path: '',
+        label: 'Podcast',
+        subText: 'Inside tips from top business minds',
+    },
+    {
+        path: '',
+        label: 'Learn',
+        subText: 'Professional online courses, led by experts',
+    },
+    {
+        path: '',
+        label: 'Blog',
+        subText: 'News, information and community stories',
+    },
+    {
+        path: '',
+        label: 'Logo Maker',
+        subText: 'Create your logo instantly',
+    },
+    {
+        path: '',
+        label: 'Fiverr Workspace',
+        subText: 'One place to manage your business',
+    },
+]
