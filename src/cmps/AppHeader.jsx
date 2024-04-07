@@ -1,5 +1,5 @@
 import { Link, NavLink, useParams, useLocation } from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useState, useEffect } from "react"
 import routes from '../routes'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
@@ -20,24 +20,27 @@ export function AppHeader() {
         window.scrollY > 80 ? setIsSearchVisible(true) : setIsSearchVisible(false)
     }
     useEffect(() => {
-        if(isHomepage){
+        if (isHomepage) {
             window.addEventListener("scroll", handleScroll)
             return () => window.removeEventListener("scroll", handleScroll)
-    }
+        }
     }, [location])
     async function onLogin(credentials) {
         try {
+            setModalOpen(false)
             const user = await login(credentials)
             showSuccessMsg(`Welcome: ${user.fullname}`)
-        } catch(err) {
+        } catch (err) {
             showErrorMsg('Cannot login')
         }
     }
     async function onSignup(credentials) {
         try {
-            const user = await signup(credentials)
-            showSuccessMsg(`Welcome new user: ${user.fullname}`)
-        } catch(err) {
+            setModalOpen(false)
+            const newUser = await signup(credentials)
+            // const user = await login(newUser)
+            showSuccessMsg(`Welcome new user: ${newUser.fullname}`)
+        } catch (err) {
             showErrorMsg('Cannot signup')
         }
     }
@@ -45,46 +48,46 @@ export function AppHeader() {
         try {
             await logout()
             showSuccessMsg(`Bye now`)
-        } catch(err) {
+        } catch (err) {
             showErrorMsg('Cannot logout')
         }
     }
-    function signInModal(val){
+    function signInModal(val) {
         setLogInSelect(val)
         setModalOpen(!isModalOpen)
     }
-
+console.log('user:', user)
     return (
         <header className={
             `app-header full main-container
                 ${isHomepage ? "beAbs" : "noAbs"}
                 ${(isScrollNull && isHomepage) ? "transparent" : "color"}
                 ${isSearchVisible ? "search-visible" : ""}`
-            }>
+        }>
             <div className="header-container">
                 <div className='flex-center gap-8'>
                     <div className="logo">
                         <a href="/"><img src={(isScrollNull && isHomepage) ? `/img/5err-logo-white.svg` : `/img/5err-logo.svg`} alt="5err logo" /></a>
                     </div>
                     <div className="search-container">
-                        <SearchBox/>
+                        <SearchBox />
                     </div>
                 </div>
-                <NavBar signInModal={signInModal}/>
+                <NavBar signInModal={signInModal} />
             </div>
             <section className="under-header main-container full">
-                    <ul className='flex clean-list'>
-                        <li>One</li>
-                        <li>Two</li>
-                        <li>Three</li>
-                        <li>Four</li>
-                        <li>Five</li>
-                        <li>Six</li>
-                        <li>Seven</li>
-                        <li>Eight</li>
-                        <li>Nine</li>
-                        <li>Ten</li>
-                    </ul>
+                <ul className='flex clean-list'>
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                    <li>Four</li>
+                    <li>Five</li>
+                    <li>Six</li>
+                    <li>Seven</li>
+                    <li>Eight</li>
+                    <li>Nine</li>
+                    <li>Ten</li>
+                </ul>
             </section>
             {
                 isModalOpen && <LoginSignup
@@ -92,9 +95,9 @@ export function AppHeader() {
                     isLogInSelect={isLogInSelect}
                 />
             }
-            </header>
+        </header>
     )
-            {/* <nav>
+    {/* <nav>
                 {routes.map(route => <NavLink key={route.path} to={route.path}>{route.label}</NavLink>)}
                 {user &&
                     <span className="user-info">
@@ -185,9 +188,9 @@ export function AppHeader() {
 
 //     return (
 //         <header className={
-//             `app-header full main-container 
-//                 ${isHomepage ? "beAbs" : "noAbs"} 
-//                 ${(isBgOn && isHomepage) ? "color" : "transparent"} 
+//             `app-header full main-container
+//                 ${isHomepage ? "beAbs" : "noAbs"}
+//                 ${(isBgOn && isHomepage) ? "color" : "transparent"}
 //                 ${isSearchVisible ? "search-visible" : ""}`
 //         }>
 //             <div className="header-container">
