@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { gigService } from "../services/gig.service.local";
+import { Link } from "react-router-dom";
 
 
 export function GigDetails() {
@@ -100,7 +101,7 @@ export function GigDetails() {
                             </ul>
                         </details>
                     </article>}
-                    <div className="continue-btn"><span className="continue">Continue</span> <span className="fa arrow"></span></div>
+                    <Link to={`/payment/${gig._id}`}><div className="continue-btn"><span className="continue">Continue</span> <span className="fa arrow"></span></div></Link>
                     <div className="Compare-btn"><span className="continue">Compare packages</span></div>
                 </main>
 
