@@ -209,7 +209,7 @@ export const gigsDemo =[
         "description": "Eye-catching banners for your social media or website...",
         "avgResponseTime": 1,
         "loc": "Brazil",
-        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/140435390/original/4e7148799271652f29b911fe657a8ab66c637f69.png"],
+        "imgUrls": ["https://source.unsplash.com/random/600x400"],
         "tags": ["Web & Mobile Design", "Banner Ads"],
         "likedByUsers": ["user23", "quick-user"],
         "reviews": [] 
@@ -229,7 +229,7 @@ export const gigsDemo =[
         "description": "Make your products shine with persuasive copy...",
         "avgResponseTime": 3, 
         "loc": "USA",
-        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/176644906/original/4ea02e313797b79078eddf0fa3309628e04726e5.jpeg"],
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/107186030/original/3bf49e58366bb7f4f78a4620c76599b12a482b4a.png"],
         "tags": ["Content Writing", "Product Descriptions"],
         "likedByUsers": [], 
         "reviews": [] 
@@ -249,7 +249,7 @@ export const gigsDemo =[
         "description": "Unique illustrations to bring your ideas to life...",
         "avgResponseTime": 2, 
         "loc": "India",
-        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/164094993/original/13c984f902685a36166fa5420978c684f8877512.png"],
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/336340527/original/2d88ebb4737d9abe80c8c1b93cf872a66c6bf210.jpg"],
         "tags": ["Arts And Crafts", "Illustration"],
         "likedByUsers": ["user99", "mini-user"], 
         "reviews": [] 
@@ -269,7 +269,7 @@ export const gigsDemo =[
         "description": "Boost your website's ranking and visibility...",
         "avgResponseTime": 1,
         "loc": "Egypt",
-        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/217915335/original/d19220620296c88366372067e5c662560082f8b7.jpeg"],
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/132536234/original/b3ec1e28c6bfcffd6f9cbc9cbd5da81d2130949b.jpg"],
         "tags": ["Digital Marketing", "SEO"],
         "likedByUsers": ["quick-user"], 
         "reviews": [] 
