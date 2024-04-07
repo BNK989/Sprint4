@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-// import { loadGigs, addGig, updateGig, removeGig, addToCART } from '../store/gig.actions.js'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
@@ -24,73 +23,29 @@ export function GigIndex() {
     }, [filterBy])
 
     function onSetFilter(filterBy) {
-        // console.log(filterBy);
         setGigFilter(filterBy)
     }
 
-    // async function onRemoveGig(gigId) {
-    //     try {
-    //         await removeGig(gigId)
-    //         showSuccessMsg('Gig removed')
-    //     } catch (err) {
-    //         showErrorMsg('Cannot remove gig')
-    //     }
-    // }
-
-    // async function onAddGig() {
-    //     const gig = gigService.getEmptyGig()
-    //     gig.vendor = prompt('Vendor?')
-    //     try {
-    //         const savedGig = await addGig(gig)
-    //         showSuccessMsg(`Gig added (id: ${savedGig._id})`)
-    //     } catch (err) {
-    //         showErrorMsg('Cannot add gig')
-    //     }
-    // }
-
-    // async function onUpdateGig(gig) {
-    //     const price = +prompt('New price?')
-    //     const cartoSave = { ...gig, price }
-    //     try {
-    //         const savedGig = await updateGig(cartoSave)
-    //         showSuccessMsg(`Gig updated, new price: ${savedGig.price}`)
-    //     } catch (err) {
-    //         showErrorMsg('Cannot update gig')
-    //     }
-    // }
-
-    // function onAddToCART(gig) {
-    //     console.log(`Adding ${gig.vendor} to CART`)
-    //     addToCART(gig)
-    //     showSuccessMsg('Added to CART')
-    // }
-
-    // function onAddGigMsg(gig) {
-    //     console.log(`TODO Adding msg to gig`)
-    //     try {
-    //         showSuccessMsg(`Gig msg added, it now has: ${3}`)
-    //     } catch (err) {
-    //         showErrorMsg('Cannot update gig')
-    //     }
-
-    // }
-
-    // function shouldShowActionBtns(gig) {
-    //     const user = userService.getLoggedinUser()
-    //     if (!user) return false
-    //     if (user.isAdmin) return true
-    //     return gig.owner?._id === user._id
-    // }
-    // if (!gigs.length) return <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
+    if (!gigs.length) return <h1>loading</h1>
+    // <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
     return (<>
-    <GigFilter filterBy={filterBy} onSetFilter={onSetFilter}/>
-    <div className='gig-index'>
-            <h3 className='gigs-title'>Gigs</h3>
+        <div className='gig-index'>
+            <h3 className='gigs-title'>Gigs category</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos, nostrum ratione dicta doloribus ipsa!</p>
+            <div className='line'></div>
+            <GigFilter filterBy={filterBy} onSetFilter={onSetFilter} />
+
+            <section className='sort'>
+                <span className='count-results'>
+                    {gigs.length}+ Results
+                </span>
+            </section>
+
             <main className='gig-list-main-container'>
-            <GigList gigs={gigs}/>
+                <GigList gigs={gigs} />
             </main>
         </div>
     </>
-        
+
     )
 }
