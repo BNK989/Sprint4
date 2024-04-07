@@ -59,17 +59,21 @@
 
                 .gig-details {
                     font-size: 0.9em;
-                    margin-block: 6px;
+                    margin-top: 6px;
+                    margin-bottom: 5px;
                 }
 
                 .gig-user-rate {
                     font-size: 0.9em;
                     display: flex;
                     align-items: center;
+                    font-weight: bold;
 
-                    // .star::after {
-                    //     content: "\f005";
-                    // }
+                    .star {
+                        svg{
+                            scale: 0.85;
+                        }
+                    }
                 }
             }
         }

@@ -1,6 +1,6 @@
 .main-container {
     display: grid;
-    grid-template-columns: 6vw 1fr 6vw;
+    grid-template-columns: 1fr $normal-breakpoint 1fr;
 
     > * {
         grid-column: 2;
