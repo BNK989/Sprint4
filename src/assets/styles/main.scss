@@ -1,39 +1,3 @@
-// Setup
-@import "setup/variables";
-@import "setup/functions";
-@import "setup/mixins";
-@import "setup/typography";
-
-// Basics
-@import "basics/helpers";
-@import "basics/layout";
-@import "basics/base";
-@import "basics/fonts";
-@import "basics/links";
-@import "basics/forms";
-
-
-// Views
-//@import "views/AboutUs";
-@import "views/HomePage";
-@import "views/GigIndex";
-@import "views/GigDetails";
-@import "views/ReviewIndex";
-@import "views/UserDetails";
-
-// Components
-@import "cmps/AppHeader";
-@import "cmps/AppFooter";
-@import "cmps/UserMsg";
-@import "cmps/ShoppingCART";
-@import "cmps/GigFilter";
-@import "cmps/LoginSignup";
-
-@import "cmps/UserDetails";
-
-@import "cmps/NavBar";
-
-
 // Shadcn & Tailwind
 .shancn {
   
@@ -43,6 +7,7 @@
 @tailwind utilities;
 
 @layer base {
+  
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -113,6 +78,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  img{
+    display: inline;
+  }
 }
 
 @layer components {
@@ -120,3 +88,40 @@
   @apply flex items-center justify-center
  } 
 }
+
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/typography";
+
+// Basics
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+@import "basics/fonts";
+@import "basics/links";
+@import "basics/forms";
+
+
+// Views
+//@import "views/AboutUs";
+@import "views/HomePage";
+@import "views/GigIndex";
+@import "views/GigDetails";
+@import "views/ReviewIndex";
+@import "views/UserDetails";
+
+// Components
+@import "cmps/AppHeader";
+@import "cmps/AppFooter";
+@import "cmps/UserMsg";
+@import "cmps/ShoppingCART";
+@import "cmps/GigFilter";
+@import "cmps/LoginSignup";
+
+@import "cmps/UserDetails";
+
+@import "cmps/NavBar";
+
+
