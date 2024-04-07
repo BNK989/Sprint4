@@ -23,7 +23,9 @@ export function LoginSignup(props) {
 
     function handleChange(ev) {
         const field = ev.target.name
+        console.log(field);
         const value = ev.target.value
+        console.log(value);
         setCredentials({ ...credentials, [field]: value })
     }
 
@@ -48,38 +50,38 @@ export function LoginSignup(props) {
     function onUploaded(imgUrl) {
         setCredentials({ ...credentials, imgUrl })
     }
-
+console.log('credentials:', credentials)
     return (
         <div className="login-page">
             <p>
                 <button className="btn-link" onClick={toggleSignup}>{!isSignup ? 'Signup' : 'Login'}</button>
             </p>
             {!isSignup && <form className="login-form" onSubmit={onLogin}>
-                <select
+                {/* <select
                     name="username"
                     value={credentials.username}
                     onChange={handleChange}
                 >
                     <option value="">Select User</option>
                     {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
-                </select>
-                {/* <input
+                </select> */}
+                <input
                         type="text"
                         name="username"
-                        value={username}
+                        value={credentials.username}
                         placeholder="Username"
                         onChange={handleChange}
-                        required
+                        // required
                         autoFocus
                     />
                     <input
                         type="password"
                         name="password"
-                        value={password}
+                        value={credentials.password}
                         placeholder="Password"
                         onChange={handleChange}
-                        required
-                    /> */}
+                        // required
+                    />
                 <button>Login!</button>
             </form>}
             <div className="signup-section">

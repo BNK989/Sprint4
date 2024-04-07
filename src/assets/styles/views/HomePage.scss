@@ -1,3 +1,44 @@
 .homepage-section{
-    background-color: red;
+    background-image: url(../../public/img/hero/hero-img1.webp);
+    background-size: cover;
+    background-position: center;
+    height: 80dvh;
+
+    .hero-container{
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        margin-inline-start: 5em;
+        
+        h1{
+            color: white;
+            line-height: 1.5em;
+            font-size: 2em;
+
+            i{
+                font-style: italic;
+                font-family: auto;
+            }
+        }
+        .search-container{
+            flex-direction: column;
+        }
+        .popular{
+            font-size: 10px;
+            ul{
+                gap: 1em;
+
+                li{
+                    color: white;
+                    padding: .5em 1em;
+                    border: 1px solid white;
+                    border-radius: 9em;
+                }
+                li:nth-child(1){
+                    border: none;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
