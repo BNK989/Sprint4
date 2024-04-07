@@ -99,7 +99,7 @@ export const gigsDemo =[
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 1,
-          "rate": 4
+          "rate": 1
         },
         "daysToMake": 3,
         "description": "Make unique logo...",
@@ -125,7 +125,7 @@ export const gigsDemo =[
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 2,
-          "rate": 4
+          "rate": 3
         },
         "daysToMake": 3,
         "description": "Make unique logo...",
@@ -151,7 +151,7 @@ export const gigsDemo =[
           "fullname": "Dudu Da",
           "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 3,
-          "rate": 4
+          "rate": 2
         },
         "daysToMake": 3,
         "description": "Make unique logo...",
