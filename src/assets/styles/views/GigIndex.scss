@@ -30,7 +30,7 @@
 
 
                 .gig-owner-mini {
-                    padding-top: 15px;
+                    padding-top: 10px;
                     display: flex;
                     justify-content: space-between;
 
@@ -55,12 +55,35 @@
                             }
                         }
                     }
+
+                    .level {
+                        align-self: center;
+                        display: flex;
+
+                    
+                        .level-and-num {
+                            font-weight: bold;
+                            padding-right: 10px;
+                        }
+
+
+                        i {
+                            display: flex;
+
+                            svg {
+                                align-self: center;
+                            }
+                        }
+
+                    }
                 }
 
                 .gig-details {
                     font-size: 0.9em;
-                    margin-top: 6px;
-                    margin-bottom: 5px;
+                    margin-top: 10px;
+                    // margin-bottom: 27px;
+                    height: 3.25em;
+
                 }
 
                 .gig-user-rate {
@@ -69,13 +92,33 @@
                     align-items: center;
                     font-weight: bold;
 
+                    .rate {
+                        span {
+                            font-weight: 100;
+                            color: $clrbtn-hover;
+                        }
+                    }
+
                     .star {
-                        svg{
+                        svg {
                             scale: 0.85;
                         }
                     }
+                }
+
+                .gig-price {
+                    margin-top: 5px;
+                    font-size: 0.9em;
+                    font-weight: bold;
                 }
             }
         }
     }
 }
+
+// ::after{
+//     content: ''
+//     position: abselut;
+//     top: 0
+//     }
+//     width height
