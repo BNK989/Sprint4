@@ -26,7 +26,7 @@ export function HomePage() {
                 {/* <img src="../../public/img/hero/hero-img1.webp" alt="hero image" /> */}
                 <div className="search-container flex">
                     <h1>Find the right <i>freelance</i><br/> service, right away</h1>
-                <SearchBox neverHide={true}/>
+                <SearchBox neverHide={true} inHeader={false}/>
                     <div className="popular">
                         <ul className='clean-list flex'>
                             <li>Popular:</li>

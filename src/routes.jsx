@@ -155,3 +155,11 @@ export const popularServices = [
      },
 
 ]
+
+export const bgImgs = [
+    'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/tbqwagffjw6cxgwnrhmb.webp',
+    'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/zj3dflxnixaytffgqpn9.webp',
+    'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/lagjxyakwvonraw1p43m.webp',
+    'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/idvcmvkhfqjlgpmdubwu.webp',
+    'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/sfl8xkvbl0ztb1yxehjz.webp',
+]
