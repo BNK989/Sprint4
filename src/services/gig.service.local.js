@@ -20,7 +20,7 @@ export const gigService = {
 window.cs = gigService
 _saveDemoData()
 
-async function query(filterBy = { title: '', price: 0, daysToMake:0 }, ownedGigsId) {
+async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGigsId) {
     console.log(filterBy);
     var gigs = await storageService.query(STORAGE_KEY)
     if (ownedGigsId) {
@@ -43,11 +43,14 @@ async function query(filterBy = { title: '', price: 0, daysToMake:0 }, ownedGigs
         } else {
             gigs = gigs.filter(gig => gig.price >= filterBy.price)
         }
-        
+
     }
-    if(filterBy.daysToMake){
-         gigs = gigs.filter(gig => gig.daysToMake <= filterBy.daysToMake)  
+    if (filterBy.daysToMake) {
+        gigs = gigs.filter(gig => gig.daysToMake <= filterBy.daysToMake)
     }
+    console.log('gigs1:', gigs)
+    gigs = gigs.sort((gig1, gig2) => (gig1.owner.rate - gig2.owner.rate) * -1)
+    console.log('gigs2:', gigs)
 
     return gigs
 }
@@ -120,7 +123,7 @@ function getEmptyGig() {
 }
 
 function getDefaultFilter() {
-    return { title: '', price: 0, creteAT: '',daysToMake:0 }
+    return { title: '', price: 0, creteAT: '', daysToMake: 0 }
 }
 
 

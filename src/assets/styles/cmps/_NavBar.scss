@@ -1,6 +1,11 @@
 .fiverr-nav{
     ul{
-        gap: 2em;
+        gap: 10px;
+        .sign-in-nav{
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
     .explore:after{
         font-family: 'fa-solid';

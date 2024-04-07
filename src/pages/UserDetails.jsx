@@ -31,7 +31,6 @@ export function UserDetails() {
     // }
 
   }, [params.id])
-  console.log('user:', user)
   console.log('ownedGigs:', ownedGigs)
   // function onUserUpdate(user) {
   //   showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
