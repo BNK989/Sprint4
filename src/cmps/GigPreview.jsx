@@ -25,7 +25,7 @@ export function GigPreview({ gig }) {
 
         <div className="gig-owner-mini">
             <div className="gig-user">
-                <img src={gig.owner.imgUrl} alt="" />
+                <img src={gig.owner.imgUrl} alt="owner image" />
                 <p>Ad by <span>{gig.owner.fullname}</span></p>
             </div>
 
