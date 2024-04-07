@@ -66,11 +66,13 @@ export function AppHeader() {
                 ${isSearchVisible ? "search-visible" : ""}`
             }>
             <div className="header-container">
-                <div className="logo">
-                    <a href="/"><img src={(isScrollNull && isHomepage) ? `/img/5err-logo-white.svg` : `/img/5err-logo.svg`} alt="5err logo" /></a>
-                </div>
-                <div className="search-container">
-                    <SearchBox/>
+                <div className='flex-center gap-8'>
+                    <div className="logo">
+                        <a href="/"><img src={(isScrollNull && isHomepage) ? `/img/5err-logo-white.svg` : `/img/5err-logo.svg`} alt="5err logo" /></a>
+                    </div>
+                    <div className="search-container">
+                        <SearchBox/>
+                    </div>
                 </div>
                 <NavBar/>
             </div>
