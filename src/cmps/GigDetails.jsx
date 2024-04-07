@@ -37,7 +37,7 @@ export function GigDetails() {
                 <h1 className="gig-title">{gig.title}</h1>
 
                 <div className="gig-user">
-                    <img src={gig.owner.imgUrl} alt="" />
+                    <img src={gig.owner.imgUrl} alt="owner image" />
 
                     <div className="user-details">
                         <p>{gig.owner.fullname}</p>
