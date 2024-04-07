@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { SearchBox } from '../cmps/SearchBox'
 import { Button } from '@/components/ui/button'
 import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
 import { useNavigate, useParams } from "react-router"
-import { searchSug } from '../routes'
+import { searchSug, bgImgs } from '../routes'
 import { TrustedBy } from '@/cmps/TrustedBy'
 import { PopularServices } from '@/cmps/PopularServices'
 
@@ -19,9 +19,22 @@ export function HomePage() {
         navigate('/explore')
     }
 
+    let intervalID = useRef()
+    const [imgIdx, setImgIdx] = useState(0)
+
+    useEffect(() => {
+        intervalID.current = setInterval(changeBG, 5000)
+        return () => clearInterval(intervalID.current)
+    }, [])
+
+    function changeBG(){
+        console.log('imgIdx', imgIdx)
+        setImgIdx((prev) => prev >= bgImgs.length - 1 ? 0 : prev + 1)
+    }
+
 
     return (
-        <section className='homepage-section'>
+        <section className='homepage-section' style={{backgroundImage: `url(${bgImgs[imgIdx]})`, transition: 'background-image 1.5s ease-in-out' }}>
             <section className='hero-container main-container full flex'>
                 {/* <img src="../../public/img/hero/hero-img1.webp" alt="hero image" /> */}
                 <div className="search-container flex">
@@ -37,11 +50,6 @@ export function HomePage() {
             </section>
             <TrustedBy/>
             <PopularServices/>
-
-            {/* <Button className='join-btn btn txt'>Join Now</Button> */}
-            
-            {/* <h2>HomePage page</h2>
-            <h1>hay</h1> */}
 
         </section >
     )
