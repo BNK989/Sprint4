@@ -1,7 +1,7 @@
 export const gigsDemo =[
     {
         "_id":"OXeMG8wNskc",
-        "title": "I will design your logo",
+        "title": "I will create professional logo and stationery",
         "price": 12,
         "owner": {
           "_id": "FHc6T",
@@ -32,7 +32,7 @@ export const gigsDemo =[
       },
       {
         "_id": "JYOJa2NpSCq",
-        "title": "I will design your logo",
+        "title": "I will design retro vintage pinup girl logo in 24 hours",
         "price": 15,
         "owner": {
           "_id": "FHc6T",
@@ -62,7 +62,7 @@ export const gigsDemo =[
         ] 
       },{
         "_id": "1y0Oqts35DQ",
-        "title": "I will design your home page",
+        "title": "I will design heraldic and luxury vintage logo",
         "price": 30,
         "owner": {
           "_id": "FHc6T",
@@ -92,7 +92,7 @@ export const gigsDemo =[
       },
       {
         "_id": "JYOJa2NpSCq9",
-        "title": "I will design your logo",
+        "title": "I will do professional, unique and modern business logo design",
         "price": 15,
         "owner": {
           "_id": "u101",
@@ -118,7 +118,7 @@ export const gigsDemo =[
       },
       {
         "_id": "JYOJa2NpSCq7",
-        "title": "I will design your logo",
+        "title": "I will design custom business logo design and unique brand identity",
         "price": 15,
         "owner": {
           "_id": "u101",
@@ -144,7 +144,7 @@ export const gigsDemo =[
       },
       {
         "_id": "JYOJa2NpSCq5",
-        "title": "I will design your logo",
+        "title": "I will create a minimal logo and a branding board",
         "price": 15,
         "owner": {
           "_id": "u101",
@@ -170,7 +170,7 @@ export const gigsDemo =[
       },
       {
         "_id": "JYOJa2NpSCq4",
-        "title": "I will design your logo",
+        "title": "I will make a professional unique clean wordmark logo",
         "price": 15,
         "owner": {
           "_id": "u101",
@@ -193,5 +193,90 @@ export const gigsDemo =[
             
           }
         ] 
+      },
+      {
+        "_id": "lks9a3nDL8sa",
+        "title": "Design a stunning custom website banner",
+        "price": 35,
+        "owner": {
+          "_id": "u205",
+          "fullname": "Sara Lee",
+          "imgUrl": "https://cdn.pixabay.com/photo/2017/01/31/19/07/avatar-2026510_1280.png",
+          "level": 2,
+          "rate": 4.5
+        },
+        "daysToMake": 2,
+        "description": "Eye-catching banners for your social media or website...",
+        "avgResponseTime": 1,
+        "loc": "Brazil",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/140435390/original/4e7148799271652f29b911fe657a8ab66c637f69.png"],
+        "tags": ["Web & Mobile Design", "Banner Ads"],
+        "likedByUsers": ["user23", "quick-user"],
+        "reviews": [] 
+      },
+      {
+        "_id": "s98KLdfh872",
+        "title": "Write captivating product descriptions",
+        "price": 20,
+        "owner": {
+          "_id": "u476",
+          "fullname": "Emily Chang",
+          "imgUrl": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+          "level": 1,
+          "rate": 5
+        },
+        "daysToMake": 1,
+        "description": "Make your products shine with persuasive copy...",
+        "avgResponseTime": 3, 
+        "loc": "USA",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/176644906/original/4ea02e313797b79078eddf0fa3309628e04726e5.jpeg"],
+        "tags": ["Content Writing", "Product Descriptions"],
+        "likedByUsers": [], 
+        "reviews": [] 
+      },
+      {
+        "_id": "L340Jnsdf76",
+        "title": "Custom Illustration for your project",
+        "price": 30,
+        "owner": {
+          "_id": "u623",
+          "fullname": "Ravi Patel",
+          "imgUrl": "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_1280.png",
+          "level": 2,
+          "rate": 4
+        },
+        "daysToMake": 4,
+        "description": "Unique illustrations to bring your ideas to life...",
+        "avgResponseTime": 2, 
+        "loc": "India",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/164094993/original/13c984f902685a36166fa5420978c684f8877512.png"],
+        "tags": ["Arts And Crafts", "Illustration"],
+        "likedByUsers": ["user99", "mini-user"], 
+        "reviews": [] 
+      },
+      {
+        "_id": "87dfhSDLK23",
+        "title": "Optimize your website for search engines (SEO)",
+        "price": 50,
+        "owner": {
+          "_id": "u885",
+          "fullname": "Ahmed Ashraf",
+          "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+          "level": 3,
+          "rate": 4.8
+        },
+        "daysToMake": 5,
+        "description": "Boost your website's ranking and visibility...",
+        "avgResponseTime": 1,
+        "loc": "Egypt",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/217915335/original/d19220620296c88366372067e5c662560082f8b7.jpeg"],
+        "tags": ["Digital Marketing", "SEO"],
+        "likedByUsers": ["quick-user"], 
+        "reviews": [] 
       }
+      
+
+      
+
+      
 ]
