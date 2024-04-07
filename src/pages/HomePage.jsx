@@ -14,9 +14,9 @@ export function HomePage() {
         <section className='homepage-section'>
             <section className='hero-container main-layout full flex'>
                 {/* <img src="../../public/img/hero/hero-img1.webp" alt="hero image" /> */}
-                <div class="search-container flex">
+                <div className="search-container flex">
                     <h1>Find the right <i>freelance</i><br/> service, right away</h1>
-                <SearchBox/>
+                <SearchBox neverHide={true}/>
                 <div className="popular">
                     <ul className='clean-list flex'>
                         <li>Popular:</li>
