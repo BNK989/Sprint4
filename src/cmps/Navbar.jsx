@@ -17,7 +17,6 @@ import {
 export function NavBar() {
 
     const user = useSelector(storeState => storeState.userModule.user)
-    console.log('user:', user)
 
     return (
         <nav className="fiverr-nav">

@@ -18,7 +18,6 @@ export function AppHeader() {
     const isHomepage = location.pathname === '/'
 
     const handleScroll = () => {
-        //console.log('window.scrollY:', window.scrollY)
         window.scrollY >= 0.1 ? setIsScrollNull(false) : setIsScrollNull(true)
         window.scrollY > 80 ? setIsSearchVisible(true) : setIsSearchVisible(false)
     }

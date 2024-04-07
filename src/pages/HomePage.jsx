@@ -15,7 +15,7 @@ export function HomePage() {
 
     const navigate = useNavigate()
     function handleClick(term){
-        setGigFilter({title: term})
+        setGigFilter({title: term.sug})
         navigate('/explore')
     }
 
@@ -30,7 +30,7 @@ export function HomePage() {
                     <div className="popular">
                         <ul className='clean-list flex'>
                             <li>Popular:</li>
-                            {searchSug.map(sug => <li className='capitalize cursor-pointer' key={sug} onClick={() => handleClick({sug})}>{sug}</li>)}
+                            {searchSug.map(sug => <li className='capitalize cursor-pointer' key={sug} onClick={(e) => {e.preventDefault();handleClick({sug})}}>{sug}</li>)}
                         </ul>
                     </div>
                 </div>
