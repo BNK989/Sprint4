@@ -1,5 +1,5 @@
 .app-header {
-    height: 80px;
+    height: 73px;
     width: 100%;
     font-weight: 700;
     font-size: 16px;
@@ -27,6 +27,8 @@
 
         .search-container{
             visibility: hidden;
+            // flex-grow: 1;
+            width: 40rem;
         }
     }
 
@@ -41,15 +43,21 @@
         background-color: white;
         .header-container{
             background-color: #fff;
+            >div{
+                min-width: min(50%, 650px);
+            }
+
+            .search-container{
+                width: 100%;
+                visibility: visible;
+            }
         }
         
-        .search-container{
-            visibility: visible;
-        }
+        
     }
 
     .logo img{
-        width: 60px;
+        width: 80px;
     }
 
     .header-container {

@@ -34,7 +34,6 @@ const routes = [
 ]
 export default routes
 
-
 export const NavRoutes = [
     {
         path: 'explore',
@@ -99,4 +98,11 @@ export const exploreMenu = [
         label: 'Fiverr Workspace',
         subText: 'One place to manage your business',
     },
+]
+
+export const searchSug = [
+    'website design',
+    'wordpress',
+    'logo design',
+    'ai services'
 ]
