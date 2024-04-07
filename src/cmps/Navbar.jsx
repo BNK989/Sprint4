@@ -18,14 +18,14 @@ export function NavBar() {
         <nav className="fiverr-nav">
             <ul className='clean-list flex'>
                 <li className='explore cursor-pointer' ><DropdownMenu className='cursor-pointer'>
-  <DropdownMenuTrigger>Explore</DropdownMenuTrigger>
-  <DropdownMenuContent>
-  {exploreMenu.map(menu =>
-    <DropdownMenuItem key={menu.label}>
-        {menu.label}<br/>{menu.subText}
-    </DropdownMenuItem>)}
-  </DropdownMenuContent>
-</DropdownMenu></li>    
+                    <DropdownMenuTrigger>Explore</DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                    {exploreMenu.map(menu =>
+                        <DropdownMenuItem key={menu.label}>
+                            <Link to={`${menu.path}`}>{menu.label}<br/>{menu.subText}</Link>
+                        </DropdownMenuItem>)}
+                    </DropdownMenuContent>
+                    </DropdownMenu></li>    
                 {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)}
                 {/* <LoginSignup /> */}
                 <li>Sign in</li>

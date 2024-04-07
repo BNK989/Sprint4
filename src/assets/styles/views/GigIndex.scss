@@ -10,63 +10,68 @@
 
 
         .gig-list {
-            // list-style: none;
-            // display: flex;
-            // flex-wrap: wrap;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2em;
+            gap: 1.2em;
 
             .gig-preview {
                 display: flex;
                 flex-flow: column;
 
                 .main-img {
+                    height: 190px;
 
                     img {
                         width: cover;
+                        height: 100%;
+                        border-radius: 10px;
                     }
                 }
 
 
                 .gig-owner-mini {
-                    margin-top: 2px;
+                    padding-top: 15px;
                     display: flex;
-                    // align-items: center;
                     justify-content: space-between;
 
                     font-size: 0.7em;
-                    *{
+
+                    * {
                         display: inline;
                     }
 
                     .gig-user {
                         display: flex;
-                        // align-items: center;
+                        gap: 7px;
+                        font-size: 1.1em;
 
                         img {
-                            max-width: 30px;
+                            max-width: 25px;
                         }
 
-
-
-                        .sdsad::after {
-                            font-family: 'fa-solid';
-                            content: "\f078";
+                        p {
+                            span {
+                                font-weight: bold;
+                            }
                         }
                     }
-
                 }
-            }
 
-            .gig-user-rate {
-                display: flex;
+                .gig-details {
+                    font-size: 0.9em;
+                    margin-block: 6px;
+                }
 
-                .star::after {
-                    content: "\f005";
+                .gig-user-rate {
+                    font-size: 0.9em;
+                    display: flex;
+                    align-items: center;
+
+                    // .star::after {
+                    //     content: "\f005";
+                    // }
                 }
             }
         }
     }
 }
-
