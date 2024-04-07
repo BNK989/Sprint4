@@ -6,6 +6,26 @@
                 cursor: pointer;
             }
         }
+
+        .user-img-navbar{
+            position: relative;
+            .user-menu-options{
+                position: absolute;
+                right: 0;
+                padding: 5px 10px;
+                margin-top: 3px;
+
+                background-color: rgb(238, 238, 238);
+                
+                .link-profile{
+                    color: black;
+
+                    &:hover{
+                        color: $clrbg1;
+                    }
+                }
+            }
+        }
     }
     .explore:after{
         font-family: 'fa-solid';
