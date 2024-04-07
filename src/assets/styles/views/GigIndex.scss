@@ -6,13 +6,33 @@
         font-size: 2em;
     }
 
+    .p {
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+    }
+
+    .line {
+        height: 1px;
+        background-color: $clr-light-grey;
+        margin-block: 20px;
+    }
+
+    .sort {
+        margin-block: 25px;
+        font-size: 1em;
+        color: $clrbtn-hover;
+    }
+
+
+
     .gig-list-main-container {
 
 
         .gig-list {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.2em;
+            gap: 1.3em;
 
             .gig-preview {
                 display: flex;
@@ -30,7 +50,7 @@
 
 
                 .gig-owner-mini {
-                    padding-top: 15px;
+                    padding-top: 10px;
                     display: flex;
                     justify-content: space-between;
 
@@ -55,21 +75,60 @@
                             }
                         }
                     }
+
+                    .level {
+                        align-self: center;
+                        display: flex;
+
+
+                        .level-and-num {
+                            font-weight: bold;
+                            padding-right: 10px;
+                        }
+
+
+                        i {
+                            display: flex;
+
+                            svg {
+                                align-self: center;
+                            }
+                        }
+
+                    }
                 }
 
                 .gig-details {
                     font-size: 0.9em;
-                    margin-block: 6px;
+                    margin-top: 10px;
+                    height: 3.25em;
+
                 }
 
                 .gig-user-rate {
                     font-size: 0.9em;
                     display: flex;
                     align-items: center;
+                    font-weight: bold;
 
-                    // .star::after {
-                    //     content: "\f005";
-                    // }
+                    .rate {
+                        span {
+                            font-weight: 100;
+                            color: $clrbtn-hover;
+                        }
+                    }
+
+                    .star {
+                        svg {
+                            scale: 0.85;
+                        }
+                    }
+                }
+
+                .gig-price {
+                    margin-top: 5px;
+                    font-size: 0.9em;
+                    font-weight: bold;
                 }
             }
         }

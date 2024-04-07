@@ -20,7 +20,8 @@ export function AppHeader() {
     const isHomepage = location.pathname === '/'
 
     const handleScroll = () => {
-        (window.scrollY > 0) ? setIsBgOn(true) : setIsBgOn(false)
+        //console.log('window.scrollY:', window.scrollY)
+        window.scrollY >= 0.1 ? setIsScrollNull(false) : setIsScrollNull(true)
         window.scrollY > 80 ? setIsSearchVisible(true) : setIsSearchVisible(false)
     }
 
@@ -72,10 +73,10 @@ export function AppHeader() {
         }>
             <div className="header-container">
                 <div className="logo">
-                    <a href="/"><img src={(isBgOn && isHomepage) ? `/img/5err-logo.svg` : `/img/5err-logo-white.svg`} alt="5err logo" /></a>
+                    <a href="/"><img src={(isScrollNull && isHomepage) ? `/img/5err-logo-white.svg` : `/img/5err-logo.svg`} alt="5err logo" /></a>
                 </div>
                 <div className="search-container">
-                    <SearchBox />
+                    <SearchBox/>
                 </div>
                 <NavBar signInModal={signInModal} />
             </div>

@@ -15,7 +15,7 @@ export function RootCmp() {
     const isHomepage = location.pathname === '/'
 
     return (
-        <div className='main-container'>
+        <div className={`main-container ${isHomepage ? 'homepage' : ''}`}>
             <AppHeader />
             <main className={`main-layout ${isHomepage ? 'full' : ''}`}>
                 <Routes>
@@ -23,7 +23,7 @@ export function RootCmp() {
                     <Route path="user/:id" element={<UserDetails />} />
                 </Routes>
             </main>
-            <AppFooter />
+            {/* <AppFooter /> */}
         </div>
     )
 }

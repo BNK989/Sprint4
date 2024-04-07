@@ -2,8 +2,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { LoginSignup } from "./LoginSignup"
 import {NavRoutes, exploreMenu} from '../routes'
 import { Button } from '@/components/ui/button'
-
-import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import {
     DropdownMenu,
@@ -15,8 +14,10 @@ import {
   } from "@/components/ui/dropdown-menu"
   
 
-export function NavBar({signInModal}) {
- 
+export function NavBar() {
+
+    const user = useSelector(storeState => storeState.userModule.user)
+
     return (
         <nav className="fiverr-nav">
             <ul className='clean-list flex'>
@@ -28,10 +29,13 @@ export function NavBar({signInModal}) {
                             <Link to={`${menu.path}`}>{menu.label}<br/>{menu.subText}</Link>
                         </DropdownMenuItem>)}
                     </DropdownMenuContent>
-                    </DropdownMenu></li>    
-                {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)}
-                <li className="sign-in-nav" onClick={()=>signInModal(false)}>Sign in</li>
-                <li onClick={()=>signInModal(true)} className='shancn-btn'><Button variant="outline" className='bg-inherit'>Join</Button></li>
+                    </DropdownMenu></li>
+                {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
+                {/* <LoginSignup /> */}
+                { user && <li>Orders</li>}
+                { user && <li className='text-black '>Switch to Selling</li>}
+                { user && <li><img className="w-8 h-8" src={user.imgUrl} alt="" /></li>}
+                { !user && <li className='shancn-btn'><Button variant="outline" className='bg-inherit'>Join</Button></li>}
                 {/* <li><button className='join-btn btn txt'>Join</button></li> */}
                 
                 
