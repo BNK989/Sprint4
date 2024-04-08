@@ -1,0 +1,100 @@
+.main-categories {
+    margin: 0 auto 24px;
+    padding: 24px 24px 48px;
+    width: 100%;
+
+    h2 {
+        margin-block-end: 40px;
+        padding-block-end: 20px;
+        font-size: em(28px);
+        line-height: 130%;
+        color: $clr-black;
+    }
+
+    ul {
+        flex-wrap: wrap;
+
+        li {
+            display: list-item;
+            padding: 0 10px 32px;
+            text-align: center;
+            width: 20%;
+
+            a {
+                color: $clr-black;
+                text-decoration: none;
+                display: inline-block;
+                position: relative;
+                text-align: center;
+
+                &::after {
+                    content: '';
+                    border-bottom: 2.5px solid lighten($clr-black,50%);
+                    width: 48px;
+                    position: absolute;
+                    top: 45px;
+                    right: 50%;
+                    transform: translateX(50%);
+                    padding: 0 0 7px;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &:hover {
+                    &::after {
+                        width: 88px;
+                        border-color: $clr-green;
+                    }
+                }
+
+                img {
+                    height: 48px;
+                    width: 48px;
+                    margin: 0 auto 15px;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .main-categories {
+        padding: 32px 32px 64px;
+        margin-block-end: 80px;
+
+        h2 {
+            line-height: 120%;
+            font-size: em(32px);
+        }
+
+        ul {
+            li {
+                width: 33.33%;
+                padding-block-end: 55px;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 900px) {
+    .main-categories {
+        margin-block-end: 96px;
+
+        h2 {
+            padding-block-end: 20px;
+        }
+
+        ul {
+            li {
+                width: 20%;
+            }
+        }
+    }
+}
+
+@media (min-width: 1160px) {
+    .main-categories {
+        max-width: 1400px;
+    }
+}

@@ -39,8 +39,8 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
     }
     if (filterBy.price) {
         if (filterBy.price === 100) {
+            console.log('price', filterBy.price);
             gigs = gigs.filter(gig => gig.price <= filterBy.price)
-            console.log(gigs);
         }
         else if (filterBy.price === 200) {
             console.log('hay');

@@ -23,7 +23,6 @@ export function RootCmp() {
                     <Routes>
                         {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
                     </Routes>
-                        <h3>h3h3h3</h3>
                 </main>
                 <AppFooter />
             </div>

@@ -21,8 +21,12 @@ export function GigIndex() {
     useEffect(() => {
         const q = searchParams.get('q')
         const cat = searchParams.get('cat')
+        const price = searchParams.get('price')
+        const daysToMake = searchParams.get('daysToMake')
         filterBy.title = q
         filterBy.category = cat
+        filterBy.price = +price
+        filterBy.daysToMake = +daysToMake
         try {
             loadGigs(filterBy)
         } catch (err) {
