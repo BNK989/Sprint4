@@ -28,24 +28,26 @@ export function GigPreview({ gig }) {
     return (<>
         <div className="main-img">
             {/* <img src={gig.imgUrls[0]} alt="" /> */}
-            <Carousel className="w-full max-w-xs">
-                <CarouselContent>
-                    {gig.imgUrls?.map((img, index) => (
-                        <CarouselItem key={index}>
-                            <img src={img} alt={`image-idx-${index}`} />
-                            {/* <div className="p-1">
-                                <Card>
-                                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                                        <span className="text-4xl font-semibold">{index + 1}</span>
-                                    </CardContent>
-                                </Card>
-                            </div> */}
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
+                <Carousel className="w-full max-w-xs">
+                    <CarouselContent>
+                        {gig.imgUrls?.map((img, index) => (
+                            <CarouselItem key={index}>
+                                <Link to={`/explore/${gig._id}`}>
+                                <img src={img} alt={`image-idx-${index}`} />
+                                </Link>
+                                {/* <div className="p-1">
+                                    <Card>
+                                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                                            <span className="text-4xl font-semibold">{index + 1}</span>
+                                        </CardContent>
+                                    </Card>
+                                </div> */}
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
         </div>
 
         <div className="gig-owner-mini">

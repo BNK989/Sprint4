@@ -73,6 +73,24 @@
             width: 86%;
             height: 53%;
 
+            .arrow-left, .arrow-right{
+                opacity: 0;
+                transform: translateY(-55px);
+                transition: opacity 0.3s ease-in, translate 0.3s ease-in;
+             }
+
+             &:hover .arrow-left{
+                 translate: 55px;
+             }
+
+             &:hover .arrow-right{
+                 translate: -55px;
+             }
+
+             &:hover .arrow-left:not(:disabled), &:hover .arrow-right:not(:disabled) {
+                opacity: 1;
+             }
+
         }
 
         .about-this-gig {
