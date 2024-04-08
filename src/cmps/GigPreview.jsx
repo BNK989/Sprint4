@@ -1,4 +1,12 @@
 import { Link } from "react-router-dom"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 
 
 export function GigPreview({ gig }) {
@@ -20,7 +28,25 @@ export function GigPreview({ gig }) {
     // <i class="fa-sharp fa-solid fa-sparkle"></i>
     return (<>
         <div className="main-img">
-            <img src={gig.imgUrls} alt="" />
+            {/* <img src={gig.imgUrls[0]} alt="" /> */}
+            <Carousel className="w-full max-w-xs">
+                <CarouselContent>
+                    {gig.imgUrls?.map((img, index) => (
+                        <CarouselItem key={index}>
+                            <img src={img} alt={`image-idx-${index}`} />
+                            {/* <div className="p-1">
+                                <Card>
+                                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                                        <span className="text-4xl font-semibold">{index + 1}</span>
+                                    </CardContent>
+                                </Card>
+                            </div> */}
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+            </Carousel>
         </div>
 
         <div className="gig-owner-mini">
@@ -31,9 +57,9 @@ export function GigPreview({ gig }) {
 
             <span className="level">
                 <span className="level-and-num">Level {gig.owner.level} </span>
-            {showLevel().map((value, idx) => <i key={gig._id + idx} >{value ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10" fill="currentColor"><path d="M4.839.22a.2.2 0 0 1 .322 0l1.942 2.636a.2.2 0 0 0 .043.043L9.782 4.84a.2.2 0 0 1 0 .322L7.146 7.105a.2.2 0 0 0-.043.043L5.161 9.784a.2.2 0 0 1-.322 0L2.897 7.148a.2.2 0 0 0-.043-.043L.218 5.163a.2.2 0 0 1 0-.322l2.636-1.942a.2.2 0 0 0 .043-.043L4.839.221Z"></path></svg> : <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10" fill="#E4E5E7"><path d="M4.839.22a.2.2 0 0 1 .322 0l1.942 2.636a.2.2 0 0 0 .043.043L9.782 4.84a.2.2 0 0 1 0 .322L7.146 7.105a.2.2 0 0 0-.043.043L5.161 9.784a.2.2 0 0 1-.322 0L2.897 7.148a.2.2 0 0 0-.043-.043L.218 5.163a.2.2 0 0 1 0-.322l2.636-1.942a.2.2 0 0 0 .043-.043L4.839.221Z"></path></svg>}</i>)}</span>
+                {showLevel().map((value, idx) => <i key={gig._id + idx} >{value ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10" fill="currentColor"><path d="M4.839.22a.2.2 0 0 1 .322 0l1.942 2.636a.2.2 0 0 0 .043.043L9.782 4.84a.2.2 0 0 1 0 .322L7.146 7.105a.2.2 0 0 0-.043.043L5.161 9.784a.2.2 0 0 1-.322 0L2.897 7.148a.2.2 0 0 0-.043-.043L.218 5.163a.2.2 0 0 1 0-.322l2.636-1.942a.2.2 0 0 0 .043-.043L4.839.221Z"></path></svg> : <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10" fill="#E4E5E7"><path d="M4.839.22a.2.2 0 0 1 .322 0l1.942 2.636a.2.2 0 0 0 .043.043L9.782 4.84a.2.2 0 0 1 0 .322L7.146 7.105a.2.2 0 0 0-.043.043L5.161 9.784a.2.2 0 0 1-.322 0L2.897 7.148a.2.2 0 0 0-.043-.043L.218 5.163a.2.2 0 0 1 0-.322l2.636-1.942a.2.2 0 0 0 .043-.043L4.839.221Z"></path></svg>}</i>)}</span>
         </div>
-        
+
         <div className="gig-details"><Link to={`/explore/${gig._id}`}>{gig.title}</Link></div>
 
         <div className="gig-user-rate">
@@ -43,7 +69,7 @@ export function GigPreview({ gig }) {
         </div>
 
         <div className="gig-price">From {gig.price}$</div>
-            {/* <span>level {gig.owner.level} {showLevel().map((value , idx) => <i key={gig._id + idx} className={value ? 'fa fa-full-star' : "bad"}></i>)}</span> */}
+        {/* <span>level {gig.owner.level} {showLevel().map((value , idx) => <i key={gig._id + idx} className={value ? 'fa fa-full-star' : "bad"}></i>)}</span> */}
     </>
     )
 }

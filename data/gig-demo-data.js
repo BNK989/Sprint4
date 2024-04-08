@@ -19,7 +19,10 @@ export const gigsDemo =[
         },
         "avgResponseTime": 1,
         "loc": "Ghana",
-        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/66145094/original/121043a9a3915d3e646bac32cb7dc6374f741e3b.jpg"],
+        "imgUrls": [
+          "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/66145094/original/121043a9a3915d3e646bac32cb7dc6374f741e3b.jpg",
+          "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/185625048/original/a285c0a494a99a882761387348e6a99f9a041758.jpg"
+        ],
         "tags": [
           "Arts And Crafts", "Logo Design"
         ],
