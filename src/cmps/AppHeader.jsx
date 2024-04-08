@@ -1,4 +1,4 @@
-import { Link, NavLink, useParams, useLocation } from 'react-router-dom'
+import { Link, NavLink, useParams, useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from "react"
 import routes from '../routes'
@@ -60,7 +60,7 @@ export function AppHeader() {
         <header className={
             `app-header full main-container
                 ${isHomepage ? "beAbs" : "noAbs"}
-                ${(isScrollNull && isHomepage) ? "transparent" : "color"}
+                ${(isScrollNull && isHomepage) ? "transparent" : "scrolled"}
                 ${isSearchVisible ? "search-visible" : ""}`
         }>
             <div className="header-container">

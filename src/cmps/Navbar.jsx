@@ -25,13 +25,10 @@ export function NavBar({ signInModal }) {
     useEffect(()=>{
         let handler = (e)=>{
             
-            if(menuRef.current && menuRef.current === e.target){
-                console.log('hay');
+            if(!menuRef.current === e.target){
                 setUserModalOpen(false)
             }
-             if(menuRef.current === e.target){
-                return
-            }
+             
         }
         document.addEventListener("mousedown",handler)
         return ()=>{
@@ -47,7 +44,7 @@ export function NavBar({ signInModal }) {
                     <DropdownMenuTrigger>Explore</DropdownMenuTrigger>
                     <DropdownMenuContent>
                         {exploreMenu.map(menu =>
-                            <DropdownMenuItem key={menu.label}>
+                            <DropdownMenuItem key={menu.label} onClick={() => console.log(123)} >
                                 <Link to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
                             </DropdownMenuItem>)}
                     </DropdownMenuContent>

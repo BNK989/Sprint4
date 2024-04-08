@@ -5,6 +5,7 @@ import { loadUser } from '../store/actions/user.actions'
 import { gigService } from '../services/gig.service.local'
 import { loadOwnGigs } from '../store/actions/gig.actions'
 import { OwnedGigPreview } from '../cmps/OwnedGigPreview'
+import { ManageOrders } from '@/cmps/ManageOrders'
 
 
 
@@ -69,11 +70,14 @@ export function UserDetails() {
           !!ownedGigs.length && ownedGigs.map(ownedGig => {
             return <li className='owned-gigs-preview' key={ownedGig._id}>
               <OwnedGigPreview ownedGig={ownedGig} />
+
             </li>
           })
         }
       </ul>
-
+    }
+    {
+      user &&  <ManageOrders user={user}/>
     }
   </section>
 

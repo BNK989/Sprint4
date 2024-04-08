@@ -1,6 +1,7 @@
 
 import { orderService } from "../../services/order.service"
 import { ADD_ORDER, REMOVE_ORDER, SET_ORDERS, UPDATE_ORDER } from "../reducers/order.reducer"
+import { store } from "../store"
 
 
 
@@ -23,7 +24,7 @@ export async function addOrder(gigID) {
     try {
         const savedOrder = await orderService.addOrder(gigID)
         store.dispatch({
-            type: UPDATE_ORDER,
+            type: ADD_ORDER,
             savedOrder
         })
         return savedOrder
@@ -37,7 +38,7 @@ export async function updateOrder(order) {
     try {
         const editOrder = await orderService.editOrder(order)
         store.dispatch({
-            type: ADD_ORDER,
+            type: UPDATE_ORDER,
             editOrder
         })
         return editOrder

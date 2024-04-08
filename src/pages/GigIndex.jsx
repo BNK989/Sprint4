@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useSearchParams } from "react-router-dom"
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { userService } from '../services/user.service.js'
@@ -12,15 +13,23 @@ export function GigIndex() {
 
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
+    
     console.log('filterBy:', filterBy)
+
+    const [searchParams, setSearchParams] = useSearchParams()
+
     useEffect(() => {
+        const q = searchParams.get('q')
+        console.log('q:', q)
+        filterBy.title = q
+        // setGigFilter({ title: q })
         try {
             loadGigs(filterBy)
         } catch (err) {
             console.log('err:', err)
             showErrorMsg('Cannot load toys')
         }
-    }, [filterBy])
+    }, [filterBy, searchParams])
 
     function onSetFilter(filterBy) {
         setGigFilter(filterBy)
