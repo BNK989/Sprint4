@@ -30,8 +30,9 @@ export function SearchBox({neverHide = false, inHeader = true}) {
     function handleSubmit(e){
         e.preventDefault()
         // gigService.query({title: query})
-        setGigFilter({title: query})
-        navigate('/explore')
+        // setGigFilter({title: query})
+        //navigate('/explore')
+        navigate(`/explore?q=${query}`)
         
     }
 

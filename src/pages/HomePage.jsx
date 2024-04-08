@@ -16,8 +16,8 @@ export function HomePage() {
 
     const navigate = useNavigate()
     function handleClick(term){
-        setGigFilter({title: term.sug})
-        navigate('/explore')
+        //setGigFilter({title: term.sug})
+        navigate('/explore/?q=' + term.sug)
     }
 
     let intervalID = useRef()
