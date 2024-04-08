@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react"
 import { utilService } from "../services/util.service"
 import { gigService } from "../services/gig.service.local"
-
-
+import { useSearchParams } from "react-router-dom"
 
 
 export function GigFilter({ filterBy, onSetFilter }) {
 
     const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
     const [isBudgetModalOpen, setBudgetModalOpen] = useState(false)
+
+    const [searchParams, setSearchParams] = useSearchParams()
 
     onSetFilter = useRef(utilService.debounce(onSetFilter))
     useEffect(() => {
@@ -17,21 +18,24 @@ export function GigFilter({ filterBy, onSetFilter }) {
     }, [filterByToEdit])
 
     function handleChange(ev) {
+        const currentParams = Object.fromEntries(searchParams)
         console.log('hay');
         // ev.preventDefault()
         let { value, name: field, type } = ev.target
-        console.log(field);
-        if (field === 'price' || field === 'daysToMake') {
-            value = type = +value
-        } else {
-            value = type === 'number' ? +value : value
+        switch (field) {
+            case 'price':
+                setSearchParams({...currentParams, price: value})
+                break;
+            case 'daysToMake':
+                setSearchParams({...currentParams, daysToMake: value})
+                break;
         }
-        console.log(value);
-        setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
+
     }
 
     function clearFilter() {
         setFilterByToEdit(gigService.getDefaultFilter())
+        setSearchParams({})
     }
 
     function onBudgetModal() {
@@ -49,7 +53,7 @@ export function GigFilter({ filterBy, onSetFilter }) {
                         <option value="201">Above $200</option>
                     </select>
                 </div>
-                <div className="filter-delivery-time">
+                <div className="filter-delivery-time ">
                     <select value={filterByToEdit.daysToMake + ""} name="daysToMake" id="delivery" onChange={handleChange} >
                         <option value="">Delivery time</option>
                         <option value="1">Express 24H</option>
