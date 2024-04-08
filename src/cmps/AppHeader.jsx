@@ -60,7 +60,7 @@ export function AppHeader() {
         <header className={
             `app-header full main-container
                 ${isHomepage ? "beAbs" : "noAbs"}
-                ${(isScrollNull && isHomepage) ? "transparent" : "color"}
+                ${(isScrollNull && isHomepage) ? "transparent" : "scrolled"}
                 ${isSearchVisible ? "search-visible" : ""}`
         }>
             <div className="header-container">
