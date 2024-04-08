@@ -44,7 +44,7 @@ export function NavBar({ signInModal }) {
                     <DropdownMenuTrigger>Explore</DropdownMenuTrigger>
                     <DropdownMenuContent>
                         {exploreMenu.map(menu =>
-                            <DropdownMenuItem key={menu.label}>
+                            <DropdownMenuItem key={menu.label} onClick={() => console.log(123)} >
                                 <Link to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
                             </DropdownMenuItem>)}
                     </DropdownMenuContent>
