@@ -1,7 +1,14 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
-import { gigService } from "../services/gig.service.local";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router"
+import { gigService } from "../services/gig.service.local"
+import { Link } from "react-router-dom"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 
 
 export function GigDetails() {
@@ -48,7 +55,25 @@ export function GigDetails() {
                     </div>
                 </div>
 
-                <img className="main-img" src={gig.imgUrls[0]} alt="" />
+                {/* <img className="main-img" src={gig.imgUrls[0]} alt="" /> */}
+                <div className="main-img">
+                    <Carousel className="w-full">
+                        <CarouselContent>
+                            {gig.imgUrls?.map((img, index) => (
+                                <CarouselItem key={index}>
+                                    <img className="h-[93%]" src={img} alt={`image-idx-${index}`} />
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                        <div  className="my-[-1em] flex-center gap-4">
+                            {gig.imgUrls?.map((img, index) => (
+                            <img key={index} className="w-20" src={img} alt={`image-idx-${index}`} />
+                                ))}
+                        </div>
+                    </Carousel>
+                </div>
 
                 <section className="about-this-gig">
                     <p>About this gig</p>
