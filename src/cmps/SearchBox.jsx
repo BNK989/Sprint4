@@ -1,7 +1,8 @@
 import { gigService } from "@/services/gig.service.local"
 import { useState, useEffect } from "react"
-import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
+import { useSearchParams } from "react-router-dom"
 import { useNavigate, useParams } from "react-router"
+import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
 
 export function SearchBox({neverHide = false, inHeader = true}) {
 
@@ -9,8 +10,10 @@ export function SearchBox({neverHide = false, inHeader = true}) {
     const [isHidden, setIsHidden] = useState(true)
     const [query, setQuery] = useState('')
     const navigate = useNavigate()
+    const [searchParams, setSearchParams] = useSearchParams()
     
     useEffect(() => {
+        console.log('searchParams:', searchParams)//.get('cat'))
         if(neverHide) {
             setIsHidden(false)
             return
@@ -29,10 +32,8 @@ export function SearchBox({neverHide = false, inHeader = true}) {
 
     function handleSubmit(e){
         e.preventDefault()
-        // gigService.query({title: query})
-        // setGigFilter({title: query})
-        //navigate('/explore')
-        navigate(`/explore?q=${query}`)
+        const currentParams = Object.fromEntries(searchParams)
+        setSearchParams({...currentParams, q: query})
         
     }
 
