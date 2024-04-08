@@ -9,6 +9,8 @@ import { TrustedBy } from '@/cmps/TrustedBy'
 import { PopularServices } from '@/cmps/PopularServices'
 import { BestPart } from '@/cmps/BestPart'
 import { Hero } from '@/cmps/Hero'
+import { JoinPoster } from '@/cmps/JoinPoster'
+import { CategoriesNav } from '@/cmps/CategoriesNav'
 
 // import { CHANGE_COUNT } from '../store/user.reducer'
 
@@ -43,6 +45,8 @@ export function HomePage() {
             <TrustedBy/>
             <PopularServices/>
             <BestPart/>
+            {/* <JoinPoster/> */}
+            <CategoriesNav/>
 
         </section >
     )
