@@ -23,7 +23,6 @@ export function GigPreview({ gig }) {
         return level
     }
 
-    console.log('showLevel():', showLevel())
 
     // <i class="fa-sharp fa-solid fa-sparkle"></i>
     return (<>

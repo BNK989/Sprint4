@@ -17,7 +17,6 @@ export const userService = {
     // changeScore
 }
 
-console.log('userDemo:', usersDemo)
 window.userService = userService
 
 
@@ -65,7 +64,7 @@ async function login(userCred) {
 async function signup(userCred) {
     const users = await storageService.query('user')
     const existUser = users.find(user => user.username === userCred.username)
-    if(existUser) throw err
+    if(existUser) return
     if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
     if(userCred._id){
         const user = await storageService.post('user', userCred)

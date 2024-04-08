@@ -5,7 +5,7 @@ import { loadUser } from '../store/actions/user.actions'
 import { gigService } from '../services/gig.service.local'
 import { loadOwnGigs } from '../store/actions/gig.actions'
 import { OwnedGigPreview } from '../cmps/OwnedGigPreview'
-import { ManageOrders } from '@/cmps/ManageOrders'
+import { ManageReceivedOrders } from '@/cmps/ManageReceivedOrders'
 
 
 
@@ -19,7 +19,7 @@ export function UserDetails() {
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.user)
   const ownedGigs = useSelector(storeState => storeState.gigModule.ownedGigs)
-  console.log('params.userId:', params)
+  
   useEffect(() => {
     loadUser(params.userId)
     loadOwnGigs(params.userId)
@@ -32,7 +32,7 @@ export function UserDetails() {
     // }
 
   }, [params.userId])
-  console.log('ownedGigs:', ownedGigs)
+  // console.log('ownedGigs:', ownedGigs)
   // function onUserUpdate(user) {
   //   showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
   //   store.dispatch({ type: 'SET_WATCHED_USER', user })
@@ -77,7 +77,8 @@ export function UserDetails() {
       </ul>
     }
     {
-      user &&  <ManageOrders user={user}/>
+      user && <ManageReceivedOrders user={user}/>
+      // user && <ManageSentOrders user={user}/>
     }
   </section>
 

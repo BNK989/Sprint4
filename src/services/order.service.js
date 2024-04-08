@@ -41,7 +41,8 @@ async function addOrder(gigId) {
             imgUrl: gigToOrder.imgUrls,
             price: gigToOrder.price
         },
-        status: "pending"
+        status: "pending",
+        createdAt: new Date(),
     }
     buyer.orders.sentOrders.unshift(orderToAdd)
     seller.orders.receivedOrders.unshift(orderToAdd)
