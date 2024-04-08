@@ -18,10 +18,10 @@ export function UserDetails() {
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.user)
   const ownedGigs = useSelector(storeState => storeState.gigModule.ownedGigs)
-  console.log('params.id:', params)
+  console.log('params.userId:', params)
   useEffect(() => {
-    loadUser(params.id)
-    loadOwnGigs(params.id)
+    loadUser(params.userId)
+    loadOwnGigs(params.userId)
     // gigService.query(params.id)
     // socketService.emit(SOCKET_EMIT_USER_WATCH, params.id)
     // socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
@@ -30,7 +30,7 @@ export function UserDetails() {
     //   socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     // }
 
-  }, [params.id])
+  }, [params.userId])
   console.log('ownedGigs:', ownedGigs)
   // function onUserUpdate(user) {
   //   showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
