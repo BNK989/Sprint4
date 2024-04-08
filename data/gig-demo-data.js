@@ -2,6 +2,7 @@ export const gigsDemo =[
     {
         "_id":"OXeMG8wNskc",
         "title": "I will create professional logo and stationery",
+        "category": "Writing & Translation",
         "price": 12,
         "owner": {
           "_id": "FHc6T",
@@ -73,6 +74,7 @@ export const gigsDemo =[
       {
         "_id": "JYOJa2NpSCq",
         "title": "I will design retro vintage pinup girl logo in 24 hours",
+        "category": "Music & Audio",
         "price": 15,
         "owner": {
           "_id": "FHc6T",
@@ -140,6 +142,7 @@ export const gigsDemo =[
       },{
         "_id": "1y0Oqts35DQ",
         "title": "I will design heraldic and luxury vintage logo",
+        "category": "Business",
         "price": 30,
         "owner": {
           "_id": "FHc6T",
@@ -208,6 +211,7 @@ export const gigsDemo =[
       {
         "_id": "JYOJa2NpSCq9",
         "title": "I will do professional, unique and modern business logo design",
+        "category": "Consulting",
         "price": 15,
         "owner": {
           "_id": "u101",
@@ -271,6 +275,7 @@ export const gigsDemo =[
       {
         "_id": "JYOJa2NpSCq7",
         "title": "I will design custom business logo design and unique brand identity",
+        "category": "Data",
         "price": 15,
         "owner": {
           "_id": "u101",
@@ -334,6 +339,7 @@ export const gigsDemo =[
       {
         "_id": "JYOJa2NpSCq5",
         "title": "I will create a minimal logo and a branding board",
+        "category": "Arts And Crafts",
         "price": 15,
         "owner": {
           "_id": "u101",
@@ -397,6 +403,7 @@ export const gigsDemo =[
       {
         "_id": "JYOJa2NpSCq4",
         "title": "I will make a professional unique clean wordmark logo",
+        "category": "Arts And Crafts",
         "price": 15,
         "owner": {
           "_id": "u101",
@@ -460,6 +467,7 @@ export const gigsDemo =[
       {
         "_id": "lks9a3nDL8sa",
         "title": "Design a stunning custom website banner",
+        "category": "Programming & Tech",
         "price": 35,
         "owner": {
           "_id": "u205",
@@ -519,6 +527,7 @@ export const gigsDemo =[
       {
         "_id": "s98KLdfh872",
         "title": "Write captivating product descriptions",
+        "category": "wordpress",
         "price": 20,
         "owner": {
           "_id": "u476",
@@ -578,6 +587,7 @@ export const gigsDemo =[
       {
         "_id": "L340Jnsdf76",
         "title": "Custom Illustration for your project",
+        "category": "Graphics & Design",
         "price": 30,
         "owner": {
           "_id": "u623",
@@ -637,6 +647,7 @@ export const gigsDemo =[
       {
         "_id": "87dfhSDLK23",
         "title": "Optimize your website for search engines (SEO)",
+        "category": "Arts And Crafts",
         "price": 50,
         "owner": {
           "_id": "u885",
@@ -692,5 +703,100 @@ export const gigsDemo =[
             "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
           }
         }] 
-      } 
+      },
+      {
+        "_id": "i102", 
+        "title": "Write a letter of recommendation",
+        "category": "Business",
+        "price": 25,
+        "owner": {
+          "_id": "u886",
+          "fullname": "Yaron Bar",
+          "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+          "level": 3,
+          "rate": 4.9
+        },
+        "daysToMake": 5,
+        "description": "Recommend a student or employee for a position or award...",
+        "avgResponseTime": 1,
+        "loc": "Israel",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/336340527/original/2d88ebb4737d9abe80c8c1b93cf872a66c6bf210.jpg"],
+        "tags": ["Recommendation", "Business"],
+        "likedByUsers": ["quick-user"],
+        "reviews": [
+          {
+            "id": "127",
+            "txt": "Excellent work, very professional and easy to work with",
+            "rate": 5,
+            "by": {
+              "_id": "u103",
+              "fullname": "Yonatan Biton",
+              "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+            }
+          },
+          {
+            "id": "128",
+            "txt": "Great job, easy to communicate and work with",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          }
+        ]
+      },
+      {
+        "_id": "i103", 
+        "title": "Create a video script",
+        "category": "Arts And Crafts",
+        "price": 30,
+        "owner": {
+          "_id": "u887",
+          "fullname": "Sharon Ben Zvi",
+          "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+          "level": 4,
+          "rate": 4.7
+        },
+        "daysToMake": 8,
+        "description": "Script a video for your brand, campaign or video content...",
+        "avgResponseTime": 2,
+        "loc": "Tel Aviv, Israel",
+        "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/336340527/original/2d88ebb4737d9abe80c8c1b93cf872a66c6bf210.jpg"],
+        "tags": ["Video Script", "Creative"],
+        "likedByUsers": ["quick-user"],
+        "reviews": [
+          {
+            "id": "129",
+            "txt": "Excellent work, very professional and easy to work with",
+            "rate": 5,
+            "by": {
+              "_id": "u103",
+              "fullname": "Yonatan Biton",
+              "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+            }
+          },
+          {
+            "id": "130",
+            "txt": "Great job, easy to communicate and work with",
+            "rate": 5,
+            "by": {
+              "_id": "u102",
+              "fullname": "Shai Shmuel",
+              "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+            }
+          },
+          {
+            "id": "131",
+            "txt": "Very good work",
+            "rate": 4,
+            "by": {
+              "_id": "u105",
+              "fullname": "Yaron Gross",
+              "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+            }
+          }
+        ]
+      }
+
 ]

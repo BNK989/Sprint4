@@ -6,8 +6,6 @@ import { gigsDemo } from '../../data/gig-demo-data.js'
 
 const STORAGE_KEY = 'gig'
 
-
-
 export const gigService = {
     query,
     getById,
@@ -15,7 +13,9 @@ export const gigService = {
     remove,
     getEmptyGig,
     addGigMsg,
-    getDefaultFilter
+    getDefaultFilter,
+    allCategories
+
 }
 window.cs = gigService
 _saveDemoData()
@@ -30,6 +30,11 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
+        console.log('gigs:', gigs)
+    }
+    if (filterBy.category) {
+        const regex = new RegExp(filterBy.category, 'i')
+        gigs = gigs.filter(gig => regex.test(gig.category))
         console.log('gigs:', gigs)
     }
     if (filterBy.price) {
@@ -141,5 +146,15 @@ function _saveDemoData() {
 // storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
 
 
+async function allCategories(){
+    var gigs = await storageService.query(STORAGE_KEY)
+    return gigs.reduce((accumulator, {category}) => {
+        if (!accumulator.includes(category)) {
+            accumulator.push(category)
+        }
+        return accumulator
+    }, [])
+}
+//allCategories().then(console.log)
 
 

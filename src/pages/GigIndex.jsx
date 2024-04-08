@@ -20,9 +20,9 @@ export function GigIndex() {
 
     useEffect(() => {
         const q = searchParams.get('q')
-        console.log('q:', q)
+        const cat = searchParams.get('cat')
         filterBy.title = q
-        // setGigFilter({ title: q })
+        filterBy.category = cat
         try {
             loadGigs(filterBy)
         } catch (err) {
