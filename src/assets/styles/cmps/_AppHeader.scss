@@ -35,6 +35,23 @@
     &.search-visible .under-header{
         transform: rotateX(0deg);
         background-color: #fff;
+        li{
+            position: relative;
+            height: 2.5em;
+            @include flex-center;
+        }
+      
+        li:hover::after {
+            background: #1dbf73;
+            bottom: 0;
+            content: "";
+            height: 3px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
+
     }
 
     &.color {
@@ -68,7 +85,7 @@
 
     .under-header{
         position: absolute;
-        top: 80px;
+        top: 73px;
         width: 100%;
 
         transform: rotateX(90deg);

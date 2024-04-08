@@ -74,16 +74,16 @@ export function AppHeader() {
             </div>
             <section className="under-header main-container full">
                     <ul className='flex clean-list'>
-                        <li>One</li>
-                        <li>Two</li>
-                        <li>Three</li>
-                        <li>Four</li>
-                        <li>Five</li>
-                        <li>Six</li>
-                        <li>Seven</li>
-                        <li>Eight</li>
-                        <li>Nine</li>
-                        <li>Ten</li>
+                        <li><Link to="/explore">Graphics & Design</Link></li>
+                        <li><Link to="/explore">Programming & Tech</Link></li>
+                        <li><Link to="/explore">Digital Marketing</Link></li>
+                        <li><Link to="/explore">Video & Animation</Link></li>
+                        <li><Link to="/explore">Writing & Translation</Link></li>
+                        <li><Link to="/explore">Music & Audio</Link></li>
+                        <li><Link to="/explore">Business</Link></li>
+                        <li><Link to="/explore">Consulting</Link></li>
+                        <li><Link to="/explore">Data</Link></li>
+                        <li><Link to="/explore">AI Services</Link></li>
                     </ul>
             </section>
             {
