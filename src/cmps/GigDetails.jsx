@@ -9,6 +9,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import { ReviewsStats } from "./ReviewsStats"
 
 
 export function GigDetails() {
@@ -52,12 +53,6 @@ export function GigDetails() {
        const threeStars = gig.reviews.filter(review => review.rate === 3).length
        const twoStars = gig.reviews.filter(review => review.rate === 2).length
        const oneStar = gig.reviews.filter(review => review.rate === 1).length
-       console.log('totalReviews:', totalReviews)
-       console.log('fiveStars:', fiveStars)
-       console.log('fourStars:', fourStars)
-       console.log('threeStars:', threeStars)
-       console.log('twoStars:', twoStars)
-       console.log('oneStar:', oneStar)
 
        return { totalReviews, fiveStars, fourStars, threeStars, twoStars, oneStar }
         
