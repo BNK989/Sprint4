@@ -3,7 +3,7 @@ import { addOrder } from "@/store/actions/order.actions"
 
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 
 
 
@@ -12,7 +12,7 @@ export function Payment() {
     const { gigId } = useParams()
     const [gig, setGig] = useState(null)
     const user = useSelector(storeState => storeState.userModule.user)
-
+    const navigate = useNavigate()
 
     useEffect(() => {
         loadGig()
@@ -29,12 +29,14 @@ export function Payment() {
             navigate('/explore')
         }
     }
-
+    
     async function onConfirm(){
         try{
-           const order = await addOrder(gigId)
-           console.log(order);
-        }catch{
+            const order = await addOrder(gigId)
+            console.log(order);
+            navigate('/')
+        }catch(err){
+            showErrorMsg('Cannot confirm order')
 
         }
     }

@@ -1,6 +1,7 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
+import { usersDemo } from '../../data/user-demo-data'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
 export const userService = {
@@ -16,6 +17,7 @@ export const userService = {
     // changeScore
 }
 
+console.log('userDemo:', usersDemo)
 window.userService = userService
 
 
@@ -112,8 +114,8 @@ function getLoggedinUser() {
 
 ;(async ()=>{
     // await storageService.post('user', {_id:'u101', fullname: 'admin', username: 'meni', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"})
-    await userService.signup({_id:'FHc6T', fullname: 'admin', username: 'meni', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",orders:{receivedOrders:[],sentOrders:[]}})
-    await userService.signup({_id:'u101',fullname: 'aviya', username: 'puki', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",orders:{receivedOrders:[],sentOrders:[]}})
+    await userService.signup(usersDemo[0])
+    await userService.signup(usersDemo[1])
 })()
 
 
