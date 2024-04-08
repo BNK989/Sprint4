@@ -175,3 +175,4 @@ export const bgImgs = [
     'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/idvcmvkhfqjlgpmdubwu.webp',
     'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/sfl8xkvbl0ztb1yxehjz.webp',
 ]
+
