@@ -2,6 +2,7 @@
     margin-inline: 45px;
     display: grid;
     grid-template-columns: 1fr auto;
+    margin-top: 2.5em;
 
 
     .gig-details {
@@ -12,7 +13,7 @@
 
         .gig-title {
             font-size: 1.5em;
-            padding-bottom: 10px;
+            // padding-bottom: 0.5em;
             font-weight: bolder;
         }
 
@@ -29,30 +30,34 @@
 
 
             img {
-                width: 15%;
+                align-self: center;
+                width: 14%;
+                margin-top: -0.5em;
             }
 
             .user-details {
                 display: flex;
                 flex-flow: column;
-                justify-content: space-between;
+                align-content: space-between;
 
-                p{
-                    font-size: 1em; 
+                p {
+                    font-size: 1em;
                     //  border-right: 1px solid black;
-                     padding-inline: 10px;
+                    padding-inline: 0.9em;
+                    margin-bottom: 0.5em;
                 }
 
-                .user-rate{
+                .user-rate {
                     font-size: 0.8em;
+                    
                     margin-bottom: 15px;
                     padding-left: 5px;
 
-                    .star{
+                    .star {
                         padding-left: 5px;
                     }
 
-                    .rate-num{
+                    .rate-num {
                         font-size: 1em;
                     }
 
@@ -143,10 +148,11 @@
                 margin-bottom: 5px;
 
 
-               
+
 
                 .clock {
                     margin-right: 5px;
+
                     svg {
                         padding: 0;
                         margin: 0;
@@ -158,6 +164,7 @@
 
             .whats-included {
                 font-size: 0.9em;
+
                 ul {
                     li {
                         font-family: 'Macan', sans-serif;
@@ -205,6 +212,129 @@
                 font-size: 0.8em;
                 padding: 10px;
                 margin-bottom: 10px;
+            }
+        }
+    }
+
+    .order-reviews-container {
+
+        display: flex;
+        flex-flow: column;
+
+        .line {
+            width: 86%;
+            background-color: $clr-light-grey;
+            height: 1px;
+            // margin-block: 2.1em;
+            margin-top: 2.1em;
+            margin-bottom:2.1em ;
+        }
+
+
+        .title {
+            font-size: 1.1em;
+            font-weight: bold;
+            // margin-bottom: 0.5em;
+        }
+
+
+        .by {
+            display: flex;
+
+
+
+            img {
+                height: fit-content;
+                margin-top: 0.3em;
+                width: 2.9em;
+                margin-right: 0.7em;
+                margin-left: -0.1em;
+            }
+
+            .user-info {
+                // align-items: center;
+                // align-content: center;
+                // margin-top: -0.2em;
+                .user-name {
+                    font-size: 0.9em;
+                    font-weight: bold;
+                }
+                .from{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 0.1em;
+                    margin-top: 0.1em;
+                    // align-content: center;
+                    img{
+                        border-radius: 5px;
+                        width: 1.2em;
+                    }
+                    span{
+                        font-size: 0.9em;
+                        margin-left: -0.3em;
+                    }
+                }
+            }
+        }
+
+        .rate {
+            display: flex;
+            margin-left: 3.5em;
+            margin-top: 1em;
+
+            align-items: center;
+
+            i:not(:last-child) {
+                margin-right: 0.25em;
+            }
+
+            span {
+                font-size: 0.8em;
+                font-weight: bold;
+            }
+        }
+
+        .review-txt {
+            margin-left: 4em;
+            font-size: 0.9em;
+            margin-top: 0.7em;
+            margin-bottom: 1em;
+            // padding-block: 0.5em;
+            width: 80%;
+            line-height: 1.5em;
+        }
+
+        .helpful {
+            margin-left: 5em;
+            margin-top: 0.7em;
+            font-size: 0.71em;
+            font-weight: bold;
+
+            display: flex;
+
+            .title {
+                margin-right: 1em;
+            }
+
+            .yes {
+                display: flex;
+                align-items: center;
+                margin-right: 0.7em;
+                font-size: 1.1em;
+
+                svg {
+                    margin-right: 0.5em;
+                }
+            }
+
+            .no {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    margin-right: 0.5em;
+                }
+
             }
         }
     }
