@@ -85,9 +85,6 @@ export function Payment() {
                             maxLength="3"
                         />
                     </div>
-
-                    <input type="submit" value="Proceed to Checkout"
-                        className="submit_btn" />
                 </form>
 
             </section>

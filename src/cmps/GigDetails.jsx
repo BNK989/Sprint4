@@ -49,7 +49,7 @@ export function GigDetails() {
                     </div>
                 </div>
 
-                <img className="main-img" src={gig.imgUrls} alt="" />
+                <img className="main-img" src={gig.imgUrls[0]} alt="" />
 
                 <section className="about-this-gig">
                     <p>About this gig</p>
