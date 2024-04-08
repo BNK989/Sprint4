@@ -8,6 +8,10 @@
     outline: none;
 }
 
+input:focus-visible{
+    border-color: $clr-black;
+}
+
 html {
     font-family: montserrat;
     line-height: 1.6;
