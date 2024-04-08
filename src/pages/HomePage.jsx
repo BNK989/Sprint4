@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router"
 import { searchSug, bgImgs } from '../routes'
 import { TrustedBy } from '@/cmps/TrustedBy'
 import { PopularServices } from '@/cmps/PopularServices'
+import { BestPart } from '@/cmps/BestPart'
 
 // import { CHANGE_COUNT } from '../store/user.reducer'
 
@@ -50,6 +51,7 @@ export function HomePage() {
             </section>
             <TrustedBy/>
             <PopularServices/>
+            <BestPart/>
 
         </section >
     )
