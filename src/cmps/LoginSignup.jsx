@@ -18,14 +18,12 @@ export function LoginSignup(props) {
 
     function clearState() {
         setCredentials({ username: '', password: '', fullname: '', imgUrl: '' })
-        setIsSignup(false)
+        // setIsSignup(false)
     }
 
     function handleChange(ev) {
         const field = ev.target.name
-        console.log(field);
         const value = ev.target.value
-        console.log(value);
         setCredentials({ ...credentials, [field]: value })
     }
 

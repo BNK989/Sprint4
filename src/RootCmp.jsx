@@ -20,7 +20,7 @@ export function RootCmp() {
             <main className={`main-layout ${isHomepage ? 'full' : ''}`}>
                 <Routes>
                     {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
-                    <Route path="user/:id" element={<UserDetails />} />
+                    
                 </Routes>
             </main>
             {/* <AppFooter /> */}

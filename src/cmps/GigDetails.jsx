@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { gigService } from "../services/gig.service.local";
+import { Link } from "react-router-dom";
 
 
 export function GigDetails() {
@@ -36,7 +37,7 @@ export function GigDetails() {
                 <h1 className="gig-title">{gig.title}</h1>
 
                 <div className="gig-user">
-                    <img src={gig.owner.imgUrl} alt="" />
+                    <img src={gig.owner.imgUrl} alt="owner image" />
 
                     <div className="user-details">
                         <p>{gig.owner.fullname}</p>
@@ -100,7 +101,7 @@ export function GigDetails() {
                             </ul>
                         </details>
                     </article>}
-                    <div className="continue-btn"><span className="continue">Continue</span> <span className="fa arrow"></span></div>
+                    <Link to={`/payment/${gig._id}`}><div className="continue-btn"><span className="continue">Continue</span> <span className="fa arrow"></span></div></Link>
                     <div className="Compare-btn"><span className="continue">Compare packages</span></div>
                 </main>
 

@@ -3,6 +3,8 @@ import { GigIndex } from './pages/GigIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { ChatApp } from './pages/Chat.jsx'
 import { GigDetails } from './cmps/GigDetails.jsx'
+import { Payment } from './pages/Payment.jsx'
+import { UserDetails } from './pages/UserDetails.jsx'
 
 // Routes accessible from the main navigation (in AppHeader)
 const routes = [
@@ -30,6 +32,16 @@ const routes = [
         path: 'explore/:gigId',
         component: <GigDetails />,
         label: 'details'
+    },
+    {
+        path: 'payment/:gigId',
+        component: <Payment />,
+        label: 'payment'
+    },
+    {
+        path: 'user/:userId',
+        component: <UserDetails />,
+        label: 'user'
     },
 ]
 export default routes
