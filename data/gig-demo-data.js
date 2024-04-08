@@ -29,7 +29,44 @@ export const gigsDemo =[
         "likedByUsers": ["mini-user"],
         "reviews": [
           {
-            
+            "id": "123",
+            "txt": "Functional, clean, and delightful. A design that just works.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "124",
+            "txt": "Sleek and modern aesthetics. A joy to interact with.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "125",
+            "txt": "Innovative approach, visually striking. A design that captivates.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "126",
+            "txt": "Elegant and intuitive design. Seamless user experience.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
           }
         ] 
       },
@@ -60,7 +97,44 @@ export const gigsDemo =[
         "likedByUsers": ["mini-user"],
         "reviews": [
           {
-            
+            "id": "123",
+            "txt": "Functional, clean, and delightful. A design that just works.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "124",
+            "txt": "Sleek and modern aesthetics. A joy to interact with.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "125",
+            "txt": "Innovative approach, visually striking. A design that captivates.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "126",
+            "txt": "Elegant and intuitive design. Seamless user experience.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
           }
         ] 
       },{
@@ -90,6 +164,44 @@ export const gigsDemo =[
         "likedByUsers": ["mini-user"],
         "reviews": [
           {
+            "id": "123",
+            "txt": "Functional, clean, and delightful. A design that just works.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "124",
+            "txt": "Sleek and modern aesthetics. A joy to interact with.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "125",
+            "txt": "Innovative approach, visually striking. A design that captivates.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "126",
+            "txt": "Elegant and intuitive design. Seamless user experience.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
           }
         ] 
       },
@@ -115,7 +227,44 @@ export const gigsDemo =[
         "likedByUsers": ["mini-user"],
         "reviews": [
           {
-            
+            "id": "123",
+            "txt": "Functional, clean, and delightful. A design that just works.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "124",
+            "txt": "Sleek and modern aesthetics. A joy to interact with.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "125",
+            "txt": "Innovative approach, visually striking. A design that captivates.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "126",
+            "txt": "Elegant and intuitive design. Seamless user experience.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
           }
         ] 
       },
@@ -141,7 +290,44 @@ export const gigsDemo =[
         "likedByUsers": ["mini-user"],
         "reviews": [
           {
-            
+            "id": "123",
+            "txt": "Functional, clean, and delightful. A design that just works.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "124",
+            "txt": "Sleek and modern aesthetics. A joy to interact with.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "125",
+            "txt": "Innovative approach, visually striking. A design that captivates.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "126",
+            "txt": "Elegant and intuitive design. Seamless user experience.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
           }
         ] 
       },
@@ -167,7 +353,44 @@ export const gigsDemo =[
         "likedByUsers": ["mini-user"],
         "reviews": [
           {
-            
+            "id": "123",
+            "txt": "Functional, clean, and delightful. A design that just works.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "124",
+            "txt": "Sleek and modern aesthetics. A joy to interact with.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "125",
+            "txt": "Innovative approach, visually striking. A design that captivates.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "126",
+            "txt": "Elegant and intuitive design. Seamless user experience.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
           }
         ] 
       },
@@ -193,7 +416,44 @@ export const gigsDemo =[
         "likedByUsers": ["mini-user"],
         "reviews": [
           {
-            
+            "id": "123",
+            "txt": "Functional, clean, and delightful. A design that just works.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "124",
+            "txt": "Sleek and modern aesthetics. A joy to interact with.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "125",
+            "txt": "Innovative approach, visually striking. A design that captivates.",
+            "rate": 5,
+            "by": {
+              "_id": "FHc6T",
+              "fullname": "admin",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
+          },
+          {
+            "id": "126",
+            "txt": "Elegant and intuitive design. Seamless user experience.",
+            "rate": 5,
+            "by": {
+              "_id": "u101",
+              "fullname": "aviya",
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+            }
           }
         ] 
       },
@@ -215,7 +475,46 @@ export const gigsDemo =[
         "imgUrls": ["https://source.unsplash.com/random/600x400"],
         "tags": ["Web & Mobile Design", "Banner Ads"],
         "likedByUsers": ["user23", "quick-user"],
-        "reviews": [] 
+        "reviews": [{
+          "id": "123",
+          "txt": "Functional, clean, and delightful. A design that just works.",
+          "rate": 5,
+          "by": {
+            "_id": "FHc6T",
+            "fullname": "admin",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "124",
+          "txt": "Sleek and modern aesthetics. A joy to interact with.",
+          "rate": 4,
+          "by": {
+            "_id": "u101",
+            "fullname": "aviya",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "125",
+          "txt": "Innovative approach, visually striking. A design that captivates.",
+          "rate": 5,
+          "by": {
+            "_id": "FHc6T",
+            "fullname": "admin",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "126",
+          "txt": "Elegant and intuitive design. Seamless user experience.",
+          "rate": 3,
+          "by": {
+            "_id": "u101",
+            "fullname": "aviya",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        }] 
       },
       {
         "_id": "s98KLdfh872",
@@ -235,7 +534,46 @@ export const gigsDemo =[
         "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/107186030/original/3bf49e58366bb7f4f78a4620c76599b12a482b4a.png"],
         "tags": ["Content Writing", "Product Descriptions"],
         "likedByUsers": [], 
-        "reviews": [] 
+        "reviews": [{
+          "id": "123",
+          "txt": "Functional, clean, and delightful. A design that just works.",
+          "rate": 5,
+          "by": {
+            "_id": "FHc6T",
+            "fullname": "admin",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "124",
+          "txt": "Sleek and modern aesthetics. A joy to interact with.",
+          "rate": 3,
+          "by": {
+            "_id": "u101",
+            "fullname": "aviya",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "125",
+          "txt": "Innovative approach, visually striking. A design that captivates.",
+          "rate": 5,
+          "by": {
+            "_id": "FHc6T",
+            "fullname": "admin",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "126",
+          "txt": "Elegant and intuitive design. Seamless user experience.",
+          "rate": 4,
+          "by": {
+            "_id": "u101",
+            "fullname": "aviya",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        }] 
       },
       {
         "_id": "L340Jnsdf76",
@@ -255,7 +593,46 @@ export const gigsDemo =[
         "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/336340527/original/2d88ebb4737d9abe80c8c1b93cf872a66c6bf210.jpg"],
         "tags": ["Arts And Crafts", "Illustration"],
         "likedByUsers": ["user99", "mini-user"], 
-        "reviews": [] 
+        "reviews": [{
+          "id": "123",
+          "txt": "Functional, clean, and delightful. A design that just works.",
+          "rate": 5,
+          "by": {
+            "_id": "FHc6T",
+            "fullname": "admin",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "124",
+          "txt": "Sleek and modern aesthetics. A joy to interact with.",
+          "rate": 3,
+          "by": {
+            "_id": "u101",
+            "fullname": "aviya",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "125",
+          "txt": "Innovative approach, visually striking. A design that captivates.",
+          "rate": 5,
+          "by": {
+            "_id": "FHc6T",
+            "fullname": "admin",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "126",
+          "txt": "Elegant and intuitive design. Seamless user experience.",
+          "rate": 4,
+          "by": {
+            "_id": "u101",
+            "fullname": "aviya",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        }] 
       },
       {
         "_id": "87dfhSDLK23",
@@ -275,11 +652,45 @@ export const gigsDemo =[
         "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/132536234/original/b3ec1e28c6bfcffd6f9cbc9cbd5da81d2130949b.jpg"],
         "tags": ["Digital Marketing", "SEO"],
         "likedByUsers": ["quick-user"], 
-        "reviews": [] 
-      }
-      
-
-      
-
-      
+        "reviews": [{
+          "id": "123",
+          "txt": "Functional, clean, and delightful. A design that just works.",
+          "rate": 5,
+          "by": {
+            "_id": "FHc6T",
+            "fullname": "admin",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "124",
+          "txt": "Sleek and modern aesthetics. A joy to interact with.",
+          "rate": 3,
+          "by": {
+            "_id": "u101",
+            "fullname": "aviya",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "125",
+          "txt": "Innovative approach, visually striking. A design that captivates.",
+          "rate": 5,
+          "by": {
+            "_id": "FHc6T",
+            "fullname": "admin",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        },
+        {
+          "id": "126",
+          "txt": "Elegant and intuitive design. Seamless user experience.",
+          "rate": 4,
+          "by": {
+            "_id": "u101",
+            "fullname": "aviya",
+            "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          }
+        }] 
+      } 
 ]
