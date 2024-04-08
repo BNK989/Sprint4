@@ -19,7 +19,6 @@ export function GigDetails() {
     async function loadGig() {
         try {
             const gig = await gigService.getById(gigId)
-            console.log('gig:', gig)
             setGig(gig)
         } catch (err) {
             console.log('Had issues in gig details', err)
@@ -62,10 +61,7 @@ export function GigDetails() {
                     provident dolor maxime eius. Ipsa, saepe.
 
                 </section>
-
             </section>
-
-
 
             <section className="order-details">
                 <div className="btns">
@@ -104,6 +100,11 @@ export function GigDetails() {
                     <Link to={`/payment/${gig._id}`}><div className="continue-btn"><span className="continue">Continue</span> <span className="fa arrow"></span></div></Link>
                     <div className="Compare-btn"><span className="continue">Compare packages</span></div>
                 </main>
+
+            </section>
+
+            <section className="order-reviews-container">
+                
 
             </section>
 
