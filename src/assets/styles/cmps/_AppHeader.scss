@@ -7,14 +7,20 @@
     border-bottom: 1px solid #e4e5e7;
     transition: background-color .5s ease;
     transition: border .5s ease; 
+    z-index: 10;
 
     li{
         margin: auto;
     }
 
     &.beAbs{
+        //position: absolute;
         position: absolute;
         background-color: transparent;
+    }
+
+    &.noAbs{
+        position: static!important;
     }
     
     &.transparent{
@@ -35,9 +41,28 @@
     &.search-visible .under-header{
         transform: rotateX(0deg);
         background-color: #fff;
+        li{
+            position: relative;
+            height: 2.5em;
+            @include flex-center;
+        }
+      
+        li:hover::after {
+            background: #1dbf73;
+            bottom: 0;
+            content: "";
+            height: 3px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
+
     }
 
-    &.color {
+
+    &.scrolled {
+
         position: sticky;
         top: 0;
         background-color: white;
@@ -53,7 +78,18 @@
             }
         }
         
+    }
+
+
+    &.noAbs .under-header{
+        position: relative;
+        position: inherit;
+
+        transform: rotateX(0deg);
+        background-color: #fff;
         
+        border-top: 1px solid lighten($clr-black,70%);
+        border-bottom: 1px solid lighten($clr-black,70%);
     }
 
     .logo img{
@@ -68,7 +104,7 @@
 
     .under-header{
         position: absolute;
-        top: 80px;
+        top: 73px;
         width: 100%;
 
         transform: rotateX(90deg);

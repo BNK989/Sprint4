@@ -1,0 +1,52 @@
+.video-section {
+    background-color: #f1fdf7;
+    min-height: 690px;
+    padding: 96px 0;
+    margin-block-end: 96px;
+    
+    .site-info {
+        margin: -.8em 0;
+    }
+
+    span{
+        margin: 0 .8em 0 0;
+    }
+
+    .side-text {
+        padding-inline-end: 30%;
+
+        *{
+            line-height: 30px;
+        }
+
+        h1 {
+            padding-bottom: 1em;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        h6{
+            font-weight: bold;
+        }
+
+        ul{
+            list-style: none;
+            li{
+                padding-bottom: .8em;
+
+                *{
+                    font-size: 1.125rem;
+                }
+
+                p{
+                    color: #62646a;
+                }
+            }
+        }
+    }
+    img {
+        object-fit: contain !important;
+    }
+    .category-svg {
+        min-height: 100%;
+    }
+}

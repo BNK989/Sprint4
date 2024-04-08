@@ -1,4 +1,4 @@
-import { Link, NavLink, useParams, useLocation } from 'react-router-dom'
+import { Link, NavLink, useParams, useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from "react"
 import routes from '../routes'
@@ -60,7 +60,7 @@ export function AppHeader() {
         <header className={
             `app-header full main-container
                 ${isHomepage ? "beAbs" : "noAbs"}
-                ${(isScrollNull && isHomepage) ? "transparent" : "color"}
+                ${(isScrollNull && isHomepage) ? "transparent" : "scrolled"}
                 ${isSearchVisible ? "search-visible" : ""}`
         }>
             <div className="header-container">
@@ -75,18 +75,18 @@ export function AppHeader() {
                 <NavBar signInModal={signInModal} />
             </div>
             <section className="under-header main-container full">
-                <ul className='flex clean-list'>
-                    <li>One</li>
-                    <li>Two</li>
-                    <li>Three</li>
-                    <li>Four</li>
-                    <li>Five</li>
-                    <li>Six</li>
-                    <li>Seven</li>
-                    <li>Eight</li>
-                    <li>Nine</li>
-                    <li>Ten</li>
-                </ul>
+                    <ul className='flex clean-list'>
+                        <li><Link to="/explore">Graphics & Design</Link></li>
+                        <li><Link to="/explore">Programming & Tech</Link></li>
+                        <li><Link to="/explore">Digital Marketing</Link></li>
+                        <li><Link to="/explore">Video & Animation</Link></li>
+                        <li><Link to="/explore">Writing & Translation</Link></li>
+                        <li><Link to="/explore">Music & Audio</Link></li>
+                        <li><Link to="/explore">Business</Link></li>
+                        <li><Link to="/explore">Consulting</Link></li>
+                        <li><Link to="/explore">Data</Link></li>
+                        <li><Link to="/explore">AI Services</Link></li>
+                    </ul>
             </section>
             {
                 isModalOpen && <LoginSignup

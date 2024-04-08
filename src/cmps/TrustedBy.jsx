@@ -1,7 +1,7 @@
 export function TrustedBy(){
 
     return (
-        <section className="trusted-by bg-[#f6f9e5]">
+        <section className="trusted-by bg-[#f6f9e5] mb-6">
             <ul className="flex-center clean-list justify-center gap-3">
                 <li className="flex-center text-gray-400 text-sm">Trusted by</li>
                 <li><img src="https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793766/gigs/fdbg9kvjrydeqaere8sn.png" alt="facebook logo" /></li>

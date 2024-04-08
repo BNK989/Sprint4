@@ -32,3 +32,11 @@
 .fa-reg{
     font-family: 'fa-regular';
 }
+
+.chevron-right::after{
+    content: '\f054';
+}
+
+.chevron-left::after{
+    content: '\f053';
+}
