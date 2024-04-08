@@ -1,41 +1,70 @@
-// import React from 'react';
-
-// // Sample data for the table
-// const tableData = [
-//   { avatar: 'path/to/avatar1.png', name: 'John Doe', task: 'Task 1', date: '2021-07-17', price: '$10', status: 'Approved' },
-//   // ... other rows
-// ];
-
-// const Table = () => (
-//   <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-//     <thead>
-//       <tr>
-//         <th>Avatar</th>
-//         <th>Name</th>
-//         <th>Task</th>
-//         <th>Submission Date</th>
-//         <th>Price</th>
-//         <th>Status</th>
-//       </tr>
-//     </thead>
-//     <tbody>
-//       {tableData.map((item, index) => (
-//         <tr key={index}>
-//           <td><img src={item.avatar} alt="Avatar" style={{ borderRadius: '50%' }} /></td>
-//           <td>{item.name}</td>
-//           <td>{item.task}</td>
-//           <td>{item.date}</td>
-//           <td>{item.price}</td>
-//           <td>{item.status}</td>
-//         </tr>
-//       ))}
-//     </tbody>
-//   </table>
-// );
-
-// export default Table;
+import { loadOrders, updateOrder } from "@/store/actions/order.actions"
+import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 
 
-export function ManageSentOrders(){
+export function ManageSentOrders({ user }) {
+    const [isActionModalOpen, setActionModal] = useState(false)
 
+    const orders = useSelector(storeState => storeState.orderModule.orders)
+
+    useEffect(() => {
+        loadOrders()
+
+    }, [])
+
+    // function onActionBtn(value,idx){
+    //     let orderToUpdate = orders[idx]
+    //     orderToUpdate.status = value
+    //     updateOrder(orderToUpdate)
+    //     setActionModal(!isActionModalOpen)
+    // }
+
+
+    return (<>
+        <h1>hay</h1>
+
+        {
+            orders.length  &&
+            <table >
+                <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Name</th>
+                        <th>Task</th>
+                        <th>Submission Date</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {orders.map((order, index) => (
+                        <tr key={index}>
+                            <td><img src={order.buyer.imgUrl} alt="Avatar"  /></td>
+                            <td>{order.buyer.fullname}</td>
+                            <td>{order.gig.title}</td>
+                            <td>{order.createdAt}</td>
+                            <td>${order.gig.price}</td>
+                            <td>{order.status}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        }
+    </>
+
+    )
 }
+
+
+// {
+//     buyer: buyer._id,
+//     seller: seller._id,
+//     gig: {
+//         _id: gigToOrder._id,
+//         title: gigToOrder.title,
+//         imgUrl: gigToOrder.imgUrls,
+//         price: gigToOrder.price
+//     },
+//     status: "pending"
+// }

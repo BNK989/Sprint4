@@ -33,8 +33,8 @@ async function addOrder(gigId) {
     const seller = await userService.getById(gigToOrder.owner._id)
 
     let orderToAdd = {
-        buyer: buyer._id,
-        seller: seller._id,
+        buyer:{fullname:buyer.fullname,imgUrl:buyer.imgUrl,_id:buyer._id},
+        seller: {fullname:seller.fullname,imgUrl:seller.imgUrl,_id:seller._id},
         gig: {
             _id: gigToOrder._id,
             title: gigToOrder.title,
@@ -53,6 +53,17 @@ async function addOrder(gigId) {
     return order
 }
 
+async function acceptRejectOrder(orderToUpdate){
+    const buyer = await userService.getLoggedinUser()
+    const seller = await userService.getById(orderToUpdate.seller._id)
+    buyer.orders.sentOrders.forEach(order => {
+        if(orderToUpdate._id === order._id) order.status =orderToUpdate.status
+    })
+    seller.orders.receivedOrders.unshift(orderToAdd)
+    await userService.update(buyer)
+    await userService.update(seller)
+}
+
 function getById(orderId) {
     return storageService.get(STORAGE_KEY, orderId)
 }
@@ -60,7 +71,7 @@ function getById(orderId) {
 async function editOrder(order) {
     var savedOrder
     savedOrder = await storageService.put(STORAGE_KEY, order)
-    return savedGig
+    return savedOrder
 }
 
 async function remove(orderId) {

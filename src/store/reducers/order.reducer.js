@@ -24,7 +24,7 @@ export function orderReducer(state = initialState, action) {
         case UPDATE_ORDER:
             return {
                 ...state,
-                orders: state.orders.map(order => order._id === action.order._id ? action.order : order)
+                orders: state.orders.map(order => order._id === action.editOrder._id ? action.editOrder : order)
             }
 
         case REMOVE_ORDER:

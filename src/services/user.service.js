@@ -41,9 +41,9 @@ function remove(userId) {
 }
 
 async function update(user) {
-    const oldUser = await storageService.get('user', user._id)
+//     const oldUser = await storageService.get('user', user._id)
    
-const updatedUser = {...oldUser,...user}
+// const updatedUser = {...oldUser,...user}
 
     await storageService.put('user', user)
 
@@ -113,8 +113,8 @@ function getLoggedinUser() {
 
 ;(async ()=>{
     // await storageService.post('user', {_id:'u101', fullname: 'admin', username: 'meni', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"})
-    await userService.signup(usersDemo[0])
     await userService.signup(usersDemo[1])
+    await userService.signup(usersDemo[0])
 })()
 
 

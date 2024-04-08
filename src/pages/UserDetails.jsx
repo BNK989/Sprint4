@@ -6,6 +6,7 @@ import { gigService } from '../services/gig.service.local'
 import { loadOwnGigs } from '../store/actions/gig.actions'
 import { OwnedGigPreview } from '../cmps/OwnedGigPreview'
 import { ManageReceivedOrders } from '@/cmps/ManageReceivedOrders'
+import { ManageSentOrders } from '@/cmps/ManageSentOrders'
 
 
 
@@ -19,7 +20,7 @@ export function UserDetails() {
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.user)
   const ownedGigs = useSelector(storeState => storeState.gigModule.ownedGigs)
-  
+
   useEffect(() => {
     loadUser(params.userId)
     loadOwnGigs(params.userId)
@@ -44,7 +45,7 @@ export function UserDetails() {
         <section className="user-details-seller">
           <img src={user.imgUrl} style={{ width: '100px' }} />
           <h3>{user.fullname}</h3>
-          
+
           {/* <i className="fa location"></i> */}
           <p><span className="fa location"></span> Country:</p>
         </section>
@@ -77,8 +78,12 @@ export function UserDetails() {
       </ul>
     }
     {
-      user && <ManageReceivedOrders user={user}/>
-      // user && <ManageSentOrders user={user}/>
+      user && <section className='manege-order-container'>
+        <ManageReceivedOrders user={user} />
+        <ManageSentOrders user={user} />
+      </section>
+
+
     }
   </section>
 
