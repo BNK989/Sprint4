@@ -1,12 +1,17 @@
 import { gigService } from "@/services/gig.service.local"
+import { addOrder } from "@/store/actions/order.actions"
+
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 import { useParams } from "react-router"
+
 
 
 
 export function Payment() {
     const { gigId } = useParams()
     const [gig, setGig] = useState(null)
+    const user = useSelector(storeState => storeState.userModule.user)
 
 
     useEffect(() => {
@@ -22,6 +27,15 @@ export function Payment() {
             console.log('Had issues in gig details', err)
             showErrorMsg('Cannot load gig')
             navigate('/explore')
+        }
+    }
+
+    async function onConfirm(){
+        try{
+           const order = await addOrder(gigId)
+           console.log(order);
+        }catch{
+
         }
     }
 
@@ -123,7 +137,7 @@ export function Payment() {
                     </div>
 
                     <section className="pay">
-                        <button className="confirm-btn">Confirm & Pay</button>
+                        <button className="confirm-btn" onClick={onConfirm}>Confirm & Pay</button>
                         <span>SLL Secure Payment</span>
                         <span>you will be charged {gig.price + 5 + 7}$ total amount</span>
                     </section>

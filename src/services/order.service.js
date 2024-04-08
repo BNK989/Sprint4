@@ -1,4 +1,6 @@
 import { storageService } from "./async-storage.service"
+import { gigService } from "./gig.service.local"
+
 import { userService } from './user.service.js'
 
 
@@ -26,10 +28,13 @@ async function query(filterBy = { buyerOrder: '', sellerOrder: '' }) {
 }
 
 async function addOrder(gigId) {
-    const gigToOrder = await storageService.get(STORAGE_KEY, gigId)
+    const gigToOrder = await gigService.getById(gigId)
+    const buyer = await userService.getLoggedinUser()
+    const seller = await userService.getById(gigToOrder.owner._id)
+
     let orderToAdd = {
-        buyer: await userService.getLoggedinUser()._id,
-        seller: await userService.getById(gigToOrder.owner._id),
+        buyer: buyer._id,
+        seller: seller._id,
         gig: {
             _id: gigToOrder._id,
             title: gigToOrder.title,
@@ -38,6 +43,11 @@ async function addOrder(gigId) {
         },
         status: "pending"
     }
+    buyer.orders.sentOrders.unshift(orderToAdd)
+    seller.orders.receivedOrders.unshift(orderToAdd)
+    await userService.update(buyer)
+    await userService.update(seller)
+
     var order = await storageService.post(STORAGE_KEY, orderToAdd)
     return order
 }
