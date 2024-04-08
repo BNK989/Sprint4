@@ -8,7 +8,8 @@ export function Hero(){
     const navigate = useNavigate()
     function handleClick(term){
         //setGigFilter({title: term.sug})
-        navigate('/explore/?q=' + term.sug)
+        // navigate('/explore/?q=' + term.sug)
+        navigate('/explore/?cat=' + term.sug)
     }
 
     let intervalID = useRef()

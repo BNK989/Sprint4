@@ -7,12 +7,15 @@ import { LoginSignup } from './LoginSignup.jsx'
 import { NavBar } from './Navbar.jsx'
 import { SearchBox } from './SearchBox.jsx'
 import { login, logout, signup } from '../store/actions/user.actions.js'
+import { gigService } from '../services/gig.service.local'
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
     const [isLogInSelect, setLogInSelect] = useState(false)
     const [isModalOpen, setModalOpen] = useState(false)
     const [isScrollNull, setIsScrollNull] = useState(true)
     const [isSearchVisible, setIsSearchVisible] = useState(false)
+    const [categories, setCategories] = useState([])
+
     const location = useLocation()
     const isHomepage = location.pathname === '/'
     const handleScroll = () => {
@@ -20,11 +23,22 @@ export function AppHeader() {
         window.scrollY > 80 ? setIsSearchVisible(true) : setIsSearchVisible(false)
     }
     useEffect(() => {
+        getCategories()
         if (isHomepage) {
             window.addEventListener("scroll", handleScroll)
             return () => window.removeEventListener("scroll", handleScroll)
         }
     }, [location])
+
+    async function getCategories() {
+        try {
+            const c = await gigService.allCategories()
+            setCategories(c)
+        } catch (err) {
+            showErrorMsg('Cannot get categories')
+        }
+
+    }
     async function onLogin(credentials) {
         try {
             setModalOpen(false)
@@ -76,7 +90,8 @@ export function AppHeader() {
             </div>
             <section className="under-header main-container full">
                     <ul className='flex clean-list'>
-                        <li><Link to="/explore">Graphics & Design</Link></li>
+                        {categories?.map(cat => <li className='capitalize' key={cat}><Link to={`/explore/?cat=${cat}`}>{cat}</Link></li>)}
+                        {/* <li><Link to="/explore">Graphics & Design</Link></li>
                         <li><Link to="/explore">Programming & Tech</Link></li>
                         <li><Link to="/explore">Digital Marketing</Link></li>
                         <li><Link to="/explore">Video & Animation</Link></li>
@@ -85,7 +100,7 @@ export function AppHeader() {
                         <li><Link to="/explore">Business</Link></li>
                         <li><Link to="/explore">Consulting</Link></li>
                         <li><Link to="/explore">Data</Link></li>
-                        <li><Link to="/explore">AI Services</Link></li>
+                        <li><Link to="/explore">AI Services</Link></li> */}
                     </ul>
             </section>
             {

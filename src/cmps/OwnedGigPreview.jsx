@@ -2,7 +2,7 @@
 
 
 export function OwnedGigPreview({ ownedGig }) {
-    console.log(ownedGig);
+    // console.log(ownedGig);
 
     return (
     <>
