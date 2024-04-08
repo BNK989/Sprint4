@@ -28,36 +28,44 @@ async function query(filterBy = { buyerOrder: '', sellerOrder: '' }) {
 }
 
 async function addOrder(gigId) {
-    const gigToOrder = await gigService.getById(gigId)
-    const buyer = await userService.getLoggedinUser()
-    const seller = await userService.getById(gigToOrder.owner._id)
+    try {
+        const gigToOrder = await gigService.getById(gigId)
+        const buyer = await userService.getLoggedinUser()
+       let users = await userService.getUsers()
+        let seller = users.find(user => user._id === gigToOrder.owner._id)
+        if(seller !== gigToOrder.owner._id){
+            seller={
+                fullname:'jaon do',
+                imgUrl:'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
+                _id:'someID'
+            }
+        }
+        let orderToAdd = {
+            buyer: { fullname: buyer.fullname, imgUrl: buyer.imgUrl, _id: buyer._id },
+            seller: { fullname: seller.fullname, imgUrl: seller.imgUrl, _id: seller._id },
+            gig: {
+                _id: gigToOrder._id,
+                title: gigToOrder.title,
+                imgUrl: gigToOrder.imgUrls,
+                price: gigToOrder.price
+            },
+            status: "pending",
+            createdAt: new Date(),
+        }
 
-    let orderToAdd = {
-        buyer:{fullname:buyer.fullname,imgUrl:buyer.imgUrl,_id:buyer._id},
-        seller: {fullname:seller.fullname,imgUrl:seller.imgUrl,_id:seller._id},
-        gig: {
-            _id: gigToOrder._id,
-            title: gigToOrder.title,
-            imgUrl: gigToOrder.imgUrls,
-            price: gigToOrder.price
-        },
-        status: "pending",
-        createdAt: new Date(),
+        var order = await storageService.post(STORAGE_KEY, orderToAdd)
+        return order
+    } catch (err) {
+        console.log('canot add order:', err)
     }
-    buyer.orders.sentOrders.unshift(orderToAdd)
-    seller.orders.receivedOrders.unshift(orderToAdd)
-    await userService.update(buyer)
-    await userService.update(seller)
 
-    var order = await storageService.post(STORAGE_KEY, orderToAdd)
-    return order
 }
 
-async function acceptRejectOrder(orderToUpdate){
+async function acceptRejectOrder(orderToUpdate) {
     const buyer = await userService.getLoggedinUser()
     const seller = await userService.getById(orderToUpdate.seller._id)
     buyer.orders.sentOrders.forEach(order => {
-        if(orderToUpdate._id === order._id) order.status =orderToUpdate.status
+        if (orderToUpdate._id === order._id) order.status = orderToUpdate.status
     })
     seller.orders.receivedOrders.unshift(orderToAdd)
     await userService.update(buyer)

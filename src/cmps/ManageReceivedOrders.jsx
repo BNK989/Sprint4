@@ -1,6 +1,7 @@
 import { loadOrders, updateOrder } from "@/store/actions/order.actions"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
+import { ReceivedOrdersPreview } from "./ReceivedOrdersPreview"
 
 
 export function ManageReceivedOrders({ user }) {
@@ -22,8 +23,6 @@ export function ManageReceivedOrders({ user }) {
 
 
     return (<>
-        <h1>hay</h1>
-
         {
             orders.length  &&
             <table >
@@ -39,19 +38,11 @@ export function ManageReceivedOrders({ user }) {
                 </thead>
                 <tbody>
                     {orders.map((order, index) => (
-                        <tr key={index}>
-                            <td><img src={order.buyer.imgUrl} alt="Avatar"  /></td>
-                            <td>{order.buyer.fullname}</td>
-                            <td>{order.gig.title}</td>
-                            <td>{order.createdAt}</td>
-                            <td>${order.gig.price}</td>
-                            <td key={order._id}  onClick={() => setActionModal(!isActionModalOpen)}><button>{order.status}</button></td>
-                            {
-                                isActionModalOpen && <td>
-                                    <button onClick={()=>onActionBtn("Accepted",index)}>Accept</button>
-                                    <button onClick={()=>onActionBtn("Rejected",index)}>Reject</button>
-                                </td>
-                            }
+                         <tr key={index}>
+                            <ReceivedOrdersPreview 
+                            order={order} index={index} onActionBtn={onActionBtn}
+                            isActionModalOpen={isActionModalOpen} setActionModal={setActionModal}
+                             />
                         </tr>
                     ))}
                 </tbody>

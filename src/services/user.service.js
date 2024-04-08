@@ -28,11 +28,15 @@ function getUsers() {
 
 
 async function getById(userId) {
+    try {
+        console.log('userId:',userId )
+        const user = await storageService.get('user', userId)
 
-    const user = await storageService.get('user', userId)
-   
-    // const user = await httpService.get(`user/${userId}`)
-    return user
+        // const user = await httpService.get(`user/${userId}`)
+        return user
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 function remove(userId) {
@@ -41,9 +45,9 @@ function remove(userId) {
 }
 
 async function update(user) {
-//     const oldUser = await storageService.get('user', user._id)
-   
-// const updatedUser = {...oldUser,...user}
+    //     const oldUser = await storageService.get('user', user._id)
+
+    // const updatedUser = {...oldUser,...user}
 
     await storageService.put('user', user)
 
@@ -64,9 +68,9 @@ async function login(userCred) {
 async function signup(userCred) {
     const users = await storageService.query('user')
     const existUser = users.find(user => user.username === userCred.username)
-    if(existUser) return
+    if (existUser) return
     if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-    if(userCred._id){
+    if (userCred._id) {
         const user = await storageService.post('user', userCred)
         return saveLocalUser(user)
     }
@@ -100,8 +104,8 @@ async function logout() {
 //   }
 
 function saveLocalUser(user) {
-    
-    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, level: user.level,orders:user.orders }
+
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, level: user.level, orders: user.orders }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -111,7 +115,7 @@ function getLoggedinUser() {
 }
 
 
-;(async ()=>{
+; (async () => {
     // await storageService.post('user', {_id:'u101', fullname: 'admin', username: 'meni', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"})
     await userService.signup(usersDemo[1])
     await userService.signup(usersDemo[0])

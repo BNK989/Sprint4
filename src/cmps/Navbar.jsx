@@ -57,7 +57,7 @@ export function NavBar({ signInModal }) {
                     {
                         isUserModalOpen &&
                         <section className="user-menu-options" ref={menuRef}>
-                            <Link className='link-profile' onClick={()=>setUserModalOpen(false)} to={`user/:${user._id}`}>Profile</Link>
+                            <Link className='link-profile' onClick={()=>setUserModalOpen(false)} to={`user/${user._id}`}>Profile</Link>
                             {/* <div onClick={onProfile}>Profile</div> */}
                         </section>
                     }

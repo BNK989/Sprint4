@@ -1,3 +1,4 @@
+import { showErrorMsg } from "@/services/event-bus.service"
 import { gigService } from "@/services/gig.service.local"
 import { addOrder } from "@/store/actions/order.actions"
 
@@ -21,10 +22,8 @@ export function Payment() {
     async function loadGig() {
         try {
             const gig = await gigService.getById(gigId)
-            console.log('gig:', gig)
             setGig(gig)
         } catch (err) {
-            console.log('Had issues in gig details', err)
             showErrorMsg('Cannot load gig')
             navigate('/explore')
         }
@@ -33,7 +32,6 @@ export function Payment() {
     async function onConfirm(){
         try{
             const order = await addOrder(gigId)
-            console.log(order);
             navigate('/')
         }catch(err){
             showErrorMsg('Cannot confirm order')
