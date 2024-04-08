@@ -22,10 +22,10 @@ export function ManageSentOrders({ user }) {
 
 
     return (<>
-        <h1>hay</h1>
+        {/* <h1>hay</h1> */}
 
         {
-            orders.length  &&
+            !!orders.length  &&
             <table >
                 <thead>
                     <tr>

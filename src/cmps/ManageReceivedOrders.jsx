@@ -24,7 +24,7 @@ export function ManageReceivedOrders({ user }) {
 
     return (<>
         {
-            orders.length  &&
+            !!orders.length  &&
             <table >
                 <thead>
                     <tr>
