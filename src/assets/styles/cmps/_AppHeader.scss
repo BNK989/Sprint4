@@ -36,6 +36,10 @@
             // flex-grow: 1;
             width: 40rem;
         }
+
+        li.join-btn button{
+            border-color: white;
+        }
     }
 
     &.search-visible .under-header{

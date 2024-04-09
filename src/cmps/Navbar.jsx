@@ -63,7 +63,7 @@ export function NavBar({ signInModal }) {
                     }
                 </li>}
                 {!user && <li className="sign-in-nav" onClick={() => signInModal(false)}>Sign in</li>}
-                {!user && <li onClick={() => signInModal(true)}><Button variant="outline" className='font-bold bg-inherit h-6 p-[1.2em] rounded text-green1 border-green1 border border-solid'>Join</Button></li>}
+                {!user && <li className='join-btn' onClick={() => signInModal(true)}><Button variant="outline" className='font-bold bg-inherit h-6 p-[1.2em] rounded text-green1 border-green1 border border-solid hover:bg-[#19a463] hover:text-white'>Join</Button></li>}
 
             </ul>
         </nav>
