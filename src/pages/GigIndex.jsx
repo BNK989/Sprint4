@@ -8,6 +8,7 @@ import { gigService } from '../services/gig.service.js'
 import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
 import { GigFilter } from '../cmps/GigFilter.jsx'
 import { GigList } from '../cmps/GigList.jsx'
+import { LoadingIndex } from '@/cmps/LodingIndex.jsx'
 
 export function GigIndex() {
 
@@ -39,7 +40,7 @@ export function GigIndex() {
         setGigFilter(filterBy)
     }
 
-    if (!gigs.length) return <h1>loading</h1>
+    // if (!gigs.length) return <LoadingIndex/>
     // <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
     return (<>
         <div className='gig-index'>
@@ -55,7 +56,8 @@ export function GigIndex() {
             </section>
 
             <main className='gig-list-main-container'>
-                <GigList gigs={gigs} />
+                {(gigs.length === 0) ? <LoadingIndex/>: <GigList gigs={gigs} /> }
+                
             </main>
         </div>
     </>
