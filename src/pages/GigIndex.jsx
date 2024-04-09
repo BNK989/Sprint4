@@ -44,7 +44,7 @@ export function GigIndex() {
     // <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
     return (<>
         <div className='gig-index'>
-            <h3 className='gigs-title'>Gigs category</h3>
+            <h3 className='gigs-title'>{filterBy.category ? filterBy.category.replace(/-/g, '&') : 'Explore All'}</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos, nostrum ratione dicta doloribus ipsa!</p>
             <div className='line'></div>
             <GigFilter filterBy={filterBy} onSetFilter={onSetFilter} />

@@ -33,7 +33,7 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
         console.log('gigs:', gigs)
     }
     if (filterBy.category) {
-        const regex = new RegExp(filterBy.category, 'i')
+        const regex = new RegExp(filterBy.category.replace(/-/g, '&'), 'i')
         gigs = gigs.filter(gig => regex.test(gig.category))
         console.log('gigs:', gigs)
     }
