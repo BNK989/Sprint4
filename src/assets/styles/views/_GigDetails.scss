@@ -180,15 +180,55 @@
 
         .more-details {
             margin-top: 1em;
-            border: 1px solid $clrbtn-hover;
+            border: 1px solid $clrbtn---hover;
+            width: 86.5%;
+
+            .line {
+                margin: 0;
+                width: 93.2%;
+                align-self: center;
+                margin-left: 1.3em;
+                // color: red;
+                // background-color: red;
+                // padding-left: 1em;
+            }
+
+            // .user-stats:not(:last-child){
+
+            // }
 
             .user-stats {
+                margin: 1.4em;
+                margin-bottom: 0.5em;
+                font-size: 0.9em;
                 display: grid;
-                grid-template-areas:
-                "1 2"
-                "2 4"
-                "5 ."
-                ;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+
+                .main {
+                    display: flex;
+                    flex-flow: column;
+                    margin-bottom: 0.5em;
+
+                    span {
+                        font-weight: bold;
+                        // font-size: 0.9em;
+                    }
+                }
+
+
+            }
+
+            .summery {
+                line-height: 1.5em;
+                font-size: 0.9em;
+                margin-left: 1.4em;
+                margin-top: 0.7em;
+                margin-bottom: 1.5em;
+                display: flex;
+                flex-flow:column ;
+                gap: 1.5em;
+
             }
         }
     }

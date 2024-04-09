@@ -161,18 +161,17 @@ export function GigDetails() {
 
                     <section className="more-details">
                         <div className="user-stats">
-                            <span className="main">From <span>Israel</span></span>
-                            <span className="main">Avg. response time <span>1 hour</span></span>
-                            <span className="main">Languages<span>English, French, Hebrew</span></span>
-                            <span className="main">Member since<span></span>May 2023</span>
-                            <span className="main">Last delivery<span></span>about 15 minutes</span>
+                            <span className="main from">From <span>Israel</span></span>
+                            <span className="main since">Member since<span></span>May 2023</span>
+                            <span className="main avg">Avg. response time <span>1 hour</span></span>
+                            <span className="main delivery">Last delivery<span>about 15 minutes</span></span>
+                            <span className="main languages">Languages<span>English, French, Hebrew</span></span>
                         </div>
                         <div className="line"></div>
                         <div className="summery">
-                            <span>A creative person who loves to provide one-stop solutions for brand identity
-                                designs for startup companies, individuals, and even leading brands around the
-                                world. I am passionate about simple, modern, and luxury designs.</span>
-                            <span>Please check out more than 5.000 reviews from happy clients around the world.</span>
+                            <span>Hey... i am {gig.owner.fullname}, A freelance graphics and logo designer, working with a well reputed organization for the past 6 years.</span>
+                            <span>I have around 2k satisfied customers World wide. I'll help you to take your business to the next level. Contact me for more info.</span>
+                            <span>Simply click my name to open my profile and gig portfolio :)</span>
                         </div>
                     </section>
 
