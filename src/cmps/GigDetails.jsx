@@ -10,6 +10,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import { ReviewsStats } from "./ReviewsStats"
+import { BreadcrumbWithCustomSeparator } from "./BreadcrumbWithCustomSeparator"
 
 
 export function GigDetails() {
@@ -62,8 +63,10 @@ export function GigDetails() {
     return (
         <section className="main-details-container">
 
-
             <section className="gig-details">
+            <div className="breadcrumb-container">
+                <BreadcrumbWithCustomSeparator/>
+            </div>
                 <h1 className="gig-title">{gig.title}</h1>
 
                 <div className="gig-user">
