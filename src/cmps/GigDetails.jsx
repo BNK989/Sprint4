@@ -17,7 +17,7 @@ export function GigDetails() {
     const { gigId } = useParams()
     const navigate = useNavigate()
     const [gig, setGig] = useState(null)
-    
+
 
     console.log('gigId:', gigId)
 
@@ -47,16 +47,16 @@ export function GigDetails() {
         return stars
     }
 
-    function stateStats(){
-       const totalReviews = gig.reviews.length
-       const fiveStars = gig.reviews.filter(review => review.rate === 5).length
-       const fourStars = gig.reviews.filter(review => review.rate === 4).length
-       const threeStars = gig.reviews.filter(review => review.rate === 3).length
-       const twoStars = gig.reviews.filter(review => review.rate === 2).length
-       const oneStar = gig.reviews.filter(review => review.rate === 1).length
+    function stateStats() {
+        const totalReviews = gig.reviews.length
+        const fiveStars = gig.reviews.filter(review => review.rate === 5).length
+        const fourStars = gig.reviews.filter(review => review.rate === 4).length
+        const threeStars = gig.reviews.filter(review => review.rate === 3).length
+        const twoStars = gig.reviews.filter(review => review.rate === 2).length
+        const oneStar = gig.reviews.filter(review => review.rate === 1).length
 
-       return { totalReviews, fiveStars, fourStars, threeStars, twoStars, oneStar }
-        
+        return { totalReviews, fiveStars, fourStars, threeStars, twoStars, oneStar }
+
     }
 
     if (!gig) return <h1>Loading</h1>
@@ -105,12 +105,34 @@ export function GigDetails() {
                 <section className="about-this-gig">
                     <p>About this gig</p>
                     {/* <span>{gig.description}</span> */}
-                    Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit.
-                    Consequuntur enim, officia soluta accusantium quaerat
-                    minima cum corporis consectetur vero odit, et
-                    delectus ipsa recusandae
-                    provident dolor maxime eius. Ipsa, saepe.
+                    <span>
+                    Hey I'll design a modern, creative and professional 3d logo for your business I assure high quality and aesthetic guidelines for your logo design. You will get an excellent service at affordable price.
+
+                    I have vast graphics designing experience.  i have 2K+ satisfied customers worldwide.
+
+                    As a creative artist i understand the importance of a modern 3d logo, It reflects an advanced outlook of the company.
+
+                    If you are interested in getting my services kindly send a message first with your logo requirements, We will discuss about it and then an order will be placed for it. After this i will take the initial requirements and will design Mockups(concepts) for my client and will show them.
+                    <span>
+                    Get in touch with me today for getting my service.
+                    Why me? Because you will get:
+                    1-Modern Professional 3d logo Design
+                    2-Affordable rates
+                    3-Unlimited revisions
+                    4-Attractive 3D Mockups
+                    5-100% Creativity
+                    6-100% MONEY BACK Guarantee (if you didn't like my logos)
+                    </span>
+                    Note:
+                    Files according to gig package will be inboxed on order completion for 1 final Design.
+                    I don't do complex mascot designs, pornography and vine logos.
+
+
+                    Thanks for taking the time to view my profile!
+
+
+                    </span>
+                    
 
                 </section>
             </section>
@@ -167,7 +189,7 @@ export function GigDetails() {
             <section className="order-reviews-container">
                 <div className="title">Reviews</div>
 
-<ReviewsStats stateStats={stateStats()}/>
+                <ReviewsStats stateStats={stateStats()} />
 
                 <ul>
                     {gig.reviews.map((review, idx) => (
