@@ -26,10 +26,10 @@
 }
 
 
-.fa{
+.fa::after{
     font-family: 'fa-solid';
 }
-.fa-reg{
+.fa-reg::after{
     font-family: 'fa-reg';
 }
 
@@ -39,4 +39,16 @@
 
 .chevron-left::after{
     content: '\f053';
+}
+
+.chevron-down::after{
+    content: '\f078';
+    position: absolute;
+    right: -.6em;
+    bottom: .2em;
+    transition: transform .2s ease;
+}
+
+[data-state="open"].chevron-down::after{
+    transform: rotate(180deg);
 }

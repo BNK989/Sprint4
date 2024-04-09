@@ -22,7 +22,7 @@ export function JoinPoster() {
             <div className="signup-text">
                 <h2 className="title">Freelance services at your <i>fingertips!</i></h2>
                 <a onClick={onOpenModal} className=" btn-signup clean-link">
-                    Join Fiverr
+                    Join 5err
                 </a>
             </div>
             {/* <LoginSignup

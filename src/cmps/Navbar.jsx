@@ -39,9 +39,9 @@ export function NavBar({ signInModal }) {
    
     return (
         <nav className="fiverr-nav">
-            <ul className='clean-list flex'>
+            <ul className='clean-list flex gap-6'>
                 <li className='explore cursor-pointer' ><DropdownMenu className='cursor-pointer'>
-                    <DropdownMenuTrigger>Explore</DropdownMenuTrigger>
+                    <DropdownMenuTrigger className='fa chevron-down relative'>Explore</DropdownMenuTrigger>
                     <DropdownMenuContent>
                         {exploreMenu.map(menu =>
                             <DropdownMenuItem key={menu.label} onClick={() => console.log(123)} >
@@ -63,7 +63,7 @@ export function NavBar({ signInModal }) {
                     }
                 </li>}
                 {!user && <li className="sign-in-nav" onClick={() => signInModal(false)}>Sign in</li>}
-                {!user && <li onClick={() => signInModal(true)} className='shancn-btn'><Button variant="outline" className='bg-inherit'>Join</Button></li>}
+                {!user && <li className='join-btn' onClick={() => signInModal(true)}><Button variant="outline" className='font-bold bg-inherit h-6 p-[1.2em] rounded text-green1 border-green1 border border-solid hover:bg-[#19a463] hover:text-white'>Join</Button></li>}
 
             </ul>
         </nav>
