@@ -13,7 +13,7 @@ export function SearchBox({neverHide = false, inHeader = true}) {
     const [searchParams, setSearchParams] = useSearchParams()
     
     useEffect(() => {
-        console.log('searchParams:', searchParams)//.get('cat'))
+        
         if(neverHide) {
             setIsHidden(false)
             return

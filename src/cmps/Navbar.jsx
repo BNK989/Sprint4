@@ -36,10 +36,7 @@ export function NavBar({ signInModal }) {
 
     useEffect(() => {
         let handler = (e) => {
-            // console.log('orders:', orders[0].status)
             setPendingOrdersTotal(orders.reduce((acc, order) => order.status === 'pending' ? acc + 1 : acc, 0))
-            // console.log('pendingOrders:', pendingOrders)
-
             if (!menuRef.current === e.target) {
                 setUserModalOpen(false)
             }

@@ -3,7 +3,7 @@ export const gigsDemo = [
     "_id": "OXeMG8wNskc",
     "title": "I will create professional logo and stationery",
     "category": "Writing & Translation",
-    "price": 12,
+    "price": 50,
     "owner": {
       "_id": "FHc6T",
       "fullname": "Dudu Da",
@@ -80,7 +80,7 @@ export const gigsDemo = [
     "_id": "JYOJa2NpSCq",
     "title": "I will design retro vintage pinup girl logo in 24 hours",
     "category": "Music & Audio",
-    "price": 15,
+    "price": 115,
     "owner": {
       "_id": "FHc6T",
       "fullname": "Dudu Da",
@@ -154,7 +154,7 @@ export const gigsDemo = [
     "_id": "1y0Oqts35DQ",
     "title": "I will design heraldic and luxury vintage logo",
     "category": "Business",
-    "price": 30,
+    "price": 230,
     "owner": {
       "_id": "FHc6T",
       "fullname": "Dudu Da",
@@ -303,7 +303,7 @@ export const gigsDemo = [
     "_id": "JYOJa2NpSCq7",
     "title": "I will design custom business logo design and unique brand identity",
     "category": "Data",
-    "price": 15,
+    "price": 415,
     "owner": {
       "_id": "u101",
       "fullname": "Dudu Da",
@@ -377,7 +377,7 @@ export const gigsDemo = [
     "_id": "JYOJa2NpSCq5",
     "title": "I will create a minimal logo and a branding board",
     "category": "Arts And Crafts",
-    "price": 15,
+    "price": 123,
     "owner": {
       "_id": "u101",
       "fullname": "Dudu Da",
@@ -451,7 +451,7 @@ export const gigsDemo = [
     "_id": "JYOJa2NpSCq4",
     "title": "I will make a professional unique clean wordmark logo",
     "category": "Arts And Crafts",
-    "price": 15,
+    "price": 50,
     "owner": {
       "_id": "u101",
       "fullname": "Dudu Da",
@@ -525,7 +525,7 @@ export const gigsDemo = [
     "_id": "lks9a3nDL8sa",
     "title": "Design a stunning custom website banner",
     "category": "Programming & Tech",
-    "price": 35,
+    "price": 140,
     "owner": {
       "_id": "u205",
       "fullname": "Sara Lee",
@@ -595,7 +595,7 @@ export const gigsDemo = [
     "_id": "s98KLdfh872",
     "title": "Write captivating product descriptions",
     "category": "wordpress",
-    "price": 20,
+    "price": 200,
     "owner": {
       "_id": "u476",
       "fullname": "Emily Chang",
@@ -665,7 +665,7 @@ export const gigsDemo = [
     "_id": "L340Jnsdf76",
     "title": "Custom Illustration for your project",
     "category": "Graphics & Design",
-    "price": 30,
+    "price": 300,
     "owner": {
       "_id": "u623",
       "fullname": "Ravi Patel",
@@ -735,7 +735,7 @@ export const gigsDemo = [
     "_id": "87dfhSDLK23",
     "title": "Optimize your website for search engines (SEO)",
     "category": "Arts And Crafts",
-    "price": 50,
+    "price": 150,
     "owner": {
       "_id": "u885",
       "fullname": "Ahmed Ashraf",
@@ -857,7 +857,7 @@ export const gigsDemo = [
     "_id": "i103",
     "title": "Create a video script",
     "category": "Arts And Crafts",
-    "price": 30,
+    "price": 330,
     "owner": {
       "_id": "u887",
       "fullname": "Sharon Ben Zvi",
