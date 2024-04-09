@@ -48,7 +48,7 @@ export function LoginSignup(props) {
     function onUploaded(imgUrl) {
         setCredentials({ ...credentials, imgUrl })
     }
-    console.log('credentials:', credentials)
+ 
     return (
         <div className="login-page">
             <article className="login-ad-container">

@@ -21,7 +21,7 @@ window.cs = gigService
 _saveDemoData()
 
 async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGigsId) {
-    console.log(filterBy);
+   
     var gigs = await storageService.query(STORAGE_KEY)
     if (ownedGigsId) {
         let userId = userService.getLoggedinUser()._id
@@ -30,20 +30,20 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
-        console.log('gigs:', gigs)
+        
     }
     if (filterBy.category) {
         const regex = new RegExp(filterBy.category.replace(/-/g, '&'), 'i')
         gigs = gigs.filter(gig => regex.test(gig.category))
-        console.log('gigs:', gigs)
+        
     }
     if (filterBy.price) {
         if (filterBy.price === 100) {
-            console.log('price', filterBy.price);
+            
             gigs = gigs.filter(gig => gig.price <= filterBy.price)
         }
         else if (filterBy.price === 200) {
-            console.log('hay');
+            
             gigs = gigs.filter(gig => gig.price >= 100 && gig.price <= 200)
         } else {
             gigs = gigs.filter(gig => gig.price >= filterBy.price)
@@ -53,9 +53,9 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
     if (filterBy.daysToMake) {
         gigs = gigs.filter(gig => gig.daysToMake <= filterBy.daysToMake)
     }
-    console.log('gigs1:', gigs)
+    
     gigs = gigs.sort((gig1, gig2) => (gig1.owner.rate - gig2.owner.rate) * -1)
-    console.log('gigs2:', gigs)
+    
 
     return gigs
 }
@@ -74,7 +74,7 @@ async function save(gig) {
     if (gig._id) {
         savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
-        console.log('gig:', gig);
+       
         // Later, owner is set by the backend
         gig.owner = userService.getLoggedinUser()
         savedGig = await storageService.post(STORAGE_KEY, gig)
@@ -142,8 +142,8 @@ function _saveDemoData() {
 }
 
 
-// TEST DATA
-// storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
+
+
 
 
 async function allCategories(){
@@ -155,6 +155,6 @@ async function allCategories(){
         return accumulator
     }, [])
 }
-//allCategories().then(console.log)
+
 
 

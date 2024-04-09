@@ -26,7 +26,7 @@ export function getActionUpdateGig(gig) {
 }
 
 export async function loadGigs(filterBy) {
-    console.log('filterBy in:', filterBy)
+    
     try {
         const gigs = await gigService.query(filterBy)
         console.log('Gigs from DB:', gigs)
@@ -71,7 +71,6 @@ export async function removeGig(gigId) {
 export async function addGig(gig) {
     try {
         const savedGig = await gigService.save(gig)
-        console.log('Added Gig', savedGig)
         store.dispatch(getActionAddGig(savedGig))
         return savedGig
     } catch (err) {
@@ -83,7 +82,7 @@ export async function addGig(gig) {
 export function updateGig(gig) {
     return gigService.save(gig)
         .then(savedGig => {
-            console.log('Updated Gig:', savedGig)
+            
             store.dispatch(getActionUpdateGig(savedGig))
             return savedGig
         })
@@ -131,7 +130,7 @@ export function onRemoveGigOptimistic(gigId) {
 
     gigService.remove(gigId)
         .then(() => {
-            console.log('Server Reported - Deleted Succesfully');
+            
         })
         .catch(err => {
             showErrorMsg('Cannot remove gig')

@@ -19,7 +19,7 @@ export function GigDetails() {
     const [gig, setGig] = useState(null)
 
 
-    console.log('gigId:', gigId)
+  
 
     useEffect(() => {
         loadGig()

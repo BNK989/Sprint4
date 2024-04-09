@@ -32,7 +32,7 @@ export function HomePage() {
     // }, [])
 
     // function changeBG(){
-    //     console.log('imgIdx', imgIdx)
+    //     
     //     setImgIdx((prev) => prev >= bgImgs.length - 1 ? 0 : prev + 1)
     // }
 

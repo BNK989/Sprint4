@@ -19,7 +19,7 @@ export function GigFilter({ filterBy, onSetFilter }) {
 
     function handleChange(ev) {
         const currentParams = Object.fromEntries(searchParams)
-        console.log('hay');
+      
         // ev.preventDefault()
         let { value, name: field, type } = ev.target
         switch (field) {
