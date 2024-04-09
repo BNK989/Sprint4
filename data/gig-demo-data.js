@@ -222,6 +222,11 @@ export const gigsDemo =[
         },
         "daysToMake": 3,
         "description": "Make unique logo...",
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "avgResponseTime": 2,
         "loc": "Ghana",
         "imgUrls": ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/185625048/original/a285c0a494a99a882761387348e6a99f9a041758.jpg"],
@@ -285,6 +290,11 @@ export const gigsDemo =[
           "rate": 3
         },
         "daysToMake": 3,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Make unique logo...",
         "avgResponseTime": 2,
         "loc": "Ghana",
@@ -349,6 +359,11 @@ export const gigsDemo =[
           "rate": 2
         },
         "daysToMake": 3,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Make unique logo...",
         "avgResponseTime": 2,
         "loc": "Ghana",
@@ -413,6 +428,11 @@ export const gigsDemo =[
           "rate": 4
         },
         "daysToMake": 3,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Make unique logo...",
         "avgResponseTime": 2,
         "loc": "Ghana",
@@ -472,11 +492,16 @@ export const gigsDemo =[
         "owner": {
           "_id": "u205",
           "fullname": "Sara Lee",
-          "imgUrl": "https://cdn.pixabay.com/photo/2017/01/31/19/07/avatar-2026510_1280.png",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 2,
           "rate": 4.5
         },
         "daysToMake": 2,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Eye-catching banners for your social media or website...",
         "avgResponseTime": 1,
         "loc": "Brazil",
@@ -532,11 +557,16 @@ export const gigsDemo =[
         "owner": {
           "_id": "u476",
           "fullname": "Emily Chang",
-          "imgUrl": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 1,
           "rate": 5
         },
         "daysToMake": 1,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Make your products shine with persuasive copy...",
         "avgResponseTime": 3, 
         "loc": "USA",
@@ -592,11 +622,16 @@ export const gigsDemo =[
         "owner": {
           "_id": "u623",
           "fullname": "Ravi Patel",
-          "imgUrl": "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_1280.png",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 2,
           "rate": 4
         },
         "daysToMake": 4,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Unique illustrations to bring your ideas to life...",
         "avgResponseTime": 2, 
         "loc": "India",
@@ -652,11 +687,16 @@ export const gigsDemo =[
         "owner": {
           "_id": "u885",
           "fullname": "Ahmed Ashraf",
-          "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 3,
           "rate": 4.8
         },
         "daysToMake": 5,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Boost your website's ranking and visibility...",
         "avgResponseTime": 1,
         "loc": "Egypt",
@@ -712,11 +752,16 @@ export const gigsDemo =[
         "owner": {
           "_id": "u886",
           "fullname": "Yaron Bar",
-          "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 3,
           "rate": 4.9
         },
         "daysToMake": 5,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Recommend a student or employee for a position or award...",
         "avgResponseTime": 1,
         "loc": "Israel",
@@ -731,7 +776,7 @@ export const gigsDemo =[
             "by": {
               "_id": "u103",
               "fullname": "Yonatan Biton",
-              "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
             }
           },
           {
@@ -754,11 +799,16 @@ export const gigsDemo =[
         "owner": {
           "_id": "u887",
           "fullname": "Sharon Ben Zvi",
-          "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
           "level": 4,
           "rate": 4.7
         },
         "daysToMake": 8,
+        "whatIncluded":{
+          "ConceptIncluded": true,
+          "IncludeSourceFile": false,
+          "StationeryDesigns":true
+        },
         "description": "Script a video for your brand, campaign or video content...",
         "avgResponseTime": 2,
         "loc": "Tel Aviv, Israel",
@@ -773,7 +823,7 @@ export const gigsDemo =[
             "by": {
               "_id": "u103",
               "fullname": "Yonatan Biton",
-              "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
             }
           },
           {
@@ -783,7 +833,7 @@ export const gigsDemo =[
             "by": {
               "_id": "u102",
               "fullname": "Shai Shmuel",
-              "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
             }
           },
           {
@@ -793,7 +843,7 @@ export const gigsDemo =[
             "by": {
               "_id": "u105",
               "fullname": "Yaron Gross",
-              "imgUrl": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+              "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
             }
           }
         ]
