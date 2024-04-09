@@ -16,6 +16,7 @@ import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
+    DropdownMenuGroup,
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
@@ -26,7 +27,6 @@ import { utilService as util } from '../services/util.service'
 
 export function NavBar({ signInModal }) {
     const [isUserModalOpen, setUserModalOpen] = useState(false)
-    const [isOpen, setIsOpen] = useState(false)
     const user = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
     const [pendingOrdersTotal, setPendingOrdersTotal] = useState(0)
@@ -50,22 +50,23 @@ export function NavBar({ signInModal }) {
         }
     }, [orders])
 
-    console.log('user:', user)
-
 
     return (
         <nav className="fiverr-nav">
             <ul className='clean-list flex gap-6'>
-                <li className='explore cursor-pointer' ><DropdownMenu className='cursor-pointer' isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
-                    <DropdownMenuTrigger asChild className='fa chevron-down relative'>
-                        <button>Explore</button>
-                    </DropdownMenuTrigger >
-                    <DropdownMenuContent isOpen={isOpen}>
-                        {exploreMenu.map(menu =>
-                            <DropdownMenuItem key={menu.label} onClick={() => setIsOpen(false)} >
-                                <Link className={!menu.path && `opacity-70 cursor-not-allowed`} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
-                            </DropdownMenuItem>)}
-                    </DropdownMenuContent>
+                <li className='explore cursor-pointer' >
+                    <DropdownMenu className='cursor-pointer'>
+                        <DropdownMenuTrigger asChild className='fa chevron-down relative'>
+                            <button>Explore</button>
+                        </DropdownMenuTrigger >
+                        <DropdownMenuContent>
+                            <DropdownMenuGroup>
+                                {exploreMenu.map(menu =>
+                                    <DropdownMenuItem key={menu.label}  >
+                                        <Link className={!menu.path && `opacity-70 cursor-not-allowed`} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
+                                    </DropdownMenuItem>)}
+                            </DropdownMenuGroup>
+                        </DropdownMenuContent>
                 </DropdownMenu></li>
                 {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
                 {user && <li className='relative' >
