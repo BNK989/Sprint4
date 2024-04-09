@@ -1,9 +1,11 @@
 .gig-index {
     display: flex;
     flex-flow: column;
+    margin-top: 4em;
 
     .gigs-title {
         font-size: 2em;
+        font-weight: bolder;
     }
 
     .p {
@@ -14,7 +16,7 @@
 
     .line {
         height: 1px;
-        background-color: $clr-light-grey;
+        background-color: $clr-light--grey;
         margin-block: 20px;
     }
 
