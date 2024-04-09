@@ -38,7 +38,7 @@ export function ManageReceivedOrders({ user }) {
                          <tr key={index}>
                             <ReceivedOrdersPreview 
                             order={order} index={index} onChangeAction={onChangeAction}
-                            
+                            orders={orders}
                              />
                         </tr>
                     ))}
