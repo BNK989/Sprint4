@@ -91,7 +91,7 @@ export function AppHeader() {
             </div>
             <section className="under-header main-container full">
                     <ul className='flex clean-list'>
-                        {categories?.map(cat => <li className='capitalize' key={cat}><Link className='font-light' to={`/explore/?cat=${cat}`}>{cat}</Link></li>)}
+                        {categories?.map(cat => <li className='capitalize' key={cat}><Link className='font-light' to={`/explore/?cat=${cat.replace(/&/g, '-')}`}>{cat}</Link></li>)}
 
                     </ul>
             </section>

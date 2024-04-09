@@ -50,7 +50,7 @@ export function NavBar({ signInModal }) {
                     <DropdownMenuContent isOpen={isOpen}>
                         {exploreMenu.map(menu =>
                             <DropdownMenuItem key={menu.label} onClick={() => setIsOpen(false)} >
-                                <Link to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
+                                <Link className={!menu.path && `opacity-70 cursor-not-allowed`} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
                             </DropdownMenuItem>)}
                     </DropdownMenuContent>
                 </DropdownMenu></li>

@@ -47,7 +47,7 @@ export function GigFilter({ filterBy, onSetFilter }) {
             <section className="gig-filter">
                 <div className="filter-price">
                     <select value={filterByToEdit.price + ""} name="price" id="price" onChange={handleChange} >
-                        <option value="">budget</option>
+                        <option value="">Budget</option>
                         <option value="100">Under $100</option>
                         <option value="200">$100 - $200</option>
                         <option value="201">Above $200</option>
