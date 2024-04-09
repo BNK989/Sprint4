@@ -52,6 +52,8 @@
 
 .line {
     background-color: $clr-light--grey;
+    height: 1px;
+    width: 100%;
 }
 
 .clean-list {
@@ -60,8 +62,8 @@
     list-style-type: none;
 }
 
-.full{
-    grid-column: 1 / -1 
+.full {
+    grid-column: 1 / -1
 }
 
 // Media helpers

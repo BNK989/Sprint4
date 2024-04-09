@@ -1,11 +1,13 @@
 .gig-index {
     display: flex;
     flex-flow: column;
-    margin-top: 4em;
+    margin-top: 2.5em;
 
     .gigs-title {
         font-size: 2em;
         font-weight: bolder;
+        margin-top: 0.2em;
+        margin-left: -0.1em;
     }
 
     .p {

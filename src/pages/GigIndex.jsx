@@ -8,6 +8,7 @@ import { gigService } from '../services/gig.service.js'
 import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
 import { GigFilter } from '../cmps/GigFilter.jsx'
 import { GigList } from '../cmps/GigList.jsx'
+import { BreadcrumbWithCustomSeparator } from '@/cmps/BreadcrumbWithCustomSeparator.jsx'
 
 export function GigIndex() {
 
@@ -43,6 +44,7 @@ export function GigIndex() {
     // <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
     return (<>
         <div className='gig-index'>
+        <BreadcrumbWithCustomSeparator/>
             <h3 className='gigs-title'>Gigs category</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos, nostrum ratione dicta doloribus ipsa!</p>
             <div className='line'></div>
