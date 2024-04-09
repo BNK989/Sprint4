@@ -5,7 +5,7 @@ export function AppFooter() {
 
 
     return (
-        <footer className="app-footer main-container full bg-gray1 border-t-2 h-16 ">
+        <footer className="app-footer main-container full bg-gray1 border-t-2 h-16 mt-6 ">
             <div className="bottom flex justify-between">
                 <div className="left flex h-6 my-auto">
                     <span><img src="/img/5err-logo.svg" alt="" /></span>
