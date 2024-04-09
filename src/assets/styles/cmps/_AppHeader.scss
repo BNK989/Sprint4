@@ -21,13 +21,17 @@
 
     &.noAbs{
         position: static!important;
+        margin: .6em 0;
+        .header-container {
+            margin-block-end: .688em;
+        }
     }
     
     &.transparent{
         border-bottom: none;
         transition: background-color .5s ease;
 
-        *{
+        *:not(.tooltip){
             color: #fff;
         }
 
@@ -94,6 +98,7 @@
         
         border-top: 1px solid lighten($clr-black,70%);
         border-bottom: 1px solid lighten($clr-black,70%);
+        height: 2.5em;
     }
 
     .logo img{

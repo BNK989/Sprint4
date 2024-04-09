@@ -22,7 +22,7 @@ export function ManageSentOrders({ user }) {
 
 
     return (<>
-        {/* <h1>hay</h1> */}
+        <h1>Sent Orders:</h1>
 
         {
             !!orders.length  &&
@@ -45,7 +45,7 @@ export function ManageSentOrders({ user }) {
                             <td>{order.gig.title}</td>
                             <td>{order.createdAt}</td>
                             <td>${order.gig.price}</td>
-                            <td>{order.status}</td>
+                            <td><span className={`${(order.status === "Accepted") && "accepted"} ${(order.status === "Rejected") && "rejected"}`}>{order.status}</span></td>
                         </tr>
                     ))}
                 </tbody>

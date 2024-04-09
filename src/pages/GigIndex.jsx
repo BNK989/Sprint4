@@ -8,6 +8,7 @@ import { gigService } from '../services/gig.service.js'
 import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
 import { GigFilter } from '../cmps/GigFilter.jsx'
 import { GigList } from '../cmps/GigList.jsx'
+import { LoadingIndex } from '@/cmps/LodingIndex.jsx'
 import { BreadcrumbWithCustomSeparator } from '@/cmps/BreadcrumbWithCustomSeparator.jsx'
 
 export function GigIndex() {
@@ -40,12 +41,12 @@ export function GigIndex() {
         setGigFilter(filterBy)
     }
 
-    if (!gigs.length) return <h1>loading</h1>
+    // if (!gigs.length) return <LoadingIndex/>
     // <div className="center-spinner"> <div className="lds-facebook"><div></div><div></div><div></div></div></div>
     return (<>
         <div className='gig-index'>
         <BreadcrumbWithCustomSeparator/>
-            <h3 className='gigs-title'>Gigs category</h3>
+            <h3 className='gigs-title'>{filterBy.category ? filterBy.category.replace(/-/g, '&') : 'Explore All'}</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos, nostrum ratione dicta doloribus ipsa!</p>
             <div className='line'></div>
             <GigFilter filterBy={filterBy} onSetFilter={onSetFilter} />
@@ -57,7 +58,8 @@ export function GigIndex() {
             </section>
 
             <main className='gig-list-main-container'>
-                <GigList gigs={gigs} />
+                {(gigs.length === 0) ? <LoadingIndex/>: <GigList gigs={gigs} /> }
+                
             </main>
         </div>
     </>

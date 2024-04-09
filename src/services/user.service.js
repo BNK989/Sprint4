@@ -2,6 +2,7 @@ import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 
 import { usersDemo } from '../../data/user-demo-data'
+import { Await } from 'react-router'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
 export const userService = {
@@ -18,11 +19,15 @@ export const userService = {
 }
 
 window.userService = userService
+_lodeUsersToStorage()
 
-
-function getUsers() {
-    return storageService.query('user')
-    // return httpService.get(`user`)
+async function getUsers() {
+    try{
+        return storageService.query('user')
+        // return httpService.get(`user`)
+    }catch(err){
+        console.log('canot lode users');
+    }
 }
 
 
@@ -84,28 +89,9 @@ async function logout() {
     // return await httpService.post('auth/logout')
 }
 
-// async function changeScore(by) {
-//     const user = getLoggedinUser()
-//     if (!user) throw new Error('Not loggedin')
-//     user.score = user.score + by || by
-//     await update(user)
-//     return user.score
-// }
-
-/// user 
-
-// {
-//     _id: "u101",
-//     fullname: "User 1",
-//     imgUrl: "/img/img1.jpg",
-//     username: "user1",
-//     password: "secret",
-//     level: "basic/premium",
-//   }
-
 function saveLocalUser(user) {
 
-    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, level: user.level, orders: user.orders }
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, level: user.level}
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -114,11 +100,24 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
+async function _lodeUsersToStorage(){
+    try{
+       const users = await getUsers()
+      if(!users || !users.length){
+          usersDemo.forEach(user =>  {
+           return storageService.post('user', user)})
+    }   
+    }catch(err){
+        console.log(err);
+    }
+    // await storageService.post('user', usersDemo)
+}
+
 
 ; (async () => {
     // await storageService.post('user', {_id:'u101', fullname: 'admin', username: 'meni', password:'123',imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"})
-    await userService.signup(usersDemo[1])
-    await userService.signup(usersDemo[0])
+    // await userService.signup(usersDemo[1])
+    // await userService.signup(usersDemo[0])
 })()
 
 

@@ -6,7 +6,12 @@ import { NavRoutes, exploreMenu } from '../routes'
 import { Button } from '@/components/ui/button'
 import { useSelector } from 'react-redux'
 import { useEffect, useRef, useState } from 'react'
-
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+  } from "@/components/ui/tooltip"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -21,10 +26,16 @@ export function NavBar({ signInModal }) {
     const [isUserModalOpen, setUserModalOpen] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
     const user = useSelector(storeState => storeState.userModule.user)
+    const orders = useSelector(storeState => storeState.orderModule.orders)
+    const [pendingOrdersTotal, setPendingOrdersTotal] = useState(0) 
+
     let menuRef = useRef()
 
     useEffect(()=>{
         let handler = (e)=>{
+            // console.log('orders:', orders[0].status)
+            setPendingOrdersTotal( orders.reduce(( acc, order )=> order.status === 'pending' ? acc + 1 : acc ,0))
+            // console.log('pendingOrders:', pendingOrders)
             
             if(!menuRef.current === e.target){
                 setUserModalOpen(false)
@@ -35,7 +46,7 @@ export function NavBar({ signInModal }) {
         return ()=>{
             document.removeEventListener("mousedown",handler)
         }
-    })
+    },[orders])
 
     console.log('isOpen:', isOpen)
 
@@ -50,12 +61,32 @@ export function NavBar({ signInModal }) {
                     <DropdownMenuContent isOpen={isOpen}>
                         {exploreMenu.map(menu =>
                             <DropdownMenuItem key={menu.label} onClick={() => setIsOpen(false)} >
-                                <Link to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
+                                <Link className={!menu.path && `opacity-70 cursor-not-allowed`} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
                             </DropdownMenuItem>)}
                     </DropdownMenuContent>
                 </DropdownMenu></li>
                 {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
-                {user && <li>Orders</li>}
+                {user && <li className='relative' >
+                <TooltipProvider>
+                <Tooltip>
+                    <TooltipTrigger>
+                    <Link to={`user/${user._id}`}>
+                        Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}
+                    </Link>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                    <p className='tooltip text-black'>{`${pendingOrdersTotal} Pending Orders`}</p>
+                    </TooltipContent>
+                </Tooltip>
+                </TooltipProvider>
+                </li>
+                    
+                    
+                    
+                }
+
+
+                
                 {user && <li className='text-black '>Switch to Selling</li>}
                 {user && <li className="user-img-navbar" >
                     <img onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8" src={user.imgUrl} alt="" />
