@@ -10,6 +10,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import { ReviewsStats } from "./ReviewsStats"
+import { BreadcrumbWithCustomSeparator } from "./BreadcrumbWithCustomSeparator"
 
 
 export function GigDetails() {
@@ -62,8 +63,10 @@ export function GigDetails() {
     return (
         <section className="main-details-container">
 
-
             <section className="gig-details">
+            <div className="breadcrumb-container">
+                <BreadcrumbWithCustomSeparator/>
+            </div>
                 <h1 className="gig-title">{gig.title}</h1>
 
                 <div className="gig-user">
@@ -81,19 +84,19 @@ export function GigDetails() {
 
                 {/* <img className="main-img" src={gig.imgUrls[0]} alt="" /> */}
                 <div className="main-img">
-                    <Carousel className="w-full">
+                    <Carousel className="w-full mb-32">
                         <CarouselContent>
                             {gig.imgUrls?.map((img, index) => (
                                 <CarouselItem key={index}>
-                                    <img className="h-[93%]" src={img} alt={`image-idx-${index}`} />
+                                    <img className="h-[90%]" src={img} alt={`image-idx-${index}`} />
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
-                        <div  className="my-[-1em] flex-center gap-4">
+                        <div  className="my-[-2.25em] flex justify-start">
                             {gig.imgUrls?.map((img, index) => (
-                            <img key={index} className="w-20" src={img} alt={`image-idx-${index}`} />
+                            <img key={index} className="ml-1 w-[100px] h-[60px]" src={img} alt={`image-idx-${index}`} />
                                 ))}
                         </div>
                     </Carousel>
