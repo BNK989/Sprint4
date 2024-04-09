@@ -91,16 +91,7 @@ export function AppHeader() {
             <section className="under-header main-container full">
                     <ul className='flex clean-list'>
                         {categories?.map(cat => <li className='capitalize' key={cat}><Link to={`/explore/?cat=${cat}`}>{cat}</Link></li>)}
-                        {/* <li><Link to="/explore">Graphics & Design</Link></li>
-                        <li><Link to="/explore">Programming & Tech</Link></li>
-                        <li><Link to="/explore">Digital Marketing</Link></li>
-                        <li><Link to="/explore">Video & Animation</Link></li>
-                        <li><Link to="/explore">Writing & Translation</Link></li>
-                        <li><Link to="/explore">Music & Audio</Link></li>
-                        <li><Link to="/explore">Business</Link></li>
-                        <li><Link to="/explore">Consulting</Link></li>
-                        <li><Link to="/explore">Data</Link></li>
-                        <li><Link to="/explore">AI Services</Link></li> */}
+
                     </ul>
             </section>
             {
