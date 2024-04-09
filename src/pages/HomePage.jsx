@@ -45,8 +45,8 @@ export function HomePage() {
             <TrustedBy/>
             <PopularServices/>
             <BestPart/>
-            {/* <JoinPoster/> */}
             <CategoriesNav/>
+            <JoinPoster/>
 
         </section >
     )
