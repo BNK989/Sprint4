@@ -1,3 +1,4 @@
+import { Progress } from "@/components/ui/progress"
 
 
 export function ReviewsStats({stateStats}){
@@ -13,7 +14,7 @@ export function ReviewsStats({stateStats}){
               {[fiveStars, fourStars, threeStars, twoStars, oneStar].map((starCount, index) => (
                 <div key={index} className="star-rating">
                   <span>{5 - index} Stars</span>
-                  <progress max={totalReviews} value={starCount}></progress>
+                  <Progress value={starCount/totalReviews * 100} className="progress-bar w-56 h-2 mx-4" />
                   <span className="star-count">({starCount})</span>
                 </div>
               ))}
