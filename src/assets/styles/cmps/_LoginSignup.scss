@@ -68,6 +68,7 @@
 
         .login-section {
             flex-grow: 1;
+
             .login-form-article {
                 padding-block: 20px;
 
@@ -92,6 +93,23 @@
 
             .login-form {
                 padding-block: 20px;
+
+                select {
+                    color: rgb(8, 8, 8);
+
+                    option {
+                        color: rgb(8, 8, 8);
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
                 input {
                     color: rgb(8, 8, 8);
                     width: 100%;
@@ -103,14 +121,20 @@
 
                 button {
                     width: 100%;
-                    background-color: rgb(216, 216, 216);
+                    color: rgb(8, 8, 8);
+                    background-color: $clr-wight;
+
+                    &:hover {
+                        scale: 1.04;
+                    }
                 }
             }
         }
 
-        .signup-section{
+        .signup-section {
             flex-grow: 1;
-            .signup-form-article{
+
+            .signup-form-article {
                 padding-block: 20px;
 
                 h1 {
@@ -132,8 +156,9 @@
                 }
             }
 
-            .signup-form{
+            .signup-form {
                 padding-block: 20px;
+
                 input {
                     color: rgb(8, 8, 8);
                     width: 100%;
@@ -148,7 +173,7 @@
                     background-color: rgb(216, 216, 216);
                 }
 
-                .upload-preview{
+                .upload-preview {
                     width: 100%;
                 }
             }

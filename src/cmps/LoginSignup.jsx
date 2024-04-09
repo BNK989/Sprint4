@@ -76,15 +76,15 @@ export function LoginSignup(props) {
                             </p>
                         </section>
                         <form className="login-form" onSubmit={onLogin}>
-                            {/* <select
+                            <select
                                 name="username"
                                 value={credentials.username}
                                 onChange={handleChange}
                             >
                                 <option value="">Select User</option>
                                 {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
-                            </select> */}
-                            <input
+                            </select>
+                            {/* <input
                                 type="text"
                                 name="username"
                                 value={credentials.username}
@@ -100,7 +100,7 @@ export function LoginSignup(props) {
                                 placeholder="Password"
                                 onChange={handleChange}
                             // required
-                            />
+                            /> */}
                             <button>Login!</button>
                         </form>
                     </>
