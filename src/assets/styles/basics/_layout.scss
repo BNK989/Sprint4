@@ -9,6 +9,9 @@
             grid-column: 1 /-1;
         }
     }
+    main.main-layout {
+        min-height: calc(100dvh - 152px);
+    }
 
     // @include for-narrow-layout {
     //     grid-template-columns: 
