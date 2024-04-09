@@ -5,10 +5,10 @@ export function AppFooter() {
 
 
     return (
-        <footer className="app-footer main-container full bg-gray1 border-t-2 h-16 mt-6 ">
+        <footer className="app-footer main-container full bg-gray1 border-t-2 h-16 mt-24 ">
             <div className="bottom flex justify-between">
                 <div className="left flex h-6 my-auto">
-                    <span><img src="/img/5err-logo.svg" alt="" /></span>
+                    <span className="mr-4"><img src="/img/5err-logo.svg" alt="5err logo" className="flex-center"/></span>
                     <p className="text-body-2 legal"><span className="copyright text-trunc">© 5err International Ltd. 2024</span></p>
                 </div>
                 <div className="right flex">

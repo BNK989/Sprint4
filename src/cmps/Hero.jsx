@@ -29,10 +29,10 @@ export function Hero(){
             <section className='hero-container main-container full flex'>
                 <div className="search-container flex">
                     <h1>Find the right <i>freelance</i><br/> service, right away</h1>
-                    <SearchBox neverHide={true} inHeader={false}/>
+                    <SearchBox neverHide={true} inHeader={false} />
                     <div className="popular">
-                        <ul className='clean-list flex'>
-                            <li>Popular:</li>
+                        <ul className='clean-list flex '>
+                            <li >Popular:</li>
                             {searchSug.map(sug => <li className='capitalize cursor-pointer' key={sug} onClick={(e) => {e.preventDefault();handleClick({sug})}}>{sug}</li>)}
                         </ul>
                     </div>

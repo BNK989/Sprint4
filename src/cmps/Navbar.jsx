@@ -30,6 +30,7 @@ export function NavBar({ signInModal }) {
     const user = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
     const [pendingOrdersTotal, setPendingOrdersTotal] = useState(0)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     let menuRef = useRef()
 
@@ -50,12 +51,13 @@ export function NavBar({ signInModal }) {
         }
     }, [orders])
 
-
+// onOpenChange={() => console.log('open') }
+//open={isMenuOpen} onOpenChange={setIsMenuOpen(prev => !prev)}
     return (
         <nav className="fiverr-nav">
             <ul className='clean-list flex gap-6'>
                 <li className='explore cursor-pointer' >
-                    <DropdownMenu className='cursor-pointer'>
+                    <DropdownMenu className='cursor-pointer' >
                         <DropdownMenuTrigger asChild className='fa chevron-down relative'>
                             <button>Explore</button>
                         </DropdownMenuTrigger >

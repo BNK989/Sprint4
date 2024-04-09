@@ -12,11 +12,18 @@
         justify-content: flex-start;
         align-items: center;
         height: 100%;
+
+        .search-form button{
+            background-color: $clr-green;
+        }
         
         h1{
             color: white;
-            line-height: 1.5em;
+            line-height: 1.1em;
             font-size: 2em;
+            letter-spacing: 0.055em;
+            font-weight: bold;
+
 
             i{
                 font-style: italic;
@@ -27,19 +34,24 @@
             flex-direction: column;
         }
         .popular{
+            margin-top: -.17em;
             font-size: 10px;
             ul{
                 gap: 1em;
 
                 li{
                     color: white;
-                    padding: .5em 1em;
+                    padding: .15em 1em;
                     border: 1px solid white;
                     border-radius: 9em;
+                    line-height: 1.1em;
+                    letter-spacing: 0.05em;
+                    @include flex-center;
                 }
                 li:nth-child(1){
                     border: none;
                     font-weight: bold;
+                    padding: .5em 0;
                 }
             }
         }
