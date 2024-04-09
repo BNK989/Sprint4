@@ -10,6 +10,7 @@ import { login, logout, signup } from '../store/actions/user.actions.js'
 import { gigService } from '../services/gig.service.local'
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
+    const order = useSelector(storeState => storeState.orderModule.user)
     const [isLogInSelect, setLogInSelect] = useState(false)
     const [isModalOpen, setModalOpen] = useState(false)
     const [isScrollNull, setIsScrollNull] = useState(true)

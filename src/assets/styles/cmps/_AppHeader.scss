@@ -31,7 +31,7 @@
         border-bottom: none;
         transition: background-color .5s ease;
 
-        *{
+        *:not(.tooltip){
             color: #fff;
         }
 

@@ -1,25 +1,26 @@
-.fiverr-nav{
-    ul{
-        .sign-in-nav{
-            &:hover{
+.fiverr-nav {
+    ul {
+        .sign-in-nav {
+            &:hover {
                 cursor: pointer;
             }
         }
 
-        .user-img-navbar{
+        .user-img-navbar {
             position: relative;
-            .user-menu-options{
+
+            .user-menu-options {
                 position: absolute;
                 right: 0;
                 padding: 5px 10px;
                 margin-top: 3px;
 
                 background-color: rgb(238, 238, 238);
-                
-                .link-profile{
+
+                .link-profile {
                     color: black;
 
-                    &:hover{
+                    &:hover {
                         color: $clrbg1;
                     }
                 }
@@ -27,8 +28,17 @@
         }
     }
 
+    .notification-dot {
+        position: absolute;
+        top: 0;
+        right: -.3em;
 
-   
+        border-radius: 50%;
+        height: .5em;
+        width: .5em;
+        background-color: $clralert;
+    }
+
     // .join-btn{
     //     padding: 7px 20px;
     //     font-weight: 700;
