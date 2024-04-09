@@ -41,48 +41,46 @@ export function UserDetails() {
   // }
   return (<section className='user-details-seller-container'>
     {
-      user && <section className="user-container">
-        <section className="user-details-seller">
-          <img src={user.imgUrl} style={{ width: '100px' }} />
-          <h3>{user.fullname}</h3>
+      // user && <section className="user-container">
+      //   <section className="user-details-seller">
+      //     <img src={user.imgUrl} style={{ width: '100px' }} />
+      //     <h3>{user.fullname}</h3>
 
-          {/* <i className="fa location"></i> */}
-          <p><span className="fa location"></span> Country:</p>
-        </section>
+      //     {/* <i className="fa location"></i> */}
+      //     <p><span className="fa location"></span> Country:</p>
+      //   </section>
 
 
-        <article className='user-description-seller'>
-          <h2>Description:</h2>
-          <p>kadfdf iuadhf uioh ouahf iuh daufhluj  aoiuhafp8ihas uihasdf iuah dasiuh </p>
-        </article>
-      </section>
+      //   <article className='user-description-seller'>
+      //     <h2>Description:</h2>
+      //     <p>kadfdf iuadhf uioh ouahf iuh daufhluj  aoiuhafp8ihas uihasdf iuah dasiuh </p>
+      //   </article>
+      // </section>
 
 
     }
 
     {
 
-      <ul className='owned-gigs-container clean-list'>
-        <li className='add-new-gig-container'>
-          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT-aRZyzNggfpR9_ncdjTOoPVirlRm6n0O020q41dCXjYk4jVAL" alt="" />
-          <p>Create new gig</p>
-        </li>
-        {
-          !!ownedGigs.length && ownedGigs.map(ownedGig => {
-            return <li className='owned-gigs-preview' key={ownedGig._id}>
-              <OwnedGigPreview ownedGig={ownedGig} />
-            </li>
-          })
-        }
-      </ul>
+      // <ul className='owned-gigs-container clean-list'>
+      //   <li className='add-new-gig-container'>
+      //     <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT-aRZyzNggfpR9_ncdjTOoPVirlRm6n0O020q41dCXjYk4jVAL" alt="" />
+      //     <p>Create new gig</p>
+      //   </li>
+      //   {
+      //     !!ownedGigs.length && ownedGigs.map(ownedGig => {
+      //       return <li className='owned-gigs-preview' key={ownedGig._id}>
+      //         <OwnedGigPreview ownedGig={ownedGig} />
+      //       </li>
+      //     })
+      //   }
+      // </ul>
     }
     {
       user && <section className='manege-order-container'>
         <ManageReceivedOrders user={user} />
         <ManageSentOrders user={user} />
       </section>
-
-
     }
   </section>
 

@@ -14,6 +14,7 @@ table {
             color: $clr-black;
             text-align: left;
             font-weight: bold;
+
             th {
                 padding: 12px 15px;
             }
@@ -23,25 +24,34 @@ table {
     tbody {
         tr {
             border-bottom: 1px solid #dddddd;
-            .active-row {
-                font-weight: bold;
-                color: #009879;
-            }
+
             td {
+                width: 50vw;
                 padding: 12px 15px;
+
+                img {
+                    width: 50%;
+                }
+
+                span {
+                    padding: 5px;
+                    border-radius: 10px;
+                    background-color: #e2ee75;
+                    &.accepted {
+                        background-color: $clrbg1;
+                    }
+
+                    &.rejected {
+                        color: $clr-light--grey;
+                        background-color: $clralert;
+                    }
+                }
+
             }
         }
+
         tr:nth-of-type(even) {
             background-color: #f3f3f3;
         }
-
-        tr:last-of-type {
-            // border-bottom: 2px solid #009879;
-        }
     }
-
-
-
-
-
 }

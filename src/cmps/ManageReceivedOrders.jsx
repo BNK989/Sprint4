@@ -20,6 +20,7 @@ export function ManageReceivedOrders({ user }) {
 
 
     return (<>
+    <h1>Received Orders:</h1>
         {
             !!orders.length  &&
             <table >
