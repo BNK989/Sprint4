@@ -5,7 +5,7 @@ import { ReceivedOrdersPreview } from "./ReceivedOrdersPreview"
 
 
 export function ManageReceivedOrders({ user }) {
-    const [isActionModalOpen, setActionModal] = useState(false)
+    // const [isActionModalOpen, setActionModal] = useState(false)
 
     const orders = useSelector(storeState => storeState.orderModule.orders)
 
@@ -14,11 +14,8 @@ export function ManageReceivedOrders({ user }) {
 
     }, [])
 
-    function onActionBtn(value,idx){
-        let orderToUpdate = orders[idx]
-        orderToUpdate.status = value
+    function onChangeAction(orderToUpdate){
         updateOrder(orderToUpdate)
-        setActionModal(!isActionModalOpen)
     }
 
 
@@ -40,8 +37,8 @@ export function ManageReceivedOrders({ user }) {
                     {orders.map((order, index) => (
                          <tr key={index}>
                             <ReceivedOrdersPreview 
-                            order={order} index={index} onActionBtn={onActionBtn}
-                            isActionModalOpen={isActionModalOpen} setActionModal={setActionModal}
+                            order={order} index={index} onChangeAction={onChangeAction}
+                            
                              />
                         </tr>
                     ))}
