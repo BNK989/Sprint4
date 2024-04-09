@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 
-export function ReceivedOrdersPreview({order,index,onChangeAction}) {
+export function ReceivedOrdersPreview({order,index,onChangeAction,orders}) {
     const [isActionModalOpen, setActionModal] = useState(false)
 
     function onActionBtn(value,idx){
