@@ -141,7 +141,7 @@ export function GigDetails() {
                 <div className="btns">
                     <button className="btn-basic">Basic</button>
                     <button className="btn-standard">Standard</button>
-                    <button className="btn-spanmium">spanmium</button>
+                    <button className="btn-premium">Premium</button>
                 </div>
 
                 <main className="main-details">
