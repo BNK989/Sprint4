@@ -20,6 +20,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { ToolTipWrapper } from './shanCN/ToolTipWrapper'
 
 
 export function NavBar({ signInModal }) {
@@ -67,22 +68,12 @@ export function NavBar({ signInModal }) {
                 </DropdownMenu></li>
                 {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
                 {user && <li className='relative' >
-                <TooltipProvider>
-                <Tooltip>
-                    <TooltipTrigger>
+                <ToolTipWrapper tooltipContent={`${pendingOrdersTotal} Pending Orders`}>
                     <Link to={`user/${user._id}`}>
-                        Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}
+                            Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}
                     </Link>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                    <p className='tooltip text-black'>{`${pendingOrdersTotal} Pending Orders`}</p>
-                    </TooltipContent>
-                </Tooltip>
-                </TooltipProvider>
-                </li>
-                    
-                    
-                    
+                </ToolTipWrapper>
+                </li>                 
                 }
 
 
