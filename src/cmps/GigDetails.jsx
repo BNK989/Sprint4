@@ -64,9 +64,9 @@ export function GigDetails() {
         <section className="main-details-container">
 
             <section className="gig-details">
-            <div className="breadcrumb-container">
-                <BreadcrumbWithCustomSeparator/>
-            </div>
+                <div className="breadcrumb-container">
+                    <BreadcrumbWithCustomSeparator />
+                </div>
                 <h1 className="gig-title">{gig.title}</h1>
 
                 <div className="gig-user">
@@ -77,14 +77,16 @@ export function GigDetails() {
 
                         <div className="user-rate">
                             <span className="fa star"></span>
-                            <span className="rate-num">{gig.owner.rate} (1k)</span>
+                            <span className="rate-num">{gig.owner.rate} <span>(1k)</span></span>
                         </div>
-                    </div>
-                </div>
 
+                    </div>
+
+                </div>
+                <div className="line"></div>
                 {/* <img className="main-img" src={gig.imgUrls[0]} alt="" /> */}
                 <div className="main-img">
-                    <Carousel className="w-full mb-32">
+                    <Carousel className="w-full mb-5">
                         <CarouselContent>
                             {gig.imgUrls?.map((img, index) => (
                                 <CarouselItem key={index}>
@@ -94,10 +96,10 @@ export function GigDetails() {
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
-                        <div  className="my-[-2.25em] flex justify-start">
+                        <div className="my-[-2.25em] flex justify-start">
                             {gig.imgUrls?.map((img, index) => (
-                            <img key={index} className="ml-1 w-[100px] h-[60px]" src={img} alt={`image-idx-${index}`} />
-                                ))}
+                                <img key={index} className="ml-1 w-[100px] h-[60px]" src={img} alt={`image-idx-${index}`} />
+                            ))}
                         </div>
                     </Carousel>
                 </div>
@@ -105,36 +107,78 @@ export function GigDetails() {
                 <section className="about-this-gig">
                     <p>About this gig</p>
                     {/* <span>{gig.description}</span> */}
-                    <span>
-                    Hey I'll design a modern, creative and professional 3d logo for your business I assure high quality and aesthetic guidelines for your logo design. You will get an excellent service at affordable price.
+                    <span className="txt">
+                        <span>
+                            Hey I'll design a modern, creative and professional 3d logo for
+                            your business I assure high quality and aesthetic guidelines for
+                            your logo design. You will get an excellent service at affordable price.
+                        </span>
 
-                    I have vast graphics designing experience.  i have 2K+ satisfied customers worldwide.
+                        <span>
+                            I have vast graphics designing experience.
+                            i have 2K+ satisfied customers worldwide.
+                        </span>
+                        <span>
+                            As a creative artist i understand the importance
+                            of a modern 3d logo, It reflects an advanced outlook of the company.
+                        </span>
 
-                    As a creative artist i understand the importance of a modern 3d logo, It reflects an advanced outlook of the company.
 
-                    If you are interested in getting my services kindly send a message first with your logo requirements, We will discuss about it and then an order will be placed for it. After this i will take the initial requirements and will design Mockups(concepts) for my client and will show them.
-                    <span>
-                    Get in touch with me today for getting my service.
-                    Why me? Because you will get:
-                    1-Modern Professional 3d logo Design
-                    2-Affordable rates
-                    3-Unlimited revisions
-                    4-Attractive 3D Mockups
-                    5-100% Creativity
-                    6-100% MONEY BACK Guarantee (if you didn't like my logos)
+                        <span>
+                            If you are interested in getting my services kindly send a message
+                            first with your logo requirements, We will discuss about it and then
+                            an order will be placed for it. After this i will take the initial
+                            requirements and will design Mockups(concepts) for my client and will
+                            show them.
+                        </span>
+                        <span>
+                            Thanks for taking the time to view my profile!
+                        </span>
+
                     </span>
-                    Note:
-                    Files according to gig package will be inboxed on order completion for 1 final Design.
-                    I don't do complex mascot designs, pornography and vine logos.
 
-
-                    Thanks for taking the time to view my profile!
-
-
-                    </span>
-                    
 
                 </section>
+
+                <div className="line"></div>
+
+
+                <section className="about-user">
+                    <h1 className="title">Get to know {gig.owner.fullname}</h1>
+                    <div className="gig-user">
+                        <img src={gig.owner.imgUrl} alt="owner image" />
+
+                        <div className="user-details">
+                            <p>{gig.owner.fullname}</p>
+                            <span className="user-desc">Minimalist Logo and Brand Designer</span>
+                            <div className="user-rate">
+                                <span className="fa star"></span>
+                                <span className="rate-num">{gig.owner.rate} <span>(1k)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button className="btn-contact-me">Contact me</button>
+
+                    <section className="more-details">
+                        <div className="user-stats">
+                            <span className="main">From <span>Israel</span></span>
+                            <span className="main">Avg. response time <span>1 hour</span></span>
+                            <span className="main">Languages<span>English, French, Hebrew</span></span>
+                            <span className="main">Member since<span></span>May 2023</span>
+                            <span className="main">Last delivery<span></span>about 15 minutes</span>
+                        </div>
+                        <div className="line"></div>
+                        <div className="summery">
+                            <span>A creative person who loves to provide one-stop solutions for brand identity
+                                designs for startup companies, individuals, and even leading brands around the
+                                world. I am passionate about simple, modern, and luxury designs.</span>
+                            <span>Please check out more than 5.000 reviews from happy clients around the world.</span>
+                        </div>
+                    </section>
+
+                </section>
+                <div className="line"></div>
+
             </section>
 
             <section className="order-details">
