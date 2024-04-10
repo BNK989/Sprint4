@@ -6,26 +6,28 @@
         height: 190px;
         // border-radius: 50px;
 
-        .arrow-left, .arrow-right{
-           opacity: 0;
-           transform: translateY(-25px);
-           transition: opacity 0.3s ease-in, translate 0.3s ease-in;
+        .arrow-left,
+        .arrow-right {
+            opacity: 0;
+            transform: translateY(-25px);
+            transition: opacity 0.3s ease-in, translate 0.3s ease-in;
         }
 
-        &:hover ~ .gig-details{
+        &:hover~.gig-details {
             text-decoration: underline;
         }
 
-        &:hover .arrow-left{
+        &:hover .arrow-left {
             translate: 55px;
         }
 
-        &:hover .arrow-right{
+        &:hover .arrow-right {
             translate: -55px;
         }
 
-        &:hover .arrow-left:not(:disabled), &:hover .arrow-right:not(:disabled) {
-           opacity: 1;
+        &:hover .arrow-left:not(:disabled),
+        &:hover .arrow-right:not(:disabled) {
+            opacity: 1;
         }
 
         img {
@@ -35,6 +37,7 @@
         }
     }
 
+    
 
     .gig-owner-mini {
         padding-top: 10px;
@@ -85,25 +88,29 @@
         }
     }
 
+    
+
     .gig-details {
         font-size: 0.9em;
         margin-top: 10px;
         height: 3.25em;
-        
 
-        &:hover{
+
+        &:hover {
             text-decoration: underline;
         }
-        &:hover ~ .main-img > :has(.arrow-left){
+
+        &:hover~.main-img> :has(.arrow-left) {
             translate: 55px;
         }
 
-        &:hover ~ .main-img > :has(.arrow-right){
+        &:hover~.main-img> :has(.arrow-right) {
             translate: -55px;
         }
 
-        &:hover ~ .main-img > :has(.arrow-left:not(:disabled)), &:hover ~ .main-img > :has(.arrow-right:not(:disabled)) {
-           opacity: 1;
+        &:hover~.main-img> :has(.arrow-left:not(:disabled)),
+        &:hover~.main-img> :has(.arrow-right:not(:disabled)) {
+            opacity: 1;
         }
 
     }
@@ -139,3 +146,4 @@
         // }
     }
 }
+
