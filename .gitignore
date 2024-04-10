@@ -26,3 +26,6 @@ dist-ssr
 # eslint
 .eslintrc*
 .eslintcache
+
+# my 
+my-gig-demo-data.js
