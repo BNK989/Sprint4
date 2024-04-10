@@ -12,19 +12,57 @@ import {
 import { ReviewsStats } from "./ReviewsStats"
 import { BreadcrumbWithCustomSeparator } from "./BreadcrumbWithCustomSeparator"
 
+import Slider from 'react-slick'
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
 
 export function GigDetails() {
     const { gigId } = useParams()
     const navigate = useNavigate()
     const [gig, setGig] = useState(null)
 
-
-  
-
     useEffect(() => {
         loadGig()
     }, [gigId])
 
+    function NextArrow({ onClick }) {
+        return (
+            <div
+                className='arrow next-arrow'
+                onClick={onClick}
+            />
+        )
+    }
+
+    function PrevArrow({ onClick }) {
+        return (
+            <div
+                className='arrow prev-arrow '
+                onClick={onClick}
+            />
+        )
+    }
+
+    const settings = {
+        customPaging: function (i) {
+            return (
+                <a >
+                    <img src={gig.imgUrls[i]} alt='' />
+                </a>
+            )
+        },
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
+        dots: true,
+        draggable: true,
+        // dotsClass: 'clean-list flex carousle-imgs',
+        dotsClass: 'slick-dots slick-thumb carousle-imgs',
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    }
 
     async function loadGig() {
         try {
@@ -84,8 +122,7 @@ export function GigDetails() {
 
                 </div>
                 <div className="line"></div>
-                {/* <img className="main-img" src={gig.imgUrls[0]} alt="" /> */}
-                <div className="main-img">
+                {/* <div className="main-img">
                     <Carousel className="w-full mb-5">
                         <CarouselContent>
                             {gig.imgUrls?.map((img, index) => (
@@ -102,6 +139,15 @@ export function GigDetails() {
                             ))}
                         </div>
                     </Carousel>
+                </div> */}
+
+                {/* <img className="main-img" src={gig.imgUrls[0]} alt="" /> */}
+                <div className='relative slider-container'>
+                    <Slider {...settings}>
+                        {gig.imgUrls.map(img => (
+                            <img src={img} />
+                        ))}
+                    </Slider>
                 </div>
 
                 <section className="about-this-gig">

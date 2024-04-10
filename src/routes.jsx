@@ -5,6 +5,7 @@ import { ChatApp } from './pages/Chat.jsx'
 import { GigDetails } from './cmps/GigDetails.jsx'
 import { Payment } from './pages/Payment.jsx'
 import { UserDetails } from './pages/UserDetails.jsx'
+import { CustomPaging } from './pages/TestingOnly.jsx'
 
 // Routes accessible from the main navigation (in AppHeader)
 const routes = [
@@ -43,6 +44,11 @@ const routes = [
         component: <UserDetails />,
         label: 'user'
     },
+    {
+        path: 'customPaging',
+        component: <CustomPaging />,
+        label: 'CustomPaging'
+    },
 ]
 export default routes
 
@@ -53,7 +59,7 @@ export const NavRoutes = [
         label: 'Explore'
     },
     // {
-    //     path: 'review',
+        //     path: 'review',
     //     component: <ReviewIndex />,
     //     label: 'Reviews'
     // },
