@@ -16,7 +16,7 @@ export function ToolTipWrapper({ tooltipContent, children }) {
                 Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}
             </Link> */}
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className='text-black tooltip'>
                 {tooltipContent}
             {/* <p className='tooltip text-black'>{`${pendingOrdersTotal} Pending Orders`}</p> */}
             </TooltipContent>

@@ -23,6 +23,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ToolTipWrapper } from './shanCN/ToolTipWrapper'
 import { utilService as util } from '../services/util.service'
+import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+} from "@/components/ui/avatar"
 
 
 export function NavBar({ signInModal }) {
@@ -48,8 +53,8 @@ export function NavBar({ signInModal }) {
         }
     }, [orders])
 
-// onOpenChange={() => console.log('open') }
-//open={isMenuOpen} onOpenChange={setIsMenuOpen(prev => !prev)}
+    // onOpenChange={() => console.log('open') }
+    //open={isMenuOpen} onOpenChange={setIsMenuOpen(prev => !prev)}
     return (
         <nav className="fiverr-nav">
             <ul className='clean-list flex gap-6'>
@@ -66,7 +71,7 @@ export function NavBar({ signInModal }) {
                                     </DropdownMenuItem>)}
                             </DropdownMenuGroup>
                         </DropdownMenuContent>
-                </DropdownMenu></li>
+                    </DropdownMenu></li>
                 {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
                 {user && <li className='relative' >
                     <ToolTipWrapper tooltipContent={`${pendingOrdersTotal} Pending Orders`}>
@@ -80,7 +85,11 @@ export function NavBar({ signInModal }) {
                 {user && <li className='text-black '>Switch to Selling</li>}
                 {user && <ToolTipWrapper tooltipContent={`Logged in as ${util.capitalizeWords(user.fullname)}`}>
                     <li className="user-img-navbar" >
-                        <img onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8" src={user.imgUrl} alt="" />
+                        <Avatar onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8">
+                            <AvatarImage src={user.imgUrl} alt="@shadcn" />
+                            <AvatarFallback>CN</AvatarFallback>
+                        </Avatar>
+                        {/* <img onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8" src={user.imgUrl} alt="" /> */}
                         {
                             isUserModalOpen &&
                             <section className="user-menu-options" ref={menuRef}>
