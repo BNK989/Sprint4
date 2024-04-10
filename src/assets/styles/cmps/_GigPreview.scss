@@ -6,6 +6,11 @@
         height: 190px;
         // border-radius: 50px;
 
+        .carousel-height{
+            height: 190px;
+            border-radius: 10px;
+        }
+
         .arrow-left,
         .arrow-right {
             opacity: 0;
@@ -55,9 +60,9 @@
             gap: 7px;
             font-size: 1.1em;
 
-            img {
-                max-width: 25px;
-            }
+            // img {
+            //     max-width: 25px;
+            // }
 
             p {
                 span {
