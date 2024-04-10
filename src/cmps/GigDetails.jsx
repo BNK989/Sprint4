@@ -101,14 +101,14 @@ export function GigDetails() {
                             {gig.imgUrls?.map((img, index) => (
                                 <CarouselItem key={index}>
                                     {/* {setCarouselIdx(index)} */}
-                                    <img  src={img} alt={`image-idx-${index}`} />
+                                    <img src={img} alt={`image-idx-${index}`} />
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
                     </Carousel>
-                        <div className=" flex justify-start">
+                        <div className="-mt-3 flex justify-start">
                             {gig.imgUrls?.map((img, index) => (
                                 <img onClick={()=> setCarouselIdx(index)} key={index} className={`ml-1 w-[100px] h-[60px] ${index === carouselIdx ? "border-2 border-orange" : ""}`} src={img} alt={`image-idx-${index}`} />
                             ))}

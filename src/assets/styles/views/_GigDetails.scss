@@ -90,6 +90,18 @@
             width: 86%;
             height: 53%;
 
+            .carousel-height{
+                height: 23.725em;
+                border-radius: 0;
+                img{
+                    transition: scale 0.35s ease-in;
+                    &:hover{
+                        scale: 1.04;
+                    }
+
+                }
+            }
+
 
             .arrow-left,
             .arrow-right {
