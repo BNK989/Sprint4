@@ -19,10 +19,11 @@
         
         h1{
             color: white;
-            line-height: 1.1em;
-            font-size: 2em;
-            letter-spacing: 0.055em;
+            line-height: 1.2em;
+            font-size: 2.5em;
+            letter-spacing: 0.052em;
             font-weight: bold;
+            margin-bottom: .35em;
 
 
             i{
@@ -30,12 +31,26 @@
                 font-family: auto;
             }
         }
-        .search-container{
+
+        .search-container {
             flex-direction: column;
+            input{
+                height: 2.725em;
+                width: max(25em, 32.6em);
+
+                &:focus-visible{
+                    border: initial;
+                }
+            }
+            button{
+                height: 2.725em;
+                width: 4em
+            }
         }
-        .popular{
-            margin-top: -.17em;
-            font-size: 10px;
+
+        .popular {
+            margin-top: 1.1em;
+            font-size: .7em;
             ul{
                 gap: 1em;
 
