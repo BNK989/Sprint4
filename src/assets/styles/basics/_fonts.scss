@@ -11,7 +11,6 @@
     src: url('../../../../public/fonts/fa/fa-Brands.otf');
 }
 
-
 @font-face {
     font-family: 'Macan';
     src: url('../../../../public/fonts/MacanPanWeb-Regular.eot');
@@ -24,6 +23,29 @@
     font-style: normal;
     font-display: swap;
 }
+
+
+//MARK: NEW FONTS
+@font-face {
+    font-family: 'macan-semibold';
+    src: url('../../../../public/fonts/macan-regular.woff2');
+}
+
+@font-face {
+    font-family: 'macan-regular';
+    src: url('../../../../public/fonts/macan-regular.woff2');
+}
+
+@font-face {
+    font-family: 'macan-light';
+    src: url('../../../../public/fonts/macan-regular.woff2');
+}
+
+@font-face {
+    font-family: 'macan-bold';
+    src: url('../../../../public/fonts/macan-regular.woff2');
+}
+
 
 
 .fa::after{
