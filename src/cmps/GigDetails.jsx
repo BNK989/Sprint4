@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/carousel"
 import { ReviewsStats } from "./ReviewsStats"
 import { BreadcrumbWithCustomSeparator } from "./BreadcrumbWithCustomSeparator"
+import { QuickAvatar } from "./shanCN/QuickAvatar"
+import { StarRating } from "./smallCmps/StarRating"
 
 
 export function GigDetails() {
@@ -71,15 +73,21 @@ export function GigDetails() {
                 </div>
                 <h1 className="gig-title">{gig.title}</h1>
 
-                <div className="gig-user">
-                    <img src={gig.owner.imgUrl} alt="owner image" />
+                <div className="gig-user flex">
+                    <QuickAvatar user={gig.owner} className="w-16 h-16"/>
+                    {/* <img src={gig.owner.imgUrl} alt="owner image" /> */}
 
                     <div className="user-details">
-                        <p>{gig.owner.fullname}</p>
+                        
+                        <div className="flex ">
+                            <p className="border-r flex-center">{gig.owner.fullname}</p>
+                            <StarRating gig={gig} className="flex-center gap-1"/>
+                        </div>
 
-                        <div className="user-rate">
+                        <div className="user-rate mt-2">
                             <span className="fa star"></span>
-                            <span className="rate-num">{gig.owner.rate} <span>(1k)</span></span>
+                            <span className="rate-num pr-4  mr-4">{gig.owner.rate} <span>(1k)</span></span>
+                            {gig.owner.ordersCount && <span className="border-l pl-4">3 Orders in queue</span>}
                         </div>
 
                     </div>
@@ -174,7 +182,7 @@ export function GigDetails() {
                         <div className="summery">
                             <span>Hey... i am {gig.owner.fullname}, A freelance graphics and logo designer, working with a well reputed organization for the past 6 years.</span>
                             <span>I have around 2k satisfied customers World wide. I'll help you to take your business to the next level. Contact me for more info.</span>
-                            <span>Simply click my name to open my profile and gig portfolio :)</span>
+                            <span>Simply click my name to open my profile and gig portfolio </span>
                         </div>
                     </section>
 
@@ -195,14 +203,12 @@ export function GigDetails() {
                         <span>Basic</span>
                         <span className="price-num">{gig.price}$</span>
 
-                        {/* <p>save tp to 20% with subscribe to save</p> */}
                     </div>
 
                     <div className="desc"><span>Lorem</span> ipsum, dolor sit amet  obcaecati veritatis, consequuntur aperiam deleniti neque et.</div>
 
                     <div className="delivery-details">
 
-                        {/* <span className="fa-reg clock"></span> */}
                         <span className="clock"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg></span>
                         <span>{gig.daysToMake} Days delivery</span>
                     </div>
@@ -222,16 +228,7 @@ export function GigDetails() {
                 </main>
 
             </section>
-            {/* {
-        "id": "127",
-        "txt": "Excellent work, very professional and easy to work with",
-        "rate": 5,
-        "by": {
-          "_id": "u103",
-          "fullname": "Yonatan Biton",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
-        }
-      }, */}
+
             <section className="order-reviews-container">
                 <div className="title">Reviews</div>
 

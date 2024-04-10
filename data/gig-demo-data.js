@@ -5,6 +5,7 @@ export const gigsDemo = [
     "category": "Writing & Translation",
     "price": 50,
     "owner": {
+      "ordersCount": 3,
       "_id": "FHc6T",
       "fullname": "Dudu Da",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -82,6 +83,7 @@ export const gigsDemo = [
     "category": "Music & Audio",
     "price": 115,
     "owner": {
+      "ordersCount": 2,
       "_id": "FHc6T",
       "fullname": "Dudu Da",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -156,6 +158,7 @@ export const gigsDemo = [
     "category": "Business",
     "price": 230,
     "owner": {
+      "ordersCount": 30,
       "_id": "FHc6T",
       "fullname": "Dudu Da",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -231,6 +234,7 @@ export const gigsDemo = [
     "category": "Consulting",
     "price": 15,
     "owner": {
+      "ordersCount": 0,
       "_id": "u101",
       "fullname": "Dudu Da",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -305,6 +309,7 @@ export const gigsDemo = [
     "category": "Data",
     "price": 415,
     "owner": {
+      "ordersCount": 35,
       "_id": "u101",
       "fullname": "Dudu Da",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -379,6 +384,7 @@ export const gigsDemo = [
     "category": "Arts And Crafts",
     "price": 123,
     "owner": {
+      "ordersCount": 1,
       "_id": "u101",
       "fullname": "Dudu Da",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -453,6 +459,7 @@ export const gigsDemo = [
     "category": "Arts And Crafts",
     "price": 50,
     "owner": {
+      "ordersCount": 2,
       "_id": "u101",
       "fullname": "Dudu Da",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -527,6 +534,7 @@ export const gigsDemo = [
     "category": "Programming & Tech",
     "price": 140,
     "owner": {
+      "ordersCount": 3,
       "_id": "u205",
       "fullname": "Sara Lee",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female",
@@ -597,6 +605,7 @@ export const gigsDemo = [
     "category": "wordpress",
     "price": 200,
     "owner": {
+      "ordersCount": 3,
       "_id": "u476",
       "fullname": "Emily Chang",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female",
@@ -667,6 +676,7 @@ export const gigsDemo = [
     "category": "Graphics & Design",
     "price": 300,
     "owner": {
+      "ordersCount": 3,
       "_id": "u623",
       "fullname": "Ravi Patel",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -737,6 +747,7 @@ export const gigsDemo = [
     "category": "Arts And Crafts",
     "price": 150,
     "owner": {
+      "ordersCount": 3,
       "_id": "u885",
       "fullname": "Ahmed Ashraf",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -807,6 +818,7 @@ export const gigsDemo = [
     "category": "Business",
     "price": 25,
     "owner": {
+      "ordersCount": 3,
       "_id": "u886",
       "fullname": "Yaron Bar",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
@@ -859,6 +871,7 @@ export const gigsDemo = [
     "category": "Arts And Crafts",
     "price": 330,
     "owner": {
+      "ordersCount": 3,
       "_id": "u887",
       "fullname": "Sharon Ben Zvi",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",

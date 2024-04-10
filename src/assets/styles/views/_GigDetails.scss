@@ -37,11 +37,11 @@
             width: 59%;
 
 
-            img {
-                align-self: center;
-                width: 14%;
-                margin-top: -0.5em;
-            }
+            // img {
+            //     align-self: center;
+            //     width: 14%;
+            //     margin-top: -0.5em;
+            // }
 
 
 
@@ -54,7 +54,7 @@
                     font-size: 1em;
                     //  border-right: 1px solid black;
                     padding-inline: 0.9em;
-                    margin-bottom: 0.5em;
+                    // margin-bottom: 0.5em;
                 }
 
                 .user-rate {
@@ -93,28 +93,27 @@
 
             .arrow-left,
             .arrow-right {
-                opacity: 0;
+                // opacity: 0;
                 height: 3.2em;
                 width: 3.2em;
 
                 box-shadow:  0 2px 5px 0 rgba(0,0,0,.15);
 
-                // transform: translateY(-55px);
                 transition: opacity 0.3s ease-in, translate 0.3s ease-in;
             }
 
-            &:hover .arrow-left {
+            .arrow-left {
                 translate: 24px;
             }
 
-            &:hover .arrow-right {
+            .arrow-right {
                 translate: -24px;
             }
 
-            &:hover .arrow-left:not(:disabled),
-            &:hover .arrow-right:not(:disabled) {
-                opacity: 1;
-            }
+            // &:hover .arrow-left:not(:disabled),
+            // &:hover .arrow-right:not(:disabled) {
+            //     opacity: 1;
+            // }
 
         }
 
