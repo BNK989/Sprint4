@@ -6,7 +6,8 @@ export const utilService = {
     randomPastTime,
     saveToStorage,
     loadFromStorage,
-    capitalizeWords
+    capitalizeWords,
+    getInitials
 }
 
 function makeId(length = 6) {
@@ -65,5 +66,12 @@ function loadFromStorage(key) {
 
 function capitalizeWords(str) {
     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+}
+
+
+function getInitials(fullName) {
+    const names = fullName.split(' ')
+    const initials = names.map(name => name.charAt(0).toUpperCase())
+    return initials.join('')
 }
 

@@ -17,6 +17,7 @@ export function GigDetails() {
     const { gigId } = useParams()
     const navigate = useNavigate()
     const [gig, setGig] = useState(null)
+    const [carouselIdx, setCarouselIdx] = useState(0)
 
 
   
@@ -59,6 +60,7 @@ export function GigDetails() {
 
     }
 
+
     if (!gig) return <h1>Loading</h1>
     return (
         <section className="main-details-container">
@@ -86,22 +88,23 @@ export function GigDetails() {
                 <div className="line"></div>
                 {/* <img className="main-img" src={gig.imgUrls[0]} alt="" /> */}
                 <div className="main-img">
-                    <Carousel className="w-full mb-5">
+                    <Carousel className="w-full mb-5" opts={{align: "start", loop: true,  startIndex: carouselIdx}}>
                         <CarouselContent>
                             {gig.imgUrls?.map((img, index) => (
                                 <CarouselItem key={index}>
-                                    <img className="h-[90%]" src={img} alt={`image-idx-${index}`} />
+                                    {/* {setCarouselIdx(index)} */}
+                                    <img  src={img} alt={`image-idx-${index}`} />
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
-                        <div className="my-[-2.25em] flex justify-start">
+                    </Carousel>
+                        <div className=" flex justify-start">
                             {gig.imgUrls?.map((img, index) => (
-                                <img key={index} className="ml-1 w-[100px] h-[60px]" src={img} alt={`image-idx-${index}`} />
+                                <img onClick={()=> setCarouselIdx(index)} key={index} className={`ml-1 w-[100px] h-[60px] ${index === carouselIdx ? "border-2 border-orange" : ""}`} src={img} alt={`image-idx-${index}`} />
                             ))}
                         </div>
-                    </Carousel>
                 </div>
 
                 <section className="about-this-gig">

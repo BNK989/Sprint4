@@ -7,7 +7,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "FHc6T",
       "fullname": "Dudu Da",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 1,
       "rate": 4
     },
@@ -71,7 +71,7 @@ export const gigsDemo = [
         "by": {
           "_id": "u101",
           "fullname": "aviya",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
         }
       }
     ]
@@ -84,7 +84,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "FHc6T",
       "fullname": "Dudu Da",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 3,
       "rate": 4
     },
@@ -146,7 +146,7 @@ export const gigsDemo = [
         "by": {
           "_id": "u101",
           "fullname": "aviya",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
         }
       }
     ]
@@ -158,7 +158,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "FHc6T",
       "fullname": "Dudu Da",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 2,
       "rate": 4
     },
@@ -220,7 +220,7 @@ export const gigsDemo = [
         "by": {
           "_id": "u101",
           "fullname": "aviya",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
         }
       }
     ]
@@ -233,7 +233,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u101",
       "fullname": "Dudu Da",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 1,
       "rate": 1
     },
@@ -294,7 +294,7 @@ export const gigsDemo = [
         "by": {
           "_id": "u101",
           "fullname": "aviya",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
         }
       }
     ]
@@ -307,7 +307,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u101",
       "fullname": "Dudu Da",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 2,
       "rate": 3
     },
@@ -368,7 +368,7 @@ export const gigsDemo = [
         "by": {
           "_id": "u101",
           "fullname": "aviya",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
         }
       }
     ]
@@ -381,7 +381,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u101",
       "fullname": "Dudu Da",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 3,
       "rate": 2
     },
@@ -442,7 +442,7 @@ export const gigsDemo = [
         "by": {
           "_id": "u101",
           "fullname": "aviya",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
         }
       }
     ]
@@ -455,7 +455,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u101",
       "fullname": "Dudu Da",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 1,
       "rate": 4
     },
@@ -516,7 +516,7 @@ export const gigsDemo = [
         "by": {
           "_id": "u101",
           "fullname": "aviya",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
         }
       }
     ]
@@ -529,7 +529,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u205",
       "fullname": "Sara Lee",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female",
       "level": 2,
       "rate": 4.5
     },
@@ -587,7 +587,7 @@ export const gigsDemo = [
       "by": {
         "_id": "u101",
         "fullname": "aviya",
-        "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+        "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
       }
     }]
   },
@@ -599,7 +599,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u476",
       "fullname": "Emily Chang",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female",
       "level": 1,
       "rate": 5
     },
@@ -657,7 +657,7 @@ export const gigsDemo = [
       "by": {
         "_id": "u101",
         "fullname": "aviya",
-        "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+        "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
       }
     }]
   },
@@ -669,7 +669,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u623",
       "fullname": "Ravi Patel",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 2,
       "rate": 4
     },
@@ -727,7 +727,7 @@ export const gigsDemo = [
       "by": {
         "_id": "u101",
         "fullname": "aviya",
-        "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+        "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
       }
     }]
   },
@@ -739,7 +739,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u885",
       "fullname": "Ahmed Ashraf",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 3,
       "rate": 4.8
     },
@@ -797,7 +797,7 @@ export const gigsDemo = [
       "by": {
         "_id": "u101",
         "fullname": "aviya",
-        "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+        "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
       }
     }]
   },
@@ -809,7 +809,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u886",
       "fullname": "Yaron Bar",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 3,
       "rate": 4.9
     },
@@ -848,7 +848,7 @@ export const gigsDemo = [
         "by": {
           "_id": "u101",
           "fullname": "aviya",
-          "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+          "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=female"
         }
       }
     ]
@@ -861,7 +861,7 @@ export const gigsDemo = [
     "owner": {
       "_id": "u887",
       "fullname": "Sharon Ben Zvi",
-      "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+      "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 4,
       "rate": 4.7
     },
