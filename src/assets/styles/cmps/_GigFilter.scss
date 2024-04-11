@@ -1,16 +1,11 @@
 .gig-filter {
-
     display: flex;
     gap: 12px;
 
-div{
-    display: flex;
-    
-}
     select {
         border: 0.8px solid rgba(138, 138, 138, 0.233);
         border-radius: 10px;
-        padding: 11px;
+        padding: em(11px);
         font-weight: bold;
         font-size: 0.9em;
         align-self: center;
@@ -20,41 +15,151 @@ div{
     .clear-filter {
         border: 0.8px solid rgba(138, 138, 138, 0.233);
         border-radius: 10px;
-        padding: 10px;
+        padding: em(10px);
         font-weight: bold;
         font-size: 1rem;
         text-align: center;
     }
 
-
-
     .budget-filter-container {
-        width: fit-content;
-        border: 1px solid black;
-        display: flex;
+        align-self: center;
         position: relative;
 
-        // .arrow-points-down-arrow::after {
-        // content: "\f107";
-        // }
-        // .arrow-points-up-arrow::after {
-        // content: "\f106";
-        // }
-        :hover {
-            cursor: pointer;
+        .drop-budget-action {
+            border: 0.8px solid rgba(138, 138, 138, 0.233);
+            border-radius: 10px;
+            padding: 0.6875em 0.9em;
+            font-weight: bold;
+            font-size: 0.9em;
+
+            &.active {
+                background-color: #f5f5f5;
+            }
+
+            &:hover {
+                border: 0.8px solid #222325;
+            }
+
+            .arrow-points-down::after {
+                content: "\f107";
+                margin-left: 12px;
+            }
+
+            .arrow-points-up::after {
+                content: "\f106";
+                margin-left: 12px;
+            }
+        }
+
+        .budget-form-filter {
+            position: absolute;
+            padding: 1.3333em 1.3333em 1.3333em 1.3333em;
+            margin-top: 8px;
+            top: 100%;
+            left: 0;
+            z-index: 20;
+
+            min-width: 14.44444em;
+
+            border: 0.5px solid rgba(182, 182, 182, 0.555);
+            border-radius: 10px;
+            box-shadow: 0 12px 18px rgba(0, 0, 0, .14);
+            background-color: #ffffff;
+
+            .budget-input {
+                margin: 0;
+                padding-block: 0.6666em;
+                font-weight: 600;
+                font-size: em(14px);
+                align-items: center;
+                width: 100%;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .circle {
+                    position: relative;
+                    width: 1.4em;
+                    height: 1.4em;
+                    margin: 0 8px 0 0;
+                    border: 1px solid rgb(133, 133, 133);
+                    border-radius: 50%;
+
+                    &.active::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: black;
+                    }
+                }
+
+                &.custom {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+
+                    :first-child {
+                        display: flex;
+                    }
+
+                    .circle {
+                        position: relative;
+                        width: 1.4em;
+                        height: 1.4em;
+                        margin: 0 8px 0 0;
+                        border: 1px solid rgb(133, 133, 133);
+                        border-radius: 50%;
+
+                        &.active::after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: black;
+                        }
+                    }
+
+                    :last-child {
+                        // padding: 0 12px 16px 42px;
+
+                        input {
+                            width: 100%;
+                            border: 1px solid #c5c6c9;
+                            border-radius: 4px;
+
+                            color: #404145;
+                            background-color: $clr6;
+                            resize: none;
+                            font: inherit;
+
+                            &:hover {
+                                background-color: #fafafa;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    background-color: #fafafa;
+                }
+
+                .budget-txt {
+                    margin: 0 0 0 8px;
+                    font-size: em(13px);
+                    color: #84868d;
+                }
+            }
+
         }
     }
-
-    .circle {
-        width: 10px;
-        height: 10px;
-        border: 1px solid black;
-        border-radius: 50%;
-        background-color: aqua;
-    }
-
-    :hover {
-        cursor: pointer;
-    }
-
 }

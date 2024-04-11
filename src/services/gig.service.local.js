@@ -4,6 +4,8 @@ import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 import { gigsDemo } from '../../data/gig-demo-data.js'
 
+import data from '../../data/new-gig-demo-data.json'
+// console.log('data:', data)
 const STORAGE_KEY = 'gig'
 
 export const gigService = {
@@ -21,6 +23,7 @@ window.cs = gigService
 _saveDemoData()
 
 async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGigsId) {
+    console.log('filterBy.price:',filterBy )
    
     var gigs = await storageService.query(STORAGE_KEY)
     if (ownedGigsId) {
@@ -38,15 +41,18 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
         
     }
     if (filterBy.price) {
-        if (filterBy.price === 100) {
+        console.log('filterBy.price:',filterBy.price )
+        if (filterBy.price === 155) {
             
             gigs = gigs.filter(gig => gig.price <= filterBy.price)
         }
-        else if (filterBy.price === 200) {
+        else if (filterBy.price === 232) {
             
-            gigs = gigs.filter(gig => gig.price >= 100 && gig.price <= 200)
-        } else {
+            gigs = gigs.filter(gig => gig.price >= 155 && gig.price <= 232)
+        } else if (filterBy.price === 233){
             gigs = gigs.filter(gig => gig.price >= filterBy.price)
+        }else{
+            gigs = gigs.filter(gig => gig.price <= filterBy.price)
         }
 
     }

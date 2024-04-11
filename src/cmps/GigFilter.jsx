@@ -8,52 +8,92 @@ export function GigFilter({ filterBy, onSetFilter }) {
 
     const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
     const [isBudgetModalOpen, setBudgetModalOpen] = useState(false)
+    const [budgetValue, setBudgetValue] = useState(0)
+    const [budgetValueCustom, setBudgetValueCustom] = useState('')
+    const customInputRef = useRef(null)
 
     const [searchParams, setSearchParams] = useSearchParams()
 
     onSetFilter = useRef(utilService.debounce(onSetFilter))
+
     useEffect(() => {
         onSetFilter.current(filterByToEdit)
 
     }, [filterByToEdit])
 
     function handleChange(ev) {
+        ev.preventDefault()
+        setBudgetModalOpen(!isBudgetModalOpen)
+        if (budgetValue === "custom") {
+            ev.target.value = +budgetValueCustom
+            ev.target.name = 'price'
+        } else {
+            ev.target.value = budgetValue
+            ev.target.name = 'price'
+        }
         const currentParams = Object.fromEntries(searchParams)
-      
         // ev.preventDefault()
         let { value, name: field, type } = ev.target
         switch (field) {
             case 'price':
-                setSearchParams({...currentParams, price: value})
+                setSearchParams({ ...currentParams, price: value })
                 break;
-            case 'daysToMake':
-                setSearchParams({...currentParams, daysToMake: value})
-                break;
+                case 'daysToMake':
+                    setSearchParams({ ...currentParams, daysToMake: value })
+                    break;
+                }
+            }
+            
+            function clearFilter() {
+                setFilterByToEdit(gigService.getDefaultFilter())
+                setSearchParams({})
+            }
+            
+            function onClearBudget() {
+                setBudgetModalOpen(false)
+                setBudgetValue(0)
+                setBudgetValueCustom('')
+                const currentParams = Object.fromEntries(searchParams)
+                setSearchParams()
+                console.log('currentParams:',currentParams )
+            }
+            
+            function onBudgetModal(value) {
+                if (value !== "custom") {
+                    setBudgetValue(value)
+                    setBudgetValueCustom('')
+                } else {
+            setBudgetValue("custom")
+
         }
-
-    }
-
-    function clearFilter() {
-        setFilterByToEdit(gigService.getDefaultFilter())
-        setSearchParams({})
-    }
-
-    function onBudgetModal() {
-        setBudgetModalOpen(true)
     }
 
     return (
         <>
             <section className="gig-filter">
-                <div className="filter-price">
-                    <select value={filterByToEdit.price + ""} name="price" id="price" onChange={handleChange} >
-                        <option value="">Budget</option>
-                        <option value="100">Under $100</option>
-                        <option value="200">$100 - $200</option>
-                        <option value="201">Above $200</option>
-                    </select>
+                <div className="budget-filter-container" >
+                    <div className={`flex drop-budget-action ${(isBudgetModalOpen) ? "active" : ""}`} onClick={() => setBudgetModalOpen(!isBudgetModalOpen)}>
+                        <p >Budget</p>
+                        <div className={`fa arrow-points-${(isBudgetModalOpen) ? "up" : "down"}`}></div>
+                    </div>
+
+                    {isBudgetModalOpen && <form id="budget-form" onSubmit={handleChange} className="budget-form-filter" >
+                        <div className="flex budget-input" onClick={() => onBudgetModal(155)}><span className={`circle ${(budgetValue === 155) ? "active" : ""}`}></span>Value<span className="budget-txt">Under $155</span></div>
+                        <div className="flex budget-input" onClick={() => onBudgetModal(232)}><span className={`circle ${(budgetValue === 232) ? "active" : ""}`}></span>Mid-range<span className="budget-txt">$155 - $232</span></div>
+                        <div className="flex budget-input" onClick={() => onBudgetModal(233)}><span className={`circle ${(budgetValue === 233) ? "active" : ""}`}></span>High-end<span className="budget-txt">$232 & Above</span></div>
+                        <div className="budget-input custom" onClick={() => onBudgetModal("custom")}>
+                            <div className="custom-input"><span className={`circle ${(budgetValue === "custom") ? "active" : ""}`}></span>Custom</div>
+                            <div><input type="number" value={budgetValueCustom} placeholder="Enter a budget" onChange={(e) => setBudgetValueCustom(e.target.value)} ref={customInputRef} /></div>
+                        </div>
+                        {/* <div className="line"></div> */}
+                        <div className="action-btn-budget-container">
+                            <button onClick={onClearBudget} className="btn-clear-budget">Clear All</button>
+                            <button form="budget-form" className="btn-apply-budget" type="submit">Apply</button>
+                        </div>
+                    </form>}
                 </div>
-                <div className="filter-delivery-time ">
+
+                <div className="filter-delivery-time">
                     <select value={filterByToEdit.daysToMake + ""} name="daysToMake" id="delivery" onChange={handleChange} >
                         <option value="">Delivery time</option>
                         <option value="1">Express 24H</option>
@@ -64,20 +104,7 @@ export function GigFilter({ filterBy, onSetFilter }) {
                 </div>
 
                 <div className="clear-filter"><span onClick={clearFilter}>Clear filter</span></div>
-
-                {/* <div onClick={onBudgetModal} className="budget-filter-container" >
-                    <p>Budget</p>
-                    <div className={`fa arrow-points-${(isBudgetModalOpen) ? "up-arrow" : "down-arrow"}`}></div>
-                </div> */}
-                {/* {isBudgetModalOpen && <form onSubmit={handleChange} >
-                        <div className="flex" onClick={handleChange}><div className="circle"></div>Under $100</div>
-                        <div className="flex" onClick={handleChange}><div className="circle"></div>$100 - $200</div>
-                        <div className="flex" onClick={handleChange}><div className="circle"></div>Above $200</div>  
-                        <button>Apply</button>
-                    </form>} */}
-
-
-        </section >
+            </section >
         </>
 
     )
