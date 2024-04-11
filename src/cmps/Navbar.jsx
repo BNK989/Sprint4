@@ -81,35 +81,40 @@ export function NavBar({ signInModal }) {
                         </DropdownMenu></li>
                     {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
                     {user && <li className='relative' >
-                        <ToolTipWrapper tooltipContent={`${pendingOrdersTotal} Pending Orders`}>
+                        <Popover>
+                            <PopoverTrigger>Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}</PopoverTrigger>
+                            <PopoverContent>Place content for the popover here.</PopoverContent>
+                        </Popover>
+
+                        {/* <ToolTipWrapper tooltipContent={`${pendingOrdersTotal} Pending Orders`}>
                             <Link to={`user/${user._id}`}>
                                 Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}
                             </Link>
-                        </ToolTipWrapper>
+                        </ToolTipWrapper> */}
                     </li>
                     }
 
                     {user && <li className='text-black '>Switch to Selling</li>}
-                    {user &&<Popover >
-                            <PopoverTrigger>
-                                <QuickAvatar  user={user} />
-                            </PopoverTrigger>
-                            <PopoverContent className="tttt left-11 mx-10">
-                                <div className="flex gap-4 mb-4">
-                                    <QuickAvatar user={user} />
-                                    <h4> {util.capitalizeWords(user.fullname)}</h4>
-                                </div>
-                                <button className='w-full border border-black border-solid rounded'>Switch to Buying</button>
-                                <hr className='my-4'/>
-                                <ul className="clean-list ">
-                                    <li className='my-3 text-[#62646a]'><Link to={`user/${user._id}`}>Profile</Link></li>
-                                    <li className='my-3 text-[#62646a]'><Link to="">Refer a Friend</Link></li>
-                                <hr className='my-4'/>
-                                    <li className='my-3 text-[#62646a]'><Link to="">Logout</Link></li>
-                                </ul>
-                                
-                                </PopoverContent>
-                            </Popover>
+                    {user && <Popover >
+                        <PopoverTrigger>
+                            <QuickAvatar user={user} />
+                        </PopoverTrigger>
+                        <PopoverContent className="tttt left-11 mx-10">
+                            <div className="flex gap-4 mb-4">
+                                <QuickAvatar user={user} />
+                                <h4> {util.capitalizeWords(user.fullname)}</h4>
+                            </div>
+                            <button className='w-full border border-black border-solid rounded'>Switch to Buying</button>
+                            <hr className='my-4' />
+                            <ul className="clean-list ">
+                                <li className='my-3 text-[#62646a]'><Link to={`user/${user._id}`}>Profile</Link></li>
+                                <li className='my-3 text-[#62646a]'><Link to="">Refer a Friend</Link></li>
+                                <hr className='my-4' />
+                                <li className='my-3 text-[#62646a]'><Link to="">Logout</Link></li>
+                            </ul>
+
+                        </PopoverContent>
+                    </Popover>
                     }
 
                     {/* {user && <HoverCard>
