@@ -54,20 +54,20 @@ export function NavBar({ signInModal }) {
         }
     }, [orders])
 
-    // onOpenChange={() => console.log('open') }
-    //open={isMenuOpen} onOpenChange={setIsMenuOpen(prev => !prev)}
     return (
+        <>
+        <div className={`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`} onClick={() => setIsMenuOpen(false)}></div>
         <nav className="fiverr-nav">
             <ul className='clean-list flex gap-6'>
                 <li className='explore cursor-pointer' >
-                    <DropdownMenu className='cursor-pointer' >
-                        <DropdownMenuTrigger asChild className='fa chevron-down relative'>
+                    <DropdownMenu className='cursor-pointer' open={isMenuOpen} >
+                        <DropdownMenuTrigger asChild className='fa chevron-down relative' onClick={() => setIsMenuOpen(prev => !prev)}>
                             <button>Explore</button>
                         </DropdownMenuTrigger >
                         <DropdownMenuContent>
                             <DropdownMenuGroup>
                                 {exploreMenu.map(menu =>
-                                    <DropdownMenuItem key={menu.label}  >
+                                    <DropdownMenuItem key={menu.label} onClick={() => setIsMenuOpen(false)} >
                                         <Link className={!menu.path && `opacity-70 cursor-not-allowed`} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
                                     </DropdownMenuItem>)}
                             </DropdownMenuGroup>
@@ -87,10 +87,7 @@ export function NavBar({ signInModal }) {
                 {user && <HoverCard>
                     <HoverCardTrigger asChild>
                         <li className="user-img-navbar" >
-                            {/* <Avatar onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8">
-                                <AvatarImage src={user.imgUrl} alt="@shadcn" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar> */}
+ 
                             <QuickAvatar  user={user} />
                     {
                         isUserModalOpen &&
@@ -142,5 +139,6 @@ export function NavBar({ signInModal }) {
 
             </ul>
         </nav>
+        </>
     )
 }
