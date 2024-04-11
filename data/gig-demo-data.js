@@ -3,7 +3,7 @@ export const gigsDemo = [
     "_id": "OXeMG8wNskc",
     "title": "I will create professional logo and stationery",
     "category": "Writing & Translation",
-    "price": 50,
+    "price": 150,
     "owner": {
       "ordersCount": 3,
       "_id": "FHc6T",
@@ -81,7 +81,7 @@ export const gigsDemo = [
     "_id": "JYOJa2NpSCq",
     "title": "I will design retro vintage pinup girl logo in 24 hours",
     "category": "Music & Audio",
-    "price": 115,
+    "price": 300,
     "owner": {
       "ordersCount": 2,
       "_id": "FHc6T",

@@ -1,0 +1,175 @@
+.budget-filter-container {
+    align-self: center;
+    position: relative;
+
+    .drop-budget-action {
+        border: 0.8px solid rgba(138, 138, 138, 0.233);
+        border-radius: 10px;
+        padding: 0.6875em 0.9em;
+        font-weight: bold;
+        font-size: 0.9em;
+
+        &.active {
+            background-color: #f5f5f5;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border: 0.8px solid #222325;
+        }
+
+        .arrow-points-down::after {
+            content: "\f107";
+            margin-left: 0.75em;
+        }
+
+        .arrow-points-up::after {
+            content: "\f106";
+            margin-left: 0.75em;
+        }
+    }
+
+    .budget-form-filter {
+        position: absolute;
+        padding: 1.3333em 1.3333em 1.3333em 1.3333em;
+        margin-top: 0.5em;
+        top: 100%;
+        left: 0;
+        z-index: 20;
+
+        min-width: 14.44444em;
+
+        border: 0.5px solid rgba(182, 182, 182, 0.555);
+        border-radius: 10px;
+        box-shadow: 0 12px 18px rgba(0, 0, 0, .14);
+        background-color: #ffffff;
+
+        .budget-input {
+            margin: 0;
+            padding-block: 0.6666em;
+            font-weight: 600;
+            font-size: 0.875em;
+            align-items: center;
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #fafafa;
+            }
+
+            .circle {
+                position: relative;
+                width: 1.4em;
+                height: 1.4em;
+                margin: 0 0.5em 0 0;
+                border: 1px solid rgb(133, 133, 133);
+                border-radius: 50%;
+
+                &.active::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    width: 0.5em;
+                    height: 0.5em;
+                    border-radius: 50%;
+                    background-color: black;
+                }
+            }
+
+            &.custom {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                align-items: start;
+
+                &> :first-child {
+                    display: grid;
+                    grid-column: 1 / -1;
+                    grid-template-columns: subgrid;
+                }
+
+                &> :last-child {
+                    grid-column: 1 / -1;
+                    display: grid;
+                    grid-template-columns: subgrid;
+
+                    input {
+                        grid-column: 2;
+                        max-width: 11em;
+                        padding: 0.6em 0.9em;
+                        border: 1px solid #c5c6c9;
+                        border-radius: 4px;
+
+
+                        color: #404145;
+                        background-color: $clr6;
+                        resize: none;
+                        font: inherit;
+
+                        &:hover {
+                            background-color: #fafafa;
+                        }
+                    }
+                }
+
+                .circle {
+                    position: relative;
+                    width: 1.4em;
+                    height: 1.4em;
+                    margin: 0 0.5em 0 0;
+                    border: 1px solid rgb(133, 133, 133);
+                    border-radius: 50%;
+
+                    &.active::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        width: 0.5em;
+                        height: 0.5em;
+                        border-radius: 50%;
+                        background-color: black;
+                    }
+                }
+
+
+            }
+
+
+
+            .budget-txt {
+                margin: 0 0 0 8px;
+                font-size: 0.8125em;
+                color: #84868d;
+            }
+        }
+
+        .action-btn-budget-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.6em;
+
+            .btn-clear-budget{
+                margin: 0;
+                padding: 0;
+                color: #62646a;
+
+                &:hover{
+                    color: #74767e;
+                }
+            }
+
+            .btn-apply-budget{
+                color: #ffffff;
+                background-color: #000000;
+                border-radius: 5px;
+                &:hover{
+                    background-color: #404145;
+                }
+            }
+        }
+
+    }
+}
