@@ -6,6 +6,8 @@ export const usersDemo = [
         username: 'puki',
         password: '123',
         ordersCount: 1,
+        from: "israel",
+        Membersince: "Apr 2023",
         imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
     },
     {
@@ -14,6 +16,8 @@ export const usersDemo = [
         username: 'ben',
         password: '123',
         ordersCount: 3,
+        from: "israel",
+        Membersince: "Apr 2023",
         imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
     },
     {
@@ -22,6 +26,8 @@ export const usersDemo = [
         username: 'meni',
         password: '123',
         ordersCount: 5,
+        from: "israel",
+        Membersince: "Apr 2023",
         imgUrl: "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
     },
 ]

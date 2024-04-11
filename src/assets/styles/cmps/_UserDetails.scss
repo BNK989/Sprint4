@@ -1,52 +1,124 @@
 .user-details-seller-container {
-    display: flex;
-    margin-top: 100px;
-    gap: 10px;
-    justify-content: space-between;
+    margin-top: 4.5em;
 
-    .user-container {
-        display: flex;
-        flex-direction: column;
-        background-color: aquamarine;
-        max-width: 400px;
-        gap: 20px;
 
-        .user-details-seller {
+    .profile-main-container {
+        display: grid;
+        grid-template-columns: 0.6fr 1fr;
+
+
+        .user-container {
             display: flex;
-            flex-direction: column;
+            flex-flow: column;
+            align-items: center;
+            margin-left: -0.4em;
 
-            img {
-                align-self: center;
-            }
+            .user-details-seller {
+                width: 79%;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                border: 1px solid $clrbtn---hover;
+                padding-block: 1.5em;
 
-            .location::after {
-                content: "\f3c5";
-            }
 
-            h3 {
-                align-self: center;
+
+                .user-name {
+                    font-weight: bold;
+                    font-size: 1.2em;
+
+                }
+
+                .line {
+                    width: 90%;
+                    margin-block: 0.3em;
+                    background-color: $clrbtn---hover;
+                }
+
+                .details {
+                    width: 89%;
+                    // margin-bottom: 1.5em;
+                    display: flex;
+                    flex-flow: column;
+                    // align-self: auto;
+
+                    p {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        span {
+                            color: red;
+                            color: $clrbtn-hover;
+                        }
+
+                        div {
+                            display: flex;
+                            align-items: center;
+                            gap: 1em;
+                        }
+                    }
+
+                }
             }
         }
 
-        .user-description-seller {
-            // width: fit-content;
-            padding-right: 10px;
-            border: 1px solid black;
+        .gigs {
+            .owned-gigs-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: minmax(5px 10px);
+                gap: 1em;
 
+                li {
+                    border: 1px solid $clr-light-grey;
+                    display: flex;
+                    flex-flow: column;
+
+                    img {
+                        object-fit: cover;
+                        max-height: 170px;
+                    }
+
+                    div{
+                        padding: 1em;
+                        font-size: 0.8em;
+                        line-height: 1.1em;
+                        display: flex;
+                        flex-flow: column;
+                        gap: 10px;
+
+                        .price{
+                            align-self: flex-end;
+                        }
+                    }
+                }
+
+                .add-new-gig-container {
+                    p {
+                        align-self: center;
+                        margin-top: 1em;
+                    }
+                }
+
+                .add-new-gig-container::before {
+
+                    content: '+';
+                    background-color: #222325;
+                    color: #fff;
+                    font-size: 48px;
+                    font-weight: 400;
+                    width: 66px;
+                    height: 66px;
+                    border-radius: 50%;
+                    display: block;
+                    padding-inline: 18px;
+                    padding-right: 5px;
+                    margin: 80px auto 20px;
+                    line-height: 69px;
+                }
+
+            }
         }
-    }
-
-
-    .owned-gigs-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-
-        .add-new-gig-container {
-            text-align: center;
-        }
-
-        .owned-gigs-preview {}
     }
 }

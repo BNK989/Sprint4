@@ -3,11 +3,14 @@
 
 export function OwnedGigPreview({ ownedGig }) {
     return (
-    <>
-        <img src={ownedGig.imgUrls[0]} alt="" />
-        <h3>{ownedGig.title}</h3>
-        <p>$ {ownedGig.price}</p>
-    </>
-            
+        <>
+            <img src={ownedGig.imgUrls[0]} alt="" />
+            <div>
+                <span>{ownedGig.title}</span>
+                <span className="price">$ {ownedGig.price}</span>
+            </div>
+
+        </>
+
     )
 }
