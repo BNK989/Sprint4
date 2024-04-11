@@ -8,6 +8,7 @@ import { NavBar } from './Navbar.jsx'
 import { SearchBox } from './SearchBox.jsx'
 import { login, logout, signup } from '../store/actions/user.actions.js'
 import { gigService } from '../services/gig.service.local'
+import { UnderHeader } from './UnderHeader'
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
     const order = useSelector(storeState => storeState.orderModule.user)
@@ -91,12 +92,8 @@ export function AppHeader() {
                 </div>
                 <NavBar signInModal={signInModal} />
             </div>
-            <section className="under-header main-container full">
-                    <ul className='flex clean-list'>
-                        {categories?.map(cat => <li className='capitalize' key={cat}><Link className='font-light' to={`/explore/?cat=${cat.replace(/&/g, '-')}`}>{cat}</Link></li>)}
+            <UnderHeader categories={categories} />
 
-                    </ul>
-            </section>
             {
                 isModalOpen && <LoginSignup
                     onLogin={onLogin} onSignup={onSignup}

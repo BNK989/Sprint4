@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom"
 
 
 
-export function GigFilterByBudget({ handleChange, isBudgetModalOpen, setBudgetModalOpen }) {
+export function GigFilterByBudget({ handleChange, isBudgetModalOpen, handleModal }) {
     const [budgetValue, setBudgetValue] = useState(0)
     const [budgetValueCustom, setBudgetValueCustom] = useState('')
     const customInputRef = useRef(null)
@@ -22,18 +22,18 @@ export function GigFilterByBudget({ handleChange, isBudgetModalOpen, setBudgetMo
     }
 
     function onClearBudget() {
-        setBudgetModalOpen(false)
+        handleModal('budget')
         setBudgetValue(0)
         setBudgetValueCustom('')
         const currentParams = Object.fromEntries(searchParams)
         delete currentParams.price
-        setSearchParams()
+        setSearchParams({...currentParams})
     }
 
     return (<>
         {/* <section className="gig-filter"> */}
             <div className="budget-filter-container" >
-                <div className={`flex drop-budget-action ${(isBudgetModalOpen) ? "active" : ""}`} onClick={() => setBudgetModalOpen(!isBudgetModalOpen)}>
+                <div className={`flex drop-budget-action ${(isBudgetModalOpen) ? "active" : ""}`} onClick={() => handleModal('budget')}>
                     <p >Budget</p>
                     <div className={`fa arrow-points-${(isBudgetModalOpen) ? "up" : "down"}`}></div>
                 </div>

@@ -9,6 +9,13 @@
         font-weight: bold;
         font-size: 1rem;
         text-align: center;
+
+
+        &:hover {
+            cursor: pointer;
+            border: 0.8px solid #222325;
+        }
+
     }
 
 }

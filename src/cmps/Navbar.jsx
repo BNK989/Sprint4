@@ -102,13 +102,13 @@ export function NavBar({ signInModal }) {
                         <div className="flex justify-between space-x-4">
                             <QuickAvatar user={user} />
                             <div className="space-y-1 text-black tooltip">
-                                <h4 className="text-sm font-semibold tooltip ">@nextjs</h4>
+                                <h4 className="text-sm font-semibold tooltip ">{user.fullname}</h4>
                                 <p className="text-sm tooltip">
-                                    The React Framework – created and maintained by @vercel.
+                                    Hey {util.capitalizeWords(user.fullname.split(' ')[0])}, you have {pendingOrdersTotal} pending orders.
                                 </p>
                                 <div className="flex items-center pt-2 tooltip">
                                     <span className="text-xs text-muted-foreground tooltip">
-                                        Joined December 2021
+                                        Joined April 2024
                                     </span>
                                 </div>
                             </div>
