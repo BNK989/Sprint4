@@ -2,8 +2,8 @@ import { useState } from "react"
 import { useSearchParams } from "react-router-dom"
 
 
-export function GigFilterByDeliveryTime({ setDeliveryModalOpen, isDeliveryModalOpen,handleChangeDelivery }) {
-    const [deliveryValue, setDeliveryValue] = useState(0)
+export function GigFilterByDeliveryTime({ handleModal, isDeliveryModalOpen,handleChangeDelivery }) {
+    const [deliveryValue, setDeliveryValue] = useState('')
     const [searchParams, setSearchParams] = useSearchParams()
 
     function onDeliveryModal(value) {
@@ -12,11 +12,11 @@ export function GigFilterByDeliveryTime({ setDeliveryModalOpen, isDeliveryModalO
     }
 
     function onClearDelivery() {
-        setDeliveryModalOpen(false)
+        handleModal('delivery')
         setDeliveryValue('')
         const currentParams = Object.fromEntries(searchParams)
         delete currentParams.daysToMake
-        setSearchParams()
+        setSearchParams({...currentParams})
     }
 
     return (
@@ -24,7 +24,7 @@ export function GigFilterByDeliveryTime({ setDeliveryModalOpen, isDeliveryModalO
             <div className="filter-delivery-time">
 
                 <div className="delivery-filter-container" >
-                    <div className={`flex drop-delivery-action ${(isDeliveryModalOpen) ? "active" : ""}`} onClick={() => setDeliveryModalOpen(!isDeliveryModalOpen)}>
+                    <div className={`flex drop-delivery-action ${(isDeliveryModalOpen) ? "active" : ""}`} onClick={() => handleModal('delivery')}>
                         <p >Delivery time</p>
                         <div className={`fa arrow-points-${(isDeliveryModalOpen) ? "up" : "down"}`}></div>
                     </div>
