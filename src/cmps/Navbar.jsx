@@ -37,7 +37,7 @@ import {
 
 
 
-export function NavBar({ signInModal }) {
+export function NavBar({onLogout, signInModal }) {
     const [isUserModalOpen, setUserModalOpen] = useState(false)
     const user = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -110,7 +110,7 @@ export function NavBar({ signInModal }) {
                                 <li className='my-3 text-[#62646a]'><Link to={`user/${user._id}`}>Profile</Link></li>
                                 <li className='my-3 text-[#62646a]'><Link to="">Refer a Friend</Link></li>
                                 <hr className='my-4' />
-                                <li className='my-3 text-[#62646a]'><Link to="">Logout</Link></li>
+                                <li className='my-3 text-[#62646a]'><Link onClick={onLogout} to="">Logout</Link></li>
                             </ul>
 
                         </PopoverContent>

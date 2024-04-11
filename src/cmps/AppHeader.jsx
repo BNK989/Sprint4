@@ -90,7 +90,7 @@ export function AppHeader() {
                         <SearchBox />
                     </div>
                 </div>
-                <NavBar signInModal={signInModal} />
+                <NavBar signInModal={signInModal} onLogout={onLogout}/>
             </div>
             <UnderHeader categories={categories} />
 
