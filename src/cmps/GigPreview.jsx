@@ -30,7 +30,7 @@ export function GigPreview({ gig }) {
     return (<>
         <div className="main-img">
             {/* <img src={gig.imgUrls[0]} alt="" /> */}
-                <Carousel className="w-full max-w-xs">
+                <Carousel className="w-full ">
                     <CarouselContent>
                         {gig.imgUrls?.map((img, index) => (
                             <CarouselItem key={index}>

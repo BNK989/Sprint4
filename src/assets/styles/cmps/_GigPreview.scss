@@ -3,11 +3,10 @@
     flex-flow: column;
 
     .main-img {
-        height: 190px;
-        // border-radius: 50px;
+        // height: 190px;
+         // border-radius: 50px;
 
         .carousel-height{
-            height: 190px;
             border-radius: 10px;
         }
 
@@ -36,9 +35,11 @@
         }
 
         img {
-            width: cover;
-            height: 90%;
+            // width: cover;
+            height: 100%;
             border-radius: 10px;
+            aspect-ratio: 1 / .6;
+            object-fit: cover;
         }
     }
 

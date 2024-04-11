@@ -43,6 +43,7 @@ export async function login(credentials) {
 }
 
 export async function signup(credentials) {
+    // credentail contain { username: '', password: '', fullname: '', ?imgUrl: '' }
     try {
         const user = await userService.signup(credentials)
         

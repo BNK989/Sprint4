@@ -71,6 +71,7 @@ async function login(userCred) {
 }
 
 async function signup(userCred) {
+    console.log('userCred', userCred)
     const users = await storageService.query('user')
     const existUser = users.find(user => user.username === userCred.username)
     if (existUser) return
