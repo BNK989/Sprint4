@@ -29,6 +29,12 @@ import {
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover"
+
 
 
 export function NavBar({ signInModal }) {
@@ -56,35 +62,57 @@ export function NavBar({ signInModal }) {
 
     return (
         <>
-        <div className={`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`} onClick={() => setIsMenuOpen(false)}/>
-        <nav className="fiverr-nav">
-            <ul className='clean-list flex gap-6'>
-                <li className='explore cursor-pointer' >
-                    <DropdownMenu className='cursor-pointer' open={isMenuOpen} >
-                        <DropdownMenuTrigger asChild className='fa chevron-down relative' onClick={() => setIsMenuOpen(prev => !prev)}>
-                            <button>Explore</button>
-                        </DropdownMenuTrigger >
-                        <DropdownMenuContent>
-                            <DropdownMenuGroup>
-                                {exploreMenu.map(menu =>
-                                    <DropdownMenuItem key={menu.label} onClick={() => setIsMenuOpen(false)} >
-                                        <Link className={!menu.path && `opacity-70 cursor-not-allowed`} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
-                                    </DropdownMenuItem>)}
-                            </DropdownMenuGroup>
-                        </DropdownMenuContent>
-                    </DropdownMenu></li>
-                {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
-                {user && <li className='relative' >
-                    <ToolTipWrapper tooltipContent={`${pendingOrdersTotal} Pending Orders`}>
-                        <Link to={`user/${user._id}`}>
-                            Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}
-                        </Link>
-                    </ToolTipWrapper>
-                </li>
-                }
+            <div className={`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`} onClick={() => setIsMenuOpen(false)} />
+            <nav className="fiverr-nav">
+                <ul className='clean-list flex gap-6'>
+                    <li className='explore cursor-pointer' >
+                        <DropdownMenu className='cursor-pointer' open={isMenuOpen} >
+                            <DropdownMenuTrigger asChild className='fa chevron-down relative' onClick={() => setIsMenuOpen(prev => !prev)}>
+                                <button>Explore</button>
+                            </DropdownMenuTrigger >
+                            <DropdownMenuContent>
+                                <DropdownMenuGroup>
+                                    {exploreMenu.map(menu =>
+                                        <DropdownMenuItem key={menu.label} onClick={() => setIsMenuOpen(false)} >
+                                            <Link className={!menu.path && `opacity-70 cursor-not-allowed`} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
+                                        </DropdownMenuItem>)}
+                                </DropdownMenuGroup>
+                            </DropdownMenuContent>
+                        </DropdownMenu></li>
+                    {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
+                    {user && <li className='relative' >
+                        <ToolTipWrapper tooltipContent={`${pendingOrdersTotal} Pending Orders`}>
+                            <Link to={`user/${user._id}`}>
+                                Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}
+                            </Link>
+                        </ToolTipWrapper>
+                    </li>
+                    }
 
-                {user && <li className='text-black '>Switch to Selling</li>}
-                {user && <HoverCard>
+                    {user && <li className='text-black '>Switch to Selling</li>}
+                    {user &&<Popover >
+                            <PopoverTrigger>
+                                <QuickAvatar  user={user} />
+                            </PopoverTrigger>
+                            <PopoverContent className="tttt left-11 mx-10">
+                                <div className="flex gap-4 mb-4">
+                                    <QuickAvatar user={user} />
+                                    <h4> {util.capitalizeWords(user.fullname)}</h4>
+                                </div>
+                                <button className='w-full border border-black border-solid rounded'>Switch to Buying</button>
+                                <hr className='my-4'/>
+                                <ul className="clean-list ">
+                                    <li className='my-3 text-[#62646a]'><Link to={`user/${user._id}`}>Profile</Link></li>
+                                    <li className='my-3 text-[#62646a]'><Link to="">Refer a Friend</Link></li>
+                                <hr className='my-4'/>
+                                    <li className='my-3 text-[#62646a]'><Link to="">Logout</Link></li>
+                                </ul>
+                                
+                                </PopoverContent>
+                            </Popover>
+                    }
+
+                    {/* {user && <HoverCard>
                     <HoverCardTrigger asChild>
                         <li className="user-img-navbar" >
  
@@ -93,7 +121,7 @@ export function NavBar({ signInModal }) {
                         isUserModalOpen &&
                         <section className="user-menu-options" ref={menuRef}>
                         <Link className='link-profile' onClick={() => setUserModalOpen(false)} to={`user/${user._id}`}>Profile</Link>
-                        {/* <div onClick={onProfile}>Profile</div> */}
+                        <div onClick={onProfile}>Profile</div>
                         </section>
                     }
                         </li>
@@ -114,11 +142,11 @@ export function NavBar({ signInModal }) {
                             </div>
                         </div>
                     </HoverCardContent>
-                </HoverCard>
-                
-            }
-            {/* <img onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8" src={user.imgUrl} alt="" /> */}
-                {/* {user && <ToolTipWrapper tooltipContent={`Logged in as ${util.capitalizeWords(user.fullname)}`}>
+                </HoverCard>    
+            } */}
+
+                    {/* <img onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8" src={user.imgUrl} alt="" /> */}
+                    {/* {user && <ToolTipWrapper tooltipContent={`Logged in as ${util.capitalizeWords(user.fullname)}`}>
                     <li className="user-img-navbar" >
                         
                         <Avatar onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8">
@@ -134,11 +162,11 @@ export function NavBar({ signInModal }) {
                     </li></ToolTipWrapper>
                 } */}
 
-                {!user && <li className="sign-in-nav" onClick={() => signInModal(false)}>Sign in</li>}
-                {!user && <li className='join-btn' onClick={() => signInModal(true)}><Button variant="outline" className='font-bold bg-inherit h-6 p-[1.2em] rounded text-green1 border-green1 border border-solid hover:bg-[#19a463] hover:text-white'>Join</Button></li>}
+                    {!user && <li className="sign-in-nav" onClick={() => signInModal(false)}>Sign in</li>}
+                    {!user && <li className='join-btn' onClick={() => signInModal(true)}><Button variant="outline" className='font-bold bg-inherit h-6 p-[1.2em] rounded text-green1 border-green1 border border-solid hover:bg-[#19a463] hover:text-white'>Join</Button></li>}
 
-            </ul>
-        </nav>
+                </ul>
+            </nav>
         </>
     )
 }
