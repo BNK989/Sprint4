@@ -22,9 +22,9 @@ export function PopularServices() {
       <CarouselContent>
         {popularServices.map((service, i) => (
           <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/5">
-            <div className="p-1 h-[19.3em] rounded bg-cover" style={{backgroundImage: `url(${service.imgUrl})`}}>
-                <h5 className="text-white mt-4 ml-4 text-[1em]">{service.subTitle}</h5>
-                <h3 className="text-white mt-2 ml-4 text-[1.3em]">{service.title}</h3>
+            <div className="img-card p-1 h-[19.3em] rounded bg-cover hover:opacity-85 duration-300" style={{backgroundImage: `url(${service.imgUrl})`}}>
+                <h5 className="text-white mt-[.4em] ml-[.4em] text-[1em]">{service.subTitle}</h5>
+                <h3 className="text-white font-extrabold leading-none ml-[.4em] text-[1.3em]">{service.title}</h3>
             </div>
           </CarouselItem>
         ))}

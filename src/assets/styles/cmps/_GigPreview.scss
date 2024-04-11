@@ -1,0 +1,154 @@
+.gig-preview {
+    display: flex;
+    flex-flow: column;
+
+    .main-img {
+        height: 190px;
+        // border-radius: 50px;
+
+        .carousel-height{
+            height: 190px;
+            border-radius: 10px;
+        }
+
+        .arrow-left,
+        .arrow-right {
+            opacity: 0;
+            transform: translateY(-25px);
+            transition: opacity 0.3s ease-in, translate 0.3s ease-in;
+        }
+
+        &:hover~.gig-details {
+            text-decoration: underline;
+        }
+
+        &:hover .arrow-left {
+            translate: 55px;
+        }
+
+        &:hover .arrow-right {
+            translate: -55px;
+        }
+
+        &:hover .arrow-left:not(:disabled),
+        &:hover .arrow-right:not(:disabled) {
+            opacity: 1;
+        }
+
+        img {
+            width: cover;
+            height: 90%;
+            border-radius: 10px;
+        }
+    }
+
+    
+
+    .gig-owner-mini {
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 0.7em;
+
+        * {
+            display: inline;
+        }
+
+        .gig-user {
+            display: flex;
+            gap: 7px;
+            font-size: 1.1em;
+
+            // img {
+            //     max-width: 25px;
+            // }
+
+            p {
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .level {
+            align-self: center;
+            display: flex;
+
+
+            .level-and-num {
+                font-weight: bold;
+                padding-right: 10px;
+            }
+
+
+            i {
+                display: flex;
+
+                svg {
+                    align-self: center;
+                }
+            }
+
+        }
+    }
+
+    
+
+    .gig-details {
+        font-size: 0.9em;
+        margin-top: 10px;
+        height: 3.25em;
+
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:hover~.main-img> :has(.arrow-left) {
+            translate: 55px;
+        }
+
+        &:hover~.main-img> :has(.arrow-right) {
+            translate: -55px;
+        }
+
+        &:hover~.main-img> :has(.arrow-left:not(:disabled)),
+        &:hover~.main-img> :has(.arrow-right:not(:disabled)) {
+            opacity: 1;
+        }
+
+    }
+
+    .gig-user-rate {
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        gap: 0.2em;
+
+        .rate {
+            span {
+                font-weight: 100;
+                color: $clrbtn-hover;
+            }
+        }
+
+        .star {
+            svg {
+                scale: 0.85;
+            }
+        }
+    }
+
+    .gig-price {
+        margin-top: 5px;
+        font-size: 0.9em;
+        font-weight: bold;
+
+        // &:hover ~ .gig-details{
+        //     text-decoration: underline;
+        // }
+    }
+}
+

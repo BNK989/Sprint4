@@ -1,7 +1,25 @@
-.arrow-left{
-    translate: 25px;
-}
+.popular-services{
 
-.arrow-right{
-    translate: -25px;
+    h2{
+        letter-spacing: .075em;
+        color: #121212 ;
+    }
+
+    // .img-card{
+    //     width: em(265px);
+    // }
+
+    .arrow-left, .arrow-right{
+        box-shadow: 0 0 6px 1px lighten(#000, 80%);
+        padding: 1.8em
+    }
+
+    .arrow-left{
+        translate: 25px;
+    }
+
+    .arrow-right{
+        translate: -25px;
+    }
+
 }

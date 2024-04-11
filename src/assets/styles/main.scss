@@ -94,19 +94,20 @@
 @import "setup/variables";
 @import "setup/functions";
 @import "setup/mixins";
-@import "setup/typography";
+@import "basics/fonts";
 
 // Basics
 @import "basics/helpers";
 @import "basics/layout";
 @import "basics/base";
-@import "basics/fonts";
 @import "basics/links";
 @import "basics/forms";
 
+// Always show
+@import "cmps/AppHeader";
+@import "cmps/AppFooter";
 
-// Views
-//@import "views/AboutUs";
+// Views/Pages
 @import "views/HomePage";
 @import "views/GigIndex";
 @import "views/GigDetails";
@@ -114,15 +115,16 @@
 @import "views/UserDetails";
 @import "views/Payment";
 
-// Components
 
 //homepage
-@import "cmps/AppHeader";
-@import "cmps/AppFooter";
+// @import "cmps/Hero"; (see homepae
 @import "cmps/TrustedBy";
 @import "cmps/PopularServices";
 @import "cmps/BestPart";
 @import "cmps/JoinPoster";
+@import "cmps/SearchBox";
+@import "cmps/GigList";
+@import "cmps/GigPreview";
 
 
 @import "cmps/CategoriesNav";
