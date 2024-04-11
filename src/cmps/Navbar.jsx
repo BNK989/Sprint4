@@ -56,7 +56,7 @@ export function NavBar({ signInModal }) {
 
     return (
         <>
-        <div className={`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`} onClick={() => setIsMenuOpen(false)}></div>
+        <div className={`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`} onClick={() => setIsMenuOpen(false)}/>
         <nav className="fiverr-nav">
             <ul className='clean-list flex gap-6'>
                 <li className='explore cursor-pointer' >
