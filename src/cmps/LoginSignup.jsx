@@ -37,6 +37,7 @@ export function LoginSignup(props) {
     function onSignup(ev = null) {
         if (ev) ev.preventDefault()
         if (!credentials.username || !credentials.password || !credentials.fullname) return
+        console.log('hey from 41' , credentials)
         props.onSignup(credentials)
         clearState()
     }
@@ -47,6 +48,7 @@ export function LoginSignup(props) {
 
     function onUploaded(imgUrl) {
         setCredentials({ ...credentials, imgUrl })
+        console.log('imgUrl:', imgUrl)
     }
  
     return (

@@ -54,6 +54,7 @@ export function AppHeader() {
         try {
             setModalOpen(false)
             const newUser = await signup(credentials)
+            console.log('got to 57 in Header' , newUser)//not getting here
             // const user = await login(newUser)
             showSuccessMsg(`Welcome new user: ${newUser.fullname}`)
         } catch (err) {
