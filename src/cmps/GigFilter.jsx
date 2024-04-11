@@ -54,6 +54,16 @@ export function GigFilter({ filterBy, onSetFilter }) {
         }
     }
 
+    function handleModal(value){
+        if(value === 'budget'){
+            setBudgetModalOpen(!isBudgetModalOpen)
+            setDeliveryModalOpen(false)
+        }else{
+            setDeliveryModalOpen(!isDeliveryModalOpen)
+            setBudgetModalOpen(false)
+        }
+    }
+
     function clearFilter() {
         setFilterByToEdit(gigService.getDefaultFilter())
         setSearchParams({})
@@ -62,9 +72,9 @@ export function GigFilter({ filterBy, onSetFilter }) {
     return (
         <>
             <section className="gig-filter">
-            <GigFilterByBudget handleChange={handleChange} setBudgetModalOpen={setBudgetModalOpen} isBudgetModalOpen={isBudgetModalOpen}/>
+            <GigFilterByBudget handleChange={handleChange} handleModal={handleModal} isBudgetModalOpen={isBudgetModalOpen}/>
 
-            <GigFilterByDeliveryTime setDeliveryModalOpen={setDeliveryModalOpen} isDeliveryModalOpen={isDeliveryModalOpen} handleChangeDelivery={handleChangeDelivery}/>   
+            <GigFilterByDeliveryTime handleModal={handleModal} isDeliveryModalOpen={isDeliveryModalOpen} handleChangeDelivery={handleChangeDelivery}/>   
      
                 <div className="clear-filter"><span onClick={clearFilter}>Clear filter</span></div>
             </section >
