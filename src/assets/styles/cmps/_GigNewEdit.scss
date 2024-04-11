@@ -1,0 +1,14 @@
+.gig-new-edit-container{
+
+    form{
+
+        input{
+
+            &:focus-visible{
+                outline: none;
+                border: none;
+            }
+
+        }
+    }
+}
