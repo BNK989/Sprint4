@@ -12,3 +12,16 @@
         width: 26.4em;
         padding-inline-start: 1em;
 }
+
+
+.app-header .dimmer{
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    width: 100vw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    pointer-events: auto;
+
+}
