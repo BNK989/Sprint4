@@ -45,10 +45,15 @@
             border-color: white;
         }
     }
-
+    
+    .left-arrow{
+        background: linear-gradient(90deg,#fff 50%,hsla(0,0%,100%,0));
+    }
+    
     &.search-visible .under-header{
         transform: rotateX(0deg);
         background-color: #fff;
+
         li{
             position: relative;
             height: 2.5em;
