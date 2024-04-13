@@ -18,7 +18,8 @@ export function AppHeader() {
     const [isScrollNull, setIsScrollNull] = useState(true)
     const [isSearchVisible, setIsSearchVisible] = useState(false)
     const [categories, setCategories] = useState([])
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+    const [burgerMenuOpen, setBurgerMenuOpen] = useState(false)
 
    
     
@@ -28,15 +29,19 @@ export function AppHeader() {
         window.scrollY >= 0.1 ? setIsScrollNull(false) : setIsScrollNull(true)
         window.scrollY > 80 ? setIsSearchVisible(true) : setIsSearchVisible(false)
     }
+
+    function isMobileDecider() {
+        setIsMobile(() => window.innerWidth < 768 )
+    }
+
     useEffect(() => {
-        const setIsMobile = () => window.innerWidth < 768 ? setIsMobilem(true) : setIsMobilem(false)
         getCategories()
-        window.addEventListener('resize', setIsMobile)
+        window.addEventListener('resize', isMobileDecider)
         if (isHomepage) {
             window.addEventListener("scroll", handleScroll)
             return () => window.removeEventListener("scroll", handleScroll)
         }
-        return () => window.removeEventListener('resize', setIsMobile)
+        return () => window.removeEventListener('resize', isMobileDecider)
     }, [location])
 
     async function getCategories() {
@@ -81,6 +86,9 @@ export function AppHeader() {
         setLogInSelect(val)
         setModalOpen(!isModalOpen)
     }
+
+    console.log(isMobile)
+
     return (
         <header className={
             `app-header full main-container
@@ -88,9 +96,19 @@ export function AppHeader() {
                 ${(isScrollNull && isHomepage) ? "transparent" : "scrolled"}
                 ${isSearchVisible ? "search-visible" : ""}`
         }>
+            <div className={`backdrop ${burgerMenuOpen ? 'on' : 'off'}`} onClick={() => setBurgerMenuOpen(false)}/>
+            <div className="burgerMenu">
+                <ul className="flex flex-col" onClick={() => setBurgerMenuOpen(false)}>
+                    <li><Button>Join 5err</Button></li>
+                    <li><Link>Sign in</Link></li>
+                    <li><Link to="/explore">Explore</Link></li>
+                </ul>
+                
+                
+            </div>
             <div className="header-container">
                 <div className='w-full md:w-fit flex align-center md:justify-center center gap-8 justify-between'>
-                    <Button className="hamburger contents md:hidden">
+                    <Button onClick={() => setBurgerMenuOpen(prev => !prev)} className="hamburger contents md:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="19" viewBox="0 0 23 19">
                             <rect y="16" width="23" height="3" rx="1.5" fill="#555"></rect>
                             <rect width="23" height="3" rx="1.5" fill="#555"></rect>
@@ -98,7 +116,7 @@ export function AppHeader() {
                         </svg>
                     </Button>
                     <div className="logo">
-                        <a href="/"><img src={(isScrollNull && isHomepage && isMobile) ? `/img/5err-logo-white.svg` : `/img/5err-logo.svg`} alt="5err logo" /></a>
+                        <a href="/"><img src={(isScrollNull && isHomepage) ? `${isMobile ? '/img/5err-logo.svg' : '/img/5err-logo-white.svg'}` : `/img/5err-logo.svg`} alt="5err logo" /></a>
                     </div>
                     <Button onClick={() => signInModal(true)} className="mobile-only-join contents md:hidden">
                         Join
