@@ -45,9 +45,19 @@
             border-color: white;
         }
     }
-    
-    .left-arrow{
-        background: linear-gradient(90deg,#fff 50%,hsla(0,0%,100%,0));
+
+    section ul{
+        padding-inline: 1.7em;
+        
+        .right-arrow{
+            box-shadow: -12px 1px 18px 12px white;
+            
+        }
+        
+        .left-arrow{
+            box-shadow: 12px 1px 18px 12px white;
+            
+        }
     }
     
     &.search-visible .under-header{
