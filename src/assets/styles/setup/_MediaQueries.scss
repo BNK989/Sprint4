@@ -1,0 +1,15 @@
+@media (max-width: 767px) {
+    .app-header.main-container.full{
+     background-color: white;
+     
+     .mobile-only-join {
+        color: #62646ac7;
+        font-weight: 800;
+        font-size: 1em;
+        transition: color .3s ease;
+        &:hover{
+            color: lighten(#62646ac7,20%);
+        }
+     }
+    }
+}

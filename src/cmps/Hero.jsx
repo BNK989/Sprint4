@@ -28,7 +28,7 @@ export function Hero(){
         <section className='homepage-section hero' style={{backgroundImage: `url(${bgImgs[imgIdx]})`, transition: 'background-image 1.5s ease-in-out' }}>
             <section className='hero-container main-container full flex'>
                 <div className="search-container flex">
-                    <h1>Find the right <i>freelance</i><br/> service, right away</h1>
+                    <h1>Find the right <i  className='text-white'>freelance</i><br/> service, right away</h1>
                     <SearchBox neverHide={true} inHeader={false} />
                     <div className="popular">
                         <ul className='clean-list flex '>

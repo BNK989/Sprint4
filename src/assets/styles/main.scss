@@ -95,6 +95,7 @@
 @import "setup/functions";
 @import "setup/mixins";
 @import "basics/fonts";
+@import "setup/MediaQueries";
 
 // Basics
 @import "basics/helpers";
@@ -145,5 +146,6 @@
 @import "cmps/UserDetails";
 
 @import "cmps/NavBar";
+
 
 
