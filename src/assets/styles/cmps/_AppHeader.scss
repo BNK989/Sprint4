@@ -81,14 +81,16 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: transform .5s ease;
+        transition: transform .5s ease, opacity .5s ease;
 
         &.off{
             transform: translateY(120%);
+            opacity: 0;
         }
         &.on{
             transform: translateY(0%);
-        }
+            opacity: 1;
+        } 
 
         >div{
             min-height: auto;
