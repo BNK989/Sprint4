@@ -132,30 +132,30 @@ function getEmptyGig() {
             },
             premium: {
                 price: 280,
-            description: "Make unique logo...",
-            whatIncluded: {
-                ConceptIncluded: true,
-                IncludeSourceFile: true,
-                StationeryDesigns: true
-            },
-            daysToMake: 4
-        }
-    },
+                description: "Make unique logo...",
+                whatIncluded: {
+                    ConceptIncluded: true,
+                    IncludeSourceFile: true,
+                    StationeryDesigns: true
+                },
+                daysToMake: 4
+            }
+        },
         owner: {
-    _id: "FHc6T",
+            _id: "FHc6T",
             fullname: "meni ko",
-                imgUrl: "https://content.latest-hairstyles.com/wp-content/uploads/best-long-hairstyles-for-men.jpg",
-                    level: 3,
-                        rate: 5,
-                            ordersCount: 5
-    },
-    avgResponseTime: 1,
+            imgUrl: "https://content.latest-hairstyles.com/wp-content/uploads/best-long-hairstyles-for-men.jpg",
+            level: 3,
+            rate: 5,
+            ordersCount: 5
+        },
+        avgResponseTime: 1,
         loc: "Ghana",
-            imgUrls: [],
-                tags: [],
-                    likedByUsers: ["mini-user"],
-                        reviews: []
-}
+        imgUrls: [],
+        tags: [],
+        likedByUsers: ["mini-user"],
+        reviews: []
+    }
 }
 
 function getDefaultFilter() {
