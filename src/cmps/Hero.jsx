@@ -41,7 +41,7 @@ export function Hero(){
         <section className='homepage-section hero' style={styles}>
             <section className='hero-container main-container full flex'>
                 <div className="search-container flex pt-36 md:pt-0">
-                    <h1 className='max-w-md'>Find the right <i  className='text-white'>freelance</i> service, right away</h1>
+                    <h1 className='max-w-[35rem]'>Find the right <i  className='text-white'>freelance</i> service, right away</h1>
                     <SearchBox neverHide={true} inHeader={false} />
                     <div className="popular">
                         <ul className='clean-list flex '>
