@@ -26,11 +26,23 @@ table {
         tr {
             border-bottom: 1px solid #dddddd;
 
+            .buyer {
+                display: flex;
+                flex-flow: column;
+                gap: 10px;
+                
+                
+            }
+
+.task{
+    font-size: 0.8em;
+}
 
             td {
                 width: 50vw;
                 padding: 12px 15px;
-                img{
+
+                img {
                     width: 50%;
                 }
             }
@@ -47,27 +59,29 @@ table {
         .received-order-action-container {
             position: relative;
             // width: fit-content;
-            
-            &.accepted{
-                button{
+
+            &.accepted {
+                button {
                     background-color: $clrbg1;
-                    
+
                 }
             }
-            &.rejected{
-                button{
+
+            &.rejected {
+                button {
                     color: $clr-light--grey;
                     background-color: $clralert;
 
                 }
             }
 
-            button{
+            button {
                 background-color: #e2ee75;
                 border-radius: 10px;
             }
 
         }
+
         .received-order-action-modal {
             padding: 0;
             position: absolute;
@@ -77,16 +91,19 @@ table {
             background-color: $clr6;
             border: 0.8px solid rgba(58, 58, 58, 0.514);
             border-radius: 15px;
-            button{
-                &:hover{
+
+            button {
+                &:hover {
                     background-color: $clr-light--grey;
-                    &.received-order-accept{
+
+                    &.received-order-accept {
                         color: $clr-light--grey;
                         background-color: $clrbg1;
                         border-radius: 10px;
-                        
+
                     }
-                    &.received-order-reject{
+
+                    &.received-order-reject {
                         color: $clr-light--grey;
                         background-color: $clralert;
                         border-radius: 10px;
@@ -95,7 +112,7 @@ table {
                 }
             }
         }
-        
+
     }
 
 
