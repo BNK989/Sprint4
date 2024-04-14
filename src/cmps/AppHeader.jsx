@@ -109,8 +109,8 @@ export function AppHeader() {
                 </ul>
             </div>
             {/* MARK: DRAWER */}
-            <div className={`draw-join ${isDrawOpen ? 'on' : 'off'}`}>
-                <div className='w-full flex justify-between box-border'>
+            <div className={`draw-join content-between ${isDrawOpen ? 'on' : 'off'}`}>
+                <div className='w-full flex justify-between box-border items-baseline'>
                     <img src="/img/5err-logo.svg" alt="5err logo" />
                     <button onClick={() => setIsDrawOpen(prev => !prev)} className='btn'>
                         <svg width="12" height="12" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="#74767E">
@@ -124,7 +124,7 @@ export function AppHeader() {
              {/* MARK: DRAWER END*/}
             <div className="header-container">
                 <div className='w-full md:w-fit flex align-center md:justify-center center gap-8 justify-between'>
-                    <Button onClick={() => setBurgerMenuOpen(prev => !prev)} className="hamburger contents md:hidden">
+                    <Button onClick={() => setBurgerMenuOpen(prev => !prev)} className=" bg-transparent hover:bg-white hamburger block md:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="19" viewBox="0 0 23 19">
                             <rect y="16" width="23" height="3" rx="1.5" fill="#555"></rect>
                             <rect width="23" height="3" rx="1.5" fill="#555"></rect>
@@ -135,12 +135,12 @@ export function AppHeader() {
                         <a href="/"><img src={(isScrollNull && isHomepage) ? `${isMobile ? '/img/5err-logo.svg' : '/img/5err-logo-white.svg'}` : `/img/5err-logo.svg`} alt="5err logo" /></a>
                     </div>
                    
-                    <div className="search-container hidden md:contents">
+                    <div className="search-container hidden md:block">
                         <SearchBox />
                     </div>
-                    <button onClick={() => setIsDrawOpen(prev => !prev)} className='btn join-btn md:hidden contents'>Join</button>
+                    <button onClick={() => setIsDrawOpen(prev => !prev)} className='btn join-btn md:hidden block'>Join</button>
                 </div>
-                <NavBar signInModal={signInModal} className={"hidden md:contents"} onLogout={onLogout}/>
+                <NavBar signInModal={signInModal} className={"hidden md:block"} onLogout={onLogout}/>
             </div>
             <UnderHeader categories={categories} />
 

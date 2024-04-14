@@ -24,6 +24,7 @@ async function query(filterBy = { buyerOrder: '', sellerOrder: '' }) {
     if (filterBy.sellerOrder) {
         orders = orders.filter(order => order.sellerOrder === filterBy.sellerOrder)
     }
+    console.log('orders:', orders)
     return orders
 }
 

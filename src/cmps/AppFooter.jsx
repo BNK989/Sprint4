@@ -5,9 +5,9 @@ export function AppFooter() {
 
 
     return (
-        <footer className="app-footer main-container full bg-gray1 border-t-2 h-16 mt-24 ">
+        <footer className="app-footer main-container full bg-gray1 border-t-2 min-h-16 mt-24 md:w-full">
             <div className="bottom flex justify-between">
-                <div className="left flex h-6 my-auto">
+                <div className="left flex min-h-6 my-auto">
                     <span className="mr-4 flex-center">
                         <img src="/img/5err-logo.svg" alt="5err logo"/>
                     </span>

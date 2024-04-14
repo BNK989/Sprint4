@@ -10,8 +10,9 @@ export const RegisterSchema = z.object({
 export const GigSchema = z.object({
     title: z.string().min(1).max(100),
     category: z.string().min(1).max(50),
-    searchTags: z.string(),//z.array(z.string()).min(1),
-    price: z.string(),//z.number().min(1),
-    daysToMake: z.string(),//z.number().min(1),
+    searchTags: z.array(z.string()).min(1),
+    price: +z.number().min(1),
+    daysToMake: z.number().min(1),
     description: z.string().min(1).max(1000),
+    imgUrls: z.array(z.string()).min(1)
   })

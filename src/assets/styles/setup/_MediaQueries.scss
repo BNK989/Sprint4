@@ -32,4 +32,41 @@
         }
     }
 
+    .video-section{
+        .video-layout{
+            flex-direction: column;
+        }
+
+        .side-text{
+            padding-inline-end: 0;
+        }
+    }
+
+    .main-categories ul li{
+        width: 50%;
+    }
+
+    .join-poster-container{
+        padding: 1em;
+        margin: 1em;
+        background-color: #4f1627;
+        width: auto;
+
+        .signup-text .title {
+            font-size: 2.3em;
+            i{
+            color: $clr-light--grey;
+            }
+    }
+
+        picture{
+            display: none;
+            
+        }
+    }
+
+    .fa.chevron-right, .fa.chevron-right::after, .fa.chevron-right::before, button.inline-flex {  
+        display: none;
+    }
+
 }

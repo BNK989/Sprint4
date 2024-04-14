@@ -12,12 +12,12 @@ export function PopularServices() {
 
     return (
         <section className="popular-services main-container full mb-24">
-          <h2 className="pb-6 text-[2em] font-extrabold tracking-tighter">Popular services</h2>
+          <h2 className="md:pb-6 pb-2 text-[2em] font-extrabold tracking-tighter">Popular services</h2>
   <Carousel
       opts={{
         align: "start",
       }}
-      className="w-full"
+      className="md:w-full w-[82vw]"
     >
       <CarouselContent>
         {popularServices.map((service, i) => (
