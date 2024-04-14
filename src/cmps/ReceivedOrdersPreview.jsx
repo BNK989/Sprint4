@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { QuickAvatar } from "./shanCN/QuickAvatar"
 
 
 
@@ -21,7 +22,9 @@ export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) 
     // buyer
     return (<>
         <td><div className="buyer">
-            <img src={order.buyer.imgUrl} alt="Avatar" />{order.buyer.fullname}
+        <QuickAvatar user={order.buyer} className="user-image aspect-square h-20 w-20 flex-center" />
+            {/* <img src={order.buyer.imgUrl} alt="Avatar" /> */}
+            {order.buyer.fullname}
             </div></td>
         {/* <td></td> */}
         <td className="task">{order.gig.title}</td>

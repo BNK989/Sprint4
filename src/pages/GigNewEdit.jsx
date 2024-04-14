@@ -34,6 +34,7 @@ import { addGig } from "@/store/actions/gig.actions"
 import {gigService} from '@/services/gig.service.local'
 import { data } from "autoprefixer"
 import { ImgUploader } from "@/cmps/ImgUploader"
+import { Link } from "react-router-dom"
 
 export function GigNewEdit() {
 
@@ -212,7 +213,10 @@ export function GigNewEdit() {
 
           </div>
           <div className="btn-container w-full flex justify-end">
-            <Button type="submit">Save & Continue</Button>
+          
+           {/* <Link to={`user/:userId${gig._id}`}> */}
+             <Button type="submit">Save & Continue</Button>
+             {/* </Link> */}
           </div>
 
         </form>

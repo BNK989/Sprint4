@@ -24,7 +24,7 @@ _saveDemoData()
 
 async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGigsId) {
     // console.log('filterBy.price:',filterBy )
-   
+
     var gigs = await storageService.query(STORAGE_KEY)
     if (ownedGigsId) {
         let userId = userService.getLoggedinUser()._id
@@ -33,25 +33,25 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.packages.basic.description))
-        
+
     }
     if (filterBy.category) {
         const regex = new RegExp(filterBy.category.replace(/-/g, '&'), 'i')
         gigs = gigs.filter(gig => regex.test(gig.category))
-        
+
     }
     if (filterBy.price) {
-        console.log('filterBy.price:',filterBy.price )
+        console.log('filterBy.price:', filterBy.price)
         if (filterBy.price === 155) {
-            
+
             gigs = gigs.filter(gig => gig.packages.basic.price <= filterBy.price)
         }
         else if (filterBy.price === 232) {
-            
+
             gigs = gigs.filter(gig => gig.packages.basic.price >= 155 && gig.packages.basic.price <= 232)
-        } else if (filterBy.price === 233){
+        } else if (filterBy.price === 233) {
             gigs = gigs.filter(gig => gig.packages.basic.price >= filterBy.price)
-        }else{
+        } else {
             gigs = gigs.filter(gig => gig.packages.basic.price <= filterBy.price)
         }
 
@@ -59,9 +59,9 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
     if (filterBy.daysToMake) {
         gigs = gigs.filter(gig => gig.packages.basic.daysToMake <= filterBy.daysToMake)
     }
-    
+
     gigs = gigs.sort((gig1, gig2) => (gig1.owner.rate - gig2.owner.rate) * -1)
-    
+
 
     return gigs
 }
@@ -80,7 +80,7 @@ async function save(gig) {
     if (gig._id) {
         savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
-       
+
         // Later, owner is set by the backend
         gig.owner = userService.getLoggedinUser()
         savedGig = await storageService.post(STORAGE_KEY, gig)
@@ -107,31 +107,55 @@ async function addGigMsg(gigId, txt) {
 
 function getEmptyGig() {
     return {
-        title: '',
-        price: '',
-        owner: {},
-        daysToMake: getRandomIntInclusive(3, 10),
-        description: makeLorem(10),
-        avgResponseTime: getRandomIntInclusive(1, 3),
+        title: "",
+        category: "",
+        packages: {
+            basic: {
+                price: 0,
+                description: "",
+                whatIncluded: {
+                    ConceptIncluded: false,
+                    IncludeSourceFile: false,
+                    StationeryDesigns: true
+                },
+                daysToMake: 0
+            },
+            standard: {
+                price: 198,
+                description: "Make unique logo...",
+                whatIncluded: {
+                    ConceptIncluded: false,
+                    IncludeSourceFile: true,
+                    StationeryDesigns: true
+                },
+                daysToMake: 5
+            },
+            premium: {
+                price: 280,
+            description: "Make unique logo...",
+            whatIncluded: {
+                ConceptIncluded: true,
+                IncludeSourceFile: true,
+                StationeryDesigns: true
+            },
+            daysToMake: 4
+        }
+    },
+        owner: {
+    _id: "FHc6T",
+            fullname: "meni ko",
+                imgUrl: "https://content.latest-hairstyles.com/wp-content/uploads/best-long-hairstyles-for-men.jpg",
+                    level: 3,
+                        rate: 5,
+                            ordersCount: 5
+    },
+    avgResponseTime: 1,
         loc: "Ghana",
-        imgUrls: [''],
-        tags: [
-            "Arts And Crafts", "Logo Design"
-        ],
-        likedByUsers: ['mini-user'],
-        reviews: [
-            {
-                "id": "madeId",
-                "txt": "Did an amazing work",
-                "rate": 4,
-                "by": {
-                    "_id": "u102",
-                    "fullname": "user2",
-                    "imgUrl": "/img/img2.jpg"
-                }
-            }
-        ],
-    }
+            imgUrls: [],
+                tags: [],
+                    likedByUsers: ["mini-user"],
+                        reviews: []
+}
 }
 
 function getDefaultFilter() {
@@ -149,9 +173,9 @@ function _saveDemoData() {
 }
 
 
-async function allCategories(){
+async function allCategories() {
     var gigs = await storageService.query(STORAGE_KEY)
-    return gigs.reduce((accumulator, {category}) => {
+    return gigs.reduce((accumulator, { category }) => {
         if (!accumulator.includes(category)) {
             accumulator.push(category)
         }
