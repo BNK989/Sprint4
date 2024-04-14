@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -37,16 +37,18 @@ import { ImgUploader } from "@/cmps/ImgUploader"
 
 export function GigNewEdit() {
   const navigate = useNavigate()
+  const params = useParams()
+  const [gig, setGig] = useState({})
 
   const form = useForm({
     resolver: zodResolver(GigSchema),
     defaultValues: {
-      title: '',
-      category: '',
+      title: gig.title || '',
+      category:  '',
       searchTags: [],
-      price: 0,
+      price:  0,
       daysToMake: 0,
-      description: '',
+      description:  '',
       imgUrl: ''
     }
   })
@@ -72,10 +74,28 @@ export function GigNewEdit() {
   let [categories, setCategories] = useState([])
 
   useEffect(() => {
+    loadGig(params.id)
     gigService.allCategories()
       .then(data => setCategories(data))
 
   }, [])
+
+  async function loadGig(id) {
+    try {
+        const gig = await gigService.getById(id)
+        console.log('gig:', gig)
+        setGig(gig)
+        form.setValue('title', gig.title)
+        form.setValue('category', gig.category)
+        form.setValue('searchTags', gig.tags.join(', '))
+        form.setValue('price', gig.packages.basic.price)
+        form.setValue('daysToMake', gig.packages.basic.daysToMake)
+        form.setValue('description', gig.description)
+    } catch (err) {
+        console.log('Had issues in gig details', err)
+        showErrorMsg('Cannot load gig')
+    }
+}
 
   function onUploaded(imgUrl) {
     console.log('imgUrl:', imgUrl)
@@ -96,8 +116,6 @@ export function GigNewEdit() {
         (valueIsArray ? valueToUse : parseFloat(valueToUse))
     )
   }
-
-
 
 
   return (

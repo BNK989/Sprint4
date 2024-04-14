@@ -49,6 +49,11 @@ const routes = [
         component: <GigNewEdit />,
         label: 'user'
     },
+    {
+        path: 'manage_gigs/:id',
+        component: <GigNewEdit />,
+        label: 'user'
+    },
 ]
 export default routes
 
