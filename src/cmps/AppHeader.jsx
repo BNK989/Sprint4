@@ -109,8 +109,8 @@ export function AppHeader() {
                 </ul>
             </div>
             {/* MARK: DRAWER */}
-            <div className={`draw-join ${isDrawOpen ? 'on' : 'off'}`}>
-                <div className='w-full flex justify-between box-border'>
+            <div className={`draw-join content-between ${isDrawOpen ? 'on' : 'off'}`}>
+                <div className='w-full flex justify-between box-border items-baseline'>
                     <img src="/img/5err-logo.svg" alt="5err logo" />
                     <button onClick={() => setIsDrawOpen(prev => !prev)} className='btn'>
                         <svg width="12" height="12" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="#74767E">

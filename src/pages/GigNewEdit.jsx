@@ -16,6 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 import { addGig } from "@/store/actions/gig.actions"
 
@@ -25,13 +26,13 @@ export function GigNewEdit() {
   // 1. Define your form.
   const form = useForm({
     resolver: zodResolver(GigSchema),
-    defaultValues: {
-      email: '',
-      name: '',
-      password: '',
-      confirmPassword: ''
-    },
-  });
+    // defaultValues: {
+    //   email: '',
+    //   name: '',
+    //   password: '',
+    //   confirmPassword: ''
+    // },
+  })
 
 
   // 2. Define a submit handler.
@@ -45,8 +46,7 @@ export function GigNewEdit() {
 
   return (
     <section className="gig-new-edit-container mt-8">
-      <div>hi</div>
-
+      <h2 className="text-center mt-3">Create a new Gig</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full p-4 m-10 border">
           <div className="flex w-full flex-col gap-8">
@@ -90,7 +90,7 @@ export function GigNewEdit() {
                 <FormItem>
                   <FormLabel>Search Tags</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input  {...field} />
                   </FormControl>
                   <FormDescription>
                     Enter search terms you feel your buyers will use when looking for your service.
@@ -106,7 +106,7 @@ export function GigNewEdit() {
                 <FormItem>
                   <FormLabel>Price</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="100" />
+                    <Input type="number" {...field} placeholder="100" valueAsNumber={true}/>
                   </FormControl>
                   <FormDescription>
                     Give a price that is both reasonable and competitive.
@@ -122,7 +122,7 @@ export function GigNewEdit() {
                 <FormItem>
                   <FormLabel>Days To Make</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="3" />
+                    <Input type="number" {...field} placeholder="3" />
                   </FormControl>
                   <FormDescription>
                     How long would it take you to deliver the work?
@@ -142,6 +142,22 @@ export function GigNewEdit() {
                   </FormControl>
                   <FormDescription>
                     Describe what you would like to achieve with your Gig.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="imgUrls"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Images</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="file" />
+                  </FormControl>
+                  <FormDescription>
+                    Add a picture that will sell your work.
                   </FormDescription>
                   <FormMessage />
                 </FormItem>

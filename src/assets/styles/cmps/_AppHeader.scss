@@ -72,24 +72,27 @@
     }
 
     .draw-join{
+        display: none;
         position: absolute;
         top: 0;
-        left: -2em;
         background-color: #fff;
         height: 100vh;
         padding: 2em;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: transform .5s ease, opacity .5s ease;
 
+        
+        transition: transform .2s .5s ease, opacity .2s .5s ease;
         &.off{
             transform: translateY(120%);
             opacity: 0;
+            pointer-events: none;
         }
         &.on{
             transform: translateY(0%);
             opacity: 1;
+            display: grid;
         } 
 
         >div{
