@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -34,7 +35,6 @@ import { addGig } from "@/store/actions/gig.actions"
 import {gigService} from '@/services/gig.service.local'
 import { data } from "autoprefixer"
 import { ImgUploader } from "@/cmps/ImgUploader"
-import { Link } from "react-router-dom"
 
 export function GigNewEdit() {
 
@@ -52,14 +52,25 @@ export function GigNewEdit() {
   })
 
   function onSubmit(values) {
+
+    const newGig = gigService.getEmptyGig()
+    newGig.title = values.title
+    newGig.category = values.category
+    newGig.tags = values.searchTags.split(',')
+    newGig.packages.basic.price = values.price
+    newGig.packages.basic.daysToMake = values.daysToMake
+    newGig.packages.basic.description = values.description
+    newGig.imgUrls.push(values.imgUrl)
+
+
     // Do something with the form values.
     console.log('submitted:', values)
-    values.tags = values.searchTags.split(',')
-    values.avgResponseTime = 8
-    values.imgUrls = [values.imgUrl]
-    values.loc = 'Gambia'
-    values.reviews = []
-    addGig(values)
+    // values.tags = values.searchTags.split(',')
+    // values.avgResponseTime = 8
+    // values.imgUrls = [values.imgUrl]
+    // values.loc = 'Gambia'
+    // values.reviews = []
+    addGig(newGig)
   }
 
   let [categories, setCategories] = useState([])
