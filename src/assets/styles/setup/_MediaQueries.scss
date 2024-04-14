@@ -1,0 +1,35 @@
+@media (max-width: 767px) {
+    //MARK: MOBILE ONLY
+    .app-header.main-container.full{
+     background-color: white;
+     
+     .mobile-only-join {
+        color: #62646ac7;
+        font-weight: 800;
+        font-size: 1em;
+        transition: color .3s ease;
+        &:hover{
+            color: lighten(#62646ac7,20%);
+        }
+     }
+    }
+
+    .under-header{
+        display: none;
+    }
+
+    .homepage-section .hero-container{
+
+        h1{
+            font-size: 1.6em;
+            max-width: 90vw;
+        }
+        .search-container input{
+            width: 100%;
+        }
+        .popular{
+            display: none;
+        }
+    }
+
+}

@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
+import { addGig } from "@/store/actions/gig.actions"
+
 export function GigNewEdit() {
 
 
@@ -37,6 +39,7 @@ export function GigNewEdit() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log('submitted:', values)
+    addGig(values)
   }
 
 
@@ -90,15 +93,65 @@ export function GigNewEdit() {
                     <Input {...field} />
                   </FormControl>
                   <FormDescription>
-                  Enter search terms you feel your buyers will use when looking for your service.
+                    Enter search terms you feel your buyers will use when looking for your service.
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
-          
+            <FormField
+              control={form.control}
+              name="price"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Price</FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder="100" />
+                  </FormControl>
+                  <FormDescription>
+                    Give a price that is both reasonable and competitive.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="daysToMake"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Days To Make</FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder="3" />
+                  </FormControl>
+                  <FormDescription>
+                    How long would it take you to deliver the work?
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="description"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Description</FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder="I will..." />
+                  </FormControl>
+                  <FormDescription>
+                    Describe what you would like to achieve with your Gig.
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
           </div>
-          <Button type="submit">Save & Continue</Button>
+          <div className="btn-container w-full flex justify-end">
+            <Button type="submit">Save & Continue</Button>
+          </div>
 
         </form>
 

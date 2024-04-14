@@ -34,10 +34,11 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
+import { cn } from '@/lib/utils'
 
 
 
-export function NavBar({onLogout, signInModal }) {
+export function NavBar({ signInModal, className,onLogout }) {
     const [isUserModalOpen, setUserModalOpen] = useState(false)
     const user = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -62,8 +63,8 @@ export function NavBar({onLogout, signInModal }) {
 
     return (
         <>
-            <div className={`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`} onClick={() => setIsMenuOpen(false)} />
-            <nav className="fiverr-nav">
+            <div className={ cn(`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`)} onClick={() => setIsMenuOpen(false)} />
+            <nav className={cn("fiverr-nav", className)}>
                 <ul className='clean-list flex gap-6'>
                     <li className='explore cursor-pointer' >
                         <DropdownMenu className='cursor-pointer' open={isMenuOpen} >
