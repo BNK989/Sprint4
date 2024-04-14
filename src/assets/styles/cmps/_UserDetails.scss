@@ -1,18 +1,24 @@
 .user-details-seller-container {
     margin-top: 4.5em;
 
-
+ 
     .profile-main-container {
         display: grid;
         grid-template-columns: 0.6fr 1fr;
+        grid-template-rows: auto 1fr;
 
-
+       .manege-order-container {
+            grid-column: 1;
+            grid-row: 2;    
+        }
+        
         .user-container {
+            grid-column: 1;
             display: flex;
             flex-flow: column;
             align-items: center;
             margin-left: -0.4em;
-
+            
             .user-details-seller {
                 width: 79%;
                 display: flex;
@@ -20,56 +26,59 @@
                 align-items: center;
                 border: 1px solid $clrbtn---hover;
                 padding-block: 1.5em;
-
-
-
+                
+                
+                
                 .user-name {
                     font-weight: bold;
                     font-size: 1.2em;
-
+                    
                 }
-
+                
                 .line {
                     width: 90%;
                     margin-block: 0.3em;
                     background-color: $clrbtn---hover;
                 }
-
+                
                 .details {
                     width: 89%;
                     // margin-bottom: 1.5em;
                     display: flex;
                     flex-flow: column;
                     // align-self: auto;
-
-                    .from , .member-since{
+                    
+                    .from,
+                    .member-since {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-
+                        
                         span {
                             color: red;
                             color: $clrbtn-hover;
                         }
-
+                        
                         div {
                             display: flex;
                             align-items: center;
                             gap: 1em;
                         }
                     }
-
+                    
                 }
             }
         }
-
+        
         .gigs {
+            grid-column: 2;
+            grid-row: 1 / -1 ;
             .owned-gigs-container {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                 gap: minmax(5px 10px);
                 gap: 1em;
-
+                
                 li {
                     border: 1px solid $clr-light-grey;
                     display: flex;
@@ -80,7 +89,7 @@
                         max-height: 170px;
                     }
 
-                    div{
+                    div {
                         padding: 1em;
                         font-size: 0.8em;
                         line-height: 1.1em;
@@ -88,13 +97,15 @@
                         flex-flow: column;
                         gap: 10px;
 
-                        .price{
+                        .price {
                             align-self: flex-end;
                         }
                     }
                 }
 
                 .add-new-gig-container {
+                    height: 100%;
+
                     p {
                         align-self: center;
                         margin-top: 1em;
