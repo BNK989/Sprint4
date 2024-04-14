@@ -1,13 +1,13 @@
 export const gigsDemo = [
   {
     "_id": "OXeMG8wNskc",
-    "title": "I will create professional logo and stationery",
+    "title": "I will create professional logo and stationery yyyyy",
     "category": "Writing & Translation",
     "price": 150,
     "owner": {
       "ordersCount": 3,
       "_id": "FHc6T",
-      "fullname": "Dudu Da",
+      "fullname": "meni ko",
       "imgUrl": "https://xsgames.co/randomusers/avatar.php?g=male",
       "level": 1,
       "rate": 4

@@ -8,10 +8,30 @@ export function ManageReceivedOrders({ user }) {
     // const [isActionModalOpen, setActionModal] = useState(false)
 
     const orders = useSelector(storeState => storeState.orderModule.orders)
+    const [myOrders, setMyOrders] = useState([])
+
 
     useEffect(() => {
         loadOrders()
+        onlyOrders()
     }, [])
+
+    function onlyOrders() {
+        if (!orders || !orders.length ) return 
+        let myOrders1 = []
+        console.log('orders:', orders)
+        orders.forEach(order => {
+            if (order.seller._id === user._id) {
+                myOrders1.push(order)
+            }
+            console.log('myOrders1:', myOrders1)
+        })
+        setMyOrders(prev => ([...prev, ...myOrders1]))
+    }
+
+    // useEffect(() => {
+    //     loadOrders()
+    // }, [])
 
     function onChangeAction(orderToUpdate) {
         updateOrder(orderToUpdate)
@@ -35,7 +55,7 @@ export function ManageReceivedOrders({ user }) {
                         </tr>
                     </thead>
                     <tbody>
-                        {orders.map((order, index) => (
+                        {myOrders.map((order, index) => (
                             <tr key={index}>
                                 <ReceivedOrdersPreview
                                     order={order} index={index} onChangeAction={onChangeAction}

@@ -23,7 +23,7 @@ window.cs = gigService
 _saveDemoData()
 
 async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGigsId) {
-    console.log('filterBy.price:',filterBy )
+    // console.log('filterBy.price:',filterBy )
    
     var gigs = await storageService.query(STORAGE_KEY)
     if (ownedGigsId) {
