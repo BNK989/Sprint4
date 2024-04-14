@@ -140,7 +140,7 @@ export function AppHeader() {
                     </div>
                     <button onClick={() => setIsDrawOpen(prev => !prev)} className='btn join-btn md:hidden block'>Join</button>
                 </div>
-                <NavBar signInModal={signInModal} className={"hidden md:block"} />
+                <NavBar signInModal={signInModal} className={"hidden md:block"} onLogout={onLogout}/>
             </div>
             <UnderHeader categories={categories} />
 

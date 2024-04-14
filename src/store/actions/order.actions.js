@@ -7,6 +7,7 @@ import { store } from "../store"
 
 
 export async function loadOrders(filterBy) {
+    console.log('hay' )
     try {
         const orders = await orderService.query(filterBy)
         store.dispatch({

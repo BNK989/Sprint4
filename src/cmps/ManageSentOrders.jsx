@@ -1,17 +1,28 @@
 import { loadOrders, updateOrder } from "@/store/actions/order.actions"
+import { space } from "postcss/lib/list"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 
 
-export function ManageSentOrders({ user }) {
+export function ManageSentOrders({ user, orders }) {
     const [isActionModalOpen, setActionModal] = useState(false)
+    const [myOrders, setMyOrders] = useState([])
 
-    const orders = useSelector(storeState => storeState.orderModule.orders)
 
     useEffect(() => {
-        loadOrders()
-
+        onlyOrders()
     }, [])
+
+    function onlyOrders() {
+        if (!orders || !orders.length ) return 
+        let myOrders1 = []
+        orders.forEach(order => {
+            if (order.buyer._id === user._id) {
+                myOrders1.push(order)
+            }
+        })
+        setMyOrders(prev => ([...prev, ...myOrders1]))
+    }
 
     // function onActionBtn(value,idx){
     //     let orderToUpdate = orders[idx]
@@ -20,38 +31,38 @@ export function ManageSentOrders({ user }) {
     //     setActionModal(!isActionModalOpen)
     // }
 
+    function gigStatusClass(status){
+        if (status = 'approved') return 'approved'
+        if (status = 'rejected') return 'rejected'
+        return''
 
-    return (<>
-        <h1>Sent Orders:</h1>
+    }
 
-        {
-            !!orders.length  &&
-            <table >
-                <thead>
-                    <tr>
-                        <th>Avatar</th>
-                        <th>Name</th>
-                        <th>Task</th>
-                        <th>Submission Date</th>
-                        <th>Price</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {orders.map((order, index) => (
-                        <tr key={index}>
-                            <td><img src={order.buyer.imgUrl} alt="Avatar"  /></td>
-                            <td>{order.buyer.fullname}</td>
-                            <td>{order.gig.title}</td>
-                            <td>{order.createdAt}</td>
-                            <td>${order.gig.price}</td>
-                            <td><span className={`${(order.status === "Accepted") && "accepted"} ${(order.status === "Rejected") && "rejected"}`}>{order.status}</span></td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+    if (!myOrders) return <span>no ordersss</span>
+    return (<section className="my-orders">
+
+        {!myOrders.length &&
+            <span className="no-orders">no orders</span>
         }
-    </>
+
+        {!!myOrders.length &&
+
+            <ul className="orders-list">
+                {myOrders.map(order => {
+                    return <li key={order._id} className={gigStatusClass(order.status)}>
+                        <img src={order.gig.imgUrl[0]} alt="" />
+                        <span className="gig-title">{order.gig.title}</span>
+                        {/* <span className="price">${order.gig.price}</span> */}
+                        <span className="order-status">{order.status}</span>
+                    </li>
+
+                })}
+
+            </ul>
+
+
+        }
+    </section>
 
     )
 }

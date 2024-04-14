@@ -42,7 +42,7 @@
                     flex-flow: column;
                     // align-self: auto;
 
-                    p {
+                    .from , .member-since{
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
