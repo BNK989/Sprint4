@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { loadUser } from '../store/actions/user.actions'
 import { gigService } from '../services/gig.service.local'
 import { loadOwnGigs } from '../store/actions/gig.actions'
@@ -85,11 +85,13 @@ export function UserDetails() {
         <section className='gigs'>
           {
             <ul className='owned-gigs-container clean-list'>
+                <Link className=' w-full add-new-gig cursor-pointer' to='/manage_gigs/new'>
               <li className='add-new-gig-container'>
 
                 {/* <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT-aRZyzNggfpR9_ncdjTOoPVirlRm6n0O020q41dCXjYk4jVAL" alt="" /> */}
                 <p>Create new gig</p>
               </li>
+                </Link>
               {
                 !!ownedGigs.length && ownedGigs.map(ownedGig => {
                   return <li className='owned-gigs-preview' key={ownedGig._id}>

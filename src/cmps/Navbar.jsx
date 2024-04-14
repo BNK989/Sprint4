@@ -34,12 +34,13 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
+import { cn } from '@/lib/utils'
 import { ManageSentOrders } from './ManageSentOrders'
 import { loadOrders } from '@/store/actions/order.actions'
 
 
 
-export function NavBar({ signInModal }) {
+export function NavBar({ signInModal, className,onLogout }) {
     const [isUserModalOpen, setUserModalOpen] = useState(false)
     const user = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -68,8 +69,8 @@ export function NavBar({ signInModal }) {
 
     return (
         <>
-            <div className={`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`} onClick={() => setIsMenuOpen(false)} />
-            <nav className="fiverr-nav">
+            <div className={ cn(`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`)} onClick={() => setIsMenuOpen(false)} />
+            <nav className={cn("fiverr-nav", className)}>
                 <ul className='clean-list flex gap-6'>
                     <li className='explore cursor-pointer' >
                         <DropdownMenu className='cursor-pointer' open={isMenuOpen} >
@@ -117,7 +118,7 @@ export function NavBar({ signInModal }) {
                                 <li className='my-3 text-[#62646a]'><Link to={`user/${user._id}`}>Profile</Link></li>
                                 <li className='my-3 text-[#62646a]'><Link to="">Refer a Friend</Link></li>
                                 <hr className='my-4' />
-                                <li className='my-3 text-[#62646a]'><Link to="">Logout</Link></li>
+                                <li className='my-3 text-[#62646a]'><Link onClick={onLogout} to="">Logout</Link></li>
                             </ul>
 
                         </PopoverContent>

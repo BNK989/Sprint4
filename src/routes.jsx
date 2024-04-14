@@ -5,6 +5,7 @@ import { ChatApp } from './pages/Chat.jsx'
 import { GigDetails } from './cmps/GigDetails.jsx'
 import { Payment } from './pages/Payment.jsx'
 import { UserDetails } from './pages/UserDetails.jsx'
+import { GigNewEdit } from './pages/GigNewEdit.jsx'
 
 // Routes accessible from the main navigation (in AppHeader)
 const routes = [
@@ -41,6 +42,11 @@ const routes = [
     {
         path: 'user/:userId',
         component: <UserDetails />,
+        label: 'user'
+    },
+    {
+        path: 'manage_gigs/new',
+        component: <GigNewEdit />,
         label: 'user'
     },
 ]

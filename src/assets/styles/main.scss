@@ -127,6 +127,10 @@
 @import "cmps/GigPreview";
 
 
+// Create gig
+@import "cmps/GigNewEdit";
+
+
 @import "cmps/CategoriesNav";
 @import "cmps/UserMsg";
 @import "cmps/ShoppingCART";
@@ -143,3 +147,5 @@
 @import "cmps/NavBar";
 
 
+
+@import "setup/MediaQueries";

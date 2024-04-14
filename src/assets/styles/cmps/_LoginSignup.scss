@@ -35,14 +35,14 @@
 
             h1 {
                 font-size: 2em;
+                color: #fff;
+                // color: black;
             }
-
-
-
 
             p {
                 display: flex;
                 gap: 10px;
+                color: #fff;
 
                 font-size: 1.3em;
                 padding-bottom: 10px;
@@ -66,8 +66,19 @@
         flex-direction: column;
         padding: 45px 40px 40px 40px;
 
+        p {
+            color: rgb(8, 8, 8)!important;
+
+            span {
+                color: rgb(8, 8, 8);
+                border-bottom: 1px solid rgb(8, 8, 8);
+            }
+        }
+
         .login-section {
             flex-grow: 1;
+
+
 
             .login-form-article {
                 padding-block: 20px;
@@ -148,7 +159,7 @@
 
                     .btn-link {
                         color: rgb(8, 8, 8);
-
+                    
                         &:hover {
                             cursor: pointer;
                         }
@@ -179,15 +190,6 @@
             }
         }
 
-
-        p {
-            color: rgb(8, 8, 8);
-
-            span {
-                color: rgb(8, 8, 8);
-                border-bottom: 1px solid rgb(8, 8, 8);
-            }
-        }
     }
 
 }

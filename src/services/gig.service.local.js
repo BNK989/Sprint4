@@ -106,14 +106,14 @@ async function addGigMsg(gigId, txt) {
 
 function getEmptyGig() {
     return {
-        title: "",
+        title: '',
         price: '',
         owner: {},
         daysToMake: getRandomIntInclusive(3, 10),
         description: makeLorem(10),
         avgResponseTime: getRandomIntInclusive(1, 3),
         loc: "Ghana",
-        imgUrls: [""],
+        imgUrls: [''],
         tags: [
             "Arts And Crafts", "Logo Design"
         ],
@@ -146,10 +146,6 @@ function _saveDemoData() {
         utilService.saveToStorage(STORAGE_KEY, gigs)
     }
 }
-
-
-
-
 
 
 async function allCategories(){
