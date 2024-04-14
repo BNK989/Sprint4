@@ -34,6 +34,8 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
+import { ManageSentOrders } from './ManageSentOrders'
+import { loadOrders } from '@/store/actions/order.actions'
 
 
 
@@ -41,12 +43,16 @@ export function NavBar({ signInModal }) {
     const [isUserModalOpen, setUserModalOpen] = useState(false)
     const user = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
+    const ownedGigs = useSelector(storeState => storeState.gigModule.ownedGigs)
+    console.log('orders:', orders)
+
     const [pendingOrdersTotal, setPendingOrdersTotal] = useState(0)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     let menuRef = useRef()
 
     useEffect(() => {
+        loadOrders()
         let handler = (e) => {
             setPendingOrdersTotal(orders.reduce((acc, order) => order.status === 'pending' ? acc + 1 : acc, 0))
             if (!menuRef.current === e.target) {
@@ -58,7 +64,7 @@ export function NavBar({ signInModal }) {
         return () => {
             document.removeEventListener("mousedown", handler)
         }
-    }, [orders])
+    }, [])
 
     return (
         <>
@@ -83,7 +89,8 @@ export function NavBar({ signInModal }) {
                     {user && <li className='relative' >
                         <Popover>
                             <PopoverTrigger>Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}</PopoverTrigger>
-                            <PopoverContent>Place content for the popover here.</PopoverContent>
+                            <PopoverContent>{ <ManageSentOrders user={user} orders=
+                            {orders} />}</PopoverContent>
                         </Popover>
 
                         {/* <ToolTipWrapper tooltipContent={`${pendingOrdersTotal} Pending Orders`}>
