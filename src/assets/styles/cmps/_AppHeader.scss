@@ -8,6 +8,9 @@
     transition: background-color .5s ease;
     transition: border .5s ease; 
     z-index: 10;
+    div.header-container button.btn.join-btn{
+        color: $clr-black;
+    }
 
     .backdrop{
         position: absolute;
@@ -65,6 +68,58 @@
                     color: $clr-black;
                 }
             }
+        }
+    }
+
+    .draw-join{
+        position: absolute;
+        top: 0;
+        left: -2em;
+        background-color: #fff;
+        height: 100vh;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform .5s ease;
+
+        &.off{
+            transform: translateY(120%);
+        }
+        &.on{
+            transform: translateY(0%);
+        }
+
+        >div{
+            min-height: auto;
+            .btn{
+                color: $clr-black;
+            }
+            img{
+                height: 27px;
+                width: auto;
+            }
+        }
+
+        h2.draw-header{
+            margin-top: 2.5em;
+
+            color: $clr-black;
+            font-size: 32px;
+            line-height: 120%;
+            font-weight: 700;
+
+            span{
+                color: #ff62ad;
+            }
+        }
+        
+        small.small{
+            margin-top: 1em;
+            color: $clr-black;
+            font-size: 12px;
+            line-height: 20px;
+            color: #74767e;
         }
     }
 
