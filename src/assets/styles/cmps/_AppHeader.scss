@@ -8,6 +8,10 @@
     transition: background-color .5s ease;
     transition: border .5s ease; 
     z-index: 10;
+
+    .logo img{
+        min-width: 80px;
+    } 
     div.header-container button.btn.join-btn{
         color: $clr-black;
     }
@@ -74,6 +78,7 @@
     .draw-join{
         position: absolute;
         top: 0;
+        left: -28px;
         background-color: #fff;
         height: 100vh;
         padding: 2em;
