@@ -11,43 +11,42 @@ export function ManageReceivedOrders({ user }) {
 
     useEffect(() => {
         loadOrders()
-
     }, [])
 
-    function onChangeAction(orderToUpdate){
+    function onChangeAction(orderToUpdate) {
         updateOrder(orderToUpdate)
     }
 
 
     return (<>
-    <h1>Received Orders:</h1>
-        {
-            !!orders.length  &&
-            <table >
-                <thead>
-                    <tr>
-                        <th>Avatar</th>
-                        <th>Name</th>
-                        <th>Task</th>
-                        <th>Submission Date</th>
-                        <th>Price</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {orders.map((order, index) => (
-                         <tr key={index}>
-                            <ReceivedOrdersPreview 
-                            order={order} index={index} onChangeAction={onChangeAction}
-                            orders={orders}
-                             />
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        }
-    </>
 
+        {
+            !!orders.length && <>
+                {/* <h1>Received Orders:</h1> */}
+                <table >
+                    <thead>
+                        <tr>
+                            <th>Avatar</th>
+                            <th>Name</th>
+                            <th>Task</th>
+                            <th>Submission Date</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orders.map((order, index) => (
+                            <tr key={index}>
+                                <ReceivedOrdersPreview
+                                    order={order} index={index} onChangeAction={onChangeAction}
+                                    orders={orders}
+                                />
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </>}
+    </>
     )
 }
 
