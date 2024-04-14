@@ -32,7 +32,7 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
     }
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
-        gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
+        gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.packages.basic.description))
         
     }
     if (filterBy.category) {
@@ -44,20 +44,20 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
         console.log('filterBy.price:',filterBy.price )
         if (filterBy.price === 155) {
             
-            gigs = gigs.filter(gig => gig.price <= filterBy.price)
+            gigs = gigs.filter(gig => gig.packages.basic.price <= filterBy.price)
         }
         else if (filterBy.price === 232) {
             
-            gigs = gigs.filter(gig => gig.price >= 155 && gig.price <= 232)
+            gigs = gigs.filter(gig => gig.packages.basic.price >= 155 && gig.packages.basic.price <= 232)
         } else if (filterBy.price === 233){
-            gigs = gigs.filter(gig => gig.price >= filterBy.price)
+            gigs = gigs.filter(gig => gig.packages.basic.price >= filterBy.price)
         }else{
-            gigs = gigs.filter(gig => gig.price <= filterBy.price)
+            gigs = gigs.filter(gig => gig.packages.basic.price <= filterBy.price)
         }
 
     }
     if (filterBy.daysToMake) {
-        gigs = gigs.filter(gig => gig.daysToMake <= filterBy.daysToMake)
+        gigs = gigs.filter(gig => gig.packages.basic.daysToMake <= filterBy.daysToMake)
     }
     
     gigs = gigs.sort((gig1, gig2) => (gig1.owner.rate - gig2.owner.rate) * -1)

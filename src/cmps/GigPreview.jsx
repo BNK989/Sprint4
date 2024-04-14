@@ -73,7 +73,7 @@ export function GigPreview({ gig }) {
             <span className="rate">{gig.owner.rate} <span>(1k)</span></span>
         </div>
 
-        <div className="gig-price">From {gig.price}$</div>
+        <div className="gig-price">From {gig.packages.basic.price}$</div>
         {/* <span>level {gig.owner.level} {showLevel().map((value , idx) => <i key={gig._id + idx} className={value ? 'fa fa-full-star' : "bad"}></i>)}</span> */}
     </>
     )
