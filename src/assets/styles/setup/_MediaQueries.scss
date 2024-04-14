@@ -65,4 +65,8 @@
         }
     }
 
+    .fa.chevron-right, .fa.chevron-right::after, .fa.chevron-right::before, button.inline-flex {  
+        display: none;
+    }
+
 }
