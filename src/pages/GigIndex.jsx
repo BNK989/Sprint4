@@ -47,7 +47,7 @@ export function GigIndex() {
         <div className='gig-index'>
         <BreadcrumbWithCustomSeparator/>
             <h3 className='gigs-title'>{filterBy.category ? filterBy.category.replace(/-/g, '&') : 'Explore All'}</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur eos, nostrum ratione dicta doloribus ipsa!</p>
+            <p>Stand out from the crowd with a logo that fits your brand personality.</p>
             <div className='line'></div>
             <GigFilter filterBy={filterBy} onSetFilter={onSetFilter} />
 
