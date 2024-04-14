@@ -157,6 +157,3 @@ async function allCategories(){
         return accumulator
     }, [])
 }
-
-
-

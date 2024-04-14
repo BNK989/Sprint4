@@ -81,7 +81,7 @@ export function NavBar({ signInModal, className,onLogout }) {
                                 <DropdownMenuGroup>
                                     {exploreMenu.map(menu =>
                                         <DropdownMenuItem key={menu.label} onClick={() => setIsMenuOpen(false)} >
-                                            <Link className={!menu.path && `opacity-70 cursor-not-allowed`} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
+                                            <Link className={!menu.path ? `opacity-70 cursor-not-allowed` : ''} to={`${menu.path}`}>{menu.label}<br />{menu.subText}</Link>
                                         </DropdownMenuItem>)}
                                 </DropdownMenuGroup>
                             </DropdownMenuContent>
