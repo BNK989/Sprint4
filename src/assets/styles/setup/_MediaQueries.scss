@@ -70,3 +70,10 @@
     }
 
 }
+
+@media (min-width: 767px) {
+//MARK DESCTOP ONLY
+.draw-join{
+    display: none;
+}
+}
