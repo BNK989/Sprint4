@@ -100,14 +100,14 @@ export function UserDetails() {
                 })
               }
             </ul>
-          }
+          } </section>
           {
             user && <section className='manege-order-container'>
               <ManageReceivedOrders user={user} />
-              <ManageSentOrders user={user} />
+              {/* <ManageSentOrders user={user} /> */}
             </section>
           }
-        </section>
+       
       </section>
 
     </section>
