@@ -1,4 +1,5 @@
 "use client"
+import { useEffect, useState } from "react"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -17,31 +18,57 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+
 
 import { addGig } from "@/store/actions/gig.actions"
 
+import {gigService} from '@/services/gig.service.local'
+import { data } from "autoprefixer"
+import { ImgUploader } from "@/cmps/ImgUploader"
+
 export function GigNewEdit() {
 
-
-  // 1. Define your form.
   const form = useForm({
     resolver: zodResolver(GigSchema),
-    // defaultValues: {
-    //   email: '',
-    //   name: '',
-    //   password: '',
-    //   confirmPassword: ''
-    // },
+    defaultValues: {
+      title: '',
+      category: '',
+      searchTags: [],
+      price: 0,
+      daysToMake: 0,
+      description: '',
+      imgUrl: ''
+    }
   })
 
-
-  // 2. Define a submit handler.
   function onSubmit(values) {
     // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     console.log('submitted:', values)
     addGig(values)
   }
+
+  let [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    gigService.allCategories()
+    .then(data => setCategories(data))
+    
+  }, [])
+
+  function onUploaded(imgUrl) {
+    console.log('imgUrl:', imgUrl)
+    form.setValue('imgUrl', imgUrl)
+}
+
 
 
   return (
@@ -74,7 +101,18 @@ export function GigNewEdit() {
                 <FormItem>
                   <FormLabel>Category</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    {/* <Select >
+                      <SelectTrigger className="w-96">
+                        <SelectValue placeholder="Select one"  />
+                      </SelectTrigger>
+                      <SelectContent >
+                        {categories.map((category,i) => (
+                          <SelectItem key={i} value={category} >{category}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select> */}
+                    <Input placeholder="category" {...field} />
+
                   </FormControl>
                   <FormDescription>
                     Choose the category that most suitable for your Gig.
@@ -90,7 +128,7 @@ export function GigNewEdit() {
                 <FormItem>
                   <FormLabel>Search Tags</FormLabel>
                   <FormControl>
-                    <Input  {...field} />
+                    <Input {...field} placeholder="tag1, tag2, tag3" />
                   </FormControl>
                   <FormDescription>
                     Enter search terms you feel your buyers will use when looking for your service.
@@ -106,7 +144,7 @@ export function GigNewEdit() {
                 <FormItem>
                   <FormLabel>Price</FormLabel>
                   <FormControl>
-                    <Input type="number" {...field} placeholder="100" valueAsNumber={true}/>
+                    <Input type="number" {...field} placeholder="100" />
                   </FormControl>
                   <FormDescription>
                     Give a price that is both reasonable and competitive.
@@ -138,7 +176,8 @@ export function GigNewEdit() {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="I will..." />
+                    {/* <Input {...field} placeholder="I will..." /> */}
+                    <Textarea {...field} placeholder="I will..." />
                   </FormControl>
                   <FormDescription>
                     Describe what you would like to achieve with your Gig.
@@ -147,7 +186,7 @@ export function GigNewEdit() {
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name="imgUrls"
               render={({ field }) => (
@@ -162,7 +201,9 @@ export function GigNewEdit() {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
+
+          <ImgUploader onUploaded={onUploaded} />
 
           </div>
           <div className="btn-container w-full flex justify-end">

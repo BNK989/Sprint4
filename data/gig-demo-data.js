@@ -1,7 +1,7 @@
 export const gigsDemo = [
   {
     "_id": "OXeMG8wNskc",
-    "title": "I will create professional logo and stationery",
+    "title": "I will create professional logo and stationery yyyyy",
     "category": "Writing & Translation",
     "packages":{
       "basic":{

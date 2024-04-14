@@ -45,7 +45,7 @@ export async function loadGigs(filterBy) {
 export async function loadOwnGigs(userId) {
     try {
         const ownedGigs = await gigService.query(null,userId)
-        console.log('Gigs from DB:', ownedGigs)
+        // console.log('Gigs from DB:', ownedGigs)
         store.dispatch({
             type: SET_OWN_GIGS,
             ownedGigs
