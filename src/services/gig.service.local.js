@@ -85,6 +85,7 @@ async function save(gig) {
         gig.owner = userService.getLoggedinUser()
         savedGig = await storageService.post(STORAGE_KEY, gig)
     }
+    console.log('88 savedGig:', savedGig)
     return savedGig
 }
 
@@ -157,6 +158,3 @@ async function allCategories(){
         return accumulator
     }, [])
 }
-
-
-
