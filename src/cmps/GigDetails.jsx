@@ -13,6 +13,7 @@ import { ReviewsStats } from "./ReviewsStats"
 import { BreadcrumbWithCustomSeparator } from "./BreadcrumbWithCustomSeparator"
 import { QuickAvatar } from "./shanCN/QuickAvatar"
 import { StarRating } from "./smallCmps/StarRating"
+import { GigOrderDetails } from "./GigOrderDetails"
 
 
 export function GigDetails() {
@@ -157,7 +158,8 @@ export function GigDetails() {
                 <section className="about-user">
                     <h1 className="title">Get to know {gig.owner.fullname}</h1>
                     <div className="gig-user">
-                        <img src={gig.owner.imgUrl} alt="owner image" />
+                    <QuickAvatar user={gig.owner} className="w-20 h-20"/>
+                        {/* <img src={gig.owner.imgUrl} alt="owner image" /> */}
 
                         <div className="user-details">
                             <p>{gig.owner.fullname}</p>
@@ -190,8 +192,8 @@ export function GigDetails() {
                 <div className="line"></div>
 
             </section>
-
-            <section className="order-details">
+                            <GigOrderDetails gig={gig}/>
+            {/* <section className="order-details">
                 <div className="btns">
                     <button className="btn-basic">Basic</button>
                     <button className="btn-standard">Standard</button>
@@ -205,7 +207,7 @@ export function GigDetails() {
 
                     </div>
 
-                    <div className="desc"><span>Lorem</span> ipsum, dolor sit amet  obcaecati veritatis, consequuntur aperiam deleniti neque et.</div>
+                    <div className="desc">Two unique High quality design concepts with HQ jpg and transparent png.</div>
 
                     <div className="delivery-details">
 
@@ -227,7 +229,7 @@ export function GigDetails() {
                     <div className="Compare-btn"><span className="continue">Compare packages</span></div>
                 </main>
 
-            </section>
+            </section> */}
 
             <section className="order-reviews-container">
                 <div className="title">Reviews</div>
@@ -258,7 +260,7 @@ export function GigDetails() {
                                 <span className="rate-num">{review.rate}</span>
                             </div>
 
-                            <div className="review-txt">{review.txt} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore illo ipsum facere rerum, neque quia quasi nam error, non ab dolores! </div>
+                            <div className="review-txt">{review.txt}</div>
 
                             <div className="helpful">
                                 <span className="title">Helpful?</span>
