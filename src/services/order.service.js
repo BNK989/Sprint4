@@ -51,7 +51,7 @@ async function addOrder(gigId) {
                 _id: gigToOrder._id,
                 title: gigToOrder.title,
                 imgUrl: gigToOrder.imgUrls,
-                price: gigToOrder.price
+                price: gigToOrder.packages.basic.price
             },
             status: "pending",
             createdAt: new Date(),

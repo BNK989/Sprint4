@@ -53,6 +53,11 @@ export function GigNewEdit() {
   function onSubmit(values) {
     // Do something with the form values.
     console.log('submitted:', values)
+    values.tags = values.searchTags.split(',')
+    values.avgResponseTime = 8
+    values.imgUrls = [values.imgUrl]
+    values.loc = 'Gambia'
+    values.reviews = []
     addGig(values)
   }
 

@@ -46,10 +46,10 @@ export function ManageReceivedOrders({ user }) {
                 <table >
                     <thead>
                         <tr>
-                            <th>Avatar</th>
-                            <th>Name</th>
+                            <th>Buyer</th>
+                            {/* <th>Name</th> */}
                             <th>Task</th>
-                            <th>Submission Date</th>
+                            <th>Date</th>
                             <th>Price</th>
                             <th>Status</th>
                         </tr>
