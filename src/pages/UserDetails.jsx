@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { loadUser } from '../store/actions/user.actions'
@@ -21,7 +21,11 @@ export function UserDetails() {
   const params = useParams()
   const user = useSelector(storeState => storeState.userModule.user)
   const ownedGigs = useSelector(storeState => storeState.gigModule.ownedGigs)
+  // const toShow = useRef(true)
+  const [toShow , setToShow] = useState(true)
+ 
 
+console.log('toShow:', toShow)
   useEffect(() => {
     loadUser(params.userId)
     loadOwnGigs(params.userId)
@@ -34,12 +38,19 @@ export function UserDetails() {
     //   socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     // }
 
-  }, [params.userId])
+  }, [params.userId ])
 
   // function onUserUpdate(user) {
   //   showSuccessMsg(`This user ${user.fullname} just got updated from socket, new score: ${user.score}`)
   //   store.dispatch({ type: 'SET_WATCHED_USER', user })
   // }
+
+  function WhatToShow(){
+if (toShow) return 'show my orders'
+if (!toShow) return 'show my gigs'
+  }
+  
+
   return (
     // <section className='all full'>
     <section className='user-details-seller-container main-container'>
@@ -78,20 +89,30 @@ export function UserDetails() {
                   <span>{user.Membersince}</span>
                 </div>
               </div>
+              <div className='line'></div>
+
+
+
+
+              <div className='what-to-show'>
+                <button className='isShow' onClick={()=> setToShow(!toShow)}>{WhatToShow()}</button>
+              </div>
+
+
 
             </section>
           </section>
         }
-        <section className='gigs'>
+       {toShow && <section className='gigs'>
           {
             <ul className='owned-gigs-container clean-list'>
-                <Link className=' w-full add-new-gig cursor-pointer' to='/manage_gigs/new'>
-              <li className='add-new-gig-container'>
+              <Link className=' w-full add-new-gig cursor-pointer' to='/manage_gigs/new'>
+                <li className='add-new-gig-container'>
 
-                {/* <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT-aRZyzNggfpR9_ncdjTOoPVirlRm6n0O020q41dCXjYk4jVAL" alt="" /> */}
-                <p>Create new gig</p>
-              </li>
-                </Link>
+                  {/* <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT-aRZyzNggfpR9_ncdjTOoPVirlRm6n0O020q41dCXjYk4jVAL" alt="" /> */}
+                  <p>Create new gig</p>
+                </li>
+              </Link>
               {
                 !!ownedGigs.length && ownedGigs.map(ownedGig => {
                   return <li className='owned-gigs-preview' key={ownedGig._id}>
@@ -100,14 +121,14 @@ export function UserDetails() {
                 })
               }
             </ul>
-          } </section>
-          {
-            user && <section className='manege-order-container'>
-              <ManageReceivedOrders user={user} />
-              {/* <ManageSentOrders user={user} /> */}
-            </section>
-          }
-       
+          } </section>}
+        {
+          !toShow && <section className='manege-order-container'>
+            <ManageReceivedOrders user={user} />
+            {/* <ManageSentOrders user={user} /> */}
+          </section>
+        }
+
       </section>
 
     </section>
