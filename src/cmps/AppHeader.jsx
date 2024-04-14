@@ -90,7 +90,7 @@ export function AppHeader() {
         setModalOpen(!isModalOpen)
     }
 
-    console.log(isMobile)
+    // console.log(isMobile)
 
     return (
         <header className={

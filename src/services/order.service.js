@@ -29,18 +29,21 @@ async function query(filterBy = { buyerOrder: '', sellerOrder: '' }) {
 }
 
 async function addOrder(gigId) {
+    console.log('gigId:', gigId)
     try {
         const gigToOrder = await gigService.getById(gigId)
         const buyer = await userService.getLoggedinUser()
-       let users = await userService.getUsers()
+        let users = await userService.getUsers()
+        console.log('users:', users)
+        console.log('gigToOrder:', gigToOrder)
         let seller = users.find(user => user._id === gigToOrder.owner._id)
-        if(seller !== gigToOrder.owner._id){
-            seller={
-                fullname:'jaon do',
-                imgUrl:'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
-                _id:'someID'
-            }
-        }
+        // if(seller !== gigToOrder.owner._id){
+        //     seller={
+        //         fullname:'meni ko',
+        //         imgUrl:'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
+        //         _id:'FHc6T'
+        //     }
+        // }
         let orderToAdd = {
             buyer: { fullname: buyer.fullname, imgUrl: buyer.imgUrl, _id: buyer._id },
             seller: { fullname: seller.fullname, imgUrl: seller.imgUrl, _id: seller._id },
@@ -53,8 +56,9 @@ async function addOrder(gigId) {
             status: "pending",
             createdAt: new Date(),
         }
-
-        var order = await storageService.post(STORAGE_KEY, orderToAdd)
+console.log('order12:', order)
+var order = await storageService.post(STORAGE_KEY, orderToAdd)
+console.log('order1245:', order)
         return order
     } catch (err) {
         console.log('canot add order:', err)

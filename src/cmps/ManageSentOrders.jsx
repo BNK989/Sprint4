@@ -16,6 +16,7 @@ export function ManageSentOrders({ user, orders }) {
     function onlyOrders() {
         if (!orders || !orders.length ) return 
         let myOrders1 = []
+        console.log('orders:', orders)
         orders.forEach(order => {
             if (order.buyer._id === user._id) {
                 myOrders1.push(order)
@@ -32,9 +33,9 @@ export function ManageSentOrders({ user, orders }) {
     // }
 
     function gigStatusClass(status){
-        if (status = 'approved') return 'approved'
-        if (status = 'rejected') return 'rejected'
-        return''
+        if (status === 'approved') return 'approved'
+        if (status === 'rejected') return 'rejected'
+        return ''
 
     }
 
@@ -45,7 +46,7 @@ export function ManageSentOrders({ user, orders }) {
             <span className="no-orders">no orders</span>
         }
 
-        {!!myOrders.length &&
+        {myOrders.length &&
 
             <ul className="orders-list">
                 {myOrders.map(order => {

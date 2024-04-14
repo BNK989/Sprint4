@@ -3,6 +3,7 @@ import { httpService } from './http.service'
 
 import { usersDemo } from '../../data/user-demo-data'
 import { Await } from 'react-router'
+import { utilService } from './util.service'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
 export const userService = {
@@ -22,10 +23,10 @@ window.userService = userService
 _lodeUsersToStorage()
 
 async function getUsers() {
-    try{
+    try {
         return storageService.query('user')
         // return httpService.get(`user`)
-    }catch(err){
+    } catch (err) {
         console.log('canot lode users');
     }
 }
@@ -34,7 +35,7 @@ async function getUsers() {
 
 async function getById(userId) {
     try {
-        
+
         const user = await storageService.get('user', userId)
 
         // const user = await httpService.get(`user/${userId}`)
@@ -92,7 +93,7 @@ async function logout() {
 
 function saveLocalUser(user) {
 
-    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, level: user.level}
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, level: user.level }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -101,17 +102,12 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
-async function _lodeUsersToStorage(){
-    try{
-       const users = await getUsers()
-      if(!users || !users.length){
-          usersDemo.forEach(user =>  {
-           return storageService.post('user', user)})
-    }   
-    }catch(err){
-        console.log(err);
+function _lodeUsersToStorage() {
+    let users = utilService.loadFromStorage('user')
+    if (!users || !users.length) {
+        users = usersDemo
     }
-    // await storageService.post('user', usersDemo)
+    utilService.saveToStorage('user', users)
 }
 
 
