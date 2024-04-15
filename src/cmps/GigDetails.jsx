@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router"
-import { gigService } from "../services/gig.service.local"
+import { gigService } from "../services/gig.service"
 import { Link } from "react-router-dom"
 import {
     Carousel,
@@ -35,7 +35,7 @@ export function GigDetails() {
             const gig = await gigService.getById(gigId)
             setGig(gig)
         } catch (err) {
-            console.log('Had issues in gig details', err)
+            console.error('Had issues in gig details', err)
             showErrorMsg('Cannot load gig')
             navigate('/explore')
         }

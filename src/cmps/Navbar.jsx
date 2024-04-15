@@ -45,7 +45,6 @@ export function NavBar({ signInModal, className,onLogout }) {
     const user = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
     const ownedGigs = useSelector(storeState => storeState.gigModule.ownedGigs)
-    console.log('orders:', orders)
 
     const [pendingOrdersTotal, setPendingOrdersTotal] = useState(0)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -53,7 +52,7 @@ export function NavBar({ signInModal, className,onLogout }) {
     let menuRef = useRef()
 
     useEffect(() => {
-        loadOrders()
+        loadOrders({buyer: true})
         let handler = (e) => {
             setPendingOrdersTotal(orders.reduce((acc, order) => order.status === 'pending' ? acc + 1 : acc, 0))
             if (!menuRef.current === e.target) {

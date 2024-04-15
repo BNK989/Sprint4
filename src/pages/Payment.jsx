@@ -1,13 +1,10 @@
 import { showErrorMsg } from "@/services/event-bus.service"
-import { gigService } from "@/services/gig.service.local"
+import { gigService } from "@/services/gig.service"
 import { addOrder } from "@/store/actions/order.actions"
 
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router"
-
-
-
 
 export function Payment() {
     const { gigId } = useParams()

@@ -311,7 +311,6 @@ function createRandomGig(id, title, category, price, owner, daysToMake, descript
 function makeABunchOfGigs(n = 20) {
     return Array.from({ length: n }).map((_, i) => createRandomGig())
 }
-// console.log(makeABunchOfGigs())
 
 // Example usage:
 const randomeGig = createRandomGig(
@@ -391,4 +390,3 @@ const randomeGig = createRandomGig(
     ]
 );
 
-// console.log(serviceObject);

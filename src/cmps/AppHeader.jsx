@@ -7,7 +7,7 @@ import { LoginSignup } from './LoginSignup.jsx'
 import { NavBar } from './Navbar.jsx'
 import { SearchBox } from './SearchBox.jsx'
 import { login, logout, signup } from '../store/actions/user.actions.js'
-import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { UnderHeader } from './UnderHeader'
 import { Button } from '@/components/ui/button'
 
@@ -23,8 +23,6 @@ export function AppHeader() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
     const [burgerMenuOpen, setBurgerMenuOpen] = useState(false)
     const [isDrawOpen, setIsDrawOpen] = useState(false)
-
-   
     
     const location = useLocation()
     const isHomepage = location.pathname === '/'
@@ -70,7 +68,6 @@ export function AppHeader() {
         try {
             setModalOpen(false)
             const newUser = await signup(credentials)
-            console.log('got to 57 in Header' , newUser)//not getting here
             // const user = await login(newUser)
             showSuccessMsg(`Welcome new user: ${newUser.fullname}`)
         } catch (err) {
@@ -89,8 +86,6 @@ export function AppHeader() {
         setLogInSelect(val)
         setModalOpen(!isModalOpen)
     }
-
-    // console.log(isMobile)
 
     return (
         <header className={

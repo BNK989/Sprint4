@@ -37,7 +37,6 @@ async function cloudUpload(ev){
   formData.append('upload_preset', PRESET_KEY)
   try {
     const imgUrl = await axios.post(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, formData)
-    console.log('image link:', imgUrl.data.secure_url)
     return imgUrl.data.secure_url
   }
   catch (err) {
