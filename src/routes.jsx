@@ -6,6 +6,7 @@ import { GigDetails } from './cmps/GigDetails.jsx'
 import { Payment } from './pages/Payment.jsx'
 import { UserDetails } from './pages/UserDetails.jsx'
 import { GigNewEdit } from './pages/GigNewEdit.jsx'
+import { UserDashboard } from './pages/UserDashboard.jsx'
 
 // Routes accessible from the main navigation (in AppHeader)
 const routes = [
@@ -44,6 +45,11 @@ const routes = [
         component: <UserDetails />,
         label: 'user'
     },
+    // {
+    //     path: 'user/dashboard/:userId',
+    //     component: <UserDashboard />,
+    //     label: 'user'
+    // },
     {
         path: 'manage_gigs/new',
         component: <GigNewEdit />,
