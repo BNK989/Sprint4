@@ -1,10 +1,12 @@
 import { storageService } from "./async-storage.service"
-import { gigService } from "./gig.service.local"
+import { gigService } from "./gig.service"
+import { httpService } from "./http.service"
 
 import { userService } from './user.service.js'
 
 
 const STORAGE_KEY = 'gigOrder'
+const BASE_URL = 'order'
 
 
 export const orderService = {
@@ -15,8 +17,10 @@ export const orderService = {
     remove
 }
 
-async function query(filterBy = { buyerOrder: '', sellerOrder: '' }) {
-    var orders = await storageService.query(STORAGE_KEY)
+async function query(filterBy) {
+    // var orders = await storageService.query(STORAGE_KEY)
+    const orders = await httpService.get(BASE_URL,filterBy)
+    console.log('orders:', orders)
 
     if (filterBy.buyerOrder) {
         orders = orders.filter(order => order.buyerOrder === filterBy.buyerOrder)
@@ -24,18 +28,14 @@ async function query(filterBy = { buyerOrder: '', sellerOrder: '' }) {
     if (filterBy.sellerOrder) {
         orders = orders.filter(order => order.sellerOrder === filterBy.sellerOrder)
     }
-    console.log('orders:', orders)
     return orders
 }
 
 async function addOrder(gigId) {
-    console.log('gigId:', gigId)
     try {
         const gigToOrder = await gigService.getById(gigId)
         const buyer = await userService.getLoggedinUser()
         let users = await userService.getUsers()
-        console.log('users:', users)
-        console.log('gigToOrder:', gigToOrder)
         let seller = users.find(user => user._id === gigToOrder.owner._id)
         // if(seller !== gigToOrder.owner._id){
         //     seller={
@@ -56,12 +56,10 @@ async function addOrder(gigId) {
             status: "pending",
             createdAt: new Date(),
         }
-console.log('order12:', order)
-var order = await storageService.post(STORAGE_KEY, orderToAdd)
-console.log('order1245:', order)
+        var order = await httpService.post(BASE_URL, orderToAdd)
         return order
     } catch (err) {
-        console.log('canot add order:', err)
+        console.error('canot add order:', err)
     }
 
 }
@@ -78,17 +76,18 @@ async function acceptRejectOrder(orderToUpdate) {
 }
 
 function getById(orderId) {
-    return storageService.get(STORAGE_KEY, orderId)
+    return httpService.get(BASE_URL, orderId)
 }
 
-async function editOrder(order) {
+async function editOrder(orderId ,value) {
     var savedOrder
-    savedOrder = await storageService.put(STORAGE_KEY, order)
+    console.log('value:', value)
+    savedOrder = await httpService.put(`${BASE_URL}/${orderId}` , {value} )
     return savedOrder
 }
 
 async function remove(orderId) {
-    await storageService.remove(STORAGE_KEY, orderId)
+    await httpService.remove(BASE_URL, orderId)
 }
 
 function getEmptyOrder() {

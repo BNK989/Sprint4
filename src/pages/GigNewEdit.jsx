@@ -31,7 +31,7 @@ import {
 
 import { addGig } from "@/store/actions/gig.actions"
 
-import { gigService } from '@/services/gig.service.local'
+import { gigService } from '@/services/gig.service'
 import { data } from "autoprefixer"
 import { ImgUploader } from "@/cmps/ImgUploader"
 
@@ -66,8 +66,6 @@ export function GigNewEdit() {
 
     addGig(newGig).then(savedGig => {
       navigate('/user/' + savedGig.owner._id)
-
-      console.log('savedGig:', savedGig)
     })
   }
 
@@ -83,7 +81,6 @@ export function GigNewEdit() {
   async function loadGig(id) {
     try {
         const gig = await gigService.getById(id)
-        console.log('gig:', gig)
         setGig(gig)
         form.setValue('title', gig.title)
         form.setValue('category', gig.category)
@@ -92,13 +89,12 @@ export function GigNewEdit() {
         form.setValue('daysToMake', gig.packages.basic.daysToMake)
         form.setValue('description', gig.description)
     } catch (err) {
-        console.log('Had issues in gig details', err)
+        console.error('Had issues in gig details', err)
         showErrorMsg('Cannot load gig')
     }
 }
 
   function onUploaded(imgUrl) {
-    console.log('imgUrl:', imgUrl)
     form.setValue('imgUrl', imgUrl)
   }
 

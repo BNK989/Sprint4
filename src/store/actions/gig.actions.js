@@ -1,4 +1,4 @@
-import { gigService } from '../../services/gig.service.local.js'
+import { gigService } from '../../services/gig.service.js'
 import { userService } from '../../services/user.service.js'
 import { store } from '../store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
@@ -29,14 +29,13 @@ export async function loadGigs(filterBy) {
     
     try {
         const gigs = await gigService.query(filterBy)
-        console.log('Gigs from DB:', gigs)
         store.dispatch({
             type: SET_GIGS,
             gigs
         })
 
     } catch (err) {
-        console.log('Cannot load gigs', err)
+        console.error('Cannot load gigs', err)
         throw err
     }
 
@@ -44,15 +43,14 @@ export async function loadGigs(filterBy) {
 
 export async function loadOwnGigs(userId) {
     try {
-        const ownedGigs = await gigService.query(null,userId)
-        // console.log('Gigs from DB:', ownedGigs)
+        const ownedGigs = await gigService.query({userId})
         store.dispatch({
             type: SET_OWN_GIGS,
             ownedGigs
         })
 
     } catch (err) {
-        console.log('Cannot load gigs', err)
+        console.error('Cannot load gigs', err)
         throw err
     }
 
@@ -63,7 +61,7 @@ export async function removeGig(gigId) {
         await gigService.remove(gigId)
         store.dispatch(getActionRemoveGig(gigId))
     } catch (err) {
-        console.log('Cannot remove gig', err)
+        console.error('Cannot remove gig', err)
         throw err
     }
 }
@@ -74,7 +72,7 @@ export async function addGig(gig) {
         store.dispatch(getActionAddGig(savedGig))
         return savedGig
     } catch (err) {
-        console.log('Cannot add gig', err)
+        console.error('Cannot add gig', err)
         throw err
     }
 }
@@ -87,7 +85,7 @@ export function updateGig(gig) {
             return savedGig
         })
         .catch(err => {
-            console.log('Cannot save gig', err)
+            console.error('Cannot save gig', err)
             throw err
         })
 }
@@ -113,7 +111,7 @@ export function updateGig(gig) {
 //         store.dispatch({ type: CLEAR_CART })
 //         return score
 //     } catch (err) {
-//         console.log('GigActions: err in checkout', err)
+//         console.error('GigActions: err in checkout', err)
 //         throw err
 //     }
 // }
@@ -134,7 +132,7 @@ export function onRemoveGigOptimistic(gigId) {
         })
         .catch(err => {
             showErrorMsg('Cannot remove gig')
-            console.log('Cannot load gigs', err)
+            console.error('Cannot load gigs', err)
             // store.dispatch({
             //     type: UNDO_REMOVE_GIG,
             // })

@@ -2,14 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { loadUser } from '../store/actions/user.actions'
-import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { loadOwnGigs } from '../store/actions/gig.actions'
 import { OwnedGigPreview } from '../cmps/OwnedGigPreview'
 import { ManageReceivedOrders } from '@/cmps/ManageReceivedOrders'
 import { ManageSentOrders } from '@/cmps/ManageSentOrders'
 import { QuickAvatar } from '@/cmps/shanCN/QuickAvatar'
-
-
 
 // import { store } from '../store/store'
 // import { showSuccessMsg } from '../services/event-bus.service'
@@ -25,7 +23,6 @@ export function UserDetails() {
   const [toShow , setToShow] = useState(true)
  
 
-console.log('toShow:', toShow)
   useEffect(() => {
     loadUser(params.userId)
     loadOwnGigs(params.userId)
@@ -114,8 +111,8 @@ if (!toShow) return 'show my gigs'
                 </li>
               </Link>
               {
-                !!ownedGigs.length && ownedGigs.map(ownedGig => {
-                  return <li className='owned-gigs-preview' key={ownedGig._id}>
+                !!ownedGigs.length && ownedGigs.map((ownedGig,i) => {
+                  return <li className='owned-gigs-preview' key={ownedGig._id + i}>
                     <OwnedGigPreview ownedGig={ownedGig} />
                   </li>
                 })

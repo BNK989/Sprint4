@@ -16,7 +16,6 @@ export function ManageSentOrders({ user, orders }) {
     function onlyOrders() {
         if (!orders || !orders.length ) return 
         let myOrders1 = []
-        console.log('orders:', orders)
         orders.forEach(order => {
             if (order.buyer._id === user._id) {
                 myOrders1.push(order)

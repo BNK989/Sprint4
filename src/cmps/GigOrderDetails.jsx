@@ -5,8 +5,6 @@ export function GigOrderDetails({gig}){
     const [isPackage, setPackage] = useState('basic')
     const pack =  gig.packages[isPackage]
     
-console.log('isPackage:', isPackage)
-console.log('gig.packages.isPackage.price:', pack)
 return <section className="order-details">
                 <div className="btns">
                     <button onClick={()=>setPackage('basic')} className={`btn-basic ${(isPackage === 'basic')? 'active' : ''}`}>Basic</button>

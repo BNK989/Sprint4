@@ -6,8 +6,8 @@ import { store } from "../store"
 
 
 
-export async function loadOrders(filterBy) {
-    console.log('hay' )
+export async function loadOrders(filterBy = {buyer: false}) {
+console.log('filterBy:', filterBy)
     try {
         const orders = await orderService.query(filterBy)
         store.dispatch({
@@ -16,7 +16,7 @@ export async function loadOrders(filterBy) {
         })
         return orders
     } catch (err) {
-        console.log('Cannot load orders', err)
+        console.error('Cannot load orders', err)
         throw err
     }
 }
@@ -30,21 +30,21 @@ export async function addOrder(gigID) {
         })
         return savedOrder
     } catch (err) {
-        console.log('Cannot add order', err)
+        console.error('Cannot add order', err)
         throw err
     }
 }
 
-export async function updateOrder(order) {
+export async function updateOrder(order, value) {
     try {
-        const editOrder = await orderService.editOrder(order)
+        const editOrder = await orderService.editOrder( order._id, value)//(`gig/${gig._id}`, gig)
         store.dispatch({
             type: UPDATE_ORDER,
             editOrder
         })
         return editOrder
     } catch (err) {
-        console.log('Cannot edit order', err)
+        console.error('Cannot edit order', err)
         throw err
     }
 }
@@ -57,7 +57,7 @@ export async function removeOrder(orderId) {
             orderId
         })
     } catch (err) {
-        console.log('Cannot remove gig', err)
+        console.error('Cannot remove gig', err)
         throw err
     }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { utilService } from "../services/util.service"
-import { gigService } from "../services/gig.service.local"
+import { gigService } from "../services/gig.service"
 import { useSearchParams } from "react-router-dom"
 import { GigFilterByBudget } from "./GigFilterByBudget"
 import { GigFilterByDeliveryTime } from "./GigFilterByDeliveryTime"

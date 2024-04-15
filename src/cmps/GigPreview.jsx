@@ -56,7 +56,7 @@ export function GigPreview({ gig }) {
             <div className="gig-user">
                 {/* <img src={gig.owner.imgUrl} alt="owner image" /> */}
                 <QuickAvatar user={gig.owner} className="owner image aspect-square h-7 w-7 flex-center" />
-                <p>Ad by <span>{gig.owner.fullname}</span></p>
+                <p><span>{gig.owner.fullname}</span></p>
             </div>
             <StarRating gig={gig}/>
 

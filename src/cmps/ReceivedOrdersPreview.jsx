@@ -9,7 +9,7 @@ export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) 
     function onActionBtn(value, idx) {
         let orderToUpdate = orders[idx]
         orderToUpdate.status = value
-        onChangeAction(orderToUpdate)
+        onChangeAction(orderToUpdate, value)
         setActionModal(!isActionModalOpen)
     }
 
@@ -32,7 +32,7 @@ export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) 
         <td>{GetDate(order.createdAt)}</td>
         {/* <td>{format(new Date(order.createdAt), 'dd/MM/yy')}</td> */}
         <td>${order.gig.price}</td>
-        <td className={`received-order-action-container ${(order.status === "Accepted") && "accepted"} ${(order.status === "Rejected") && "rejected"}`} key={order._id} onClick={() => setActionModal(!isActionModalOpen)}><button>{order.status}</button></td>
+        <td className={`received-order-action-container ${(order.status === "Accepted") && "accepted"} ${(order.status === "Rejected") && "rejected"}`} onClick={() => setActionModal(!isActionModalOpen)}><button>{order.status}</button></td>
         {
             isActionModalOpen && <td className="received-order-action-modal">
                 <button className="received-order-accept" onClick={() => onActionBtn("Accepted", index)}>Accept</button>

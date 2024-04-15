@@ -5,7 +5,6 @@ import { userService } from './user.service.js'
 import { gigsDemo } from '../../data/gig-demo-data.js'
 
 import data from '../../data/new-gig-demo-data.json'
-// console.log('data:', data)
 const STORAGE_KEY = 'gig'
 
 export const gigService = {
@@ -23,7 +22,6 @@ window.cs = gigService
 _saveDemoData()
 
 async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGigsId) {
-    // console.log('filterBy.price:',filterBy )
 
     var gigs = await storageService.query(STORAGE_KEY)
     if (ownedGigsId) {
@@ -41,7 +39,6 @@ async function query(filterBy = { title: '', price: 0, daysToMake: 0 }, ownedGig
 
     }
     if (filterBy.price) {
-        console.log('filterBy.price:', filterBy.price)
         if (filterBy.price === 155) {
 
             gigs = gigs.filter(gig => gig.packages.basic.price <= filterBy.price)
@@ -85,7 +82,6 @@ async function save(gig) {
         gig.owner = userService.getLoggedinUser()
         savedGig = await storageService.post(STORAGE_KEY, gig)
     }
-    console.log('88 savedGig:', savedGig)
     return savedGig
 }
 
@@ -141,14 +137,7 @@ function getEmptyGig() {
                 daysToMake: 4
             }
         },
-        owner: {
-            _id: "FHc6T",
-            fullname: "meni ko",
-            imgUrl: "https://content.latest-hairstyles.com/wp-content/uploads/best-long-hairstyles-for-men.jpg",
-            level: 3,
-            rate: 5,
-            ordersCount: 5
-        },
+        owner: {},
         avgResponseTime: 1,
         loc: "Ghana",
         imgUrls: [],

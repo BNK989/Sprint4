@@ -5,7 +5,8 @@ import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 
 
-const STORAGE_KEY = 'gig'
+const STORAGE_KEY = '5err'
+const BASE_URL = 'gig'
 
 export const gigService = {
     query,
@@ -13,13 +14,14 @@ export const gigService = {
     save,
     remove,
     getEmptyGig,
-    addGigMsg
+    addGigMsg,
+    getDefaultFilter
 }
 window.cs = gigService
 
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    return httpService.get(STORAGE_KEY, filterBy)
+async function query(filterBy = { txt: '', category: '', price: 0, userId: '' }) {
+    return httpService.get(BASE_URL, filterBy)
 }
 
 function getById(gigId) {
@@ -51,6 +53,10 @@ function getEmptyGig() {
         vendor: 'Susita-' + (Date.now() % 1000),
         price: utilService.getRandomIntInclusive(1000, 9000),
     }
+}
+
+function getDefaultFilter() {
+    return { title: '', price: 0, creteAT: '', daysToMake: 0, ownedGigs: '' }
 }
 
 

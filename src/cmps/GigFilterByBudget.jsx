@@ -9,7 +9,6 @@ export function GigFilterByBudget({ handleChange, isBudgetModalOpen, handleModal
     const customInputRef = useRef(null)
     const [searchParams, setSearchParams] = useSearchParams()
 
-    // console.log('budgetValue:', budgetValue)
 
     function onBudgetModal(value) {
         if (value !== "custom") {

@@ -19,12 +19,10 @@ export function ManageReceivedOrders({ user }) {
     function onlyOrders() {
         if (!orders || !orders.length ) return 
         let myOrders1 = []
-        console.log('orders:', orders)
         orders.forEach(order => {
             if (order.seller._id === user._id) {
                 myOrders1.push(order)
             }
-            console.log('myOrders1:', myOrders1)
         })
         setMyOrders(prev => ([...prev, ...myOrders1]))
     }
@@ -33,8 +31,8 @@ export function ManageReceivedOrders({ user }) {
     //     loadOrders()
     // }, [])
 
-    function onChangeAction(orderToUpdate) {
-        updateOrder(orderToUpdate)
+    function onChangeAction(orderToUpdate, value) {
+        updateOrder(orderToUpdate, value)
     }
 
 

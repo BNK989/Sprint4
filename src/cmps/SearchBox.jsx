@@ -1,4 +1,4 @@
-import { gigService } from "@/services/gig.service.local"
+import { gigService } from "@/services/gig.service"
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
 import { useNavigate, useParams } from "react-router"

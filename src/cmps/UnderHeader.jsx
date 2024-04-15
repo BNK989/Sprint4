@@ -14,7 +14,6 @@ export function UnderHeader({ categories }) {
         });
     }
 
-
     //CSS IN _AppHeader
 
     return (
@@ -28,7 +27,6 @@ export function UnderHeader({ categories }) {
                         </svg>
                     </span>
                 </button>
-
 
                 {categories?.map(cat => <li className='capitalize' key={cat}><Link className='font-light whitespace-nowrap' to={`/explore/?cat=${cat.replace(/&/g, '-')}`}>{cat}</Link></li>)}
                 

@@ -32,7 +32,7 @@ export function GigIndex() {
         try {
             loadGigs(filterBy)
         } catch (err) {
-            console.log('err:', err)
+            console.error('err:', err)
             showErrorMsg('Cannot load toys')
         }
     }, [filterBy, searchParams])
