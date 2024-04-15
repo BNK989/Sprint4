@@ -1,12 +1,13 @@
-
 .gig-list-main-container {
 
 
     .gig-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-        gap: 1.3em;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        // gap: 1.3em ;
+        row-gap: 2.5em;
+        column-gap: 1.3em;
 
-        
+
     }
 }

@@ -5,10 +5,13 @@
     .clear-filter {
         border: 0.8px solid rgba(138, 138, 138, 0.233);
         border-radius: 10px;
-        padding: em(10px);
+        // padding: 0.5em;
+        padding-top: 0.7em;
+        padding-inline: 0.7em;
         font-weight: bold;
         font-size: 1rem;
         text-align: center;
+        
 
 
         &:hover {
