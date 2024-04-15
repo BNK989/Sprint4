@@ -1,9 +1,10 @@
 "use client"
 import { useEffect, useState } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
+import { z } from "zod"
 import { GigSchema } from "../../schema/index"
 
 import { Button } from "@/components/ui/button"
@@ -31,76 +32,52 @@ import {
 
 import { addGig } from "@/store/actions/gig.actions"
 
-import { gigService } from '@/services/gig.service.local'
+import {gigService} from '@/services/gig.service.local'
 import { data } from "autoprefixer"
 import { ImgUploader } from "@/cmps/ImgUploader"
 
 export function GigNewEdit() {
-  const navigate = useNavigate()
-  const params = useParams()
-  const [gig, setGig] = useState({})
 
   const form = useForm({
     resolver: zodResolver(GigSchema),
     defaultValues: {
-      title: gig.title || '',
-      category:  '',
+      title: '',
+      category: '',
       searchTags: [],
-      price:  0,
+      price: 0,
       daysToMake: 0,
-      description:  '',
+      description: '',
       imgUrl: ''
     }
   })
 
   function onSubmit(values) {
+    console.log('values:', values)
 
-    const newGig = gigService.getEmptyGig()
-    newGig.title = values.title
-    newGig.category = values.category
-    newGig.tags = values.searchTags.split(',')
-    newGig.packages.basic.price = values.price
-    newGig.packages.basic.daysToMake = values.daysToMake
-    newGig.packages.basic.description = values.description
-    newGig.imgUrls.push(values.imgUrl)
+    // const newGig = gigService.getEmptyGig()
+    // newGig.title = values.title
+    // newGig.category = values.category
+    // newGig.tags = values.searchTags.split(',')
+    // newGig.packages.basic.price = values.price
+    // newGig.packages.basic.daysToMake = values.daysToMake
+    // newGig.packages.basic.description = values.description
+    // newGig.imgUrls.push(values.imgUrl)
 
-    addGig(newGig).then(savedGig => {
-      navigate('/user/' + savedGig.owner._id)
-
-      console.log('savedGig:', savedGig)
-    })
+    // addGig(newGig)
   }
 
   let [categories, setCategories] = useState([])
 
   useEffect(() => {
-    loadGig(params.id)
     gigService.allCategories()
-      .then(data => setCategories(data))
-
+    .then(data => setCategories(data))
+    
   }, [])
-
-  async function loadGig(id) {
-    try {
-        const gig = await gigService.getById(id)
-        console.log('gig:', gig)
-        setGig(gig)
-        form.setValue('title', gig.title)
-        form.setValue('category', gig.category)
-        form.setValue('searchTags', gig.tags.join(', '))
-        form.setValue('price', gig.packages.basic.price)
-        form.setValue('daysToMake', gig.packages.basic.daysToMake)
-        form.setValue('description', gig.description)
-    } catch (err) {
-        console.log('Had issues in gig details', err)
-        showErrorMsg('Cannot load gig')
-    }
-}
 
   function onUploaded(imgUrl) {
     console.log('imgUrl:', imgUrl)
     form.setValue('imgUrl', imgUrl)
-  }
+}
 
 
   function handleChange(e) {
@@ -118,13 +95,15 @@ export function GigNewEdit() {
   }
 
 
+
+
   return (
     <section className="gig-new-edit-container mt-8">
       <h2 className="text-center mt-3">Create a new Gig</h2>
-      <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="w-full p-4 m-10 border">
           <div className="flex w-full flex-col gap-8">
 
+            
             <FormField
               control={form.control}
               name="title"
@@ -141,28 +120,25 @@ export function GigNewEdit() {
                 </FormItem>
               )}
             />
-            {/* MARK: CATEGORY */}
             <FormField
               control={form.control}
               name="category"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Category</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
+                    <Select {...field}>
+                  <FormControl>
                       <SelectTrigger className="w-96">
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
-                    </FormControl>
-                    <SelectContent >
-                      {categories.map((category, i) => (
-                        <SelectItem key={i} value={category} >{category}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                      <SelectContent >
+                        {categories.map((category,i) => (
+                          <SelectItem key={i} value={category} >{category}</SelectItem>
+                        ))}
+                      </SelectContent>
+                  </FormControl>
+                    </Select>
+                    {/* <Input placeholder="category" {...field} /> */}
 
                   <FormDescription>
                     Choose the category that most suitable for your Gig.
@@ -253,19 +229,17 @@ export function GigNewEdit() {
               )}
             /> */}
 
-            <ImgUploader onUploaded={onUploaded} />
+          <ImgUploader onUploaded={onUploaded} />
 
           </div>
           <div className="btn-container w-full flex justify-end">
-
-            {/* <Link to={`user/:userId${gig._id}`}> */}
-            <Button type="submit">Save & Continue</Button>
-            {/* </Link> */}
+          
+           {/* <Link to={`user/:userId${gig._id}`}> */}
+             <Button type="submit">Save & Continue</Button>
+             {/* </Link> */}
           </div>
 
         </form>
-
-      </Form>
 
     </section>
   )

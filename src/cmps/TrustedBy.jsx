@@ -1,7 +1,7 @@
 export function TrustedBy(){
 
     return (
-        <section className="trusted-by bg-gray1 mb-24">
+        <section className="trusted-by bg-gray1 mb-10 md:mb-24">
             <ul className="flex-center clean-list justify-center gap-2 md:gap-14 h-24">
                 <li className="flex-center text-gray-400 text-sm hidden md:contents">Trusted by</li>
                 <li><img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/meta.12b5e5c.png" alt="meta logo" /></li>

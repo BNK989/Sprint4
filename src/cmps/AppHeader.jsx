@@ -103,7 +103,7 @@ export function AppHeader() {
             {/* MARK: Burger Menu */}
             <div className="burgerMenu">
                 <ul className="flex flex-col w-full" onClick={() => setBurgerMenuOpen(false)}>
-                    <li className='w-full'><Button className='w-36'>Join 5err</Button></li>
+                    <li className='w-full'><Button onClick={() => setIsDrawOpen(true)} className='w-36'>Join 5err</Button></li>
                     <li><Link to="/explore">Explore</Link></li>
                     <li><Link>Sign in</Link></li>
                 </ul>
