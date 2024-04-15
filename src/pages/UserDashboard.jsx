@@ -7,7 +7,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 
-// export function UserDashboard() {
+export function UserDashboard() {
 //     const data = {
 //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
 //         datasets: [
@@ -37,4 +37,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 //   return (
 //   <Pie data={data} />;
 //   )
-// }
+return <>
+<h1>hey</h1></>
+}
