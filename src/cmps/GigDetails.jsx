@@ -241,14 +241,15 @@ export function GigDetails() {
                         <li key={idx}>
                             <div className="line"></div>
                             <div className="by">
-                                <img src={review.by.imgUrl} alt="owner image" />
+                            <QuickAvatar user={review.by} className="owner image aspect-square h-13 w-12 m-1 ml--1 flex-center" />
+                                {/* <img src={review.by.imgUrl} alt="owner image" /> */}
 
                                 <div className="user-info">
 
                                     <span className="user-name">{review.by.fullname}</span>
 
                                     <div className="from">
-                                        <img src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png" alt="" />
+                                        <img className="flag" src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png" alt="" />
                                         <span>Israel</span>
                                     </div>
 

@@ -2,11 +2,14 @@
     display: grid;
     grid-template-columns: 1fr 37vw;
 
+
     .payment-option {
         margin-top: 3.2em;
         display: flex;
         flex-flow: column;
         border: 0.5px solid $clr-light-grey;
+        height: fit-content;
+        padding-bottom: 2em;
 
 
         .title {
@@ -19,14 +22,27 @@
         form {
             display: flex;
             flex-flow: column;
+
             padding-left: 2.1em;
 
+            .datas {
+                display: flex;
+                width: 72%;
+                justify-content: space-between;
+
+                .inputBox{
+                    width: 48%;
+                }
+            }
 
             .inputBox {
+                display: flex;
+                flex-flow: column;
+                width: 72%;
 
                 label {
+                    margin-top: 0.65em;
                     font-size: 0.9em;
-
                 }
 
                 input {
@@ -62,6 +78,7 @@
                 display: flex;
                 padding-top: 0.8em;
                 padding-bottom: 1.1em;
+                align-items: center;
 
                 .gig-img {
                     width: 6em;
@@ -71,7 +88,7 @@
                 .gig-title {
                     font-weight: bolder;
                     font-size: 0.9em;
-                    line-height: 1.2em;
+                    line-height: 1.4em;
                     padding-left: 1.1em;
                 }
 
@@ -81,6 +98,8 @@
                 height: 0.1px;
                 width: 100%;
                 background-color: $clr-light-grey;
+                // background-color: red;
+                margin-top: 0.2em;
             }
 
             .price {
@@ -90,8 +109,31 @@
 
                 display: flex;
                 justify-content: space-between;
+            }
 
+            .whats-included {
+                font-size: 0.9em;
 
+                ul {
+                    li {
+                        font-family: 'Macan', sans-serif;
+                        font-size: 1em;
+                        margin-bottom: 0.8em;
+
+                        .include::after {
+                            margin-right: 0.5em;
+                            content: "\f00c";
+                            color: black;
+                        }
+
+                        .not-include::after {
+                            margin-right: 0.5em;
+                            content: "\f00c";
+                            color: $clr-light-grey;
+                        }
+                    }
+
+                }
             }
 
             .whats-included {
@@ -121,6 +163,7 @@
         .order {
             padding-left: 1.5em;
             padding-right: 1.3em;
+            margin-top: 0.1em;
             display: flex;
             flex-flow: column;
             font-size: 0.9em;
@@ -136,18 +179,19 @@
                 height: 0.1px;
                 width: 100%;
                 background-color: $clr-light-grey;
-                margin-top: 1em;
-                margin-bottom: 0.5em;
+                margin-top: 0.9em;
+                margin-bottom: 0.4em;
             }
 
             .total {
-                // padding-top: 2em;
+                margin-top: 0.15em;
                 font-weight: bold;
             }
 
             .pay {
                 display: flex;
                 flex-flow: column;
+                margin-bottom: 1em;
 
                 .confirm-btn {
                     background-color: $clr-black;
@@ -155,6 +199,7 @@
                     margin-top: 1.2em;
                     font-size: 1em;
                     padding: 0.6em;
+                    // padding-inline: 0.5em;
                     border-radius: 5px;
                 }
 
@@ -162,6 +207,7 @@
                     margin-top: 0.2em;
                     font-size: 0.9em;
                     align-self: center;
+
                 }
             }
 

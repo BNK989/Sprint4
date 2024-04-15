@@ -56,6 +56,11 @@
                     padding-inline: 0.9em;
                     // margin-bottom: 0.5em;
                 }
+                .flex-center{
+                    .stars{
+                        display: flex;
+                    }
+                }
 
                 .user-rate {
                     display: flex;
@@ -64,6 +69,7 @@
 
                     margin-bottom: 15px;
                     padding-left: 0.7em;
+
 
                     .star {
                         padding-left: 5px;
@@ -279,11 +285,12 @@
 
 
             img {
-                height: fit-content;
-                margin-top: 0.3em;
-                width: 2.9em;
-                margin-right: 0.7em;
-                margin-left: -0.1em;
+                object-fit:fill;
+                // height: fit-content;
+                // margin-top: 0.3em;
+                // width: 2.9em;
+                // margin-right: 0.7em;
+                // margin-left: -0.1em;
             }
 
             .user-info {
@@ -303,9 +310,15 @@
                     margin-top: 0.1em;
 
                     // align-content: center;
-                    img {
+                    .flag {
                         border-radius: 5px;
                         width: 1.2em;
+                        object-fit:fill;
+                        // height: fit-content;
+                        margin-top: -0.1em;
+                        // width: 2.9em;
+                        margin-right: 0.7em;
+                        margin-left: -0.1em;
                     }
 
                     span {
@@ -321,13 +334,14 @@
             margin-left: 3.5em;
             margin-top: 1em;
 
-            align-items: center;
+            // align-items: center;
 
             i:not(:last-child) {
                 margin-right: 0.25em;
             }
 
             span {
+                margin-top: -0.2em;
                 font-size: 0.8em;
                 font-weight: bold;
             }

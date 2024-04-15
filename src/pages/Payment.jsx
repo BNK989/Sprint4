@@ -28,12 +28,12 @@ export function Payment() {
             navigate('/explore')
         }
     }
-    
-    async function onConfirm(){
-        try{
+
+    async function onConfirm() {
+        try {
             const order = await addOrder(gigId)
             navigate('/')
-        }catch(err){
+        } catch (err) {
             showErrorMsg('Cannot confirm order')
 
         }
@@ -45,9 +45,9 @@ export function Payment() {
         <section className="payment-container">
 
             <section className="payment-option">
-                <span className="title">Payment Options</span>
+                <span className="title">Payment Option</span>
 
-                <form action="">
+                <form >
 
                     <div className="inputBox">
                         <label htmlFor="cardNum">
@@ -57,21 +57,23 @@ export function Payment() {
                             placeholder="1111-2222-3333-4444"
                             maxLength="19" />
                     </div>
+                    <div className="datas">
 
-                    <div className="inputBox">
-                        <label htmlFor="">Expiration date</label>
-                        <input type="text" id="inputBox"
-                            placeholder="00/00"
-                            maxLength="5" />
-                    </div>
+                        <div className="inputBox">
+                            <label htmlFor="">Expiration date</label>
+                            <input type="text" id="inputBox"
+                                placeholder="00/00"
+                                maxLength="5" />
+                        </div>
 
-                    <div className="inputBox">
-                        <label
-                        // htmlFor="cvv"
-                        >Security code</label>
-                        <input type="text" id="cvv"
-                            placeholder="123"
-                            maxLength="3" />
+                        <div className="inputBox">
+                            <label
+                            // htmlFor="cvv"
+                            >Security code</label>
+                            <input type="text" id="cvv"
+                                placeholder="123"
+                                maxLength="3" />
+                        </div>
                     </div>
 
                     <div className="inputBox">
@@ -91,19 +93,29 @@ export function Payment() {
 
                 <section className="info">
                     <div className="gig-mini-info">
-                        <img className="gig-img" src={gig.imgUrls[0]} alt="owner image" />
+                        <img className="gig-img" src={gig.imgUrls[0]} alt="gig image" />
                         <span className="gig-title">{gig.title}</span>
                     </div>
 
                     <div className="line"></div>
 
                     <div className="price">
-                        <span>Basic Package</span>
-                        <span className="price-num">{gig.price}$</span>
+                        <span>Package includes</span>
+                        <span className="price-num">{gig.packages.standard.price}$</span>
+
 
                         {/* <p>save tp to 20% with subscribe to save</p> */}
                     </div>
-
+                    <article className="whats-included">
+                        {/* <details>
+                            <summary>what's included</summary> */}
+                        <ul className="clean-list">
+                            <li className="fa vi"><span className={(gig.packages.standard.whatIncluded.ConceptIncluded) ? 'fa include' : 'fa not-include'}></span>  1 Concept Included </li>
+                            <li className="fa vi"><span className={(gig.packages.standard.whatIncluded.IncludeSourceFile) ? 'fa include' : 'fa not-include'}></span> Include Source File </li>
+                            <li className="fa vi"><span className={(gig.packages.standard.whatIncluded.StationeryDesigns) ? 'fa include' : 'fa not-include'}></span> Stationery Designs</li>
+                        </ul>
+                        {/* </details> */}
+                    </article>
                     {gig.whatIncluded && <article className="whats-included">
                         <div className=" vi"><span className={(gig.whatIncluded.ConceptIncluded) ? 'fa include' : 'fa not-include'}></span>  1 Concept Included </div>
                         <div className=" vi"><span className={(gig.whatIncluded.IncludeSourceFile) ? 'fa include' : 'fa not-include'}></span> Include Source File </div>
@@ -126,17 +138,17 @@ export function Payment() {
 
                     <div className="total">
                         <span className="title">Total</span>
-                        <span className="price">{gig.price + 5 + 7}$</span>
+                        <span className="price">{gig.packages.standard.price + 5 + 7}$</span>
                     </div>
                     <div className="time">
                         <span className="title">Total delivery time</span>
-                        <span className="price">{gig.daysToMake} <span>{(gig.daysToMake > 1) ? 'days' : 'day' } </span></span>
+                        <span className="price">{gig.packages.standard.daysToMake} <span>{(gig.daysToMake > 1) ? 'days' : 'day'} </span></span>
                     </div>
 
                     <section className="pay">
                         <button className="confirm-btn" onClick={onConfirm}>Confirm & Pay</button>
                         <span>SLL Secure Payment</span>
-                        <span>you will be charged {gig.price + 5 + 7}$ total amount</span>
+                        <span>you will be charged {gig.packages.standard.price + 5 + 7}$ total amount</span>
                     </section>
                 </section>
 

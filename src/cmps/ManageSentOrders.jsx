@@ -25,12 +25,16 @@ export function ManageSentOrders({ user, orders }) {
         setMyOrders(prev => ([...prev, ...myOrders1]))
     }
 
-    // function onActionBtn(value,idx){
-    //     let orderToUpdate = orders[idx]
-    //     orderToUpdate.status = value
-    //     updateOrder(orderToUpdate)
-    //     setActionModal(!isActionModalOpen)
-    // }
+    function truncateStringToWordCount(inputString, maxWordCount) {
+        const words = inputString.split(/\s+/);
+    
+        if (words.length <= maxWordCount) {
+            return inputString;
+        }
+    
+        const truncatedWords = words.slice(0, maxWordCount).join(' ');
+        return `${truncatedWords}...`;
+    }
 
     function gigStatusClass(status){
         if (status === 'approved') return 'approved'
@@ -52,7 +56,7 @@ export function ManageSentOrders({ user, orders }) {
                 {myOrders.map(order => {
                     return <li key={order._id} className={gigStatusClass(order.status)}>
                         <img src={order.gig.imgUrl[0]} alt="" />
-                        <span className="gig-title">{order.gig.title}</span>
+                        <span className="gig-title">{truncateStringToWordCount(order.gig.title , 5)}</span>
                         {/* <span className="price">${order.gig.price}</span> */}
                         <span className="order-status">{order.status}</span>
                     </li>

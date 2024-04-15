@@ -66,9 +66,10 @@
 .chevron-down::after{
     content: '\f078';
     position: absolute;
-    right: -.6em;
-    bottom: .4em;
+    right: -.7em;
+    bottom: .3em;
     transition: transform .2s ease;
+    color: $clrbtn-hover;
 }
 
 [data-state="open"].chevron-down::after{
