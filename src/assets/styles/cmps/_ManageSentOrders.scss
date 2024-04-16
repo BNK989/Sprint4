@@ -1,48 +1,54 @@
+.my-orders {
+    width: 100%;
 
-    .my-orders {
+    .no-orders {
         width: 100%;
+    }
 
-        .no-orders {
-            width: 100%;
+    .orders-list {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 0.5em;
+
+        .approved {
+            color: $clrbg1;
         }
 
-        .orders-list {
-            width: 100%;
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            gap: 0.5em;
+        .rejected {
+            color: $clralert;
+        }
 
-            .approved{
-                color: $clrbg1;
-            }
-            .rejected{
-                color: $clralert;
-            }
-            
-            li{
-                width: 100%;
-                height: 5em;
-                font-size: 0.6em;
-                display: flex;
-                align-items: center;
-                // justify-content: space-between;
-                gap: 1em;
-                
-                img{
-                width: 10em ;
+        li {
+            width: 100%;
+            height: 5em;
+            font-size: 0.6em;
+            display: flex;
+            align-items: center;
+            // justify-content: space-between;
+            gap: 1em;
+
+            img {
+                width: 10em;
                 height: 5em;
                 object-fit: cover;
-                   
-                    // margin-right: 3em;
-                }
-                // .gig-title{
-                    
-                // }
 
+                // margin-right: 3em;
             }
+
+
+            .pending {
+                background-color: #e2ee75;
+                border-radius: 5px;
+            }
+            .approved{
+                background-color: $clrbg1
+            }
+
         }
     }
+}
 
 
 
