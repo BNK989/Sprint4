@@ -37,6 +37,9 @@ import {
 import { cn } from '@/lib/utils'
 import { ManageSentOrders } from './ManageSentOrders'
 import { loadOrders } from '@/store/actions/order.actions'
+import { SOCKET_EVENT_EDIT_ORDER, socketService } from '@/services/socket.service'
+import { UPDATE_ORDER } from '@/store/reducers/order.reducer'
+import { store } from '@/store/store'
 
 
 
@@ -53,6 +56,10 @@ export function NavBar({ signInModal, className,onLogout }) {
 
     useEffect(() => {
         loadOrders({buyer: true})
+        socketService.on(SOCKET_EVENT_EDIT_ORDER,(editOrder)=>{
+            console.log('editOrder:', editOrder)
+            store.dispatch({type:UPDATE_ORDER,editOrder})
+        })
         let handler = (e) => {
             setPendingOrdersTotal(orders.reduce((acc, order) => order.status === 'pending' ? acc + 1 : acc, 0))
             if (!menuRef.current === e.target) {
@@ -63,6 +70,7 @@ export function NavBar({ signInModal, className,onLogout }) {
         document.addEventListener("mousedown", handler)
         return () => {
             document.removeEventListener("mousedown", handler)
+            socketService.off(SOCKET_EVENT_EDIT_ORDER)
         }
     }, [])
 
