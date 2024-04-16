@@ -1,0 +1,58 @@
+.UserDashboard {
+    margin-top: 3em;
+    display: grid;
+
+    .basic-stats {
+        border: 1px solid $clrbtn---hover;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        div {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            border-inline: 1px solid $clrbtn---hover;
+            padding: 1em;
+
+            .title {
+                font-size: 0.7em;
+                font-weight: bold;
+                margin-bottom: 0.5em;
+            }
+
+            .stat {
+                color: $clrbtn-hover;
+            }
+        }
+
+    }
+
+    .charts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .pie-container {
+            align-items: center;
+            .pie {
+
+                max-width: 20em;
+            }
+        }
+
+        .chart-container ,
+        .pie-container {
+            display: flex;
+            flex-flow: column;
+            // align-items: center;
+
+            .title {
+                align-self: center;
+                // align-self: center;
+            }
+
+        }
+    }
+
+
+
+}

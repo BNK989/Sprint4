@@ -5,6 +5,7 @@ import { QuickAvatar } from "./shanCN/QuickAvatar"
 
 export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) {
     const [isActionModalOpen, setActionModal] = useState(false)
+    
 
     function onActionBtn(value, idx) {
         let orderToUpdate = orders[idx]
@@ -19,7 +20,7 @@ export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) 
         const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear() % 100}`;
         return formattedDate
     }
-    // buyer
+    console.log('order.status:', order.status)
     return (<>
         <td><div className="buyer">
         <QuickAvatar user={order.buyer} className="user-image aspect-square h-20 w-20 flex-center" />

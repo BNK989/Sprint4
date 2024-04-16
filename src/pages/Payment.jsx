@@ -52,6 +52,7 @@ export function Payment() {
                         </label>
                         <input type="text" id="cardNum"
                             placeholder="1111-2222-3333-4444"
+                            value="4580 2401 0242 5423"
                             maxLength="19" />
                     </div>
                     <div className="datas">
@@ -60,6 +61,7 @@ export function Payment() {
                             <label htmlFor="">Expiration date</label>
                             <input type="text" id="inputBox"
                                 placeholder="00/00"
+                                value= '01/25'
                                 maxLength="5" />
                         </div>
 
@@ -78,6 +80,7 @@ export function Payment() {
                             cardholder's name
                         </label>
                         <input type="text" id="cardhold-name"
+                        value='ben'
                             placeholder=""
                             maxLength="3"
                         />

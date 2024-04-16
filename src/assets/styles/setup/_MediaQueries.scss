@@ -117,3 +117,24 @@
         }
     }
 }
+
+@media (max-width: 1300px){
+
+    .payment-container{
+       display: grid;
+       grid-template-rows: 1fr 1fr;
+       grid-template-columns: 1fr;
+    //    align-items: center;
+    justify-items: center;
+
+        .payment-option{
+            grid-row: 2;
+
+        }
+
+        .order-info{
+grid-row: 1;
+        }
+
+    }
+}

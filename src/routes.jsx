@@ -45,11 +45,11 @@ const routes = [
         component: <UserDetails />,
         label: 'user'
     },
-    // {
-    //     path: 'user/dashboard/:userId',
-    //     component: <UserDashboard />,
-    //     label: 'user'
-    // },
+    {
+        path: 'user/dashboard/:userId',
+        component: <UserDashboard />,
+        label: 'user'
+    },
     {
         path: 'manage_gigs/new',
         component: <GigNewEdit />,

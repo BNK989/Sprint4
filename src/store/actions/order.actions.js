@@ -37,7 +37,7 @@ export async function addOrder(gigID) {
 
 export async function updateOrder(order, value) {
     try {
-        const editOrder = await orderService.editOrder( order._id, value)//(`gig/${gig._id}`, gig)
+        const editOrder = await orderService.editOrder( order._id, value)
         store.dispatch({
             type: UPDATE_ORDER,
             editOrder

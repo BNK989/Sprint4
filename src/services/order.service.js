@@ -37,13 +37,7 @@ async function addOrder(gigId) {
         const buyer = await userService.getLoggedinUser()
         let users = await userService.getUsers()
         let seller = users.find(user => user._id === gigToOrder.owner._id)
-        // if(seller !== gigToOrder.owner._id){
-        //     seller={
-        //         fullname:'meni ko',
-        //         imgUrl:'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
-        //         _id:'FHc6T'
-        //     }
-        // }
+        
         let orderToAdd = {
             buyer: { fullname: buyer.fullname, imgUrl: buyer.imgUrl, _id: buyer._id },
             seller: { fullname: seller.fullname, imgUrl: seller.imgUrl, _id: seller._id },
@@ -81,8 +75,8 @@ function getById(orderId) {
 
 async function editOrder(orderId ,value) {
     var savedOrder
-    console.log('value:', value)
     savedOrder = await httpService.put(`${BASE_URL}/${orderId}` , {value} )
+    console.log('savedOrder:', savedOrder)
     return savedOrder
 }
 

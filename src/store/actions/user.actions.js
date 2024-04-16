@@ -34,7 +34,7 @@ export async function login(credentials) {
             type: SET_USER,
             user
         })
-        // socketService.login(user)
+        socketService.login(user._id)
         return user
     } catch (err) {
         console.error('Cannot login', err)
@@ -51,7 +51,7 @@ export async function signup(credentials) {
             type: SET_USER,
             user
         })
-        // socketService.login(user)
+        socketService.login(user._id)
         return user
     } catch (err) {
         console.error('Cannot signup', err)
@@ -66,7 +66,7 @@ export async function logout() {
             type: SET_USER,
             user: null
         })
-        // socketService.logout()
+        socketService.logout()
     } catch (err) {
         console.error('Cannot logout', err)
         throw err
