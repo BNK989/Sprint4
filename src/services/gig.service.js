@@ -15,7 +15,8 @@ export const gigService = {
     remove,
     getEmptyGig,
     addGigMsg,
-    getDefaultFilter
+    getDefaultFilter,
+    allCategories
 }
 window.cs = gigService
 
@@ -60,7 +61,13 @@ function getDefaultFilter() {
     return { title: '', price: 0, creteAT: '', daysToMake: 0, ownedGigs: '' }
 }
 
-
-
-
-
+async function allCategories() {
+    // return ['Graphics & Design','Programming & Tech', 'Digital Marketing', 'Video & Animation', 'Writing & Translation', 'Music & Audio', 'Business', 'Consulting', 'Data', 'AI Services', ]
+    var gigs = await query()
+    return gigs.reduce((accumulator, { category }) => {
+        if (!accumulator.includes(category) && accumulator.length < 9) {
+            accumulator.push(category)
+        }
+        return accumulator
+    }, [])
+}

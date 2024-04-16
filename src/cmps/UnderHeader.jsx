@@ -18,7 +18,7 @@ export function UnderHeader({ categories }) {
 
     return (
         <section className="relative under-header main-container full md:visible ">
-            <ul className='flex clean-list overflow-x-hidden md:w-96' ref={scrollRef}>
+            <ul className='flex clean-list overflow-x-hidden md:w-96 overflow-y-hidden' ref={scrollRef}>
 
                 <button onClick={() => scrollX('left')} className="lg:hidden left-arrow bg-white absolute left-0">
                     <span className="icon-chevron w-4 h-4 " aria-hidden="true" style={{ fill: 'rgb(122, 125, 133)' }}>

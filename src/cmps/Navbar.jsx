@@ -132,56 +132,6 @@ export function NavBar({ signInModal, className,onLogout }) {
                     </Popover>
                     }
 
-                    {/* {user && <HoverCard>
-                    <HoverCardTrigger asChild>
-                        <li className="user-img-navbar" >
- 
-                            <QuickAvatar  user={user} />
-                    {
-                        isUserModalOpen &&
-                        <section className="user-menu-options" ref={menuRef}>
-                        <Link className='link-profile' onClick={() => setUserModalOpen(false)} to={`user/${user._id}`}>Profile</Link>
-                        <div onClick={onProfile}>Profile</div>
-                        </section>
-                    }
-                        </li>
-                    </HoverCardTrigger>
-                    <HoverCardContent className="w-80">
-                        <div className="flex justify-between space-x-4">
-                            <QuickAvatar user={user} />
-                            <div className="space-y-1 text-black tooltip">
-                                <h4 className="text-sm font-semibold tooltip ">{user.fullname}</h4>
-                                <p className="text-sm tooltip">
-                                    Hey {util.capitalizeWords(user.fullname.split(' ')[0])}, you have {pendingOrdersTotal} pending orders.
-                                </p>
-                                <div className="flex items-center pt-2 tooltip">
-                                    <span className="text-xs text-muted-foreground tooltip">
-                                        Joined April 2024
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </HoverCardContent>
-                </HoverCard>    
-            } */}
-
-                    {/* <img onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8" src={user.imgUrl} alt="" /> */}
-                    {/* {user && <ToolTipWrapper tooltipContent={`Logged in as ${util.capitalizeWords(user.fullname)}`}>
-                    <li className="user-img-navbar" >
-                        
-                        <Avatar onClick={() => setUserModalOpen(!isUserModalOpen)} className="w-8 h-8">
-                            <AvatarImage src={user.imgUrl} alt="@shadcn" />
-                            <AvatarFallback>CN</AvatarFallback>
-                        </Avatar>
-                        {
-                            isUserModalOpen &&
-                            <section className="user-menu-options" ref={menuRef}>
-                                <Link className='link-profile' onClick={() => setUserModalOpen(false)} to={`user/${user._id}`}>Profile</Link>
-                            </section>
-                        }
-                    </li></ToolTipWrapper>
-                } */}
-
                     {!user && <li className="sign-in-nav" onClick={() => signInModal(false)}>Sign in</li>}
                     {!user && <li className='join-btn' onClick={() => signInModal(true)}><Button variant="outline" className='font-bold bg-inherit h-6 p-[1.2em] rounded text-green1 border-green1 border border-solid hover:bg-[#19a463] hover:text-white'>Join</Button></li>}
 
