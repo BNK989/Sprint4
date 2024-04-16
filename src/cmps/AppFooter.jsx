@@ -82,7 +82,7 @@ export function AppFooter() {
                         </button>
                     </section>
                     <section className="locale-settings-package settings-button locale_settings-package locale-settings-package locale_settings-package">
-                        <button className="selection-trigger currency-selection-trigger text-body-2 default">₪ ILS</button>
+                        {/* <button className="selection-trigger currency-selection-trigger text-body-2 default">₪ ILS</button> */}
                     </section>
                     <button className="accessibility-button" aria-label="Open accessibility menu" data-uw-trigger="true" data-uw-ignore-s25="true" aria-haspopup="dialog">
                         <span className="nFghBOe accessibility-icon"  aria-hidden="true">
