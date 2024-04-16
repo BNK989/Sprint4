@@ -29,12 +29,28 @@
 
     .charts {
         display: grid;
-        grid-template-columns: repeat(2 1fr);
-        
+        grid-template-columns: repeat(2, 1fr);
+
         .pie-container {
-            width: 50%;
+            align-items: center;
+            .pie {
+
+                max-width: 20em;
+            }
         }
 
+        .chart-container ,
+        .pie-container {
+            display: flex;
+            flex-flow: column;
+            // align-items: center;
+
+            .title {
+                align-self: center;
+                // align-self: center;
+            }
+
+        }
     }
 
 

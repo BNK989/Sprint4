@@ -26,6 +26,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "embla-carousel-react": "^8.0.1",
+    "faker": "^5.5.3",
     "lucide-react": "^0.365.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",

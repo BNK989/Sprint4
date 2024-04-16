@@ -3,6 +3,7 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import { PieBestSellers } from '@/cmps/smallCmps/PieBestSellers';
+import { ChartOverview } from '@/cmps/smallCmps/ChartOverview';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
@@ -44,9 +45,11 @@ export function UserDashboard() {
           <span className='stat'>11,750$</span>
         </div>
       </section>
-      
+
       <section className='charts'>
+        <ChartOverview/>
           <PieBestSellers />
+          
       </section>
     </section>
   )
