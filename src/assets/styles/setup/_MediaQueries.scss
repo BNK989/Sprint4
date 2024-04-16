@@ -117,3 +117,13 @@
         }
     }
 }
+
+@media (max-width: 1300px){
+
+    .payment-container{
+        display: flex;
+        flex-flow: column;
+        // align-items: center;
+
+    }
+}
