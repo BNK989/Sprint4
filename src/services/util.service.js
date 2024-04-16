@@ -290,28 +290,35 @@ const titlesArr = ['Create a professional social media strategy',
         'Write a catchy and effective blog post',]
 
 //MARK: createRandomGig
-function createRandomGig(id, title, category, price, owner, daysToMake, description, whatIncluded, avgResponseTime, loc, imgUrls, tags, likedByUsers, reviews) {
+function createRandomGig(builder = {title, category, price, owner, daysToMake, description, whatIncluded, avgResponseTime, loc, imgUrls, tags, likedByUsers, reviews}) {
     return {
-        "_id": id || makeId(),
-        "title": title || titlesArr[getRandomIntInclusive(0, titlesArr.length - 1)],
-        "category": category || categoryArr[getRandomIntInclusive(0, categoryArr.length - 1)],
-        "price": price || getRandomIntInclusive(10, 2000),
-        "owner": owner || ownersArr[getRandomIntInclusive(0, 4)],
-        "daysToMake": daysToMake || getRandomIntInclusive(1, 8),
-        "description": description || makeLorem(),
-        "whatIncluded": whatIncluded || { ConceptIncluded: getRandomBool(), IncludeSourceFile: getRandomBool(), StationeryDesigns: getRandomBool() },
-        "avgResponseTime": avgResponseTime || getRandomIntInclusive(1, 10),
-        "loc": loc || countriesArr[getRandomIntInclusive(0, 100)],
-        "imgUrls": imgUrls || Array.from({ length: 5 }).map((_, i) => `https://source.unsplash.com/random/30${getRandomIntInclusive(0, 9)}%C3%9740${getRandomIntInclusive(0, 9)}`),
-        "tags": tags || removeDuplicates(Array.from({ length: getRandomIntInclusive(1, 5) }).map((_, i) => tagsArr[getRandomIntInclusive(0, tagsArr.length - 1)])),
-        "likedByUsers": likedByUsers || ["user23", "quick-user"],
-        "reviews": reviews || removeDuplicates(Array.from({ length: getRandomIntInclusive(1, 5) }).map((_, i) => reviewsArr[getRandomIntInclusive(0, reviewsArr.length - 1)])),
+        // "_id": id || makeId(),
+        "title": builder.title || titlesArr[getRandomIntInclusive(0, titlesArr.length - 1)],
+        "category": builder.category || categoryArr[getRandomIntInclusive(0, categoryArr.length - 1)],
+        "price": builder.price || getRandomIntInclusive(10, 2000),
+        "owner": builder.owner || ownersArr[getRandomIntInclusive(0, 4)],
+        "daysToMake": builder.daysToMake || getRandomIntInclusive(1, 8),
+        "description": builder.description || makeLorem(),
+        "whatIncluded": builder.whatIncluded || { ConceptIncluded: getRandomBool(), IncludeSourceFile: getRandomBool(), StationeryDesigns: getRandomBool() },
+        "avgResponseTime": builder.avgResponseTime || getRandomIntInclusive(1, 10),
+        "loc": builder.loc || countriesArr[getRandomIntInclusive(0, 100)],
+        "imgUrls": builder.imgUrls || Array.from({ length: 5 }).map((_, i) => `https://source.unsplash.com/random/30${getRandomIntInclusive(0, 9)}%C3%9740${getRandomIntInclusive(0, 9)}`),
+        "tags": builder.tags || removeDuplicates(Array.from({ length: getRandomIntInclusive(1, 5) }).map((_, i) => tagsArr[getRandomIntInclusive(0, tagsArr.length - 1)])),
+        "likedByUsers": builder.likedByUsers || ["user23", "quick-user"],
+        "reviews": builder.reviews || removeDuplicates(Array.from({ length: getRandomIntInclusive(1, 5) }).map((_, i) => reviewsArr[getRandomIntInclusive(0, reviewsArr.length - 1)])),
     }
 }
 
 
 function makeABunchOfGigs(n = 20) {
     return Array.from({ length: n }).map((_, i) => createRandomGig())
+}
+
+// createMyGig()
+function createMyGig(){
+    const newGig = createRandomGig({imgUrls: ["https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/66145094/original/121043a9a3915d3e646bac32cb7dc6374f741e3b.jpg"]})
+    console.log('new gig:', newGig)
+    httpService.post('gig', newGig)
 }
 
 // Example usage:

@@ -261,8 +261,8 @@ export function GigDetails() {
                                     <span className="user-name">{review.by.fullname}</span>
 
                                     <div className="from">
-                                        <img className="flag" src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png" alt="" />
-                                        <span>Israel</span>
+                                        <img className="flag" src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png" alt="" />
+                                        <span>USA</span>
                                     </div>
 
                                 </div>

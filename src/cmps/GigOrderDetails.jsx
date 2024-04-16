@@ -29,7 +29,7 @@ return <section className="order-details">
 
                     {pack.whatIncluded && <article className="whats-included">
                         <details>
-                            <summary>what's included</summary>
+                            <summary>What's included</summary>
                             <ul className="clean-list">
                                 <li className="fa vi"><span className={(pack.whatIncluded.ConceptIncluded) ? 'fa include' : 'fa not-include'}></span>  1 Concept Included </li>
                                 <li className="fa vi"><span className={(pack.whatIncluded.IncludeSourceFile) ? 'fa include' : 'fa not-include'}></span> Include Source File </li>
