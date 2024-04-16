@@ -2,42 +2,38 @@ import { loadOrders, updateOrder } from "@/store/actions/order.actions"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { ReceivedOrdersPreview } from "./ReceivedOrdersPreview"
+import { SOCKET_EVENT_ADD_ORDER, socketService } from "@/services/socket.service"
+import { ADD_ORDER } from "@/store/reducers/order.reducer"
+import { store } from "@/store/store"
 
 
 export function ManageReceivedOrders({ user }) {
     // const [isActionModalOpen, setActionModal] = useState(false)
 
     const orders = useSelector(storeState => storeState.orderModule.orders)
-    const [myOrders, setMyOrders] = useState([])
+    // const [isOrderUpdate, setOrderUpdate] = useState(false)
 
 
     useEffect(() => {
         loadOrders()
-        onlyOrders()
+
+        socketService.on(SOCKET_EVENT_ADD_ORDER,(savedOrder)=>{
+            console.log('order:', savedOrder)
+            store.dispatch({type:ADD_ORDER,savedOrder})
+        })
+
+        return()=>{
+            socketService.off(SOCKET_EVENT_ADD_ORDER)
+        }
+
     }, [])
 
-    function onlyOrders() {
-        if (!orders || !orders.length ) return 
-        let myOrders1 = []
-        orders.forEach(order => {
-            if (order.seller._id === user._id) {
-                myOrders1.push(order)
-            }
-        })
-        setMyOrders(prev => ([...prev, ...myOrders1]))
-    }
-
-    // useEffect(() => {
-    //     loadOrders()
-    // }, [])
-
     function onChangeAction(orderToUpdate, value) {
+        console.log('orderToUpdate:',orderToUpdate )
         updateOrder(orderToUpdate, value)
     }
-
-
+console.log('orders46:', orders)
     return (<>
-
         {
             !!orders.length && <>
                 {/* <h1>Received Orders:</h1> */}
@@ -53,7 +49,7 @@ export function ManageReceivedOrders({ user }) {
                         </tr>
                     </thead>
                     <tbody>
-                        {myOrders.map((order, index) => (
+                        {orders.map((order, index) => (
                             <tr key={index}>
                                 <ReceivedOrdersPreview
                                     order={order} index={index} onChangeAction={onChangeAction}
@@ -67,16 +63,3 @@ export function ManageReceivedOrders({ user }) {
     </>
     )
 }
-
-
-// {
-//     buyer: buyer._id,
-//     seller: seller._id,
-//     gig: {
-//         _id: gigToOrder._id,
-//         title: gigToOrder.title,
-//         imgUrl: gigToOrder.imgUrls,
-//         price: gigToOrder.price
-//     },
-//     status: "pending"
-// }

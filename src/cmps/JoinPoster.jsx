@@ -1,15 +1,13 @@
 import { setModal } from "@/store/actions/system.actions"
 import { useState } from "react"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 
 export function JoinPoster() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const isOpen = useSelector(storeState => storeState.systemModule.isModalOpen)
 
-    function onOpenModal() {
-        setIsModalOpen(true)
-        setModal(true)
-        
+    function onHandleModal() {
+        setModal(!isOpen)
     }
 
     function onCloseModal() {
@@ -25,7 +23,7 @@ export function JoinPoster() {
             </picture>
             <div className="signup-text">
                 <h2 className="title">Freelance services at your <i>fingertips!</i></h2>
-                <a onClick={onOpenModal} className=" btn-signup clean-link">
+                <a onClick={onHandleModal} className=" btn-signup clean-link">
                     Join 5err
                 </a>
             </div>

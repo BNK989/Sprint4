@@ -1,6 +1,7 @@
 import { Link, NavLink, useParams, useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from "react"
+import { setModal } from "@/store/actions/system.actions"
 import routes from '../routes'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { LoginSignup } from './LoginSignup.jsx'
@@ -15,6 +16,7 @@ import { Button } from '@/components/ui/button'
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
     const order = useSelector(storeState => storeState.orderModule.user)
+    const isModalOpenStore = useSelector(storeState => storeState.systemModule.isModalOpen)
     const [isLogInSelect, setLogInSelect] = useState(false)
     const [isModalOpen, setModalOpen] = useState(false)
     const [isScrollNull, setIsScrollNull] = useState(true)
@@ -48,8 +50,8 @@ export function AppHeader() {
     async function getCategories() {
         try {
             const c = await gigService.allCategories()
-            if(c.length >= 10) c.splice(10)
-            setCategories(c)
+            // if(c.length >= 10) c.splice(10)
+            setCategories(['Website Design', ...c])
         } catch (err) {
             showErrorMsg('Cannot get categories')
         }
@@ -83,8 +85,9 @@ export function AppHeader() {
         }
     }
     function signInModal(val) {
-        setLogInSelect(val)
-        setModalOpen(!isModalOpen)
+        // setLogInSelect(val)
+        // setModalOpen(!isModalOpen)
+        setModal(!isModalOpenStore)
     }
 
     return (
@@ -140,7 +143,8 @@ export function AppHeader() {
             <UnderHeader categories={categories} />
 
             {
-                isModalOpen && <LoginSignup
+                // isModalOpen && <LoginSignup
+                isModalOpenStore && <LoginSignup
                     onLogin={onLogin} onSignup={onSignup}
                     isLogInSelect={isLogInSelect}
                 />

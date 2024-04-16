@@ -14,7 +14,7 @@ export function systemReducer(state = initialState, action = {}) {
     case LOADING_DONE:
       return { ...state, isLoading: false }
     case MODAL_STATUS:
-      return { ...state, isModalOpen: false }
+      return { ...state, isModalOpen: action.boolean }
     default: return state
   }
 }

@@ -14,6 +14,7 @@ import { BreadcrumbWithCustomSeparator } from "./BreadcrumbWithCustomSeparator"
 import { QuickAvatar } from "./shanCN/QuickAvatar"
 import { StarRating } from "./smallCmps/StarRating"
 import { GigOrderDetails } from "./GigOrderDetails"
+import { AppCarousel } from "@/components/ui/AppCarousel"
 
 
 export function GigDetails() {
@@ -22,8 +23,6 @@ export function GigDetails() {
     const [gig, setGig] = useState(null)
     const [carouselIdx, setCarouselIdx] = useState(0)
 
-
-  
 
     useEffect(() => {
         loadGig()
@@ -63,6 +62,12 @@ export function GigDetails() {
 
     }
 
+    const carouselItem = (carouselImg, i) => (
+        <CarouselItem key={i} >
+          <img src={carouselImg} alt={`image-idx-${i}`} />
+        </CarouselItem>
+      )
+
 
     if (!gig) return <h1>Loading</h1>
     return (
@@ -75,14 +80,14 @@ export function GigDetails() {
                 <h1 className="gig-title">{gig.title}</h1>
 
                 <div className="gig-user flex">
-                    <QuickAvatar user={gig.owner} className="w-16 h-16"/>
+                    <QuickAvatar user={gig.owner} className="w-16 h-16" />
                     {/* <img src={gig.owner.imgUrl} alt="owner image" /> */}
 
                     <div className="user-details">
-                        
+
                         <div className="flex ">
                             <p className="border-r flex-center">{gig.owner.fullname}</p>
-                            <StarRating gig={gig} className="flex-center gap-1"/>
+                            <StarRating gig={gig} className="flex-center gap-1" />
                         </div>
 
                         <div className="user-rate mt-2">
@@ -97,23 +102,30 @@ export function GigDetails() {
                 <div className="line"></div>
                 {/* <img className="main-img" src={gig.imgUrls[0]} alt="" /> */}
                 <div className="main-img">
-                    <Carousel className="w-full mb-5" opts={{align: "start", loop: true,  startIndex: carouselIdx}}>
+                    {/* <Carousel className="w-full mb-5" opts={{align: "start", loop: true,  startIndex: carouselIdx}}>
                         <CarouselContent>
                             {gig.imgUrls?.map((img, index) => (
                                 <CarouselItem key={index}>
-                                    {/* {setCarouselIdx(index)} */}
+                                    //{setCarouselIdx(index)}
                                     <img src={img} alt={`image-idx-${index}`} />
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
-                    </Carousel>
-                        <div className="-mt-3 flex justify-start">
-                            {gig.imgUrls?.map((img, index) => (
-                                <img onClick={()=> setCarouselIdx(index)} key={index} className={`ml-1 w-[100px] h-[60px] ${index === carouselIdx ? "border-2 border-orange" : ""}`} src={img} alt={`image-idx-${index}`} />
-                            ))}
-                        </div>
+                    </Carousel> */}
+                    <AppCarousel
+                        items={gig.imgUrls}
+                        renderItem={carouselItem}
+                        className="w-full mb-5"
+                        opts={{ align: "start", loop: true,  startIndex: carouselIdx }}
+                    >
+                    </AppCarousel>
+                    <div className="-mt-3 flex justify-start">
+                        {gig.imgUrls?.map((img, index) => (
+                            <img onClick={() => setCarouselIdx(index)} key={index} className={`ml-1 w-[100px] h-[60px] ${index === carouselIdx ? "border-2 border-orange" : ""}`} src={img} alt={`image-idx-${index}`} />
+                        ))}
+                    </div>
                 </div>
 
                 <section className="about-this-gig">
@@ -158,7 +170,7 @@ export function GigDetails() {
                 <section className="about-user">
                     <h1 className="title">Get to know {gig.owner.fullname}</h1>
                     <div className="gig-user">
-                    <QuickAvatar user={gig.owner} className="w-20 h-20"/>
+                        <QuickAvatar user={gig.owner} className="w-20 h-20" />
                         {/* <img src={gig.owner.imgUrl} alt="owner image" /> */}
 
                         <div className="user-details">
@@ -192,7 +204,7 @@ export function GigDetails() {
                 <div className="line"></div>
 
             </section>
-                            <GigOrderDetails gig={gig}/>
+            <GigOrderDetails gig={gig} />
             {/* <section className="order-details">
                 <div className="btns">
                     <button className="btn-basic">Basic</button>
@@ -241,7 +253,7 @@ export function GigDetails() {
                         <li key={idx}>
                             <div className="line"></div>
                             <div className="by">
-                            <QuickAvatar user={review.by} className="owner image aspect-square h-13 w-12 m-1 ml--1 flex-center" />
+                                <QuickAvatar user={review.by} className="owner image aspect-square h-13 w-12 m-1 ml--1 flex-center" />
                                 {/* <img src={review.by.imgUrl} alt="owner image" /> */}
 
                                 <div className="user-info">
