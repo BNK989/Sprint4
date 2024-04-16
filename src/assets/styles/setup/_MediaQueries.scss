@@ -1,70 +1,79 @@
 @media (max-width: 767px) {
+
     //MARK: MOBILE ONLY
-    .app-header.main-container.full{
-     background-color: white;
-     
-     .mobile-only-join {
-        color: #62646ac7;
-        font-weight: 800;
-        font-size: 1em;
-        transition: color .3s ease;
-        &:hover{
-            color: lighten(#62646ac7,20%);
+    .app-header.main-container.full {
+        background-color: white;
+
+        .mobile-only-join {
+            color: #62646ac7;
+            font-weight: 800;
+            font-size: 1em;
+            transition: color .3s ease;
+
+            &:hover {
+                color: lighten(#62646ac7, 20%);
+            }
         }
-     }
     }
 
-    .under-header{
+    .under-header {
         display: none;
     }
 
-    .homepage-section{
+    .homepage-section {
         height: 60vh;
     }
-    .homepage-section .hero-container{
 
-        h1{
+    .homepage-section .hero-container {
+
+        h1 {
             font-size: 1.7em;
             max-width: 90vw;
         }
-        .search-container input{
+
+        .search-container input {
             width: 100%;
         }
-        .popular{
+
+        .popular {
             display: none;
         }
-        .search-form{
+
+        .search-form {
             flex-direction: column;
-            input{
+
+            input {
                 border-radius: 5px;
                 margin-block: 1px;
             }
-            button{
+
+            button {
                 border-radius: 5px;
                 width: 100%;
                 justify-content: start;
-                svg{
+
+                svg {
                     margin-left: 1em;
                 }
             }
         }
     }
 
-    .video-section{
-        .video-layout{
+    .video-section {
+        .video-layout {
             flex-direction: column;
         }
 
-        .side-text{
+        .side-text {
             padding-inline-end: 0;
         }
     }
 
-    .main-categories ul li{
+    .main-categories ul li {
         width: 50%;
     }
 
-    .join-poster-container{
+    .join-poster-container {
         padding: 1em;
         margin: 1em;
         background-color: #4f1627;
@@ -72,69 +81,88 @@
 
         .signup-text .title {
             font-size: 2.3em;
-            i{
-            color: $clr-light--grey;
-            }
-    }
 
-        picture{
+            i {
+                color: $clr-light--grey;
+            }
+        }
+
+        picture {
             display: none;
-            
+
         }
     }
 
-    .fa.chevron-right, .fa.chevron-right::after, .fa.chevron-right::before {  
+    .fa.chevron-right,
+    .fa.chevron-right::after,
+    .fa.chevron-right::before {
         display: none;
     }
+
     //MARK: Trusted by
-    .popular-services h2{
+    .popular-services h2 {
         letter-spacing: 0;
         font-size: 1.4em;
     }
 }
 
 @media (min-width: 767px) {
-//MARK laptop ONLY
-    .draw-join{
+
+    //MARK laptop ONLY
+    .draw-join {
         display: none;
     }
-    
-    .burgerMenu{
-        display: none!important;
+
+    .burgerMenu {
+        display: none !important;
     }
 }
-@media (min-width: 1024px) {
-//MARK desktop ONLY
-    .app-header .under-header ul{
-        padding-inline: 0;
-        
-        li:first-of-type{
-            margin-inline-start: 0;  
-        } 
 
-        li:last-of-type{
+@media (min-width: 1024px) {
+
+    //MARK desktop ONLY
+    .app-header .under-header ul {
+        padding-inline: 0;
+
+        li:first-of-type {
+            margin-inline-start: 0;
+        }
+
+        li:last-of-type {
             margin-inline-end: 0;
         }
     }
 }
 
-@media (max-width: 1300px){
+@media (max-width: 1300px) {
 
-    .payment-container{
-       display: grid;
-       grid-template-rows: 1fr 1fr;
-       grid-template-columns: 1fr;
-    //    align-items: center;
-    justify-items: center;
+    .payment-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        //    align-items: center;
+        justify-items: center;
 
-        .payment-option{
+        .payment-option {
             grid-row: 2;
 
         }
 
-        .order-info{
-grid-row: 1;
+        .order-info {
+            grid-row: 1;
         }
 
+    }
+
+    .user-details-seller-container {
+        .profile-main-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+
+            .user-container{
+                grid-row: 2;
+            }
+        }
     }
 }

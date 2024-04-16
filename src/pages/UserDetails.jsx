@@ -50,7 +50,7 @@ if (!toShow) return 'show my gigs'
 
   return (
     // <section className='all full'>
-    <section className='user-details-seller-container main-container capitalize'>
+    <section className='user-details-seller-container capitalize'>
       <section className='profile-main-container'>
 
         {
