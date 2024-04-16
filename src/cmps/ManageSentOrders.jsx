@@ -17,7 +17,7 @@ export function ManageSentOrders({ user, orders }) {
     function gigStatusClass(status){
         if (status === 'approved') return 'approved'
         if (status === 'rejected') return 'rejected'
-        return ''
+        return 'pending'
     }
 
     if (!orders) return <span>no ordersss</span>
@@ -32,7 +32,7 @@ export function ManageSentOrders({ user, orders }) {
                         <img src={order.gig.imgUrl[0]} alt="" />
                         <span className="gig-title">{truncateStringToWordCount(order.gig.title , 5)}</span>
                         {/* <span className="price">${order.gig.price}</span> */}
-                        <span className={`order-status ${(order.status === 'pending')? 'pending' : 'approved'}`}>{order.status}</span>
+                        <span className={`order-status`}>{order.status}</span>
                     </li>
                 })}
             </ul>

@@ -37,13 +37,21 @@
                 // margin-right: 3em;
             }
 
-
-            .pending {
-                background-color: #e2ee75;
-                border-radius: 5px;
+            &.pending{
+                background-color: #b7e5ff6b;
+                
             }
-            .approved{
-                background-color: $clrbg1
+            
+            &.accepted{
+                .order-status{
+                    font-weight: bolder;
+                }
+                background-color: #afff8f70;
+
+            }
+            
+            &.rejected{
+                background-color: $clralert;
             }
 
         }
