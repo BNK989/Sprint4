@@ -54,7 +54,7 @@
             transition: 70ms cubic-bezier(.75, 0, .25, 1);
 
             &:hover {
-                background-color: lighten($clr-green,10%);
+                background-color: lighten($clr-green, 10%);
             }
         }
     }
