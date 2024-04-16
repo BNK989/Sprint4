@@ -3,14 +3,14 @@ export function LoadingIndex() {
 
     return (
         <>
-            <div className="skeleton-container gig-list">
+            {/* <div className="skeleton-container gig-list"> */}
                 <ul className="gig-list">
                     <li className="gig-preview"><SkeletonCard /></li>
                     <li><SkeletonCard /></li>
                     <li><SkeletonCard /></li>
                     <li><SkeletonCard /></li>
                 </ul>
-            </div>
+            {/* </div> */}
         </>
 
     )

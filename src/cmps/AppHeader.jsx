@@ -94,7 +94,7 @@ export function AppHeader() {
                 ${(isScrollNull && isHomepage) ? "transparent" : "scrolled"}
                 ${isSearchVisible ? "search-visible" : ""}`
         }>
-            <div className={`backdrop ${burgerMenuOpen ? 'on' : 'off'}`} onClick={() => setBurgerMenuOpen(false)}/>
+            <div className={`full backdrop ${burgerMenuOpen ? 'on' : 'off'}`} onClick={() => setBurgerMenuOpen(false)}/>
             {/* MARK: Burger Menu */}
             <div className="burgerMenu">
                 <ul className="flex flex-col w-full" onClick={() => setBurgerMenuOpen(false)}>
