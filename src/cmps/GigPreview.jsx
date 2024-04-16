@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel"
 import { QuickAvatar } from "./shanCN/QuickAvatar"
 import { StarRating } from "./smallCmps/StarRating"
+import { AppCarousel } from "@/components/ui/AppCarousel"
 
 
 export function GigPreview({ gig }) {
@@ -25,31 +26,46 @@ export function GigPreview({ gig }) {
         return level
     }
 
+    const carouselItem = (img, i) => (
+        <CarouselItem key={i}>
+            <Link to={`/explore/${gig._id}`}>
+                <img src={img} alt={`image-idx-${i}`} />
+            </Link>
+        </CarouselItem>
+    )
+
 
     // <i class="fa-sharp fa-solid fa-sparkle"></i>
     return (<>
         <div className="main-img">
             {/* <img src={gig.imgUrls[0]} alt="" /> */}
-                <Carousel className="w-full ">
+            {/* <Carousel className="w-full ">
                     <CarouselContent>
                         {gig.imgUrls?.map((img, index) => (
                             <CarouselItem key={index}>
                                 <Link to={`/explore/${gig._id}`}>
                                 <img src={img} alt={`image-idx-${index}`} />
                                 </Link>
-                                {/* <div className="p-1">
-                                    <Card>
-                                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                                            <span className="text-4xl font-semibold">{index + 1}</span>
-                                        </CardContent>
-                                    </Card>
-                                </div> */}
+                               // <div className="p-1">
+                                   // <Card>
+                                    //    <CardContent className="flex aspect-square items-center justify-center p-6">
+                                     //       <span className="text-4xl font-semibold">{index + 1}</span>
+                                    //    </CardContent>
+                                //    </Card>
+                              //  </div>
                             </CarouselItem>
                         ))}
                     </CarouselContent>
                     <CarouselPrevious />
                     <CarouselNext />
-                </Carousel>
+                </Carousel> */}
+            <AppCarousel
+                items={gig.imgUrls}
+                renderItem={carouselItem}
+                className="md:w-full w-[82vw]"
+                opts={{ align: "start" }}
+            >
+            </AppCarousel>
         </div>
 
         <div className="gig-owner-mini">
@@ -58,7 +74,7 @@ export function GigPreview({ gig }) {
                 <QuickAvatar user={gig.owner} className="owner image aspect-square h-6 w-6 flex-center" />
                 <p><span>{gig.owner.fullname}</span></p>
             </div>
-            <StarRating gig={gig}/>
+            <StarRating gig={gig} />
 
             {/* <span className="level">
                 <span className="level-and-num">Level {gig.owner.level} </span>

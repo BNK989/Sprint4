@@ -1,15 +1,22 @@
 import { useState, useEffect } from 'react'
 import { userService } from '../services/user.service'
 import { ImgUploader } from './ImgUploader'
+import { useSelector } from 'react-redux'
+import { setModal } from '@/store/actions/system.actions'
 
 export function LoginSignup(props) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
     const [isSignup, setIsSignup] = useState(props.isLogInSelect)
     const [users, setUsers] = useState([])
+    const isModalOpenStore = useSelector(storeState => storeState.systemModule.isModalOpen)
 
     useEffect(() => {
         loadUsers()
     }, [])
+
+    function closeModal() {
+        setModal(false)
+    }
 
     async function loadUsers() {
         const users = await userService.getUsers()
@@ -32,13 +39,15 @@ export function LoginSignup(props) {
         if (!credentials.username) return
         props.onLogin(credentials)
         clearState()
+        closeModal()
     }
-
+    
     function onSignup(ev = null) {
         if (ev) ev.preventDefault()
         if (!credentials.username || !credentials.password || !credentials.fullname) return
         props.onSignup(credentials)
         clearState()
+        closeModal()
     }
 
     function toggleSignup() {
