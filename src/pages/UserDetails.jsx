@@ -50,7 +50,7 @@ if (!toShow) return 'show my gigs'
 
   return (
     // <section className='all full'>
-    <section className='user-details-seller-container main-container'>
+    <section className='user-details-seller-container main-container capitalize'>
       <section className='profile-main-container'>
 
         {
@@ -92,7 +92,7 @@ if (!toShow) return 'show my gigs'
 
 
               <div className='what-to-show'>
-                <button className='isShow' onClick={()=> setToShow(!toShow)}>{WhatToShow()}</button>
+                <button className='isShow capitalize' onClick={()=> setToShow(!toShow)}>{WhatToShow()}</button>
               </div>
 
 

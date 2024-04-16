@@ -7,7 +7,8 @@ export const utilService = {
     saveToStorage,
     loadFromStorage,
     capitalizeWords,
-    getInitials
+    getInitials,
+    createRandomGig
 }
 
 function makeId(length = 6) {
@@ -267,7 +268,6 @@ const reviewsArr = [
         }
     },
 ]
-
 const titlesArr = ['Create a professional social media strategy',
         'Write a compelling video script',
         'Design a cool website for a startup',
@@ -289,6 +289,7 @@ const titlesArr = ['Create a professional social media strategy',
         'Design a stunning company logo',
         'Write a catchy and effective blog post',]
 
+//MARK: createRandomGig
 function createRandomGig(id, title, category, price, owner, daysToMake, description, whatIncluded, avgResponseTime, loc, imgUrls, tags, likedByUsers, reviews) {
     return {
         "_id": id || makeId(),
@@ -307,6 +308,7 @@ function createRandomGig(id, title, category, price, owner, daysToMake, descript
         "reviews": reviews || removeDuplicates(Array.from({ length: getRandomIntInclusive(1, 5) }).map((_, i) => reviewsArr[getRandomIntInclusive(0, reviewsArr.length - 1)])),
     }
 }
+
 
 function makeABunchOfGigs(n = 20) {
     return Array.from({ length: n }).map((_, i) => createRandomGig())
