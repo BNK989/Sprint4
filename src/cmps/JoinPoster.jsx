@@ -1,11 +1,15 @@
+import { setModal } from "@/store/actions/system.actions"
 import { useState } from "react"
-// import { LoginSignup } from "./LoginSignup"
+import { useSelector } from "react-redux"
 
 export function JoinPoster() {
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const isOpen = useSelector(storeState => storeState.systemModule.isModalOpen)
 
     function onOpenModal() {
         setIsModalOpen(true)
+        setModal(true)
+        
     }
 
     function onCloseModal() {
