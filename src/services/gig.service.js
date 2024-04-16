@@ -21,6 +21,7 @@ window.cs = gigService
 
 
 async function query(filterBy = { txt: '', category: '', price: 0, userId: '' }) {
+    console.log('filterBy:', filterBy)
     return httpService.get(BASE_URL, filterBy)
 }
 

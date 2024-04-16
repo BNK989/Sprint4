@@ -29,6 +29,7 @@ export async function loadGigs(filterBy) {
     
     try {
         const gigs = await gigService.query(filterBy)
+        // const gigs = await gigService.query(filterBy)
         store.dispatch({
             type: SET_GIGS,
             gigs
