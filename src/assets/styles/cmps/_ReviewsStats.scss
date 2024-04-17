@@ -14,9 +14,11 @@
         .star-rating {
             display: flex;
             align-items: center;
-            // margin-top: 0.6em;
+            justify-content: space-between;
+
             margin-left: 0.4em;
             margin-bottom: 0.38em;
+            width: 21rem;
 
             span {
                 font-size: 0.9em;
@@ -59,6 +61,7 @@
             display: flex;
             margin-bottom: 0.4em;
             justify-content: space-between;
+
         }
         .star{
             display: flex;
@@ -66,6 +69,10 @@
             margin-top: -0.3em;
             gap: 0.1em;
             font-weight: bold;
+
+            svg{
+                margin-top: -0.2em;
+            }
             
 
             span{
