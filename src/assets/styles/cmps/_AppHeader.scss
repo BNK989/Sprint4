@@ -23,6 +23,7 @@
         width: 98.9vw;
         height: 100vh;
         transition: opacity .5s ease;
+        z-index: 1;
 
         &.on{
             background-color: #000;
@@ -88,7 +89,7 @@
         
         transition: transform .5s ease, opacity .5s ease;
         &.off{
-            transform: translateY(120%);
+            transform: translateY(120%), scale(0);
             opacity: 0;
             pointer-events: none;
         }

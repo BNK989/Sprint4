@@ -3,9 +3,16 @@
     //MARK: MOBILE ONLY
     .app-header {
 
+        &.beAbs {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        }
+
         .backdrop{
             width: 108vw;
         }
+        
 
         .main-container.full {
             background-color: white;
