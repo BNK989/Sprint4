@@ -11,6 +11,7 @@ import { login, logout, signup } from '../store/actions/user.actions.js'
 import { gigService } from '../services/gig.service'
 import { UnderHeader } from './UnderHeader'
 import { Button } from '@/components/ui/button'
+import { QuickAvatar } from './shanCN/QuickAvatar'
 
   
 export function AppHeader() {
@@ -27,6 +28,7 @@ export function AppHeader() {
     const [isDrawOpen, setIsDrawOpen] = useState(false)
     
     const location = useLocation()
+    const navigate = useNavigate()
     const isHomepage = location.pathname === '/'
     const handleScroll = () => {
         window.scrollY >= 0.1 ? setIsScrollNull(false) : setIsScrollNull(true)
@@ -101,9 +103,17 @@ export function AppHeader() {
             {/* MARK: Burger Menu */}
             <div className="burgerMenu">
                 <ul className="flex flex-col w-full" onClick={() => setBurgerMenuOpen(false)}>
-                    <li className='w-full'><Button onClick={() => setIsDrawOpen(true)} className='w-36'>Join 5err</Button></li>
+                    {!user && <>
+                        <li className='w-full'><Button onClick={() => setIsDrawOpen(true)} className='w-36'>Join 5err</Button></li>
+                        <li><Link>Sign in</Link></li>
+                    </>}
+
                     <li><Link to="/explore">Explore</Link></li>
-                    <li><Link>Sign in</Link></li>
+                    {user && <>
+                        <li><Link>View Orders</Link></li>
+                        <li><Link>View Profile</Link></li>
+                        <li><Link>Sign Out</Link></li>
+                    </>}
                 </ul>
             </div>
             {/* MARK: DRAWER */}
@@ -136,7 +146,10 @@ export function AppHeader() {
                     <div className="search-container hidden md:block">
                         <SearchBox />
                     </div>
-                    <button onClick={() => setIsDrawOpen(prev => !prev)} className='btn join-btn md:hidden block'>Join</button>
+                    {!user && <button onClick={() => setIsDrawOpen(prev => !prev)} className='btn join-btn md:hidden block'>Join</button>}
+                    {user && <button onClick={() => navigate(`/user/${user._id}`)} className='btn join-btn md:hidden block'>
+                        <QuickAvatar user={user} className="" />
+                    </button>}
                 </div>
                 <NavBar signInModal={signInModal} className={"hidden md:block"} onLogout={onLogout}/>
             </div>

@@ -1,17 +1,24 @@
 @media (max-width: 767px) {
 
     //MARK: MOBILE ONLY
-    .app-header.main-container.full {
-        background-color: white;
+    .app-header {
 
-        .mobile-only-join {
-            color: #62646ac7;
-            font-weight: 800;
-            font-size: 1em;
-            transition: color .3s ease;
+        .backdrop{
+            width: 108vw;
+        }
 
-            &:hover {
-                color: lighten(#62646ac7, 20%);
+        .main-container.full {
+            background-color: white;
+
+            .mobile-only-join {
+                color: #62646ac7;
+                font-weight: 800;
+                font-size: 1em;
+                transition: color .3s ease;
+
+                &:hover {
+                    color: lighten(#62646ac7, 20%);
+                }
             }
         }
     }
@@ -93,11 +100,11 @@
         }
     }
 
-    .fa.chevron-right,
-    .fa.chevron-right::after,
-    .fa.chevron-right::before {
-        display: none;
-    }
+    // .fa.chevron-right,
+    // .fa.chevron-right::after,
+    // .fa.chevron-right::before {
+    //     display: none;
+    // }
 
     //MARK: Trusted by
     .popular-services h2 {
@@ -161,9 +168,13 @@
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
 
-            .user-container{
+            .user-container {
                 grid-row: 2;
             }
         }
+    }
+
+    ul.owned-gigs-container.clean-list {
+        margin-block-end: 2em;
     }
 }
