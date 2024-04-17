@@ -1,10 +1,14 @@
-import { useState } from "react"
+import 'animate.css'
+import { useRef, useState } from "react"
 import { QuickAvatar } from "./shanCN/QuickAvatar"
-
+import { utilService as u } from '../services/util.service'
 
 
 export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) {
     const [isActionModalOpen, setActionModal] = useState(false)
+
+    let currStatus = useRef()
+    
     
 
     function onActionBtn(value, idx) {
@@ -12,6 +16,7 @@ export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) 
         orderToUpdate.status = value
         onChangeAction(orderToUpdate, value)
         setActionModal(!isActionModalOpen)
+        u.animateRef(currStatus.current,`animate__shake${value === 'Accepted' ? 'Y' : 'X'}`, 500)
     }
 
     function GetDate(isoDate) {
@@ -33,7 +38,7 @@ export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) 
         <td>{GetDate(order.createdAt)}</td>
         {/* <td>{format(new Date(order.createdAt), 'dd/MM/yy')}</td> */}
         <td>${order.gig.price}</td>
-        <td className={`received-order-action-container ${(order.status === "Accepted") && "accepted"} ${(order.status === "Rejected") && "rejected"}`} onClick={() => setActionModal(!isActionModalOpen)}><button>{order.status}</button></td>
+        <td className={`received-order-action-container ${(order.status === "Accepted") && "accepted"} ${(order.status === "Rejected") && "rejected"}`} onClick={() => setActionModal(!isActionModalOpen)}><button ref={currStatus}>{order.status}</button></td>
         {
             isActionModalOpen && <td className="received-order-action-modal">
                 <button className="received-order-accept" onClick={() => onActionBtn("Accepted", index)}>Accept</button>
