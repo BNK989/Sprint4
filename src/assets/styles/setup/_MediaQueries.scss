@@ -1,6 +1,26 @@
 @media (max-width: 767px) {
 
     //MARK: MOBILE ONLY
+
+    main.main-layout{
+        grid-column: 1/-1;
+        margin: 0 5px;
+    }
+
+    section.manege-order-container{
+
+        table{
+            min-width: 0;
+            td{
+                padding: 4px 2px;
+            }
+        }
+
+        * {
+            font-size: 0.9em;
+        }
+    }
+
     .app-header {
 
         &.beAbs {
