@@ -23,12 +23,12 @@ export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) 
     console.log('order.status:', order.status)
     return (<>
         <td><div className="buyer">
-        <QuickAvatar user={order.buyer} className="user-image aspect-square h-20 w-20 flex-center" />
+        <QuickAvatar user={order.buyer} className="user-image aspect-square h-7 w-7 md:h-20 md:w-20 flex-center" />
             {/* <img src={order.buyer.imgUrl} alt="Avatar" /> */}
-            {order.buyer.fullname}
+            <p className="text-sm md:text-md">{order.buyer.fullname}</p>
             </div></td>
         {/* <td></td> */}
-        <td className="task">{order.gig.title}</td>
+        <td className="task"><p>{order.gig.title}</p></td>
 
         <td>{GetDate(order.createdAt)}</td>
         {/* <td>{format(new Date(order.createdAt), 'dd/MM/yy')}</td> */}

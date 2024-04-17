@@ -28,15 +28,23 @@ table {
 
             .buyer {
                 display: flex;
+                align-items: center;
                 flex-flow: column;
                 gap: 10px;
-                
-                
+
+
             }
 
-.task{
-    font-size: 0.8em;
-}
+            .task {
+                font-size: 0.8em;
+
+                p {
+                    max-width: 6em;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
 
             td {
                 width: 50vw;
