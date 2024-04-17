@@ -8,7 +8,8 @@ export const utilService = {
     loadFromStorage,
     capitalizeWords,
     getInitials,
-    createRandomGig
+    createRandomGig,
+    animate
 }
 
 function makeId(length = 6) {
@@ -399,3 +400,11 @@ const randomeGig = createRandomGig(
     ]
 );
 
+
+function animate(e, animation, timeOut = 1000){
+    e.target.classList.add('animate__animated', animation)
+    setTimeout(() => {
+        e.target.classList.remove('animate__animated', animation)
+    }, timeOut)
+
+}

@@ -8,7 +8,7 @@ export function AppFooter() {
         <footer className="app-footer main-container full bg-gray1 border-t-2 min-h-16 mt-24 md:w-full">
             <div className="bottom flex justify-between">
                 <div className="left flex min-h-6 my-auto">
-                    <span className="mr-4 flex-center">
+                    <span className="mr-4 flex-center" >
                         <img src="/img/5err-logo.svg" alt="5err logo"/>
                     </span>
                     <p className="text-body-2 legal"><span className="copyright text-trunc text-[#9ca3af] text-sm">© 5err International Ltd. 2024</span></p>

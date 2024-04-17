@@ -1,11 +1,12 @@
+import {utilService as u} from '../services/util.service'
 export function BestPart() {
 
     return (
         <section className="video-section flex full main-container">
             <div className="flex video-layout">
                 <div className="site-info">
-                    <div className="side-text">
-                        <h1>The best part? Everything.</h1>
+                    <div className="side-text" >
+                        <h1 onClick={(e) => u.animate(e,'animate__shakeY')}>The best part? Everything.</h1>
                         <ul>
                             <li>
                                 <section className="flex align-center">
@@ -56,8 +57,8 @@ export function BestPart() {
                         </ul>
                     </div>
                 </div>
-                <div className="vid-container flex-center">
-                    <img src="https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp" />
+                <div className="vid-container flex-center" >
+                    <img src="https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp" onClick={(e) => u.animate(e,'animate__shakeY')}/>
                 </div>
             </div>
         </section>
