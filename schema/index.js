@@ -14,5 +14,5 @@ export const GigSchema = z.object({
     price: z.coerce.number().min(5),//z.number().min(1),
     daysToMake: z.coerce.number().min(1),
     description: z.string().min(1).max(1000),
-    imgUrl: z.any()
+    imgUrls: z.any()
   })
