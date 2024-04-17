@@ -11,7 +11,7 @@ export function AppFooter() {
                     <span className="mr-4 flex-center">
                         <img src="/img/5err-logo.svg" alt="5err logo"/>
                     </span>
-                    <p className="text-body-2 legal"><span className="copyright text-trunc">© 5err International Ltd. 2024</span></p>
+                    <p className="text-body-2 legal"><span className="copyright text-trunc text-[#9ca3af] text-sm">© 5err International Ltd. 2024</span></p>
                 </div>
                 <div className="right flex">
                     <ul className="social flex gap-6 my-auto">
