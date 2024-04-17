@@ -11,15 +11,15 @@
         flex-flow: column;
         align-items: center;
         gap: 0.5em;
-
+        
         .approved {
             color: $clrbg1;
         }
-
+        
         .rejected {
             color: $clralert;
         }
-
+        
         li {
             width: 100%;
             height: 5em;
@@ -28,6 +28,7 @@
             align-items: center;
             // justify-content: space-between;
             gap: 1em;
+            padding-right: 5px;
 
             img {
                 width: 10em;
@@ -47,7 +48,6 @@
                     font-weight: bolder;
                 }
                 background-color: #afff8f70;
-
             }
             
             &.rejected{
