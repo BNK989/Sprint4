@@ -34,6 +34,7 @@ import { addGig } from "@/store/actions/gig.actions"
 import { gigService } from '@/services/gig.service'
 import { data } from "autoprefixer"
 import { ImgUploader } from "@/cmps/ImgUploader"
+import { httpService } from "@/services/http.service"
 
 export function GigNewEdit() {
   const navigate = useNavigate()

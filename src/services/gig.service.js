@@ -34,6 +34,7 @@ async function remove(gigId) {
     return httpService.delete(`gig/${gigId}`)
 }
 async function save(gig) {
+    console.log('123gig:', gig)
     var savedGig
     if (gig._id) {
         savedGig = await httpService.put(`gig/${gig._id}`, gig)
@@ -45,15 +46,54 @@ async function save(gig) {
 }
 
 async function addGigMsg(gigId, txt) {
-    const savedMsg = await httpService.post(`gig/${gigId}/msg`, {txt})
+    const savedMsg = await httpService.post(`gig/${gigId}/msg`, { txt })
     return savedMsg
 }
 
 
 function getEmptyGig() {
     return {
-        vendor: 'Susita-' + (Date.now() % 1000),
-        price: utilService.getRandomIntInclusive(1000, 9000),
+        title: "",
+        category: "",
+        packages: {
+            basic: {
+                price: 999,
+                description: "Make unique logo...",
+                whatIncluded: {
+                    ConceptIncluded: false,
+                    IncludeSourceFile: false,
+                    StationeryDesigns: true
+                },
+                daysToMake: 6
+            },
+            standard: {
+                price: 250,
+                description: "Make unique logo...",
+                whatIncluded: {
+                    ConceptIncluded: false,
+                    IncludeSourceFile: true,
+                    StationeryDesigns: true
+                },
+                daysToMake: 5
+            },
+            premium: {
+                price: 299,
+                description: "Make unique logo...",
+                whatIncluded: {
+                    ConceptIncluded: true,
+                    IncludeSourceFile: true,
+                    StationeryDesigns: true
+                },
+                daysToMake: 4
+            }
+        },
+        owner: {},
+        avgResponseTime: 1,
+        loc: "USA",
+        imgUrls: [],
+        tags: [],
+        likedByUsers: [],
+        reviews: []
     }
 }
 
