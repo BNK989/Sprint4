@@ -9,14 +9,15 @@ import { store } from "@/store/store"
 
 export function ManageReceivedOrders({ user }) {
     // const [isActionModalOpen, setActionModal] = useState(false)
-
+    
     const orders = useSelector(storeState => storeState.orderModule.orders)
+    console.log('orders14:', orders)
     // const [isOrderUpdate, setOrderUpdate] = useState(false)
 
 
     useEffect(() => {
         loadOrders()
-
+        // sortOrders()
         socketService.on(SOCKET_EVENT_ADD_ORDER,(savedOrder)=>{
             console.log('order:', savedOrder)
             store.dispatch({type:ADD_ORDER,savedOrder})
@@ -27,6 +28,12 @@ export function ManageReceivedOrders({ user }) {
         }
 
     }, [])
+
+    // function sortOrders(){
+    //     console.log(orders);
+    //     orders.sort((order1, order2) => (order1.createdAt - order2.createdAt) )
+    //     console.log(orders);
+    // }
 
     function onChangeAction(orderToUpdate, value) {
         console.log('orderToUpdate:',orderToUpdate )

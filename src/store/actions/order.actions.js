@@ -10,10 +10,12 @@ export async function loadOrders(filterBy = {buyer: false}) {
 console.log('filterBy:', filterBy)
     try {
         const orders = await orderService.query(filterBy)
+        console.log('ordershghgh11111:', orders)
         store.dispatch({
             type: SET_ORDERS,
             orders
         })
+        console.log('ordershghgh:', orders)
         return orders
     } catch (err) {
         console.error('Cannot load orders', err)
