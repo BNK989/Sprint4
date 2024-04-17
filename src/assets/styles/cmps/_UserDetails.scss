@@ -5,7 +5,7 @@
  
     .profile-main-container {
         display: grid;
-        grid-template-columns: 0.6fr 1fr;
+        grid-template-columns: minmax(160px, 0.6fr) 1fr;
         grid-template-rows: auto 1fr;
 
    
