@@ -6,7 +6,6 @@ import { loadGigs, setGigFilter } from '../store/actions/gig.actions.js'
 
 export function SearchBox({neverHide = false, inHeader = true}) {
 
-
     const [isHidden, setIsHidden] = useState(true)
     const [query, setQuery] = useState('')
     const navigate = useNavigate()
