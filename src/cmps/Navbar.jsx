@@ -52,6 +52,8 @@ export function NavBar({ signInModal, className,onLogout }) {
     const [pendingOrdersTotal, setPendingOrdersTotal] = useState(0)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  
+
     let menuRef = useRef()
 
     useEffect(() => {
@@ -59,6 +61,7 @@ export function NavBar({ signInModal, className,onLogout }) {
         socketService.on(SOCKET_EVENT_EDIT_ORDER,(editOrder)=>{
             console.log('editOrder:', editOrder)
             store.dispatch({type:UPDATE_ORDER,editOrder})
+            
         })
         let handler = (e) => {
             setPendingOrdersTotal(orders.reduce((acc, order) => order.status === 'pending' ? acc + 1 : acc, 0))
