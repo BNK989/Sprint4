@@ -1,3 +1,4 @@
+import { Success } from "@/cmps/Success"
 import { showErrorMsg } from "@/services/event-bus.service"
 import { gigService } from "@/services/gig.service"
 import { addOrder } from "@/store/actions/order.actions"
@@ -9,6 +10,7 @@ import { useNavigate, useParams } from "react-router"
 export function Payment() {
     const { gigId } = useParams()
     const [gig, setGig] = useState(null)
+    const [isDialogOpen, setIsDialogOpen] = useState(false)
     const user = useSelector(storeState => storeState.userModule.user)
     const navigate = useNavigate()
 
@@ -29,17 +31,23 @@ export function Payment() {
     async function onConfirm() {
         try {
             const order = await addOrder(gigId)
-            navigate('/')
+            setIsDialogOpen(true)
+            setTimeout(() => {
+                setIsDialogOpen(false)
+                navigate('/')
+            }, 2750)
+
         } catch (err) {
             showErrorMsg('Cannot confirm order')
-
         }
     }
 
     if (!gig) return <h1>Loading</h1>
     return (
+    <>
 
         <section className="payment-container">
+            <Success isDialogOpen={isDialogOpen}/>
 
             <section className="payment-option">
                 <span className="title">Payment Option</span>
@@ -154,6 +162,6 @@ export function Payment() {
 
             </section>
         </section>
-
+        </>
     )
 }
