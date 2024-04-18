@@ -85,7 +85,7 @@ export function Payment() {
 
                     <div className="inputBox">
                         <label htmlFor="cardhold-name">
-                            cardholder's name
+                            Cardholder's name
                         </label>
                         <input type="text" id="cardhold-name"
                         defaultValue='ben'

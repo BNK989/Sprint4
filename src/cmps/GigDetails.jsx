@@ -15,6 +15,7 @@ import { QuickAvatar } from "./shanCN/QuickAvatar"
 import { StarRating } from "./smallCmps/StarRating"
 import { GigOrderDetails } from "./GigOrderDetails"
 import { AppCarousel } from "@/components/ui/AppCarousel"
+import { Skeleton } from "@/components/ui/skeleton"
 
 
 export function GigDetails() {
@@ -104,7 +105,17 @@ export function GigDetails() {
       )
 
 
-    if (!gig) return <h1>Loading</h1>
+    if (!gig) {
+        return <>
+            <Skeleton className="mt-14 ml-8 h-4 w-[250px]" />
+            <Skeleton className="mt-10 ml-8 h-8 w-[700px]" />
+            <div className="mt-8 ml-8 flex">
+                <Skeleton className="h-14 w-14 rounded-full" />
+                <Skeleton className="ml-10 h-14 w-80 rounded" />
+            </div>
+                <Skeleton className="mt-8 ml-10 h-96 w-[700px] rounded" />
+        </>
+    }
     return (
         <section className="main-details-container">
 
