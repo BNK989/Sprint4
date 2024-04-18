@@ -15,11 +15,13 @@ export function ManageSentOrders({ user, orders }) {
     }
 
     function gigStatusClass(status){
-        if (status === 'approved') return 'approved'
-        if (status === 'rejected') return 'rejected'
+        console.log(status);
+        if (status === 'Accepted') return 'accepted'
+        if (status === 'Rejected') return 'rejected'
         return 'pending'
     }
 
+console.log('orders:', orders)
     if (!orders) return <span>no ordersss</span>
     return (<section className="my-orders">
         {!orders.length &&
@@ -28,7 +30,7 @@ export function ManageSentOrders({ user, orders }) {
         {!!orders.length &&
             <ul className="orders-list">
                 {orders.map(order => {
-                    return <li key={order._id} className={gigStatusClass(order.status)}>
+                    return <li key={order._id} className={ gigStatusClass(order.status)}>
                         <img src={order.gig.imgUrl[0]} alt="" />
                         <span className="gig-title">{truncateStringToWordCount(order.gig.title , 5)}</span>
                         {/* <span className="price">${order.gig.price}</span> */}
