@@ -63,7 +63,9 @@ export function GigNewEdit() {
     newGig.packages.basic.price = values.price
     newGig.packages.basic.daysToMake = values.daysToMake
     newGig.packages.basic.description = values.description
-    newGig.imgUrls.push(values.imgUrl)
+    newGig.imgUrls = values.imgUrls
+
+    console.log('newGig:', newGig)
 
     addGig(newGig).then(savedGig => {
       navigate('/user/' + savedGig.owner._id)
@@ -95,8 +97,9 @@ export function GigNewEdit() {
     }
 }
 
-  function onUploaded(imgUrl) {
-    form.setValue('imgUrl', imgUrl)
+  function onUploaded(imgUrls) {
+    form.setValue('imgUrls', imgUrls)
+    console.log('imgUrls100:', imgUrls)
   }
 
 
@@ -250,7 +253,7 @@ export function GigNewEdit() {
               )}
             /> */}
 
-            <ImgUploader onUploaded={onUploaded} />
+            <ImgUploader onUploaded={onUploaded} multiple={true} />
 
           </div>
           <div className="btn-container w-full flex justify-end">

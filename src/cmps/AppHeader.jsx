@@ -12,6 +12,7 @@ import { gigService } from '../services/gig.service'
 import { UnderHeader } from './UnderHeader'
 import { Button } from '@/components/ui/button'
 import { QuickAvatar } from './shanCN/QuickAvatar'
+import 'animate.css'
 
   
 export function AppHeader() {

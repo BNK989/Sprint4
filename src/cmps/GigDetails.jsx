@@ -28,6 +28,41 @@ export function GigDetails() {
         loadGig()
     }, [gigId])
 
+    const countries = [{
+        countryName: 'USA',
+        flagUrl: 'https://flagicons.lipis.dev/flags/4x3/us.svg'
+    },
+    {
+        countryName: 'Canada',
+        flagUrl: 'https://flagicons.lipis.dev/flags/4x3/ca.svg'
+    },
+    {
+        countryName: 'UK',
+        flagUrl: 'https://flagicons.lipis.dev/flags/4x3/gb.svg'
+    },
+    {
+        countryName: 'Germany',
+        flagUrl: 'https://flagicons.lipis.dev/flags/4x3/de.svg'
+    },
+    {
+        countryName: 'France',
+        flagUrl: 'https://flagicons.lipis.dev/flags/4x3/fr.svg'
+    },
+    {
+        countryName: 'Israel',
+        flagUrl: 'https://flagicons.lipis.dev/flags/4x3/il.svg'
+    }
+]
+
+    function randomCountry(){
+        const randomIdx = Math.floor(Math.random() * countries.length)
+        const selectedCountry = countries[randomIdx]
+        return (<>
+            <img className="flag" src={selectedCountry.flagUrl} alt={selectedCountry.countryName} />
+            <span>{selectedCountry.countryName}</span>
+        </>)
+    }
+
 
     async function loadGig() {
         try {
@@ -102,18 +137,7 @@ export function GigDetails() {
                 <div className="line"></div>
                 {/* <img className="main-img" src={gig.imgUrls[0]} alt="" /> */}
                 <div className="main-img">
-                    {/* <Carousel className="w-full mb-5" opts={{align: "start", loop: true,  startIndex: carouselIdx}}>
-                        <CarouselContent>
-                            {gig.imgUrls?.map((img, index) => (
-                                <CarouselItem key={index}>
-                                    //{setCarouselIdx(index)}
-                                    <img src={img} alt={`image-idx-${index}`} />
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                    </Carousel> */}
+
                     <AppCarousel
                         items={gig.imgUrls}
                         renderItem={carouselItem}
@@ -205,43 +229,6 @@ export function GigDetails() {
 
             </section>
             <GigOrderDetails gig={gig} />
-            {/* <section className="order-details">
-                <div className="btns">
-                    <button className="btn-basic">Basic</button>
-                    <button className="btn-standard">Standard</button>
-                    <button className="btn-premium">Premium</button>
-                </div>
-
-                <main className="main-details">
-                    <div className="price">
-                        <span>Basic</span>
-                        <span className="price-num">{gig.price}$</span>
-
-                    </div>
-
-                    <div className="desc">Two unique High quality design concepts with HQ jpg and transparent png.</div>
-
-                    <div className="delivery-details">
-
-                        <span className="clock"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg></span>
-                        <span>{gig.daysToMake} Days delivery</span>
-                    </div>
-
-                    {gig.whatIncluded && <article className="whats-included">
-                        <details>
-                            <summary>what's included</summary>
-                            <ul className="clean-list">
-                                <li className="fa vi"><span className={(gig.whatIncluded.ConceptIncluded) ? 'fa include' : 'fa not-include'}></span>  1 Concept Included </li>
-                                <li className="fa vi"><span className={(gig.whatIncluded.IncludeSourceFile) ? 'fa include' : 'fa not-include'}></span> Include Source File </li>
-                                <li className="fa vi"><span className={(gig.whatIncluded.StationeryDesigns) ? 'fa include' : 'fa not-include'}></span> Stationery Designs</li>
-                            </ul>
-                        </details>
-                    </article>}
-                    <Link to={`/payment/${gig._id}`}><div className="continue-btn"><span className="continue">Continue</span> <span className="fa arrow"></span></div></Link>
-                    <div className="Compare-btn"><span className="continue">Compare packages</span></div>
-                </main>
-
-            </section> */}
 
             <section className="order-reviews-container">
                 <div className="title">Reviews</div>
@@ -261,8 +248,8 @@ export function GigDetails() {
                                     <span className="user-name">{review.by.fullname}</span>
 
                                     <div className="from">
-                                        <img className="flag" src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png" alt="" />
-                                        <span>USA</span>
+                                        
+                                        {randomCountry()}
                                     </div>
 
                                 </div>

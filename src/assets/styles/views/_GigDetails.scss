@@ -74,6 +74,7 @@
                     .star {
                         padding-left: 5px;
                         padding-right: 0.5em;
+                        margin-top: -0.1em;
                     }
 
                     .rate-num {
@@ -294,10 +295,8 @@
             }
 
             .user-info {
+                margin-left: 0.4em;
 
-                // align-items: center;
-                // align-content: center;
-                // margin-top: -0.2em;
                 .user-name {
                     font-size: 0.9em;
                     font-weight: bold;
@@ -310,14 +309,11 @@
                     margin-left: 0.1em;
                     margin-top: 0.1em;
 
-                    // align-content: center;
                     .flag {
                         border-radius: 5px;
                         width: 1.2em;
                         object-fit:fill;
-                        // height: fit-content;
-                        margin-top: -0.1em;
-                        // width: 2.9em;
+                        margin-top: -0.2em;
                         margin-right: 0.7em;
                         margin-left: -0.1em;
                     }
@@ -368,6 +364,12 @@
 
             .title {
                 margin-right: 1em;
+            }
+            
+
+            .yes,
+            .no {
+                cursor: pointer;
             }
 
             .yes {

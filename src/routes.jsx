@@ -130,10 +130,10 @@ export const exploreMenu = [
 ]
 
 export const searchSug = [
-    'website design',
-    'wordpress',
-    'logo design',
-    'ai services'
+    'Website Design',
+    'Wordpress',
+    'Logo Design',
+    'Ai Services'
 ]
 
 export const popularServices = [

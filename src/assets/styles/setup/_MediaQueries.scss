@@ -19,6 +19,10 @@
         * {
             font-size: 0.9em;
         }
+
+        tr{
+            position: relative;
+        }
     }
 
     .app-header {
@@ -30,7 +34,7 @@
         }
 
         .backdrop{
-            width: 108vw;
+            width: calc(100vw + 2em);
         }
         
 
@@ -190,6 +194,7 @@
     }
 
     .user-details-seller-container {
+        margin-top: 0;
         .profile-main-container {
             display: grid;
             grid-template-columns: 1fr;

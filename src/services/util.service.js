@@ -8,7 +8,9 @@ export const utilService = {
     loadFromStorage,
     capitalizeWords,
     getInitials,
-    createRandomGig
+    createRandomGig,
+    animate,
+    animateRef
 }
 
 function makeId(length = 6) {
@@ -399,3 +401,20 @@ const randomeGig = createRandomGig(
     ]
 );
 
+
+function animate(e, animation, timeOut = 1000){
+    e.target.classList.add('animate__animated', animation)
+    setTimeout(() => {
+        e.target.classList.remove('animate__animated', animation)
+    }, timeOut)
+
+}
+function animateRef(ref, animation, timeOut = 1000){
+    console.log('ref:', ref)
+    ref.classList.add('animate__animated', animation)
+    setTimeout(() => {
+        console.log('ref:', ref)
+        ref.classList.remove('animate__animated', animation)
+    }, timeOut)
+
+}

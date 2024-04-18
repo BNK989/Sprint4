@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "661cc2573356f2ac97fd2ad0"
+  },
+  "fullname": "Richard Nixon",
+  "username": "Nix37",
+  "password": "123",
+  "ordersCount": 1,
+  "from": "Massachusetts",
+  "Membersince": "Apr 2023",
+  "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_F._Kennedy%2C_White_House_color_photo_portrait.jpg/330px-John_F._Kennedy%2C_White_House_color_photo_portrait.jpg"
+},
+{
+  "_id": {
+    "$oid": "661cc2723356f2ac97fd2ad2"
+  },
+  "fullname": "John F Kennedy",
+  "username": "Jonny35",
+  "password": "123",
+  "ordersCount": 5,
+  "from": "California",
+  "Membersince": "Apr 2023",
+  "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Richard_Nixon_presidential_portrait_%281%29.jpg/330px-Richard_Nixon_presidential_portrait_%281%29.jpg"
+},
+{
+  "_id": {
+    "$oid": "661cc27e3356f2ac97fd2ad4"
+  },
+  "fullname": "Gerald Ford",
+  "username": "Ford38",
+  "password": "123",
+  "ordersCount": 3,
+  "from": "Nebraska",
+  "Membersince": "Apr 2023",
+  "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Gerald_Ford_presidential_portrait_%28cropped%29.jpg/330px-Gerald_Ford_presidential_portrait_%28cropped%29.jpg"
+},
+{
+  "_id": {
+    "$oid": "661ea0ce3356f2ac97fd2b07"
+  },
+  "fullname": "Jimmy Carter",
+  "username": "Jimmy39",
+  "password": "123",
+  "ordersCount": 3,
+  "from": "Georgia",
+  "Membersince": "Apr 2023",
+  "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/JimmyCarterPortrait2.jpg/330px-JimmyCarterPortrait2.jpg"
+},
+{
+  "_id": {
+    "$oid": "661ea1023356f2ac97fd2b08"
+  },
+  "fullname": "Ronald Reagan",
+  "username": "Ronald40",
+  "password": "123",
+  "ordersCount": 3,
+  "from": "Texas",
+  "Membersince": "Apr 2023",
+  "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Official_Portrait_of_President_Reagan_1981.jpg/225px-Official_Portrait_of_President_Reagan_1981.jpg"
+},
+{
+  "_id": {
+    "$oid": "661ea1243356f2ac97fd2b09"
+  },
+  "fullname": "George H. W. Bush",
+  "username": "Bush41",
+  "password": "123",
+  "ordersCount": 3,
+  "from": "Texas",
+  "Membersince": "Apr 2023",
+  "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/George_H._W._Bush_presidential_portrait_%28cropped%29.jpg/225px-George_H._W._Bush_presidential_portrait_%28cropped%29.jpg"
+},
+{
+  "_id": {
+    "$oid": "661f55e8c92e2439450e2bf4"
+  },
+  "username": "bnk989",
+  "password": "$2b$10$tZK3GVYbO6jg4d4pEb/0Q.obTu0QigIG78ULXfZJQckbIgaSLUlfy",
+  "fullname": "Ben Klinovsky",
+  "imgUrl": "https://res.cloudinary.com/dqwoykxjx/image/upload/v1713329637/yl6fc6aaaaqvugvri3ti.png"
+}]
