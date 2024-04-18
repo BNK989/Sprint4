@@ -1,5 +1,19 @@
 import {utilService as u} from '../services/util.service'
+import 'animate.css'
 export function BestPart() {
+    
+
+    function dance(e){
+        e.preventDefault()
+        const content = e.target.innerText.split('')
+        const spannedContent = content.map((l, i) => `<span key=${i} style='color: ${u.getRandomColor()}; margin: 0'>${l}</span>`).join('')
+        e.target.innerHTML = spannedContent
+    }
+    function unDance(e){
+        const content = e.target.innerText.split('')
+        const spannedContent = content.map((l, i) => `<span key=${i} style='margin: 0'>${l}</span>`).join('')
+        e.target.innerHTML = spannedContent
+    }
 
     return (
         <section className="video-section flex full main-container">
@@ -16,7 +30,7 @@ export function BestPart() {
                                     </svg></span>
                                     <h6>Stick to your budget</h6>
                                 </section>
-                                <p>Find the right service for every price point. No hourly rates, just project-based pricing.</p>
+                                <p onContextMenu={dance} onClick={unDance} className='transition-colors'>Find the right service for every price point. No hourly rates, just project-based pricing.</p>
                             </li>
                             <li>
                                 <section className="flex align-center">

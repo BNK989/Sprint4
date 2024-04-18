@@ -16,7 +16,7 @@ export function ReceivedOrdersPreview({ order, index, onChangeAction, orders }) 
         orderToUpdate.status = value
         onChangeAction(orderToUpdate, value)
         setActionModal(!isActionModalOpen)
-        u.animateRef(currStatus.current,`animate__shake${value === 'Accepted' ? 'Y' : 'X'}`, 500)
+        u.animateRef(currStatus.current,`animate__shake${value === 'Accepted' ? 'Y' : 'X'}`, 800)
     }
 
     function GetDate(isoDate) {

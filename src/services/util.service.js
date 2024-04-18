@@ -10,7 +10,8 @@ export const utilService = {
     getInitials,
     createRandomGig,
     animate,
-    animateRef
+    animateRef,
+    getRandomColor
 }
 
 function makeId(length = 6) {
@@ -410,11 +411,13 @@ function animate(e, animation, timeOut = 1000){
 
 }
 function animateRef(ref, animation, timeOut = 1000){
-    console.log('ref:', ref)
     ref.classList.add('animate__animated', animation)
     setTimeout(() => {
-        console.log('ref:', ref)
         ref.classList.remove('animate__animated', animation)
     }, timeOut)
 
+}
+
+function getRandomColor(){
+   return `#${Math.floor(Math.random()*16777215).toString(16)}`;
 }
