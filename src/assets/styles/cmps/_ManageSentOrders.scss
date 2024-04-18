@@ -26,7 +26,6 @@
             font-size: 0.6em;
             display: flex;
             align-items: center;
-            // justify-content: space-between;
             gap: 1em;
             padding-right: 5px;
 
@@ -34,13 +33,10 @@
                 width: 10em;
                 height: 5em;
                 object-fit: cover;
-
-                // margin-right: 3em;
             }
 
             &.pending{
-                background-color: #b7e5ff6b;
-                
+                background-color: $clr-light--grey;
             }
             
             &.accepted{
@@ -53,68 +49,6 @@
             &.rejected{
                 background-color: $clralert;
             }
-
         }
     }
 }
-
-
-
-
-// table {
-//     width: 100%;
-//     border-collapse: collapse;
-//     margin: 25px 0;
-//     font-size: 0.9em;
-//     min-width: 400px;
-//     border-radius: 5px 5px 0 0;
-//     overflow: hidden;
-//     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-
-//     thead {
-//         tr {
-//             background-color: $clr-light--grey;
-//             color: $clr-black;
-//             text-align: left;
-//             font-weight: bold;
-
-//             th {
-//                 padding: 12px 15px;
-//             }
-//         }
-//     }
-
-//     tbody {
-//         tr {
-//             border-bottom: 1px solid #dddddd;
-
-//             td {
-//                 width: 50vw;
-//                 padding: 12px 15px;
-
-//                 img {
-//                     width: 50%;
-//                 }
-
-//                 span {
-//                     padding: 5px;
-//                     border-radius: 10px;
-//                     background-color: #e2ee75;
-//                     &.accepted {
-//                         background-color: $clrbg1;
-//                     }
-
-//                     &.rejected {
-//                         color: $clr-light--grey;
-//                         background-color: $clralert;
-//                     }
-//                 }
-
-//             }
-//         }
-
-//         tr:nth-of-type(even) {
-//             background-color: #f3f3f3;
-//         }
-//     }
-// }

@@ -11,7 +11,7 @@ export const utilService = {
     createRandomGig,
     animate,
     animateRef,
-    getRandomColor
+    // animateRefRepeat
 }
 
 function makeId(length = 6) {
@@ -410,10 +410,11 @@ function animate(e, animation, timeOut = 1000){
     }, timeOut)
 
 }
-function animateRef(ref, animation, timeOut = 1000){
-    ref.classList.add('animate__animated', animation)
+function animateRef(ref, animation, timeOut = 1000, repeat = 1){
+    console.log('ref:', ref)
+    ref.classList.add('animate__animated', animation,`animate__repeat-${repeat}`)
     setTimeout(() => {
-        ref.classList.remove('animate__animated', animation)
+        ref.classList.remove('animate__animated', animation,`animate__repeat-${repeat}`)
     }, timeOut)
 
 }
@@ -421,3 +422,4 @@ function animateRef(ref, animation, timeOut = 1000){
 function getRandomColor(){
    return `#${Math.floor(Math.random()*16777215).toString(16)}`;
 }
+

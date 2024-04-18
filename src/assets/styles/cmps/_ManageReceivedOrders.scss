@@ -76,7 +76,7 @@ table {
 
             &.accepted {
                 button {
-                    background-color: $clrbg1;
+                    background-color: #afff8f70;
 
                 }
             }
@@ -90,7 +90,7 @@ table {
             }
 
             button {
-                background-color: #e2ee75;
+                background-color: $clr-light--grey;
                 border-radius: 10px;
             }
 

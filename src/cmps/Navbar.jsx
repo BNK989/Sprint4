@@ -1,34 +1,21 @@
 
 
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-import { NavRoutes, exploreMenu } from '../routes'
+import { exploreMenu } from '../routes'
 import { Button } from '@/components/ui/button'
 import { useSelector } from 'react-redux'
 import { useEffect, useRef, useState } from 'react'
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuGroup,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { ToolTipWrapper } from './shanCN/ToolTipWrapper'
 import { QuickAvatar } from './shanCN/QuickAvatar'
 import { utilService as util } from '../services/util.service'
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "@/components/ui/hover-card"
+
 import {
     Popover,
     PopoverContent,
@@ -41,16 +28,16 @@ import { SOCKET_EVENT_EDIT_ORDER, socketService } from '@/services/socket.servic
 import { UPDATE_ORDER } from '@/store/reducers/order.reducer'
 import { store } from '@/store/store'
 
-
-
 export function NavBar({ signInModal, className,onLogout }) {
     const [isUserModalOpen, setUserModalOpen] = useState(false)
     const user = useSelector(storeState => storeState.userModule.user)
     const orders = useSelector(storeState => storeState.orderModule.orders)
-    const ownedGigs = useSelector(storeState => storeState.gigModule.ownedGigs)
 
     const [pendingOrdersTotal, setPendingOrdersTotal] = useState(0)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const bellRef = useRef()
+    const ordersRef = useRef(0)
 
   
 
@@ -59,16 +46,14 @@ export function NavBar({ signInModal, className,onLogout }) {
     useEffect(() => {
         loadOrders({buyer: true})
         socketService.on(SOCKET_EVENT_EDIT_ORDER,(editOrder)=>{
-            console.log('editOrder:', editOrder)
             store.dispatch({type:UPDATE_ORDER,editOrder})
-            
+            util.animateRef(bellRef.current,'animate__swing',5000,2)
         })
         let handler = (e) => {
             setPendingOrdersTotal(orders.reduce((acc, order) => order.status === 'pending' ? acc + 1 : acc, 0))
             if (!menuRef.current === e.target) {
                 setUserModalOpen(false)
             }
-
         }
         document.addEventListener("mousedown", handler)
         return () => {
@@ -76,6 +61,12 @@ export function NavBar({ signInModal, className,onLogout }) {
             socketService.off(SOCKET_EVENT_EDIT_ORDER)
         }
     }, [])
+if(orders.length){
+    if(orders.length > ordersRef.current){
+        util.animateRef(bellRef.current,'animate__swing',5000,2)
+        ordersRef.current += 1
+    }
+}
 
     return (
         <>
@@ -96,19 +87,12 @@ export function NavBar({ signInModal, className,onLogout }) {
                                 </DropdownMenuGroup>
                             </DropdownMenuContent>
                         </DropdownMenu></li>
-                    {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
                     {user && <li className='relative' >
                         <Popover>
-                            <PopoverTrigger>Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}</PopoverTrigger>
+                            <PopoverTrigger>Orders{ <div ref={bellRef} className={`${orders.length && 'notification-bell  fa'}`}></div>}</PopoverTrigger>
                             <PopoverContent>{ <ManageSentOrders user={user} orders=
                             {orders} />}</PopoverContent>
                         </Popover>
-
-                        {/* <ToolTipWrapper tooltipContent={`${pendingOrdersTotal} Pending Orders`}>
-                            <Link to={`user/${user._id}`}>
-                                Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}
-                            </Link>
-                        </ToolTipWrapper> */}
                     </li>
                     }
 
@@ -130,7 +114,6 @@ export function NavBar({ signInModal, className,onLogout }) {
                                 <hr className='my-4' />
                                 <li className='my-3 text-[#62646a]'><Link onClick={onLogout} to="">Logout</Link></li>
                             </ul>
-
                         </PopoverContent>
                     </Popover>
                     }

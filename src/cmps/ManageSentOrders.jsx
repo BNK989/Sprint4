@@ -1,9 +1,4 @@
-import { loadOrders, updateOrder } from "@/store/actions/order.actions"
-import { space } from "postcss/lib/list"
-import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
-
-export function ManageSentOrders({ user, orders }) {
+export function ManageSentOrders({ orders }) {
 
     function truncateStringToWordCount(inputString, maxWordCount) {
         const words = inputString.split(/\s+/);
@@ -15,13 +10,11 @@ export function ManageSentOrders({ user, orders }) {
     }
 
     function gigStatusClass(status){
-        console.log(status);
         if (status === 'Accepted') return 'accepted'
         if (status === 'Rejected') return 'rejected'
-        return 'pending'
+        return 'Pending'
     }
 
-console.log('orders:', orders)
     if (!orders) return <span>no ordersss</span>
     return (<section className="my-orders">
         {!orders.length &&
@@ -33,7 +26,6 @@ console.log('orders:', orders)
                     return <li key={order._id} className={ gigStatusClass(order.status)}>
                         <img src={order.gig.imgUrl[0]} alt="" />
                         <span className="gig-title">{truncateStringToWordCount(order.gig.title , 5)}</span>
-                        {/* <span className="price">${order.gig.price}</span> */}
                         <span className={`order-status`}>{order.status}</span>
                     </li>
                 })}
