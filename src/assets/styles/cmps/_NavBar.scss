@@ -30,15 +30,23 @@
         }
     }
 
-    .notification-dot {
+    .notification-bell {
         position: absolute;
         top: 0;
         right: -.3em;
 
-        border-radius: 50%;
-        height: .5em;
-        width: .5em;
-        background-color: $clralert;
+        // border-radius: 50%;
+        // height: .5em;
+        // width: .5em;
+        // background-color: $clralert;
+
+        &::after{
+            content: "\f0f3";
+            position: absolute;
+            top: -0.3em;
+            right: 0.2em;
+            // color: aqua;
+        }
     }
 
     // .explore{

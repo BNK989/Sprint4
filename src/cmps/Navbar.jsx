@@ -7,12 +7,6 @@ import { Button } from '@/components/ui/button'
 import { useSelector } from 'react-redux'
 import { useEffect, useRef, useState } from 'react'
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip"
-import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
@@ -21,14 +15,9 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { ToolTipWrapper } from './shanCN/ToolTipWrapper'
 import { QuickAvatar } from './shanCN/QuickAvatar'
 import { utilService as util } from '../services/util.service'
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "@/components/ui/hover-card"
+
 import {
     Popover,
     PopoverContent,
@@ -52,6 +41,8 @@ export function NavBar({ signInModal, className,onLogout }) {
     const [pendingOrdersTotal, setPendingOrdersTotal] = useState(0)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+    const bellRef = useRef()
+
   
 
     let menuRef = useRef()
@@ -61,7 +52,7 @@ export function NavBar({ signInModal, className,onLogout }) {
         socketService.on(SOCKET_EVENT_EDIT_ORDER,(editOrder)=>{
             console.log('editOrder:', editOrder)
             store.dispatch({type:UPDATE_ORDER,editOrder})
-            
+            util.animateRef(bellRef.current,'animate__swing',2000)
         })
         let handler = (e) => {
             setPendingOrdersTotal(orders.reduce((acc, order) => order.status === 'pending' ? acc + 1 : acc, 0))
@@ -76,7 +67,7 @@ export function NavBar({ signInModal, className,onLogout }) {
             socketService.off(SOCKET_EVENT_EDIT_ORDER)
         }
     }, [])
-
+console.log('pendingOrdersTotal:', pendingOrdersTotal)
     return (
         <>
             <div className={ cn(`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`)} onClick={() => setIsMenuOpen(false)} />
@@ -99,7 +90,7 @@ export function NavBar({ signInModal, className,onLogout }) {
                     {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
                     {user && <li className='relative' >
                         <Popover>
-                            <PopoverTrigger>Orders{pendingOrdersTotal !== 0 && <div className='notification-dot'></div>}</PopoverTrigger>
+                            <PopoverTrigger>Orders{ <div ref={bellRef} className='notification-bell fa'></div>}</PopoverTrigger>
                             <PopoverContent>{ <ManageSentOrders user={user} orders=
                             {orders} />}</PopoverContent>
                         </Popover>
