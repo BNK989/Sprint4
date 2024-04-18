@@ -1,3 +1,6 @@
+// * * * * * {
+//     outline: 2px solid red;
+// }
 table {
     position: relative;
     width: 100%;
@@ -67,10 +70,13 @@ table {
         .received-order-action-container {
             position: relative;
             // width: fit-content;
+            button{
+                --animate-duration: 0.8s;
+            }
 
             &.accepted {
                 button {
-                    background-color: $clrbg1;
+                    background-color: #afff8f70;
 
                 }
             }
@@ -84,7 +90,7 @@ table {
             }
 
             button {
-                background-color: #e2ee75;
+                background-color: $clr-light--grey;
                 border-radius: 10px;
             }
 

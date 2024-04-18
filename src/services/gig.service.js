@@ -1,11 +1,5 @@
-
-// import { storageService } from './async-storage.service.js'
 import { httpService } from './http.service.js'
-import { utilService } from './util.service.js'
-import { userService } from './user.service.js'
 
-
-const STORAGE_KEY = '5err'
 const BASE_URL = 'gig'
 
 export const gigService = {
@@ -22,7 +16,6 @@ window.cs = gigService
 
 
 async function query(filterBy = { txt: '', category: '', price: 0, userId: '' }) {
-    console.log('filterBy:', filterBy)
     return httpService.get(BASE_URL, filterBy)
 }
 
@@ -34,7 +27,6 @@ async function remove(gigId) {
     return httpService.delete(`gig/${gigId}`)
 }
 async function save(gig) {
-    console.log('123gig:', gig)
     var savedGig
     if (gig._id) {
         savedGig = await httpService.put(`gig/${gig._id}`, gig)
@@ -49,7 +41,6 @@ async function addGigMsg(gigId, txt) {
     const savedMsg = await httpService.post(`gig/${gigId}/msg`, { txt })
     return savedMsg
 }
-
 
 function getEmptyGig() {
     return {
@@ -102,7 +93,6 @@ function getDefaultFilter() {
 }
 
 async function allCategories() {
-    // return ['Graphics & Design','Programming & Tech', 'Digital Marketing', 'Video & Animation', 'Writing & Translation', 'Music & Audio', 'Business', 'Consulting', 'Data', 'AI Services', ]
     var gigs = await query()
     return gigs.reduce((accumulator, { category }) => {
         if (!accumulator.includes(category) && accumulator.length < 9) {
