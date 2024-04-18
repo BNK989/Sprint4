@@ -11,6 +11,7 @@ export const utilService = {
     createRandomGig,
     animate,
     animateRef,
+    getRandomColor
     // animateRefRepeat
 }
 
