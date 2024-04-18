@@ -10,7 +10,8 @@ export const utilService = {
     getInitials,
     createRandomGig,
     animate,
-    animateRef
+    animateRef,
+    // animateRefRepeat
 }
 
 function makeId(length = 6) {
@@ -409,12 +410,21 @@ function animate(e, animation, timeOut = 1000){
     }, timeOut)
 
 }
-function animateRef(ref, animation, timeOut = 1000){
+function animateRef(ref, animation, timeOut = 1000, repeat = 1){
     console.log('ref:', ref)
-    ref.classList.add('animate__animated', animation)
+    ref.classList.add('animate__animated', animation,`animate__repeat-${repeat}`)
     setTimeout(() => {
         console.log('ref:', ref)
-        ref.classList.remove('animate__animated', animation)
+        ref.classList.remove('animate__animated', animation,`animate__repeat-${repeat}`)
     }, timeOut)
 
 }
+// function animateRefRepeat(ref, animation, timeOut = 1000, repeat = 1){
+//     console.log('ref:', ref)
+//     ref.classList.add('animate__animated', animation, `animate__repeat-${repeat}`)
+//     setTimeout(() => {
+//         console.log('ref:', ref)
+//         ref.classList.remove('animate__animated', animation,'animate__repeat-2')
+//     }, timeOut)
+
+// }

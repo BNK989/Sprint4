@@ -42,6 +42,7 @@ export function NavBar({ signInModal, className,onLogout }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const bellRef = useRef()
+    const ordersRef = useRef(0)
 
   
 
@@ -50,9 +51,8 @@ export function NavBar({ signInModal, className,onLogout }) {
     useEffect(() => {
         loadOrders({buyer: true})
         socketService.on(SOCKET_EVENT_EDIT_ORDER,(editOrder)=>{
-            console.log('editOrder:', editOrder)
             store.dispatch({type:UPDATE_ORDER,editOrder})
-            util.animateRef(bellRef.current,'animate__swing',2000)
+            util.animateRef(bellRef.current,'animate__swing',5000,2)
         })
         let handler = (e) => {
             setPendingOrdersTotal(orders.reduce((acc, order) => order.status === 'pending' ? acc + 1 : acc, 0))
@@ -67,7 +67,13 @@ export function NavBar({ signInModal, className,onLogout }) {
             socketService.off(SOCKET_EVENT_EDIT_ORDER)
         }
     }, [])
-console.log('pendingOrdersTotal:', pendingOrdersTotal)
+if(orders.length){
+    if(orders.length > ordersRef.current){
+        util.animateRef(bellRef.current,'animate__swing',5000,2)
+        ordersRef.current += 1
+    }
+}
+
     return (
         <>
             <div className={ cn(`top-0 right-0 w-screen h-screen absolute ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`)} onClick={() => setIsMenuOpen(false)} />
@@ -90,7 +96,7 @@ console.log('pendingOrdersTotal:', pendingOrdersTotal)
                     {/* {NavRoutes.splice(1,2).map(route => <li key={route.path} className={route.path}><NavLink to={route.path}>{route.label}</NavLink></li>)} */}
                     {user && <li className='relative' >
                         <Popover>
-                            <PopoverTrigger>Orders{ <div ref={bellRef} className='notification-bell fa'></div>}</PopoverTrigger>
+                            <PopoverTrigger>Orders{ <div ref={bellRef} className={`${orders.length && 'notification-bell  fa'}`}></div>}</PopoverTrigger>
                             <PopoverContent>{ <ManageSentOrders user={user} orders=
                             {orders} />}</PopoverContent>
                         </Popover>

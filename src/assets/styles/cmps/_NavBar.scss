@@ -34,7 +34,9 @@
         position: absolute;
         top: 0;
         right: -.3em;
-
+        // --animate-repeat: 2;
+        
+        animation-duration: 2s;
         // border-radius: 50%;
         // height: .5em;
         // width: .5em;
@@ -45,6 +47,7 @@
             position: absolute;
             top: -0.3em;
             right: 0.2em;
+            // animation-duration: 2000ms;
             // color: aqua;
         }
     }
