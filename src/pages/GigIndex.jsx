@@ -10,6 +10,7 @@ import { GigFilter } from '../cmps/GigFilter.jsx'
 import { GigList } from '../cmps/GigList.jsx'
 import { LoadingIndex } from '@/cmps/LodingIndex.jsx'
 import { BreadcrumbWithCustomSeparator } from '@/cmps/BreadcrumbWithCustomSeparator.jsx'
+import { ActiveFilters } from '@/cmps/ActiveFilters.jsx'
 
 export function GigIndex() {
 
@@ -50,6 +51,7 @@ export function GigIndex() {
             <p>Stand out from the crowd with a logo that fits your brand personality.</p>
             <div className='line'></div>
             <GigFilter filterBy={filterBy} onSetFilter={onSetFilter} />
+            <ActiveFilters filterBy={filterBy} />
 
             <section className='sort'>
                 <span className='count-results'>
